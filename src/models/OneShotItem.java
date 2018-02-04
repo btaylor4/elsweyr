@@ -5,7 +5,7 @@ package models;
 public class OneShotItem extends Item {
 
     OneShotItem(){
-        setItemType(ItemType.OneShot);
+        setItemType(ItemType.ONESHOT);
     }
 
     @Override

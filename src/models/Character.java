@@ -35,7 +35,6 @@ public class Character {
     }
 
     public void updateLevel(){
-        currExp -= expToNextLevel;
         level++;
         updateExpToNextLevel();
     }

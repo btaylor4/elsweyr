@@ -1,5 +1,5 @@
 package models;
 
 public enum ItemType {
-    Takeable, OneShot, Obstacle, Interactive
+    TAKEABLE, ONESHOT, OBSTACLE, INTERACTIVE,NONE
 }

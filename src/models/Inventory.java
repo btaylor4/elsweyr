@@ -8,6 +8,22 @@ public class Inventory {
     private HashMap<String, List<Item>> items;
     private int maxSize;
 
+    public HashMap<String, List<Item>> getItems() {
+        return items;
+    }
+
+    public void setItems(HashMap<String, List<Item>> items) {
+        this.items = items;
+    }
+
+    public int getMaxSize() {
+        return maxSize;
+    }
+
+    public void setMaxSize(int maxSize) {
+        this.maxSize = maxSize;
+    }
+
     public boolean addItem(Item item){
         //If the inventory is full the item cannot be added
         if(items.size() == maxSize)

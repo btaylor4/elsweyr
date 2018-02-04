@@ -3,8 +3,12 @@ package models;
 public class LevelUpEffect extends AreaEffect {
     private boolean hasBeenActivated;
 
+    public LevelUpEffect(){
+        setEffectType(EffectType.LEVELUPEFFECT);
+    }
+
     public void levelUp(Character character){
-        character.setLevel(character.getLevel() + 1);
+        character.updateLevel();
     }
     public boolean hasBeenActivated() {
         return hasBeenActivated;

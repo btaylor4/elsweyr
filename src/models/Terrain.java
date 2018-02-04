@@ -1,5 +1,5 @@
 package models;
 
 public enum  Terrain {
-    Grass, Water, Mountain
+    GRASS, WATER, MOUNTAIN, NONE
 }

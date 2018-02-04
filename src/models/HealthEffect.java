@@ -6,6 +6,9 @@ public class HealthEffect extends AreaEffect {
     private int healthChange;
     private String effectId;
 
+    public HealthEffect(){
+        setEffectType(EffectType.HEALTHEFFECT);
+    }
     public int getTimeInterval() {
         return timeInterval;
     }

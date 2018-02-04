@@ -4,7 +4,7 @@ package models;
 public class InteractiveItem extends Item {
 
     InteractiveItem(){
-        setItemType(ItemType.Interactive);
+        setItemType(ItemType.INTERACTIVE);
     }
     @Override
     public boolean onTouchAction(Character character) {

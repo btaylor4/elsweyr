@@ -4,7 +4,7 @@ package models;
 public class ObstacleItem extends Item {
 
     ObstacleItem(){
-        setItemType(ItemType.Obstacle);
+        setItemType(ItemType.OBSTACLE);
     }
 
     @Override

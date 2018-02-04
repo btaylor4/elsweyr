@@ -1,5 +1,5 @@
 package models;
 
 public enum EffectType{
-    HealthEffect, LevelUpEffect
+    HEALTHEFFECT, LEVELUPEFFECT,NONE
 }
