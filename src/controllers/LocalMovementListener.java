@@ -101,8 +101,16 @@ public class LocalMovementListener {
         //TODO: implement similiar way as above method
     }
 
-    boolean checkForLocalExitTile(){
-        return false;
+    boolean checkForLocalExitTile(Character character, Zone localMap){
+        Point localPos = character.getLocalPos();
+
+        if(localPos.getX() == localMap.getExitTile().getX() && localPos.getY() == localMap.getExitTile().getY() ){
+            return true;
+
+        }
+        else{
+            return false;
+        }
 
     }
     void passControlToGlobalGamePlay(){
