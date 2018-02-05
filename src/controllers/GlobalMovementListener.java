@@ -18,10 +18,10 @@ public class GlobalMovementListener implements EventHandler<ActionEvent> {
         int xPositionChange = (int)(characterPosition.getX() + projectedMove.getX());
         int yPositionChange = (int)(characterPosition.getY() + projectedMove.getY());
 
-        if(xPositionChange < 0 || xPositionChange > map.getGlobalMap()[0].length - 1)
+        if(xPositionChange < 0 || xPositionChange > map.getGlobalMap().length - 1)
             return false;
 
-        else if(yPositionChange < 0 || yPositionChange > map.getGlobalMap().length - 1)
+        else if(yPositionChange < 0 || yPositionChange > map.getGlobalMap()[0].length - 1)
             return false;
 
         else
@@ -33,23 +33,23 @@ public class GlobalMovementListener implements EventHandler<ActionEvent> {
 
         switch (move) {
             case "UP": // 8
-                projectedMove = new Point(0, -1);
-                break;
-
-            case "DOWN": // 2
-                projectedMove = new Point(0, 1);
-                break;
-
-            case "LEFT": // 4
                 projectedMove = new Point(-1, 0);
                 break;
 
-            case "RIGHT": //6
+            case "DOWN": // 2
                 projectedMove = new Point(1, 0);
                 break;
 
+            case "LEFT": // 4
+                projectedMove = new Point(0, -1);
+                break;
+
+            case "RIGHT": //6
+                projectedMove = new Point(0, 1);
+                break;
+
             case "END": // 1 DOWN_LEFT
-                projectedMove = new Point(-1, 1);
+                projectedMove = new Point(1, -1);
                 break;
 
             case "PAGE_DOWN":  // DOWN_RIGHT
@@ -62,7 +62,7 @@ public class GlobalMovementListener implements EventHandler<ActionEvent> {
 
 
             case "PAGE_UP": // UP_RIGHT
-                projectedMove = new Point(1, -1);
+                projectedMove = new Point(-1, 1);
                 break;
 
             default:
