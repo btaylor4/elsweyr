@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import models.Character;
 import models.GlobalLevel;
 
+import javax.swing.text.Position;
 import java.awt.*;
 
 
@@ -15,8 +16,8 @@ public class GlobalMovementListener implements EventHandler<ActionEvent> {
 
     private boolean checkVaildMove(Point projectedMove, Character character, GlobalLevel map) {
         Point characterPosition = character.getGlobalPos();
-        int xPositionChange = (int)(characterPosition.getX() + projectedMove.getX());
-        int yPositionChange = (int)(characterPosition.getY() + projectedMove.getY());
+        int xPositionChange = characterPosition.x + projectedMove.y;
+        int yPositionChange = characterPosition.x + projectedMove.y;
 
         if(xPositionChange < 0 || xPositionChange > map.getGlobalMap().length - 1)
             return false;
@@ -74,8 +75,13 @@ public class GlobalMovementListener implements EventHandler<ActionEvent> {
         }
     }
 
-    public boolean checkForLocalLevel() {
-        return false;
+    public boolean checkForLocalLevel(Character character, GlobalLevel map) {
+        Point globalPos = character.getGlobalPos();
+        if(map.getGlobalMap()[globalPos.x][globalPos.y].getStartTile() != null)
+            return true;
+
+        else
+            return false;
     }
 
     void passControlToGlobalGamePlay() {}
