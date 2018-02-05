@@ -1,9 +1,16 @@
 package controllers;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import models.*;
 import models.Character;
+import javafx.scene.Node;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.io.IOException;
 
 import static models.ItemType.OBSTACLE;
 
@@ -101,16 +108,20 @@ public class LocalMovementListener {
         //TODO: implement similiar way as above method
     }
 
-    boolean checkForLocalExitTile(Character character, Zone localMap){
+    void checkForLocalExitTile(ActionEvent event, Character character, Zone localMap) throws IOException {
         Point localPos = character.getLocalPos();
 
+        //If user reaches exit tile, then send him back to global view
         if(localPos.getX() == localMap.getExitTile().getX() && localPos.getY() == localMap.getExitTile().getY() ){
-            return true;
 
+            //TO DO: Add fxml address for global view
+            Parent globalView = FXMLLoader.load(getClass().getResource("GLOBALVIEW.FXL GOES HERE"));
+            Scene scene = new Scene(globalView);
+            Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.show();
         }
-        else{
-            return false;
-        }
+
 
     }
     void passControlToGlobalGamePlay(){
