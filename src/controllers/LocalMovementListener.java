@@ -49,8 +49,8 @@ public class LocalMovementListener {
     }
     boolean checkValidMove(String numKeyPressed, Character character, Zone localMap){
 
-        int mapRows = localMap.getLocalMap().length; //get rows of map
-        int mapCols = localMap.getLocalMap()[0].length; //get cols of map
+        int mapRows = localMap.getLocalMap().length-1; //get rows of map
+        int mapCols = localMap.getLocalMap()[0].length-1; //get cols of map
         Point characterPositionInMap = character.getLocalPos();
         Point moveDirection; //Store the direction associated with the key pressed ex: UP = (0,1), DOWN = (0,-1)
 
