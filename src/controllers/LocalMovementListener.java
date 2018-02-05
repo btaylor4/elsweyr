@@ -1,9 +1,7 @@
 package controllers;
 
-import models.Zone;
+import models.*;
 import models.Character;
-import models.ItemType;
-import models.Terrain;
 
 import java.awt.*;
 
@@ -92,19 +90,17 @@ public class LocalMovementListener {
         return true;
     }
 
-    boolean checkForItem(){
-        return false;
+    void interactWithItem(Character character, Zone localMap){
+        Point localPos = character.getLocalPos();
+        //TODO: Possibly have different check for not null
+        if(localMap.getLocalMap()[(int)localPos.getX()][(int)localPos.getY()].getItem() != null)
+            localMap.getLocalMap()[(int)localPos.getX()][(int)localPos.getY()].getItem().onTouchAction(character);
     }
-    void interactWithItem(){
 
+    void interactWithAreaEffects(Character character, Zone localMap){
+        //TODO: implement similiar way as above method
     }
-    void checkForAreaEffects(){
 
-    }
-    boolean interactWithAreaEffects(){
-
-        return false;
-    }
     boolean checkForLocalExitTile(){
         return false;
 
