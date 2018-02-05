@@ -18,7 +18,7 @@ public class Character {
     private Point localPos;
     private Item equippedItem;
     private Image characterSprite;
-    private Buffs activeBuffs;
+    private Buffs[] activeBuffs; 
 
     public void updateHealth(int healthChange){
         currentHP += healthChange;
@@ -46,16 +46,12 @@ public class Character {
     public void unEquip(Item item){
 
     }
-
-
     public void useEquipped(){
 
     }
-
     private void updateExpToNextLevel(){
         expToNextLevel *= 2;
     }
-
 
     public int getBaseHP() {
         return baseHP;
@@ -153,11 +149,11 @@ public class Character {
         this.characterSprite = characterSprite;
     }
 
-    public Buffs getActiveBuffs() {
+    public Buffs[] getActiveBuffs() {
         return activeBuffs;
     }
 
-    public void setActiveBuffs(Buffs activeBuffs) {
+    public void setActiveBuffs(Buffs[] activeBuffs) {
         this.activeBuffs = activeBuffs;
     }
 }
