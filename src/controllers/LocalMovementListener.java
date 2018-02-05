@@ -114,7 +114,7 @@ public class LocalMovementListener {
         //If user reaches exit tile, then send him back to global view
         if(localPos.getX() == localMap.getExitTile().getX() && localPos.getY() == localMap.getExitTile().getY() ){
 
-            //TO DO: Add fxml address for global view
+            //TO DO: ADD FXML ADDRESS FOR GLOBAL VIEW HERE 
             Parent globalView = FXMLLoader.load(getClass().getResource("GLOBALVIEW.FXL GOES HERE"));
             Scene scene = new Scene(globalView);
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
