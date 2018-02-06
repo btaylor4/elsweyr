@@ -1,8 +1,9 @@
 package models;
 
-import javafx.scene.image.Image;
-
 import java.awt.*;
+import java.util.ArrayList;
+import javafx.scene.image.Image;
+import java.io.*;
 
 public class Character {
 
@@ -18,8 +19,28 @@ public class Character {
     private Point localPos;
     private Item equippedItem;
     private Image characterSprite;
-    private Buffs[] activeBuffs; 
+    private String characterSpritePath;
+    private ArrayList<Buffs> activeBuffs;
 
+    Character()
+    {
+        activeBuffs = new ArrayList<Buffs>();
+        equippedItem = null;
+    }
+
+    public void createCharacterImage() throws FileNotFoundException
+    {
+        characterSprite = new Image(new FileInputStream(characterSpritePath));
+    }
+
+    public void setCharacterSpritePath(String characterSpritePath)
+    {
+        this.characterSpritePath = characterSpritePath;
+    }
+    public String getCharacterSpritePath()
+    {
+        return characterSpritePath;
+    }
     public void updateHealth(int healthChange){
         currentHP += healthChange;
         //Character max currentHP is his/her TotalHP
@@ -46,9 +67,11 @@ public class Character {
     public void unEquip(Item item){
 
     }
+
     public void useEquipped(){
 
     }
+
     private void updateExpToNextLevel(){
         expToNextLevel *= 2;
     }
@@ -149,11 +172,11 @@ public class Character {
         this.characterSprite = characterSprite;
     }
 
-    public Buffs[] getActiveBuffs() {
+    public ArrayList<Buffs> getActiveBuffs() {
         return activeBuffs;
     }
-
-    public void setActiveBuffs(Buffs[] activeBuffs) {
-        this.activeBuffs = activeBuffs;
+    public void addActiveBuff(Buffs newActiveBuff)
+    {
+        activeBuffs.add(newActiveBuff);
     }
 }

@@ -5,6 +5,15 @@ public class GlobalLevel {
     private Zone[][] globalMap;
     private int gameTime;
 
+    GlobalLevel()
+    {
+        globalMap = new Zone[10][10];
+    }
+
+    GlobalLevel(int rows, int cols)   {
+        globalMap = new Zone[rows][cols];
+    }
+
     public Zone[][] getGlobalMap() {
         return globalMap;
     }
