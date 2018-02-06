@@ -160,8 +160,7 @@ public class ReadMapTest {
         GlobalLevel GL = null;
 
         try {
-            ReadFiles.loadGame(mapFile);
-            GL = ReadFiles.getLoadedMap();
+            GL = ReadFiles.loadGame(mapFile);
         } catch (IOException e) {
             System.out.println("ReadFileDoneMessedUp");
             Assert.assertTrue(false);

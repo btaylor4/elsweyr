@@ -33,7 +33,7 @@ public class Inventory {
 
     public boolean addItem(Item item){
         //If the inventory is full the item cannot be added
-        if(items.size() == maxSize)
+        if(items.size() == maxSize) // if number of item types < max then user can have infinite of one or more types?
             return false;
         else{
             //Returns a list of the same items
@@ -52,7 +52,7 @@ public class Inventory {
             //There already exists a list of that item.
             else{
                 sameItem.add(item);
-                items.put(item.getName(), sameItem);
+                items.put(item.getName(), sameItem); // no need to put, sameItem has reference to same list?
             }
         }
         return true;
