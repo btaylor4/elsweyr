@@ -183,18 +183,9 @@ public class LocalGameplayController {
 
     }
 
-    void interactWithItem(Character character, Zone localMap){
-        Point localPos = character.getLocalPos();
-        //TODO: Possibly have different check for not null
-    }
-
     void interactWithAreaEffects(Character character, Zone localMap){
         //TODO: implement similiar way as above method
     }
-
-
-
-
 
 
 
