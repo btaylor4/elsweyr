@@ -26,11 +26,11 @@ public class LocalMovementListener {
 
 
         if(predictedMove.x < 0 || predictedMove.y < 0 || predictedMove.x > mapRows || predictedMove.y > mapCols ){
-            return false;
+            return true;
         }
 
         else{
-            return true;
+            return false;
         }
 
     }
@@ -42,14 +42,14 @@ public class LocalMovementListener {
 
         //Check if there's an obstacle item on tile where character wants to move
         if(map.getLocalMap()[predictedMove.x][predictedMove.y].getItem().equals(ItemType.OBSTACLE)){
-            return false;
+            return true;
         }
         //Check if the terrain where character is moving is of type grass
         if(!map.getLocalMap()[predictedMove.x][predictedMove.y].getTerrain().equals(Terrain.GRASS)){
-            return false;
+            return true;
         }
 
-        return true;
+        return false;
 
     }
     boolean checkValidMove(String numKeyPressed, Character character, Zone localMap){

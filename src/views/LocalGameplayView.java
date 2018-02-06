@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -12,10 +13,11 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 
-public class LocalGameplayView extends Stage {   //
+public class LocalGameplayView extends Parent {   //
 
     private Button inventoryButton = new Button("Inventory");
     private Button inGameMenuButton = new Button("In-Game Menu");
+    private Button changeToGlobal = new Button("Change To Global View");
     private Image charachterSprite;
     private Image [][] tileSprites;
     private Image[][] itemSprites;
@@ -25,8 +27,7 @@ public class LocalGameplayView extends Stage {   //
     Scene localScene = new Scene(root,800,800);
 
     public LocalGameplayView(){
-        this.setTitle("LOCAL GAMEPLAY VIEW");
-        this.setScene(localScene);
+
 
         GridPane grid = new GridPane();
         grid.setVgap(10);
@@ -36,8 +37,8 @@ public class LocalGameplayView extends Stage {   //
 
         grid.add(inventoryButton,1,1);
         grid.add(inGameMenuButton, 1,0);
-
-        root.getChildren().add(grid);
+        grid.add(changeToGlobal,4,4);
+        this.getChildren().add(grid);
     }
 
     public void addInventoryButtonListener(EventHandler<ActionEvent> handlerForInvButton){
@@ -50,6 +51,10 @@ public class LocalGameplayView extends Stage {   //
 
     public void addKeyPressListener(EventHandler<KeyEvent> handlerForKeypress){
         this.localScene.setOnKeyPressed(handlerForKeypress);
+    }
+
+    public void addChangeToGlobalListener(EventHandler<ActionEvent> handlerForChangeToGlobal){
+        this.changeToGlobal.setOnAction(handlerForChangeToGlobal);
     }
 
 }

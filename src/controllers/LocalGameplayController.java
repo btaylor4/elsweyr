@@ -10,6 +10,9 @@ import models.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import models.Character;
+import models.GlobalLevel;
+import models.Zone;
+import views.GlobalGameplayView;
 import views.LocalGameplayView;
 
 import java.awt.*;
@@ -18,33 +21,59 @@ import java.io.IOException;
 
 public class LocalGameplayController {
     private Character character;
-    private Zone map;
+    private GlobalLevel globalMap;
     private EventHandler<ActionEvent> localMovementListener;
     private EventHandler<ActionEvent> inventoryListener;
     private LocalGameplayView view;
 
-    public LocalGameplayController(LocalGameplayView localView, Character playerCharacter, Zone global) {
+    public LocalGameplayController(LocalGameplayView localView, Character playerCharacter, GlobalLevel global) {
         this.character = playerCharacter;
-        this.map = global;
+        this.globalMap = global;
+        //TODO: make sure the correct map is loaded from the global map during this constructor
         this.view = localView;
         this.view.addKeyPressListener(new MovementHandler());
         this.view.addMenuButtonListener(new MenuButtonHandler());
         this.view.addInventoryButtonListener(new InvButtonHandler());
+        this.view.addChangeToGlobalListener(new ChangeToGlobalHandler());
     }
 
     class MovementHandler implements EventHandler<KeyEvent> {
 
         @Override
-        public void handle(KeyEvent e) {
+        public void handle(KeyEvent event) {
             //Do Movement Stuff
             //move character around
-//            if(e)
-            String keyPressed = e.getCode().toString();
+            String keyPressed = event.getCode().toString();
             System.out.println(keyPressed);
 
-            //moveCharacter(keyPressed,character,map);
+            //Attempt to move character on local map. We have to get the local map the user is on based on the global position he was in.
+            moveCharacter(keyPressed,character,globalMap.getGlobalMap()[(int)character.getGlobalPos().getX()][(int)character.getGlobalPos().getY()]);
 
-            //character.getLocalPos();
+            Point localPos = character.getLocalPos();
+
+            Zone localMap = globalMap.getGlobalMap()[(int)character.getGlobalPos().getX()][(int)character.getGlobalPos().getY()];
+
+
+            //CHECK IF THERE IS AN ITEM IN TILE, IF IT'S INTERACTIVE ACTIVATE IT
+            //IF IT'S TAKEABLE TAKE IT
+
+            if(localMap.getLocalMap()[(int)localPos.getX()][(int)localPos.getY()].getItem() != null)
+                localMap.getLocalMap()[(int)localPos.getX()][(int)localPos.getY()].getItem().onTouchAction(character);
+
+
+            //CHECK IF THERE'S AN EXIT TILE
+
+
+            if(localPos.getX() == localMap.getExitTile().getX() && localPos.getY() == localMap.getExitTile().getY() ){
+
+                GlobalGameplayView globalView = new GlobalGameplayView();
+                GlobalGameplayController globalGameplay = new GlobalGameplayController(globalView,character,globalMap);
+                Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+                Scene scene = new Scene(globalView,500,500);
+                window.setScene(scene);
+            }
+
 
         }
     }
@@ -70,18 +99,18 @@ public class LocalGameplayController {
     }
 
 
-    boolean outOfMapBounds(Point userLocation, Point userMove, int mapRows, int mapCols){
+    boolean outOfMapBounds(Point userLocation,Point userMove, int mapRows,int mapCols){
         Point predictedMove = new Point();
         predictedMove.x = userLocation.x + userMove.x;
         predictedMove.y = userLocation.y + userMove.y;
 
 
         if(predictedMove.x < 0 || predictedMove.y < 0 || predictedMove.x > mapRows || predictedMove.y > mapCols ){
-            return false;
+            return true;
         }
 
         else{
-            return true;
+            return false;
         }
 
     }
@@ -93,14 +122,14 @@ public class LocalGameplayController {
 
         //Check if there's an obstacle item on tile where character wants to move
         if(map.getLocalMap()[predictedMove.x][predictedMove.y].getItem().equals(ItemType.OBSTACLE)){
-            return false;
+            return true;
         }
         //Check if the terrain where character is moving is of type grass
         if(!map.getLocalMap()[predictedMove.x][predictedMove.y].getTerrain().equals(Terrain.GRASS)){
-            return false;
+            return true;
         }
 
-        return true;
+        return false;
 
     }
 
@@ -143,7 +172,8 @@ public class LocalGameplayController {
 
         }
 
-        if(!outOfMapBounds(characterPositionInMap,moveDirection,mapRows,mapCols)){
+        // If charachter isn't out of bounds and there isn't an obstacle item or impassable terrain, update his position
+        if(!outOfMapBounds(characterPositionInMap,moveDirection,mapRows,mapCols) && obstacleOrTerrainBlocking(characterPositionInMap,moveDirection,localMap)){
 
             Point newCharacterPosition = new Point((int)characterPositionInMap.getX()+(int)moveDirection.getX(),(int)characterPositionInMap.getY()+(int)moveDirection.getY());
             character.updateLocalPos(newCharacterPosition);
@@ -156,33 +186,34 @@ public class LocalGameplayController {
     void interactWithItem(Character character, Zone localMap){
         Point localPos = character.getLocalPos();
         //TODO: Possibly have different check for not null
-        if(localMap.getLocalMap()[(int)localPos.getX()][(int)localPos.getY()].getItem() != null)
-            localMap.getLocalMap()[(int)localPos.getX()][(int)localPos.getY()].getItem().onTouchAction(character);
     }
 
     void interactWithAreaEffects(Character character, Zone localMap){
         //TODO: implement similiar way as above method
     }
 
-    void checkForLocalExitTile(java.awt.event.ActionEvent event, Character character, Zone localMap) throws IOException {
-        Point localPos = character.getLocalPos();
 
-        //If user reaches exit tile, then send him back to global view
-        if(localPos.getX() == localMap.getExitTile().getX() && localPos.getY() == localMap.getExitTile().getY() ){
 
-            //TO DO: ADD FXML ADDRESS FOR GLOBAL VIEW HERE
-            Parent globalView = FXMLLoader.load(getClass().getResource("GLOBALVIEW.FXL GOES HERE"));
-            Scene scene = new Scene(globalView);
-            Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            window.setScene(scene);
-            window.show();
+
+
+
+
+    class ChangeToGlobalHandler implements EventHandler<ActionEvent> {
+
+        @Override
+        public void handle(ActionEvent event) {
+            //Do Menu stuff
+            //switch into in-game menu
+
+
+//            System.out.println("Changing View To Global Level");
+//
+//            GlobalGameplayView globalView = new GlobalGameplayView();
+//            GlobalGameplayController controller = new GlobalGameplayController(globalView,character,globalMap);
+//            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+//            window = globalView;
+//            window.show();
+
         }
-
-
     }
-    void passControlToGlobalGamePlay(){
-
-    }
-
-
 }
