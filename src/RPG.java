@@ -17,8 +17,7 @@ public class RPG extends Application{
         LocalGameplayView localView = new LocalGameplayView();
         Character playerCharacter = new Character();
         Zone localLevel = new Zone();
-        GlobalLevel global = new GlobalLevel();
-        LocalGameplayController localController = new LocalGameplayController(localView, playerCharacter, global);
+        LocalGameplayController localController = new LocalGameplayController(localView, playerCharacter, localLevel);
         localView.show();
     }
 
