@@ -32,7 +32,7 @@ public class GlobalGameplayController {
 
     public class GlobalMovementListener implements EventHandler<KeyEvent> {
 
-        public boolean checkVaildMove(Point projectedMove, Character character, GlobalLevel map) {
+        public boolean checkVaildMove(Point projectedMove) {
             Point characterPosition = character.getGlobalPos();
             int xPositionChange = characterPosition.x + projectedMove.x;
             int yPositionChange = characterPosition.y + projectedMove.y;
@@ -47,7 +47,7 @@ public class GlobalGameplayController {
                 return true;
         }
 
-        public void updateCharacterPosition(String move, Character character, GlobalLevel map) {
+        public void updateCharacterPosition(String move) {
             Point projectedMove;
 
             switch (move) {
@@ -88,12 +88,12 @@ public class GlobalGameplayController {
                     projectedMove = new Point(0, 0);
             }
 
-            if(checkVaildMove(projectedMove, character, map)) {
+            if(checkVaildMove(projectedMove)) {
                 character.updateGlobalPos(projectedMove);
             }
         }
 
-        public boolean checkForLocalLevel(Character character, GlobalLevel map) {
+        public boolean checkForLocalLevel() {
             Point globalPos = character.getGlobalPos();
             if(map.getGlobalMap()[globalPos.x][globalPos.y].getStartTile() != null)
                 return true;
@@ -102,10 +102,21 @@ public class GlobalGameplayController {
                 return false;
         }
 
-        public void passControlToGlobalGamePlay() {}
-
         @Override
-        public void handle(KeyEvent event) {}
+        public void handle(KeyEvent event) {
+            String move = event.getCode().toString();
+
+            updateCharacterPosition(move);
+            if(checkForLocalLevel()) {
+                LocalGameplayView localGameplayView = new LocalGameplayView();
+                LocalGameplayController localGameplayController = new LocalGameplayController(localGameplayView, character, map);
+
+                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+                Scene globalScene = new Scene(localGameplayView, 500, 500);
+
+                window.setScene(globalScene);
+            }
+        }
     }
 
     class MenuButtonHandler implements EventHandler<ActionEvent> {
@@ -120,19 +131,20 @@ public class GlobalGameplayController {
 
     class ChangeToLocalHandler implements EventHandler<ActionEvent> {
 
+        //TODO: Clean thi
         @Override
         public void handle(ActionEvent event) {
-            //Do Menu stuff
-            //switch into in-game menu
-            System.out.println("Changing View To Global Level");
-
-            LocalGameplayView localGameplayView = new LocalGameplayView();
-            LocalGameplayController localGameplayController = new LocalGameplayController(localGameplayView, character, map);
-
-            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-            Scene globalScene = new Scene(localGameplayView, 500, 500);
-
-            window.setScene(globalScene);
+//            //Do Menu stuff
+//            //switch into in-game menu
+//            System.out.println("Changing View To Global Level");
+//
+//            LocalGameplayView localGameplayView = new LocalGameplayView();
+//            LocalGameplayController localGameplayController = new LocalGameplayController(localGameplayView, character, map);
+//
+//            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+//            Scene globalScene = new Scene(localGameplayView, 500, 500);
+//
+//            window.setScene(globalScene);
         }
     }
 }
