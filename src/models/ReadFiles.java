@@ -3,15 +3,28 @@ package models;
 import javafx.scene.image.Image;
 
 import java.awt.*;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class ReadFiles {
+
+    private static final String MAP_PATH = "TestFilesForReader\\";
+    private static final String IMAGE_PATH = "PlaceHolderForImages\\";
 
     private static GlobalLevel loadedMap;
     private static Character loadedCharacter;
     private static String loadedSlotDetails;
+
+    public static GlobalLevel getLoadedMap() {
+        return loadedMap;
+    }
+
+    public static Character getLoadedCharacter() {
+        return loadedCharacter;
+    }
+
+    public static String getLoadedSlotDetails() {
+        return loadedSlotDetails;
+    }
 
     public static void loadGame(String gameFile) throws IOException {
         String currentLine;
@@ -22,7 +35,7 @@ public class ReadFiles {
         Tile [][] tiles;
         Point size;
 
-        inStream = new FileReader(gameFile);
+        inStream = new FileReader(MAP_PATH + gameFile);
         reader = new BufferedReader(inStream);
 
         currentLine = reader.readLine();
@@ -57,11 +70,11 @@ public class ReadFiles {
             currentZone.setStartTile(size);
 
             currentLine = reader.readLine();
-            currentZone.setPassable(trueOrFalse(currentLine, gameFile));
+            Image image = new Image(new FileInputStream(IMAGE_PATH + currentLine));
+            currentZone.setZoneSprite(image);
 
             currentLine = reader.readLine();
-            Image image = new Image(currentLine);
-            currentZone.setZoneSprite(image);
+            currentZone.setPassable(trueOrFalse(currentLine, gameFile));
 
             int j = 0;
             while (j < local.length * local[0].length) {
@@ -70,9 +83,10 @@ public class ReadFiles {
 
                 line = reader.readLine().split(" ");
                 tile.setTerrain(getTerrain(line[0]));
-        //      tile.setTileSprite(new Image("thisTilesTerrain.png"));
+                tile.setTileSprite(new Image(new FileInputStream(IMAGE_PATH + line[0] + ".png")));
 
-                for (int k = 0; k < Integer.parseInt(line[1]); ++k) {
+                int tileAttributes = Integer.parseInt(line[1]);
+                for (int k = 0; k < tileAttributes; ++k) {
                     line = reader.readLine().split(" ");
                     setUpTile(tile, line, gameFile);
                 }
@@ -84,10 +98,13 @@ public class ReadFiles {
             local[i / local.length][i % local[0].length] = currentZone;
             ++i;
         }
+
+        reader.close();
+        inStream.close();
     }
 
     public static void loadCharacter(String characterFile, String avatarFile) {
-
+        
     }
 
     public static void loadSaveSlotDetails(String detailsFile) {
@@ -112,10 +129,10 @@ public class ReadFiles {
         }
     }
 
-    private static void setUpTile(Tile tile, String [] line, String gameFile) {
+    private static void setUpTile(Tile tile, String [] line, String gameFile) throws FileNotFoundException {
 
         if (line[0].equals("Effect")) {
-            if (line[1].equals("Health")) {
+            if (line[1].equals("Health") || line[1].equals("Death")) {
                 HealthEffect HE = new HealthEffect();
                 HE.setEffectType(EffectType.HEALTHEFFECT);
                 HE.setTimeInterval(Integer.parseInt(line[2]));
@@ -135,29 +152,29 @@ public class ReadFiles {
             if (line[1].equals("Takeable")) {
                 TakeableItem TI = new TakeableItem();
                 TI.setName(line[2]);
-        //      TI.setItemSprite(new Image("imageFile.png"));
+                TI.setItemSprite(new Image(new FileInputStream(IMAGE_PATH + "Takeable.png")));
                 tile.setItem(TI);
             } else if (line[1].equals("Obstacle")) {
                 ObstacleItem OI = new ObstacleItem();
                 OI.setName(line[2]);
-        //      OI.setItemSprite(new Image("imageFile.png"));
+                OI.setItemSprite(new Image(new FileInputStream(IMAGE_PATH + "Obstacle.png")));
                 tile.setItem(OI);
             } else if (line[1].equals("OneShot")) {
                 OneShotItem OSI = new OneShotItem();
                 OSI.setName(line[2]);
-        //      OSI.setItemSprite(new Image("imageFile.png"));
+                OSI.setItemSprite(new Image(new FileInputStream(IMAGE_PATH + "OneShot.png")));
                 tile.setItem(OSI);
             } else if (line[1].equals("Interactive")) {
                 InteractiveItem II = new InteractiveItem();
                 II.setName(line[2]);
-        //      II.setItemSprite(new Image("imageFile.png"));
+                II.setItemSprite(new Image(new FileInputStream(IMAGE_PATH + "Interactive.png")));
                 tile.setItem(II);
             } else {
                 System.out.println("Improper Item Property @ " + gameFile + "should be Obstacle, Interactive, OneShot, or Takeable");
                 assert false;
             }
         } else if (line[0].equals("Decal")) {
-            Image decal = new Image(line[1]);
+            Image decal = new Image(new FileInputStream(IMAGE_PATH + line[1]));
             tile.setDecal(decal);
         } else {
             System.out.println("Improper Tile Property @ " + gameFile + "should be Effect, Item, or Decal");
@@ -171,7 +188,7 @@ public class ReadFiles {
         } else if (line.equals("1")) {
             return true;
         } else {
-            System.out.println("Improper File Format @ " + gameFile + ", should be 0 or 1");
+            System.out.println("Improper File Format @ " + gameFile + ", should be 0 or 1, but is: " + line);
             assert false;
         }
         return false;
