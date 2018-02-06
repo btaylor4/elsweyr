@@ -2,7 +2,7 @@ package views;
 
 import java.awt.*;
 
-public class LocalGameplayView {
+public class LocalGameplayView {   //
 
     private Button inventoryButton;
     private Button inGameMenuButton;
