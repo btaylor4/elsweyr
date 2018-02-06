@@ -16,6 +16,7 @@ public class LocalGameplayView extends Stage {   //
 
     private Button inventoryButton = new Button("Inventory");
     private Button inGameMenuButton = new Button("In-Game Menu");
+    private Button changeToGlobal = new Button("Change To Global View");
     private Image charachterSprite;
     private Image [][] tileSprites;
     private Image[][] itemSprites;
@@ -36,7 +37,7 @@ public class LocalGameplayView extends Stage {   //
 
         grid.add(inventoryButton,1,1);
         grid.add(inGameMenuButton, 1,0);
-
+        grid.add(changeToGlobal,4,4);
         root.getChildren().add(grid);
     }
 
@@ -50,6 +51,10 @@ public class LocalGameplayView extends Stage {   //
 
     public void addKeyPressListener(EventHandler<KeyEvent> handlerForKeypress){
         this.localScene.setOnKeyPressed(handlerForKeypress);
+    }
+
+    public void addChangeToGlobalListener(EventHandler<ActionEvent> handlerForChangeToGlobal){
+        this.changeToGlobal.setOnAction(handlerForChangeToGlobal);
     }
 
 }
