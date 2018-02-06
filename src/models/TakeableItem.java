@@ -2,7 +2,7 @@ package models;
 
 public class TakeableItem extends Item{
 
-    TakeableItem()
+    public TakeableItem()
     {
         setItemType(ItemType.TAKEABLE);
     }

@@ -3,7 +3,7 @@ package models;
 
 public class ObstacleItem extends Item {
 
-    ObstacleItem(){
+    public ObstacleItem(){
         setItemType(ItemType.OBSTACLE);
     }
 
