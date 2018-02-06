@@ -173,7 +173,7 @@ public class LocalGameplayController {
         }
 
         // If charachter isn't out of bounds and there isn't an obstacle item or impassable terrain, update his position
-        if(!outOfMapBounds(characterPositionInMap,moveDirection,mapRows,mapCols) && obstacleOrTerrainBlocking(characterPositionInMap,moveDirection,localMap)){
+        if(!outOfMapBounds(characterPositionInMap,moveDirection,mapRows,mapCols) && !obstacleOrTerrainBlocking(characterPositionInMap,moveDirection,localMap)){
 
             Point newCharacterPosition = new Point((int)characterPositionInMap.getX()+(int)moveDirection.getX(),(int)characterPositionInMap.getY()+(int)moveDirection.getY());
             character.updateLocalPos(newCharacterPosition);

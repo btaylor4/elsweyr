@@ -16,14 +16,10 @@ public class TestLocalGameplayController {
     @Test
     public void testingMovement() {
         Point origin = new Point(0,0);
-        Zone  map = new Zone(6);
+        Zone  map = new Zone();
         GlobalLevel globalLevel = new GlobalLevel();
         Zone[][] zone = new Zone[4][4];
         Tile[][] tiles = new Tile[4][4];
-        zone[0][0].setLocalMap(tiles);
-
-
-
         Character character = new Character();
 
         character.updateLocalPos(origin);
