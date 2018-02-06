@@ -1,5 +1,6 @@
 package views;
 
+import javafx.beans.NamedArg;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -26,7 +27,6 @@ public class GlobalGameplayView extends Parent {   //
     Scene localScene = new Scene(root,800,800);
 
     public GlobalGameplayView(){
-
         GridPane grid = new GridPane();
         grid.setVgap(10);
         grid.setHgap(10);
@@ -34,7 +34,7 @@ public class GlobalGameplayView extends Parent {   //
 
         grid.add(inGameMenuButton, 1,0);
         grid.add(changeToLocal,4,4);
-        root.getChildren().add(grid);
+        this.getChildren().addAll(grid);
     }
 
     public void addMenuButtonListener(EventHandler<ActionEvent> handlerForMenuButton){
@@ -48,5 +48,4 @@ public class GlobalGameplayView extends Parent {   //
     public void addChangeToLocalListener(EventHandler<ActionEvent> handlerForChangeToLocal){
         this.changeToLocal.setOnAction(handlerForChangeToLocal);
     }
-
 }
