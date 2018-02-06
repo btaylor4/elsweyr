@@ -3,7 +3,7 @@ package models;
 
 public class InteractiveItem extends Item {
 
-    InteractiveItem(){
+    public InteractiveItem(){
         setItemType(ItemType.INTERACTIVE);
     }
     @Override
