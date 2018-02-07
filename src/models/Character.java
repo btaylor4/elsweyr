@@ -14,6 +14,7 @@ public class Character {
     private int currExp;
     private int expToNextLevel;
     private int level;
+    private Terrain terrainType;
     private Inventory inventory;
     private Point globalPos;
     private Point localPos;
@@ -178,5 +179,13 @@ public class Character {
     public void addActiveBuff(Buffs newActiveBuff)
     {
         activeBuffs.add(newActiveBuff);
+    }
+
+    public Terrain getTerrainType() {
+        return terrainType;
+    }
+
+    public void setTerrainType(Terrain terrainType) {
+        this.terrainType = terrainType;
     }
 }

@@ -4,7 +4,7 @@ package models;
 
 public class OneShotItem extends Item {
 
-    OneShotItem(){
+    public OneShotItem(){
         setItemType(ItemType.ONESHOT);
     }
 
