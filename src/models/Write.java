@@ -110,7 +110,7 @@ public class Write {
                         //each tile
                         Tile tile = zoneLocalMap[u][h];
                         int numberOfLinesForEachTile = 0;
-                        if(!tile.getEffectType().getEffectType().equals(EffectType.NONE)) {
+                        if(!tile.getAreaEffect().getEffectType().equals(EffectType.NONE)) {
                             numberOfLinesForEachTile++;
                         }
                         if(!tile.getItem().getItemType().equals(ItemType.NONE)) {
@@ -123,15 +123,15 @@ public class Write {
                         mapSaveFile.write(newString.format("%s %d %n", tile.getTerrain(), numberOfLinesForEachTile));
 
                         //AreaEffects
-                        mapSaveFile.write(newString.format("%s ", tile.getEffectType().getEffectType()));
-                        if(tile.getEffectType().getEffectType().equals(EffectType.HEALTHEFFECT))
+                        mapSaveFile.write(newString.format("%s ", tile.getAreaEffect().getEffectType()));
+                        if(tile.getAreaEffect().getEffectType().equals(EffectType.HEALTHEFFECT))
                         {
-                            HealthEffect tileEffect = (HealthEffect)tile.getEffectType();
+                            HealthEffect tileEffect = (HealthEffect)tile.getAreaEffect();
                             mapSaveFile.write(newString.format("%d %d %s%n", tileEffect.getTimeInterval(), tileEffect.getHealthChange(), tileEffect.getEffectId()));
                         }
-                        else if(tile.getEffectType().getEffectType().equals(EffectType.LEVELUPEFFECT))
+                        else if(tile.getAreaEffect().getEffectType().equals(EffectType.LEVELUPEFFECT))
                         {
-                            LevelUpEffect tileEffect = (LevelUpEffect)tile.getEffectType();
+                            LevelUpEffect tileEffect = (LevelUpEffect)tile.getAreaEffect();
                             if(tileEffect.hasBeenActivated())
                             {
                                 mapSaveFile.write(newString.format("%d%n", 1));
