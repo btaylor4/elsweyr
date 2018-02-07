@@ -28,7 +28,6 @@ public class Character {
     public Character()
     {
         activeBuffs = new ArrayList<Buffs>();
-        equippedItem = null;
     }
 
     public void createCharacterImage() throws FileNotFoundException
