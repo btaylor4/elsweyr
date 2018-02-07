@@ -7,7 +7,7 @@ import java.io.*;
 
 public class ReadFiles {
 
-    private static final String IMAGE_PATH = "PlaceHolderForImages" + File.separator;
+    private static final String IMAGE_PATH = "PlaceholderForImages" + File.separator;
 
     private static String loadedSlotDetails;
 

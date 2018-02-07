@@ -36,7 +36,7 @@ public class ReadWriteTest {
         zones[0][0].setPassable(true);
         zones[0][0].setZoneSprite(new Image(new FileInputStream(IMAGE_PATH + "mapImage.png")));
 
-        // first local map tiles
+        // first local map tile 1
         tiles[0][0] = new Tile();
         tiles[0][0].setTerrain(Terrain.GRASS);
         HealthEffect HE = new HealthEffect();
@@ -52,7 +52,7 @@ public class ReadWriteTest {
         tiles[0][0].setDecal(new Image(new FileInputStream(IMAGE_PATH + "Death.png")));
         tiles[0][0].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "GRASS.png")));
 
-        // second local map tiles
+        // first local map tile 2
         tiles[0][1] = new Tile();
         tiles[0][1].setTerrain(Terrain.MOUNTAIN);
         LevelUpEffect LE = new LevelUpEffect();
@@ -66,26 +66,39 @@ public class ReadWriteTest {
         tiles[0][1].setDecal(new Image(new FileInputStream(IMAGE_PATH + "Level.png")));
         tiles[0][1].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "MOUNTAIN.png")));
 
-        // third local map tiles
+        // first local map tile 3
         tiles[1][0] = new Tile();
         tiles[1][0].setTerrain(Terrain.WATER);
         OneShotItem OSI = new OneShotItem();
         OSI.setName("one");
         OSI.setItemSprite(new Image(new FileInputStream(IMAGE_PATH + "OneShot.png")));
+        HE = new HealthEffect();
+        HE.setEffectId("1013");
+        HE.setEffectType(EffectType.HEALTHEFFECT);
+        HE.setTimeInterval(10);
+        HE.setHealthChange(-5);
+        tiles[1][0].setEffectType(HE);
         tiles[1][0].setItem(OSI);
         tiles[1][0].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "WATER.png")));
 
-        // fourth local map tiles
+        // first local map tile 4
         tiles[1][1] = new Tile();
         tiles[1][1].setTerrain(Terrain.WATER);
         TakeableItem TI = new TakeableItem();
         TI.setName("me");
         TI.setItemSprite(new Image(new FileInputStream(IMAGE_PATH + "Takeable.png")));
+        HE = new HealthEffect();
+        HE.setEffectId("1019");
+        HE.setEffectType(EffectType.HEALTHEFFECT);
+        HE.setTimeInterval(10);
+        HE.setHealthChange(-5);
+        tiles[1][1].setEffectType(HE);
         tiles[1][1].setItem(TI);
         tiles[1][1].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "GRASS.png")));
 
-        tiles = new Tile[1][2];
+
         //second local map
+        tiles = new Tile[1][2];
         zones[1][0] = new Zone();
         zones[1][0].setLocalMap(tiles);
         zones[1][0].setExitTile(new Point(0, 1));
@@ -93,23 +106,31 @@ public class ReadWriteTest {
         zones[1][0].setPassable(false);
         zones[1][0].setZoneSprite(new Image(new FileInputStream(IMAGE_PATH + "mapImage.png")));
 
-        // first local map tile
+        // second local map tile 1
         tiles[0][0] = new Tile();
         tiles[0][0].setTerrain(Terrain.GRASS);
         LE = new LevelUpEffect();
         LE.setHasBeenActivated(true);
         LE.setEffectType(EffectType.LEVELUPEFFECT);
+        NoneItem NI = new NoneItem();
+        tiles[0][0].setItem(NI);
         tiles[0][0].setEffectType(LE);
         tiles[0][0].setDecal(new Image(new FileInputStream(IMAGE_PATH + "Level.png")));
         tiles[0][0].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "GRASS.png")));
 
-        // second local map tiles
+        // second local map tile 2
         tiles[0][1] = new Tile();
         tiles[0][1].setTerrain(Terrain.WATER);
+        LE = new LevelUpEffect();
+        LE.setHasBeenActivated(true);
+        LE.setEffectType(EffectType.LEVELUPEFFECT);
+        NI = new NoneItem();
+        tiles[0][1].setItem(NI);
+        tiles[0][1].setEffectType(LE);
         tiles[0][1].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "WATER.png")));
 
-        tiles = new Tile[2][2];
         // third local map
+        tiles = new Tile[1][2];
         zones[2][0] = new Zone();
         zones[2][0].setLocalMap(tiles);
         zones[2][0].setExitTile(new Point(0, 0));
@@ -117,17 +138,27 @@ public class ReadWriteTest {
         zones[2][0].setPassable(true);
         zones[2][0].setZoneSprite(new Image(new FileInputStream(IMAGE_PATH + "mapImage.png")));
 
-        // first local map tiles
+        // third local map tile 1
         tiles[0][0] = new Tile();
         tiles[0][0].setTerrain(Terrain.WATER);
+        HE = new HealthEffect();
+        HE.setEffectType(EffectType.NONE);
+        NI = new NoneItem();
+        tiles[0][0].setItem(NI);
+        tiles[0][0].setEffectType(HE);
         tiles[0][0].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "WATER.png")));
 
-        // second local map tiles
+        // third local map tile 2
         tiles[0][1] = new Tile();
         tiles[0][1].setTerrain(Terrain.WATER);
+        NI = new NoneItem();
+        tiles[0][1].setItem(NI);
+        HE = new HealthEffect();
+        HE.setEffectType(EffectType.NONE);
+        tiles[0][1].setEffectType(HE);
         tiles[0][1].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "WATER.png")));
 
-        // third local map tiles
+        /*// third local map tile 3
         tiles[1][0] = new Tile();
         tiles[1][0].setTerrain(Terrain.GRASS);
         HE = new HealthEffect();
@@ -139,7 +170,7 @@ public class ReadWriteTest {
         tiles[1][0].setDecal(new Image(new FileInputStream(IMAGE_PATH + "Health.png")));
         tiles[1][0].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "GRASS.png")));
 
-        // fourth local map tiles
+        // third local map tile 4
         tiles[1][1] = new Tile();
         tiles[1][1].setTerrain(Terrain.MOUNTAIN);
         HE = new HealthEffect();
@@ -149,7 +180,7 @@ public class ReadWriteTest {
         HE.setHealthChange(-1000);
         tiles[1][1].setEffectType(HE);
         tiles[1][1].setDecal(new Image(new FileInputStream(IMAGE_PATH + "Death.png")));
-        tiles[1][1].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "MOUNTAIN.png")));
+        tiles[1][1].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "MOUNTAIN.png")));*/
 
         actualMap.setGlobalMap(zones);
         actualMap.setGameTime(15);
@@ -225,7 +256,7 @@ public class ReadWriteTest {
 
     }
 
-    @Ignore
+    //@Ignore
     @Test
     public void testMap() throws IOException {
         Write write = new Write();

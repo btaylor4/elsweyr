@@ -116,7 +116,7 @@ public class Write {
                         if(!tile.getItem().getItemType().equals(ItemType.NONE)) {
                             numberOfLinesForEachTile++;
                         }
-                        if(tile.getDecalSpritePath().length() > 1) {
+                        if(tile.getDecalSpritePath() != null /*tile.getDecalSpritePath().length() > 1*/) {
                             numberOfLinesForEachTile++;
                         }
 
