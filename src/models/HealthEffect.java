@@ -1,14 +1,20 @@
 package models;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class HealthEffect extends AreaEffect {
 
     private int timeInterval;
     private int healthChange;
     private String effectId;
+    private Timer buf;
 
     public HealthEffect(){
         setEffectType(EffectType.HEALTHEFFECT);
+        buf = new Timer();
     }
+
     public int getTimeInterval() {
         return timeInterval;
     }
@@ -32,4 +38,18 @@ public class HealthEffect extends AreaEffect {
     public void setEffectId(String effectId) {
         this.effectId = effectId;
     }
+
+    public void applyEffect(Character character) {
+        buf.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                character.updateHealth(healthChange);
+            }
+        }, timeInterval);
+    }
+
+    public void stopTimer() {
+        buf.cancel();
+    }
+
 }

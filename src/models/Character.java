@@ -3,6 +3,7 @@ package models;
 import javafx.scene.image.Image;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Character {
 
@@ -20,6 +21,19 @@ public class Character {
     private Item equippedItem;
     private Image characterSprite;
     private Buffs activeBuffs;
+    private ArrayList<HealthEffect> effects = new ArrayList<>();
+
+    public void addEffect(HealthEffect effect) {
+        effects.add(effect);
+    }
+
+    public boolean hasEffect(HealthEffect effect) {
+        if(effects.contains(effect))
+            return true;
+
+        else
+            return false;
+    }
 
     public void updateHealth(int healthChange){
         currentHP += healthChange;
