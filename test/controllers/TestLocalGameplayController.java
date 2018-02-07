@@ -42,6 +42,8 @@ public class TestLocalGameplayController extends ApplicationTest {
 
     @Before
     public void init() {
+        HealthEffect healthEffect = new HealthEffect();
+        healthEffect.setEffectType(EffectType.NONE);
         globalLevel = new GlobalLevel();
         zones = new Zone[5][5];
 
@@ -58,6 +60,7 @@ public class TestLocalGameplayController extends ApplicationTest {
                 tiles[i][j] = new Tile();
                 tiles[i][j].setItem(new InteractiveItem());
                 tiles[i][j].setTerrain(Terrain.GRASS);
+                tiles[i][j].setEffectType(healthEffect);
             }
         }
 
