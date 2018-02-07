@@ -15,8 +15,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import models.SaveFile;
 
-import java.util.Date;
-
 
 public class LoadGameView extends Parent {   //
 
@@ -28,9 +26,9 @@ public class LoadGameView extends Parent {   //
     Group root = new Group();
     private ObservableList<SaveFile> saves =
         FXCollections.observableArrayList(
-            new SaveFile("dummyFile", "2018/12/5 12:00","SomePath"),
-            new SaveFile("otherDummyFile", "2017/12/3-12:00)","SomeOtherPath"),
-            new SaveFile("anotherDummyFile", "1999/12/31-12:00","SomeOtherOtherPath")
+            new SaveFile("dummyFile", "2018/12/5 12:00","TheCharacter.txt", "TheMap.txt"),
+            new SaveFile("otherDummyFile", "2017/12/3-12:00)","TheCharacter.txt", "TheMap.txt"),
+            new SaveFile("anotherDummyFile", "1999/12/31-12:00","SomeCharacterFile", "SomeMapFile")
         );
 
     public LoadGameView(){
@@ -42,8 +40,8 @@ public class LoadGameView extends Parent {   //
 
         //Back To Main Menu Button
         grid.add(backToMainButton,4,1);
-        //TODO: Set button to disabled until a table item is clicked
-//        loadButton.setDisable(true);
+
+        loadButton.setDisable(true);
         grid.add(loadButton,4,4);
 
         //Setting up the table view for the saved games
@@ -56,10 +54,11 @@ public class LoadGameView extends Parent {   //
         TableColumn lastPlayedDate = new TableColumn("Last Played");
         lastPlayedDate.setCellValueFactory( new PropertyValueFactory<>("dateLastPlayed"));
 
-        TableColumn pathToFile = new TableColumn("File Path");
-        pathToFile.setCellValueFactory( new PropertyValueFactory<>("pathToFile"));
+        TableColumn pathToFile = new TableColumn("Map File Path");
+        pathToFile.setCellValueFactory( new PropertyValueFactory<>("pathToMapFile"));
 
         savedGamesTable.setItems(saves);
+        savedGamesTable.getSelectionModel().selectFirst();
         savedGamesTable.getColumns().addAll(savedGameNames, lastPlayedDate,pathToFile);
 
         grid.add(savedGamesTable,4,0);
@@ -72,7 +71,11 @@ public class LoadGameView extends Parent {   //
     }
 
     public void addTableClickListener(EventHandler<MouseEvent> handlerForTableMouseClick){
+        savedGamesTable.setOnMouseClicked(handlerForTableMouseClick);
+    }
 
+    public void enableLoadButton(){
+        loadButton.setDisable(false);
     }
 
     public SaveFile getSelectedFile(){

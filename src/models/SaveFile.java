@@ -1,16 +1,16 @@
 package models;
 
-import java.util.Date;
-
 public class SaveFile {
     private String fileName;
     private String dateLastPlayed;
-    private String pathToFile;
+    private String pathToCharacterFile;
+    private String pathToMapFile;
 
-    public SaveFile(String fileName, String dateLastPlayed, String pathToFile) {
+    public SaveFile(String fileName, String dateLastPlayed, String pathToCharacterFile, String pathToMapFile) {
         this.fileName = fileName;
         this.dateLastPlayed = dateLastPlayed;
-        this.pathToFile = pathToFile;
+        this.pathToCharacterFile = pathToCharacterFile;
+        this.pathToMapFile = pathToMapFile;
     }
 
 
@@ -30,11 +30,19 @@ public class SaveFile {
         this.dateLastPlayed = dateLastPlayed;
     }
 
-    public String getPathToFile() {
-        return pathToFile;
+    public String getPathToCharacterFile() {
+        return pathToCharacterFile;
     }
 
-    public void setPathToFile(String pathToFile) {
-        this.pathToFile = pathToFile;
+    public void setPathToCharacterFile(String pathToFile) {
+        this.pathToCharacterFile = pathToFile;
+    }
+
+    public String getPathToMapFile() {
+        return pathToMapFile;
+    }
+
+    public void setPathToMapFile(String pathToMapFile) {
+        this.pathToMapFile = pathToMapFile;
     }
 }
