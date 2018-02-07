@@ -1,8 +1,9 @@
 package models;
 
-import javafx.scene.image.Image;
-
 import java.awt.*;
+import java.util.ArrayList;
+import javafx.scene.image.Image;
+import java.io.*;
 
 public class Character {
 
@@ -15,12 +16,45 @@ public class Character {
     private int level;
     private Terrain terrainType;
     private Inventory inventory;
+
+    private boolean onLocal;
     private Point globalPos;
     private Point localPos;
     private Item equippedItem;
     private Image characterSprite;
-    private Buffs activeBuffs;
+    private String characterSpritePath;
+    private ArrayList<Buffs> activeBuffs;
+    private ArrayList<HealthEffect> effects = new ArrayList<>();
 
+    public Character()
+    {
+        activeBuffs = new ArrayList<Buffs>();
+    }
+
+    public void createCharacterImage() throws FileNotFoundException {
+        characterSprite = new Image(new FileInputStream(characterSpritePath));
+    }
+
+    public void addEffect(HealthEffect effect) {
+        effects.add(effect);
+    }
+
+    public boolean hasEffect(HealthEffect effect) {
+        if(effects.contains(effect))
+            return true;
+
+        else
+            return false;
+    }
+
+    public void setCharacterSpritePath(String characterSpritePath)
+    {
+        this.characterSpritePath = characterSpritePath;
+    }
+    public String getCharacterSpritePath()
+    {
+        return characterSpritePath;
+    }
     public void updateHealth(int healthChange){
         currentHP += healthChange;
         //Character max currentHP is his/her TotalHP
@@ -48,7 +82,6 @@ public class Character {
 
     }
 
-
     public void useEquipped(){
 
     }
@@ -56,7 +89,6 @@ public class Character {
     private void updateExpToNextLevel(){
         expToNextLevel *= 2;
     }
-
 
     public int getBaseHP() {
         return baseHP;
@@ -122,6 +154,14 @@ public class Character {
         this.inventory = inventory;
     }
 
+    public boolean isOnLocal() {
+        return onLocal;
+    }
+
+    public void setOnLocal(boolean onLocal) {
+        this.onLocal = onLocal;
+    }
+
     public Point getGlobalPos() {
         return globalPos;
     }
@@ -154,12 +194,12 @@ public class Character {
         this.characterSprite = characterSprite;
     }
 
-    public Buffs getActiveBuffs() {
+    public ArrayList<Buffs> getActiveBuffs() {
         return activeBuffs;
     }
-
-    public void setActiveBuffs(Buffs activeBuffs) {
-        this.activeBuffs = activeBuffs;
+    public void addActiveBuff(Buffs newActiveBuff)
+    {
+        activeBuffs.add(newActiveBuff);
     }
 
     public Terrain getTerrainType() {

@@ -13,7 +13,6 @@ public class Buffs {
     public void startBuffTimer(){
         buffTimer = new Timer();
         //buffTimer.schedule
-
     }
 
     public HealthEffect getHealthEffect() {

@@ -7,6 +7,13 @@ public class Inventory {
 
     private HashMap<String, List<Item>> items;
     private int maxSize;
+    private int hashMapSize;
+    private ArrayList<String> hashMapNameArray;
+
+    Inventory(){
+        items = new HashMap<String, List<Item>>();
+        hashMapNameArray = new ArrayList<String>();
+    }
 
     public HashMap<String, List<Item>> getItems() {
         return items;
@@ -26,7 +33,7 @@ public class Inventory {
 
     public boolean addItem(Item item){
         //If the inventory is full the item cannot be added
-        if(items.size() == maxSize)
+        if(items.size() == maxSize) // if number of item types < max then user can have infinite of one or more types?
             return false;
         else{
             //Returns a list of the same items
@@ -40,15 +47,29 @@ public class Inventory {
                 List<Item> temp = new ArrayList<Item>();
                 temp.add(item);
                 items.put(item.getName(),temp);
+                hashMapNameArray.add(item.getName());
             }
             //There already exists a list of that item.
             else{
                 sameItem.add(item);
-                items.put(item.getName(), sameItem);
+                items.put(item.getName(), sameItem); // no need to put, sameItem has reference to same list?
             }
         }
         return true;
 
+    }
+    public ArrayList<String> getHashMapNameArray()
+    {
+        return hashMapNameArray;
+    }
+    public void setHashMapSize()
+    {
+        hashMapSize = items.size();
+    }
+
+    public int getHashMapSize()
+    {
+        return hashMapSize;
     }
 
     public boolean removeItem(Item item) {

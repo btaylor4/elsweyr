@@ -1,6 +1,10 @@
 package models;
 
+import javafx.scene.image.Image;
+
 import java.awt.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public class Zone {
 
@@ -8,10 +12,33 @@ public class Zone {
     private Point exitTile;
     private Point startTile;
     private Image zoneSprite;
+    private String zoneSpritePath;
     private boolean isPassable;
+
+    public Zone() {
+    }
+
+    public Zone(int row, int col)  {
+        localMap = new Tile[row][col];
+    }
 
     public Tile[][] getLocalMap() {
         return localMap;
+    }
+
+    public void setZoneSpritePath(String zoneSpritePath)
+    {
+        this.zoneSpritePath = zoneSpritePath;
+    }
+
+    public void createZoneImage() throws FileNotFoundException
+    {
+        zoneSprite = new Image(new FileInputStream(zoneSpritePath));
+    }
+
+    public String getZoneSpritePath()
+    {
+        return zoneSpritePath;
     }
 
     public void setLocalMap(Tile[][] localMap) {
