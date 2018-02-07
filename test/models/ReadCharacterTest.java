@@ -28,6 +28,7 @@ public class ReadCharacterTest {
         actualChar.setCurrExp(0);
         actualChar.setExpToNextLevel(4);
         actualChar.setLevel(4);
+        actualChar.setOnLocal(false);
         actualChar.updateLocalPos(new Point(4, 3));
         actualChar.updateGlobalPos(new Point (7, 8));
         actualChar.setCharacterSpritePath(IMAGE_PATH + "Character.png");
@@ -97,6 +98,7 @@ public class ReadCharacterTest {
         Assert.assertEquals(expectedChar.getCurrExp(), actualChar.getCurrExp());
         Assert.assertEquals(expectedChar.getExpToNextLevel(), actualChar.getExpToNextLevel());
         Assert.assertEquals(expectedChar.getLevel(), actualChar.getLevel());
+        Assert.assertEquals(expectedChar.isOnLocal(), actualChar.isOnLocal());
         Assert.assertEquals(expectedChar.getLocalPos(), actualChar.getLocalPos());
         Assert.assertEquals(expectedChar.getGlobalPos(), actualChar.getGlobalPos());
         Assert.assertEquals(expectedChar.getCharacterSpritePath(), actualChar.getCharacterSpritePath());

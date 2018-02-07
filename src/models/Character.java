@@ -16,6 +16,8 @@ public class Character {
     private int level;
     private Terrain terrainType;
     private Inventory inventory;
+
+    private boolean onLocal;
     private Point globalPos;
     private Point localPos;
     private Item equippedItem;
@@ -139,6 +141,14 @@ public class Character {
 
     public void setInventory(Inventory inventory) {
         this.inventory = inventory;
+    }
+
+    public boolean isOnLocal() {
+        return onLocal;
+    }
+
+    public void setOnLocal(boolean onLocal) {
+        this.onLocal = onLocal;
     }
 
     public Point getGlobalPos() {
