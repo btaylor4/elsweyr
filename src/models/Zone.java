@@ -1,5 +1,7 @@
 package models;
 
+import javafx.scene.image.Image;
+
 import java.awt.*;
 
 public class Zone {
@@ -9,6 +11,10 @@ public class Zone {
     private Point startTile;
     private Image zoneSprite;
     private boolean isPassable;
+
+    public Zone()  {
+        localMap = new Tile[10][10];
+    }
 
     public Tile[][] getLocalMap() {
         return localMap;

@@ -1,6 +1,6 @@
 package models;
 
-import java.awt.*;
+import javafx.scene.image.Image;
 
 public class Tile {
 
