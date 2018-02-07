@@ -180,10 +180,6 @@ public class ReadFiles {
         return loadedCharacter;
     }
 
-    public static void loadSaveSlotDetails(String detailsFile) {
-
-    }
-
     private static Point getMatrixSize(String [] size) {
         assert size.length == 2;
         return new Point(Integer.parseInt(size[0]), Integer.parseInt(size[1]));
