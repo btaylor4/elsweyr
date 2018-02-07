@@ -39,17 +39,17 @@ public class HealthEffect extends AreaEffect {
         this.effectId = effectId;
     }
 
+    @Override
     public void applyEffect(Character character) {
         buf.schedule(new TimerTask() {
             @Override
             public void run() {
                 character.updateHealth(healthChange);
             }
-        }, timeInterval);
+        }, 0, timeInterval);
     }
 
     public void stopTimer() {
         buf.cancel();
     }
-
 }

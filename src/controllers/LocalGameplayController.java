@@ -187,6 +187,10 @@ public class LocalGameplayController {
 
         }
 
+        if(localMap.getLocalMap()[character.getLocalPos().x][character.getLocalPos().y].getEffectType().getEffectType() != EffectType.NONE) {
+            localMap.getLocalMap()[character.getLocalPos().x][character.getLocalPos().y].getEffectType().applyEffect(character);
+        }
+
 
     }
 
