@@ -127,6 +127,10 @@ public class ReadFiles {
         currentLine = reader.readLine();
         loadedCharacter.setLevel(Integer.parseInt(currentLine));
 
+        //is player on local?
+        currentLine = reader.readLine();
+        loadedCharacter.setOnLocal(trueOrFalse(currentLine, characterFile));
+
         //local pos
         currentLine = reader.readLine();
         loc = getMatrixSize(currentLine.split(" "));

@@ -2,6 +2,9 @@ package models;
 
 import javafx.scene.image.Image;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 public class Tile {
 
     private Terrain terrain;
@@ -9,6 +12,9 @@ public class Tile {
     private AreaEffect effectType;
     private Item item;
     private Image decal;
+    private String tileSpritePath;
+    private Image decalSprite;
+    private String decalSpritePath;
 
     public void removeItem(){
         item = null;
@@ -53,4 +59,29 @@ public class Tile {
     public void setDecal(Image decal) {
         this.decal = decal;
     }
+
+    public void setDecalSpritePath(String decalSpritePath) {
+        this.decalSpritePath = decalSpritePath;
+    }
+
+    public void createDecalImage() throws FileNotFoundException {
+        decalSprite = new Image(new FileInputStream(decalSpritePath));
+    }
+
+    public String getDecalSpritePath() {
+        return decalSpritePath;
+    }
+
+    public void setTileSpritePath(String tileSpritePath) {
+        this.tileSpritePath = tileSpritePath;
+    }
+
+    public void createTileImage() throws FileNotFoundException {
+        tileSprite = new Image(new FileInputStream(tileSpritePath));
+    }
+
+    public String getTileSpritePath() {
+        return tileSpritePath;
+    }
+
 }
