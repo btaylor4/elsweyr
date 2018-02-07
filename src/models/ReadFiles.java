@@ -7,8 +7,7 @@ import java.io.*;
 
 public class ReadFiles {
 
-    private static final String MAP_PATH = "TestFilesForReader\\";
-    private static final String IMAGE_PATH = "PlaceHolderForImages\\";
+    private static final String IMAGE_PATH = "PlaceHolderForImages" + File.separator;
 
     private static String loadedSlotDetails;
 
@@ -22,7 +21,7 @@ public class ReadFiles {
         Tile [][] tiles;
         Point size;
 
-        inStream = new FileReader(MAP_PATH + gameFile);
+        inStream = new FileReader(gameFile);
         reader = new BufferedReader(inStream);
 
         currentLine = reader.readLine();
@@ -99,7 +98,7 @@ public class ReadFiles {
         FileReader inStream;
         BufferedReader reader;
 
-        inStream = new FileReader(MAP_PATH + characterFile);
+        inStream = new FileReader(characterFile);
         reader = new BufferedReader(inStream);
 
         Character loadedCharacter = new Character();
@@ -140,7 +139,7 @@ public class ReadFiles {
 
         //player image
         currentLine = reader.readLine();
-        loadedCharacter.setCharacterSpritePath(IMAGE_PATH + currentLine);
+        loadedCharacter.setCharacterSpritePath(currentLine);
         loadedCharacter.createCharacterImage();
 
         //equipped item
@@ -252,6 +251,13 @@ public class ReadFiles {
             System.out.println("Improper Tile Property @ " + gameFile + "should be Effect, Item, or Decal");
             assert false;
         }
+
+        if (tile.getItem() == null) {
+            tile.setItem(new NoneItem());
+        }
+        if (tile.getEffectType() == null) {
+            tile.setEffectType(new NoneEffect());
+        }
     }
 
     private static String getID(String [] id, int startPos) {
@@ -295,8 +301,8 @@ public class ReadFiles {
     }
 
     private static Item getItem(String item) throws FileNotFoundException {
-        if (item.equals("N/A")) {
-            return null;
+        if (item.equals(ItemType.NONE.name())) {
+            return new NoneItem();
         } else {
             TakeableItem TI = new TakeableItem();
             TI.setItemSprite(new Image(new FileInputStream(IMAGE_PATH + "Takeable.png")));

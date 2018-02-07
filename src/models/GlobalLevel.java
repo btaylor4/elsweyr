@@ -5,7 +5,7 @@ public class GlobalLevel {
     private Zone[][] globalMap;
     private int gameTime;
 
-    GlobalLevel()
+    public GlobalLevel()
     {
         globalMap = new Zone[10][10];
     }

@@ -6,6 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.awt.*;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 
 public class ReadCharacterTest {
 
-    private static final String IMAGE_PATH = "PlaceHolderForImages\\";
+    private static final String IMAGE_PATH = "PlaceHolderForImages" + File.separator;
 
     private static Character actualChar;
 
@@ -31,6 +32,7 @@ public class ReadCharacterTest {
         actualChar.updateGlobalPos(new Point (7, 8));
         actualChar.setCharacterSpritePath(IMAGE_PATH + "Character.png");
         actualChar.createCharacterImage();
+        actualChar.setEquippedItem(new NoneItem());
         actualChar.setInventory(new Inventory());
         actualChar.getInventory().setMaxSize(5);
 
@@ -119,12 +121,6 @@ public class ReadCharacterTest {
     }
 
     private void checkEquipped(Item expected, Item actual) {
-        if (expected == null && actual == null) {
-            return;
-        } else if (expected == null || actual == null) {
-            Assert.assertTrue(false);
-        }
-
         Assert.assertEquals(expected.getName(), actual.getName());
         Assert.assertEquals(expected.getItemType(), actual.getItemType());
     }

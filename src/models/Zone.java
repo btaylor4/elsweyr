@@ -12,7 +12,7 @@ public class Zone {
     private Image zoneSprite;
     private boolean isPassable;
 
-    Zone()  {
+    public Zone()  {
         localMap = new Tile[10][10];
     }
 

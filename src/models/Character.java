@@ -23,7 +23,7 @@ public class Character {
     private String characterSpritePath;
     private ArrayList<Buffs> activeBuffs;
 
-    Character()
+    public Character()
     {
         activeBuffs = new ArrayList<Buffs>();
         equippedItem = null;
