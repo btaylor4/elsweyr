@@ -30,7 +30,7 @@ public class Tile {
         this.tileSprite = tileSprite;
     }
 
-    public AreaEffect getEffectType() {
+    public AreaEffect getAreaEffect() {
         return effectType;
     }
 
