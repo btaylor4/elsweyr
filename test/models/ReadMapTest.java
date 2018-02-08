@@ -230,7 +230,7 @@ public class ReadMapTest {
             // test tile
             Assert.assertEquals(expected.getTerrain(), actual.getTerrain());
             checkItem(expected.getItem(), actual.getItem());
-            checkEffect(expected.getEffectType(), actual.getEffectType());
+            checkEffect(expected.getAreaEffect(), actual.getAreaEffect());
         } else {
             System.out.println("one or both objects are null");
             Assert.assertTrue(false);

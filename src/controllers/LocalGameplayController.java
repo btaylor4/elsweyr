@@ -36,6 +36,7 @@ public class LocalGameplayController {
         this.view.addInventoryButtonListener(new InvButtonHandler());
         this.view.addChangeToGlobalListener(new ChangeToGlobalHandler());
     }
+    public LocalGameplayController(){};
 
     class MovementHandler implements EventHandler<KeyEvent> {
 
@@ -47,11 +48,17 @@ public class LocalGameplayController {
             System.out.println(keyPressed);
 
             //Attempt to move character on local map. We have to get the local map the user is on based on the global position he was in.
-            moveCharacter(keyPressed,character,globalMap.getGlobalMap()[(int)character.getGlobalPos().getX()][(int)character.getGlobalPos().getY()]);
+            int globalCharacterXPos = (int)character.getGlobalPos().getX();
+            int globalCharacterYPos = (int)character.getGlobalPos().getY();
+
+            Zone localMap = globalMap.getGlobalMap()[globalCharacterXPos][globalCharacterYPos];
+
+            moveCharacter(keyPressed,character,localMap);
 
             Point localPos = character.getLocalPos();
 
-            Zone localMap = globalMap.getGlobalMap()[(int)character.getGlobalPos().getX()][(int)character.getGlobalPos().getY()];
+            //Gets local map by accessing the global position of character and getting the zone he's on
+//            localMap = globalMap.getGlobalMap()[(int)character.getGlobalPos().getX()][(int)character.getGlobalPos().getY()];
 
 
             //CHECK IF THERE IS AN ITEM IN TILE, IF IT'S INTERACTIVE ACTIVATE IT
@@ -121,7 +128,7 @@ public class LocalGameplayController {
         predictedMove.y = userLocation.y + userMove.y;
 
         //Check if there's an obstacle item on tile where character wants to move
-        if(map.getLocalMap()[predictedMove.x][predictedMove.y].getItem().equals(ItemType.OBSTACLE)){
+        if(map.getLocalMap()[predictedMove.x][predictedMove.y].getItem().getItemType().equals(ItemType.OBSTACLE)){
             return true;
         }
         //Check if the terrain where character is moving is of type grass
@@ -136,8 +143,8 @@ public class LocalGameplayController {
     //Determines if move in map is a valid one
     void moveCharacter(String numKeyPressed, Character character, Zone localMap){
 
-        int mapRows = localMap.getLocalMap().length-1; //get rows of map
-        int mapCols = localMap.getLocalMap()[0].length-1; //get cols of map
+        int mapRows = (localMap.getLocalMap().length)-1; //get rows of map
+        int mapCols = (localMap.getLocalMap()[0].length)-1; //get cols of map
         Point characterPositionInMap = character.getLocalPos();
         Point moveDirection; //Store the direction associated with the key pressed ex: UP = (0,1), DOWN = (0,-1)
 
@@ -178,6 +185,10 @@ public class LocalGameplayController {
             Point newCharacterPosition = new Point((int)characterPositionInMap.getX()+(int)moveDirection.getX(),(int)characterPositionInMap.getY()+(int)moveDirection.getY());
             character.updateLocalPos(newCharacterPosition);
 
+        }
+
+        if(localMap.getLocalMap()[character.getLocalPos().x][character.getLocalPos().y].getAreaEffect().getEffectType() != EffectType.NONE) {
+            localMap.getLocalMap()[character.getLocalPos().x][character.getLocalPos().y].getAreaEffect().applyEffect(character);
         }
 
 

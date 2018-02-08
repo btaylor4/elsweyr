@@ -17,4 +17,9 @@ public class LevelUpEffect extends AreaEffect {
     public void setHasBeenActivated(boolean hasBeenActivated) {
         this.hasBeenActivated = hasBeenActivated;
     }
+
+    @Override
+    public void applyEffect(Character character) {
+
+    }
 }

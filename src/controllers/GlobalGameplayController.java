@@ -92,7 +92,10 @@ public class GlobalGameplayController {
                 Point newPosition = new Point(character.getGlobalPos().x + projectedMove.x,
                         character.getGlobalPos().y + projectedMove.y);
                 character.updateGlobalPos(newPosition);
+                //Sends the character position to the view
+                view.updateCharacterPos(newPosition);
             }
+
         }
 
         public boolean checkForLocalLevel() {

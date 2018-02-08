@@ -24,15 +24,27 @@ public class Character {
     private Image characterSprite;
     private String characterSpritePath;
     private ArrayList<Buffs> activeBuffs;
+    private ArrayList<HealthEffect> effects = new ArrayList<>();
 
     public Character()
     {
         activeBuffs = new ArrayList<Buffs>();
     }
 
-    public void createCharacterImage() throws FileNotFoundException
-    {
+    public void createCharacterImage() throws FileNotFoundException {
         characterSprite = new Image(new FileInputStream(characterSpritePath));
+    }
+
+    public void addEffect(HealthEffect effect) {
+        effects.add(effect);
+    }
+
+    public boolean hasEffect(HealthEffect effect) {
+        if(effects.contains(effect))
+            return true;
+
+        else
+            return false;
     }
 
     public void setCharacterSpritePath(String characterSpritePath)

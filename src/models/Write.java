@@ -108,7 +108,7 @@ public class Write {
                         //each tile
                         Tile tile = zoneLocalMap[u][h];
                         int numberOfLinesForEachTile = 0;
-                        if(!tile.getEffectType().getEffectType().equals(EffectType.NONE)) {
+                        if(!tile.getAreaEffect().getEffectType().equals(EffectType.NONE)) {
                             numberOfLinesForEachTile++;
                         }
                         if(!tile.getItem().getItemType().equals(ItemType.NONE)) {
@@ -121,20 +121,20 @@ public class Write {
                         mapSaveFile.write(newString.format("%s %d %n", tile.getTerrain(), numberOfLinesForEachTile));
 
                         //AreaEffects
-
                         //new stuff
-                        if(!tile.getEffectType().getEffectType().equals(EffectType.NONE)) {
-                            mapSaveFile.write(newString.format("Effect %s ", tile.getEffectType().getEffectType()));
-                            if (tile.getEffectType().getEffectType().equals(EffectType.HEALTHEFFECT)) {
-                                HealthEffect tileEffect = (HealthEffect) tile.getEffectType();
+                        if(!tile.getAreaEffect().getEffectType().equals(EffectType.NONE)) {
+                            mapSaveFile.write(newString.format("Effect %s ", tile.getAreaEffect().getEffectType()));
+                            if (tile.getAreaEffect().getEffectType().equals(EffectType.HEALTHEFFECT)) {
+                                HealthEffect tileEffect = (HealthEffect) tile.getAreaEffect();
                                 mapSaveFile.write(newString.format("%d %d %s%n", tileEffect.getTimeInterval(), tileEffect.getHealthChange(), tileEffect.getEffectId()));
-                            } else if (tile.getEffectType().getEffectType().equals(EffectType.LEVELUPEFFECT)) {
-                                LevelUpEffect tileEffect = (LevelUpEffect) tile.getEffectType();
+                            } else if (tile.getAreaEffect().getEffectType().equals(EffectType.LEVELUPEFFECT)) {
+                                LevelUpEffect tileEffect = (LevelUpEffect) tile.getAreaEffect();
                                 if (tileEffect.hasBeenActivated()) {
                                     mapSaveFile.write(newString.format("%d%n", 1));
                                 } else {
                                     mapSaveFile.write(newString.format("%d%n", 0));
                                 }
+
                             }
                         }
                         if(!tile.getItem().getItemType().equals(ItemType.NONE)) {
