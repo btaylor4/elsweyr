@@ -123,13 +123,13 @@ public class Write {
                         //AreaEffects
 
                         //new stuff
-                        if(!tile.getAreaEffect().getEffectType().equals(EffectType.NONE)) {
-                            mapSaveFile.write(newString.format("Effect %s ", tile.getAreaEffect().getEffectType()));
-                            if (tile.getAreaEffect().getEffectType().equals(EffectType.HEALTHEFFECT)) {
-                                HealthEffect tileEffect = (HealthEffect) tile.getAreaEffect();
+                        if(!tile.getEffectType().getEffectType().equals(EffectType.NONE)) {
+                            mapSaveFile.write(newString.format("Effect %s ", tile.getEffectType().getEffectType()));
+                            if (tile.getEffectType().getEffectType().equals(EffectType.HEALTHEFFECT)) {
+                                HealthEffect tileEffect = (HealthEffect) tile.getEffectType();
                                 mapSaveFile.write(newString.format("%d %d %s%n", tileEffect.getTimeInterval(), tileEffect.getHealthChange(), tileEffect.getEffectId()));
-                            } else if (tile.getAreaEffect().getEffectType().equals(EffectType.LEVELUPEFFECT)) {
-                                LevelUpEffect tileEffect = (LevelUpEffect) tile.getAreaEffect();
+                            } else if (tile.getEffectType().getEffectType().equals(EffectType.LEVELUPEFFECT)) {
+                                LevelUpEffect tileEffect = (LevelUpEffect) tile.getEffectType();
                                 if (tileEffect.hasBeenActivated()) {
                                     mapSaveFile.write(newString.format("%d%n", 1));
                                 } else {
