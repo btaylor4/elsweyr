@@ -256,7 +256,7 @@ public class ReadFiles {
         if (tile.getItem() == null) {
             tile.setItem(new NoneItem());
         }
-        if (tile.getEffectType() == null) {
+        if (tile.getAreaEffect() == null) {
             tile.setEffectType(new NoneEffect());
         }
     }
