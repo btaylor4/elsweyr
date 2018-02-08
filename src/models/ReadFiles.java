@@ -56,7 +56,7 @@ public class ReadFiles {
             currentZone.setStartTile(size);
 
             currentLine = reader.readLine();
-            Image image = new Image(new FileInputStream(IMAGE_PATH + currentLine));
+            Image image = new Image(new FileInputStream(currentLine));
             currentZone.setZoneSprite(image);
 
             currentLine = reader.readLine();
@@ -74,6 +74,7 @@ public class ReadFiles {
                 int tileAttributes = Integer.parseInt(line[1]);
                 for (int k = 0; k < tileAttributes; ++k) {
                     line = reader.readLine().split(" ");
+                    System.out.println();
                     setUpTile(tile, line, gameFile);
                 }
 
@@ -245,7 +246,7 @@ public class ReadFiles {
                 assert false;
             }
         } else if (line[0].equals("Decal")) {
-            Image decal = new Image(new FileInputStream(IMAGE_PATH + line[1]));
+            Image decal = new Image(new FileInputStream(line[1]));
             tile.setDecal(decal);
         } else {
             System.out.println("Improper Tile Property @ " + gameFile + "should be Effect, Item, or Decal");
