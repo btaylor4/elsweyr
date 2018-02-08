@@ -46,13 +46,14 @@ public class ReadWriteTest {
         HE.setHealthChange(-5);
         tiles[0][0].setEffectType(HE);
         InteractiveItem II = new InteractiveItem();
-        II.setName("bob");
+        II.setName("bob ob");
         II.setItemSpritePath(IMAGE_PATH + "Interactive.png");
         II.createItemImage();
         tiles[0][0].setItem(II);
         tiles[0][0].setDecalSpritePath(IMAGE_PATH + "Death.png");
         tiles[0][0].createDecalImage();
-        tiles[0][0].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "GRASS.png")));
+        tiles[0][0].setTileSpritePath(IMAGE_PATH + "GRASS.png");
+        tiles[0][0].createTileImage();
 
         // second local map tiles
         tiles[0][1] = new Tile();
@@ -68,7 +69,8 @@ public class ReadWriteTest {
         tiles[0][1].setItem(OI);
         tiles[0][1].setDecalSpritePath(IMAGE_PATH + "Level.png");
         tiles[0][1].createDecalImage();
-        tiles[0][1].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "MOUNTAIN.png")));
+        tiles[0][1].setTileSpritePath(IMAGE_PATH + "MOUNTAIN.png");
+        tiles[0][1].createTileImage();
 
         // third local map tiles
         tiles[1][0] = new Tile();
@@ -79,7 +81,8 @@ public class ReadWriteTest {
         OSI.setItemSpritePath(IMAGE_PATH + "Interactive.png");
         OSI.createItemImage();
         tiles[1][0].setItem(OSI);
-        tiles[1][0].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "WATER.png")));
+        tiles[1][0].setTileSpritePath(IMAGE_PATH + "WATER.png");
+        tiles[1][0].createTileImage();
 
         // fourth local map tiles
         tiles[1][1] = new Tile();
@@ -90,7 +93,8 @@ public class ReadWriteTest {
         TI.setItemSpritePath(IMAGE_PATH + "Interactive.png");
         TI.createItemImage();
         tiles[1][1].setItem(TI);
-        tiles[1][1].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "GRASS.png")));
+        tiles[1][1].setTileSpritePath(IMAGE_PATH + "GRASS.png");
+        tiles[1][1].createTileImage();
 
         tiles = new Tile[1][2];
         //second local map
@@ -112,14 +116,16 @@ public class ReadWriteTest {
         tiles[0][0].setItem(new NoneItem());
         tiles[0][0].setDecalSpritePath(IMAGE_PATH + "Level.png");
         tiles[0][0].createDecalImage();
-        tiles[0][0].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "GRASS.png")));
+        tiles[0][0].setTileSpritePath(IMAGE_PATH + "GRASS.png");
+        tiles[0][0].createTileImage();
 
         // second local map tiles
         tiles[0][1] = new Tile();
         tiles[0][1].setTerrain(Terrain.WATER);
         tiles[0][1].setEffectType(new NoneEffect());
         tiles[0][1].setItem(new NoneItem());
-        tiles[0][1].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "WATER.png")));
+        tiles[0][1].setTileSpritePath(IMAGE_PATH + "WATER.png");
+        tiles[0][1].createTileImage();
 
         tiles = new Tile[2][2];
         // third local map
@@ -136,14 +142,16 @@ public class ReadWriteTest {
         tiles[0][0].setTerrain(Terrain.WATER);
         tiles[0][0].setEffectType(new NoneEffect());
         tiles[0][0].setItem(new NoneItem());
-        tiles[0][0].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "WATER.png")));
+        tiles[0][0].setTileSpritePath(IMAGE_PATH + "WATER.png");
+        tiles[0][0].createTileImage();
 
         // second local map tiles
         tiles[0][1] = new Tile();
         tiles[0][1].setTerrain(Terrain.WATER);
         tiles[0][1].setEffectType(new NoneEffect());
         tiles[0][1].setItem(new NoneItem());
-        tiles[0][1].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "WATER.png")));
+        tiles[0][1].setTileSpritePath(IMAGE_PATH + "WATER.png");
+        tiles[0][1].createTileImage();
 
         // third local map tiles
         tiles[1][0] = new Tile();
@@ -157,7 +165,8 @@ public class ReadWriteTest {
         tiles[1][0].setItem(new NoneItem());
         tiles[1][0].setDecalSpritePath(IMAGE_PATH + "Health.png");
         tiles[1][0].createDecalImage();
-        tiles[1][0].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "GRASS.png")));
+        tiles[1][0].setTileSpritePath(IMAGE_PATH + "GRASS.png");
+        tiles[1][0].createTileImage();
 
         // fourth local map tiles
         tiles[1][1] = new Tile();
@@ -171,7 +180,8 @@ public class ReadWriteTest {
         tiles[1][1].setItem(new NoneItem());
         tiles[1][1].setDecalSpritePath(IMAGE_PATH + "Death.png");
         tiles[1][1].createDecalImage();
-        tiles[1][1].setTileSprite(new Image(new FileInputStream(IMAGE_PATH + "MOUNTAIN.png")));
+        tiles[1][1].setTileSpritePath(IMAGE_PATH + "MOUNTAIN.png");
+        tiles[1][1].createTileImage();
 
         actualMap.setGlobalMap(zones);
         actualMap.setGameTime(15);
@@ -303,6 +313,7 @@ public class ReadWriteTest {
             Assert.assertEquals(expected.isPassable(), actual.isPassable());
             Assert.assertEquals(expected.getLocalMap().length, actual.getLocalMap().length);
             Assert.assertEquals(expected.getLocalMap()[0].length, actual.getLocalMap()[0].length);
+            Assert.assertEquals(expected.getZoneSpritePath(), actual.getZoneSpritePath());
         } else {
             System.out.println("one or both objects are null");
             Assert.assertTrue(false);
@@ -313,6 +324,8 @@ public class ReadWriteTest {
         if (expected != null && actual != null) {
             // test tile
             Assert.assertEquals(expected.getTerrain(), actual.getTerrain());
+            Assert.assertEquals(expected.getTileSpritePath(), actual.getTileSpritePath());
+            Assert.assertEquals(expected.getDecalSpritePath(), actual.getDecalSpritePath());
             checkItem(expected.getItem(), actual.getItem());
             checkEffect(expected.getAreaEffect(), actual.getAreaEffect());
         } else {
@@ -331,6 +344,7 @@ public class ReadWriteTest {
 
         Assert.assertEquals(expected.getItemType(), actual.getItemType());
         Assert.assertEquals(expected.getName(), actual.getName());
+        Assert.assertEquals(expected.getItemSpritePath(), actual.getItemSpritePath());
     }
 
     private void checkEffect(AreaEffect expected, AreaEffect actual) {

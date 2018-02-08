@@ -141,16 +141,16 @@ public class Write {
                             //Item
                             if (tile.getItem().getItemType().equals(ItemType.TAKEABLE)) {
                                 TakeableItem tileItem = (TakeableItem) tile.getItem();
-                                mapSaveFile.write(newString.format("Item TAKEABLE %s %n", tileItem.getName(), tileItem.getItemSpritePath()));
+                                mapSaveFile.write(newString.format("Item TAKEABLE %s %s%n", tileItem.getName(), tileItem.getItemSpritePath()));
                             } else if (tile.getItem().getItemType().equals(ItemType.INTERACTIVE)) {
                                 InteractiveItem tileItem = (InteractiveItem) tile.getItem();
-                                mapSaveFile.write(newString.format("Item INTERACTIVE %s %n", tileItem.getName(), tileItem.getItemSpritePath()));
+                                mapSaveFile.write(newString.format("Item INTERACTIVE %s %s%n", tileItem.getName(), tileItem.getItemSpritePath()));
                             } else if (tile.getItem().getItemType().equals(ItemType.OBSTACLE)) {
                                 ObstacleItem tileItem = (ObstacleItem) tile.getItem();
-                                mapSaveFile.write(newString.format("Item OBSTACLE %s %n", tileItem.getName(), tileItem.getItemSpritePath()));
+                                mapSaveFile.write(newString.format("Item OBSTACLE %s %s%n", tileItem.getName(), tileItem.getItemSpritePath()));
                             } else if (tile.getItem().getItemType().equals(ItemType.ONESHOT)) {
                                 OneShotItem tileItem = (OneShotItem) tile.getItem();
-                                mapSaveFile.write(newString.format("Item ONESHOT %s %n", tileItem.getName(), tileItem.getItemSpritePath()));
+                                mapSaveFile.write(newString.format("Item ONESHOT %s %s%n", tileItem.getName(), tileItem.getItemSpritePath()));
                             }
                         }
                         if(tile.getDecalSpritePath() != null) {
