@@ -20,6 +20,8 @@ public class LevelUpEffect extends AreaEffect {
 
     @Override
     public void applyEffect(Character character) {
-
+        int nextLevelExperience = character.getExpToNextLevel();
+        character.setCurrExp(nextLevelExperience);
+        character.updateLevel();
     }
 }

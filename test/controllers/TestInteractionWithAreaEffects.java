@@ -28,6 +28,7 @@ public class TestInteractionWithAreaEffects extends ApplicationTest {
     private Character character;
 
     private HealthEffect healthEffect;
+    private LevelUpEffect levelUpEffect;
     private Zone[][] zones;
     private Tile[][] tiles;
     private Scene localScene;
@@ -71,10 +72,11 @@ public class TestInteractionWithAreaEffects extends ApplicationTest {
 
         zones[0][0].setLocalMap(tiles);
         globalLevel.setGlobalMap(zones);
+        levelUpEffect = new LevelUpEffect();
     }
 
     @Test
-    public void testAreaEffectAppliesAfterMove() throws InterruptedException {
+    public void testHealthEffectAppliesAfterMove() throws InterruptedException {
         healthEffect = new HealthEffect();
         character.setBaseHP(200);
         character.setCurrentHP(200);
@@ -97,5 +99,27 @@ public class TestInteractionWithAreaEffects extends ApplicationTest {
         Thread.sleep(2000);
 
         assertEquals(character.getCurrentHP(), 196);
+    }
+
+    @Test
+    public void testLevelUpEffectAppliesAfterMove() {
+        character.setLevel(1);
+        character.setCurrExp(1);
+        character.setExpToNextLevel(10);
+
+        character.updateGlobalPos(new Point(0,0));
+        character.updateLocalPos(new Point(0,0));
+        zones[0][0].getLocalMap()[0][1].setEffectType(levelUpEffect);
+
+        controller = new LocalGameplayController(localview, character, globalLevel);
+        movementHandler = controller.new MovementHandler();
+
+        KeyEvent event = new KeyEvent(KeyEvent.KEY_PRESSED, "", "", KeyCode.RIGHT, false,
+                false,false,false);
+
+        movementHandler.handle(event);
+        assertEquals(character.getLevel(), 2);
+        assertEquals(character.getCurrExp(), 10);
+        assertEquals(character.getExpToNextLevel(), 20);
     }
 }
