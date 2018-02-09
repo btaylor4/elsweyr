@@ -27,8 +27,7 @@ public class LoadGameView extends Parent {   //
     private Button loadButton = new Button("Load Selected Game");
     private TableView<SaveFile> savedGamesTable = new TableView<>();
     Group root = new Group();
-    private ObservableList<SaveFile> saves =
-        FXCollections.observableArrayList();
+    private ObservableList<SaveFile> saves = FXCollections.observableArrayList();
 
     public LoadGameView(){
         //TODO: Check files and find any loaded games and add them to a dropdown menu
@@ -82,7 +81,6 @@ public class LoadGameView extends Parent {   //
     public SaveFile getSelectedFile(){
         return savedGamesTable.getSelectionModel().getSelectedItem();
     }
-
 
     public void addLoadGameListener(EventHandler<ActionEvent> handlerForLoadGame){
         loadButton.setOnAction(handlerForLoadGame);
