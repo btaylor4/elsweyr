@@ -1,28 +1,18 @@
 package views;
 
 import javafx.animation.AnimationTimer;
-import javafx.animation.PathTransition;
-import javafx.application.Application;
-import javafx.beans.NamedArg;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
-import javafx.geometry.Insets;
 import javafx.geometry.VPos;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
-import javafx.scene.shape.Line;
-import javafx.scene.shape.Path;
-import javafx.stage.Stage;
-import javafx.util.Duration;
 
 import java.awt.*;
 
@@ -65,7 +55,7 @@ public class GlobalGameplayView extends Parent {   //
         viewableGlobalMap.setVgap(0);
         viewableGlobalMap.setHgap(0);
 
-        intializeSprites();
+        initializeSprites();
 
         GlobalDisplay gd = new GlobalDisplay(this);
         gd.intializeMap();
@@ -76,7 +66,7 @@ public class GlobalGameplayView extends Parent {   //
 
     }
     //Creates ImageViews for the character and map tiles.
-    public void intializeSprites(){
+    public void initializeSprites(){
         //Intializes the characterSprite with an Image
         charachterSprite =  charachterSprite = new Image("PlaceHolderForImages/Character.png", 80.,80.,true,true);
         //Creates a characterView
@@ -147,7 +137,7 @@ public class GlobalGameplayView extends Parent {   //
             {
                 //Moves the character and causes a one second wait.
                 viewableGlobalMap.getChildren().clear();
-                if(now - elapsedTime < 1_000_000_000)
+                if(now - elapsedTime < 500_000_000)
                 {
                     updateViewAfterMovement();
                     moveCharacterView();
@@ -291,10 +281,6 @@ public class GlobalGameplayView extends Parent {   //
         }
         return DisplayColEnd;
     }
-
-
-
-
 }
 
 
