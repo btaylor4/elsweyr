@@ -16,6 +16,7 @@ public class Character {
     private int level;
     private Terrain terrainType;
     private Inventory inventory;
+    private String name;
 
     private boolean onLocal;
     private Point globalPos;
@@ -26,6 +27,7 @@ public class Character {
     private ArrayList<Buffs> activeBuffs;
     private ArrayList<HealthEffect> effects = new ArrayList<>();
 
+    //TODO CREATE A DEFAULT CONSTRUCTOR THAT ONLY TAKES IN AN IMAGE AND SETS EVERYTHING ELSE UP FROM A FILE
     public Character()
     {
         activeBuffs = new ArrayList<Buffs>();
@@ -34,6 +36,10 @@ public class Character {
     public void createCharacterImage() throws FileNotFoundException {
         characterSprite = new Image(new FileInputStream(characterSpritePath));
     }
+    public void setCharacterImage(Image characterImage){
+        this.characterSprite = characterImage;
+    }
+
 
     public void addEffect(HealthEffect effect) {
         effects.add(effect);
@@ -205,8 +211,12 @@ public class Character {
     public Terrain getTerrainType() {
         return terrainType;
     }
-
     public void setTerrainType(Terrain terrainType) {
         this.terrainType = terrainType;
     }
+
+    public String getCharacterName(){return name;}
+    public void setCharacterName(String name){this.name = name;}
+
+
 }
