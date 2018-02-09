@@ -4,12 +4,14 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import models.Character;
 import models.GlobalLevel;
+import models.SaveFile;
 import views.GlobalGameplayView;
 import views.MainMenuView;
 import views.NewGameView;
-import models.Character;
 
 
 public class NewGameController {
@@ -25,6 +27,7 @@ public class NewGameController {
         this.global = new GlobalLevel();
         this.view.addBackToMainListener(new NewGameController.backToMainButtonHandler());
         this.view.addStartGaneListener(new NewGameController.startNewGameButtonHandler());
+        this.view.addTableClickListener(new NewGameController.tableClickedEventHandler());
     }
 
 
@@ -32,7 +35,8 @@ public class NewGameController {
 
         @Override
         public void handle(ActionEvent event){
-
+            SaveFile saveFile = view.getSelectedFile();
+            System.out.println(saveFile.getFileName());
             //Set up custom character settings
             character.setCharacterSprite(view.getSelectedImage());
             character.setCharacterName(view.getSelectedName());
@@ -52,6 +56,13 @@ public class NewGameController {
 
     }
 
+    class tableClickedEventHandler implements EventHandler<MouseEvent> {
+
+        @Override
+        public void handle(MouseEvent event) {
+            view.enableCreateButton();
+        }
+    }
 
     class backToMainButtonHandler implements EventHandler<ActionEvent> {
 

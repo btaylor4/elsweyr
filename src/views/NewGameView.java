@@ -2,24 +2,26 @@ package views;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.image.Image;
+import models.SaveFile;
 
-
-import java.awt.*;
+import java.io.File;
+import java.util.Date;
 
 //TODO PASS CHARACHTER IMAGE INTO NEW CHARACTER CLASS
 public class NewGameView extends Parent {
@@ -31,6 +33,8 @@ public class NewGameView extends Parent {
     private Label nameLabel = new Label("Name: ");
     private TextField nameInput = new TextField();
     private Image selectedCharacterImage;
+    private TableView<SaveFile> savedGamesTable = new TableView<>();
+    private ObservableList<SaveFile> saves = FXCollections.observableArrayList();
 
 
     Group root = new Group();
@@ -49,6 +53,30 @@ public class NewGameView extends Parent {
 
         HBox returnMenuBox = new HBox();
         returnMenuBox.getChildren().addAll(backToMainButton,startGameButton);
+        startGameButton.setDisable(true);
+
+
+        //Setting up the table view for the saved games
+        setUpSaves();
+
+        savedGamesTable.setEditable(false);
+        savedGamesTable.setMinWidth(400);
+        savedGamesTable.setMaxHeight(100);
+
+        TableColumn savedGameNames = new TableColumn("Saves");
+        savedGameNames.setCellValueFactory( new PropertyValueFactory<>("fileName"));
+
+        TableColumn lastPlayedDate = new TableColumn("Last Played");
+        lastPlayedDate.setCellValueFactory( new PropertyValueFactory<>("dateLastPlayed"));
+
+        TableColumn pathToFile = new TableColumn("Map File Path");
+        pathToFile.setCellValueFactory( new PropertyValueFactory<>("pathToMapFile"));
+
+        savedGamesTable.setItems(saves);
+        savedGamesTable.getSelectionModel().selectFirst();
+        savedGamesTable.getColumns().addAll(savedGameNames, lastPlayedDate,pathToFile);
+
+        grid.add(savedGamesTable,5,5, 15, 1);
 
 
         Image image = new Image(getClass().getResourceAsStream("briefcase.png"));
@@ -115,8 +143,44 @@ public class NewGameView extends Parent {
     public void addBackToMainListener(EventHandler<ActionEvent> handlerForBackButton){
         backToMainButton.setOnAction(handlerForBackButton);
     }
+
+    public void addTableClickListener(EventHandler<MouseEvent> handlerForTableMouseClick){
+        savedGamesTable.setOnMouseClicked(handlerForTableMouseClick);
+    }
+
+    public void enableCreateButton(){
+        startGameButton.setDisable(false);
+    }
+
+    public SaveFile getSelectedFile(){
+        return savedGamesTable.getSelectionModel().getSelectedItem();
+    }
+
     public void addStartGaneListener(EventHandler<ActionEvent> handlerForBackButton){
         startGameButton.setOnAction(handlerForBackButton);
     }
 
+    private void setUpSaves() {
+        File folder;
+        File [] files = new File[0];
+        String saveSlot = "SaveSlot";
+
+        for (int i = 1; i < 4; ++i) {
+            folder = new File (saveSlot + i + File.separator);
+            files = folder.listFiles();
+
+            if (files.length == 2) {
+                Date lastPlayed = new Date (files[0].lastModified());
+
+                if (files[0].getName().contains("Map")) {
+                    saves.add(new SaveFile("save" + i, "" + lastPlayed.toString(), files[1].getName(), files[0].getName()));
+                } else {
+                    saves.add(new SaveFile("save" + i, "" + lastPlayed.toString(), files[0].getName(), files[1].getName()));
+                }
+            } else {
+                saves.add(new SaveFile("Empty", "0/0/0 00:00", "No File", "No File"));
+            }
+        }
+
+    }
 }
