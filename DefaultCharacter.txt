@@ -1,0 +1,14 @@
+10
+10
+0
+0
+2
+0
+0
+0 0
+0 0
+PlaceHolderForImages\Character.png
+Equipped NONE
+5
+0
+0
