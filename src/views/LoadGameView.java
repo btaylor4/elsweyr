@@ -46,7 +46,7 @@ public class LoadGameView extends Parent {   //
 
         //Setting up the table view for the saved games
         savedGamesTable.setEditable(false);
-        savedGamesTable.setMinWidth(400);
+        savedGamesTable.setMinWidth(450);
 
         TableColumn savedGameNames = new TableColumn("Saves");
         savedGameNames.setCellValueFactory( new PropertyValueFactory<>("fileName"));
@@ -59,7 +59,7 @@ public class LoadGameView extends Parent {   //
 
         savedGamesTable.setItems(saves);
         savedGamesTable.getSelectionModel().selectFirst();
-        savedGamesTable.getColumns().addAll(savedGameNames, lastPlayedDate,pathToFile);
+        savedGamesTable.getColumns().addAll(savedGameNames, lastPlayedDate, pathToFile);
 
         grid.add(savedGamesTable,4,0);
         this.getChildren().add(grid);
@@ -97,6 +97,7 @@ public class LoadGameView extends Parent {   //
 
             if (files.length == 2) {
                 Date lastPlayed = new Date (files[0].lastModified());
+                // file name = playerName + Map + .txt -> ignore "Map.txt"
                 if (files[0].getName().contains("Map")) {
                     saves.add(new SaveFile("save" + i, "" + lastPlayed.toString(), files[1].getName(), files[0].getName()));
                 } else {
