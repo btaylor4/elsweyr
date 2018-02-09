@@ -75,7 +75,7 @@ public class LocalGameplayController {
 
                 GlobalGameplayView globalView = new GlobalGameplayView();
                 GlobalGameplayController globalGameplay = new GlobalGameplayController(globalView,character,globalMap);
-                Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                Stage window = (Stage)(((Scene)event.getSource()).getWindow());
 
                 Scene scene = new Scene(globalView,500,500);
                 window.setScene(scene);
