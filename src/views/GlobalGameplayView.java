@@ -68,7 +68,7 @@ public class GlobalGameplayView extends Parent {   //
     //Creates ImageViews for the character and map tiles.
     public void initializeSprites(){
         //Intializes the characterSprite with an Image
-        charachterSprite =  charachterSprite = new Image("PlaceHolderForImages/Character.png", 80.,80.,true,true);
+        charachterSprite =  charachterSprite = new Image("file:PlaceHolderForImages/Character.png", 80.,80.,true,true);
         //Creates a characterView
         characterView = new ImageView(charachterSprite);
         //Character height and width must be smaller than tile's height and width.
@@ -79,11 +79,11 @@ public class GlobalGameplayView extends Parent {   //
             for (int j = 0; j < globalMapSize; j++) {
                 int temp = (int)(Math.random() * 3);
                 if(temp == 2)
-                    tileSprites[i][j] = new Image("PlaceHolderForImages/Water.png",100.,100., true,true);
+                    tileSprites[i][j] = new Image("file:PlaceHolderForImages/Water.png",100.,100., true,true);
                 else if( temp == 1 )
-                    tileSprites[i][j] = new Image("PlaceHolderForImages/GRASS.png",100.,100., true,true);
+                    tileSprites[i][j] = new Image("file:PlaceHolderForImages/GRASS.png",100.,100., true,true);
                 else
-                    tileSprites[i][j] = new Image("PlaceHolderForImages/MOUNTAIN.png",100.,100., true,true);
+                    tileSprites[i][j] = new Image("file:PlaceHolderForImages/MOUNTAIN.png",100.,100., true,true);
             }
         }
 
