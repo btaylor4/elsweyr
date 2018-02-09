@@ -162,21 +162,32 @@ public class NewGameView extends Parent {
 
     private void setUpSaves() {
         File folder;
-        File [] files = new File[0];
+        File [] files;
         String saveSlot = "SaveSlot";
 
         for (int i = 1; i < 4; ++i) {
             folder = new File (saveSlot + i + File.separator);
             files = folder.listFiles();
 
-            if (files.length == 2) {
-                Date lastPlayed = new Date (files[0].lastModified());
+            if (files != null && files.length > 1) {
+                Date lastPlayed = new Date(0);
+                String mapFilePath = "";
+                String characterFileNamePath = "";
 
-                if (files[0].getName().contains("Map")) {
-                    saves.add(new SaveFile("save" + i, "" + lastPlayed.toString(), files[1].getName(), files[0].getName()));
-                } else {
-                    saves.add(new SaveFile("save" + i, "" + lastPlayed.toString(), files[0].getName(), files[1].getName()));
+                for (int j = 0; j < files.length; ++j) {
+                    if (files[j].getName().equals("TheMap.txt")) {
+                        lastPlayed = new Date (files[0].lastModified());
+                        mapFilePath = saveSlot + i + "TheMap.txt";
+                    } else if (files[j].getName().equals("TheCharacter.txt")) {
+                        characterFileNamePath = saveSlot + i + "TheCharacter.txt";
+                    }
                 }
+                if (!mapFilePath.equals("") && !characterFileNamePath.equals("")) {
+                    saves.add(new SaveFile("save " + i, lastPlayed.toString(), characterFileNamePath, mapFilePath));
+                } else {
+                    saves.add(new SaveFile("Empty", "0/0/0 00:00", "No File", "No File"));
+                }
+
             } else {
                 saves.add(new SaveFile("Empty", "0/0/0 00:00", "No File", "No File"));
             }
