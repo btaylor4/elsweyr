@@ -1,5 +1,7 @@
 package views;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -7,56 +9,56 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import models.SaveFile;
 
 import java.io.File;
 import java.util.Date;
 
-
+//TODO PASS CHARACHTER IMAGE INTO NEW CHARACTER CLASS
 public class NewGameView extends Parent {
 
-    //Declare all the buttons and assets the New Game view will need
-    private final String AVATAR_PATH = "PlaceHolderForImages" + File.separator;
+    //Declare all the buttons and assets the Load Game view will need
 
     private Button backToMainButton = new Button("Back To Main Menu");
-    private Button createButton = new Button("Create New Game");
-    private ImageView [] avatar = new ImageView[3];
+    private Button startGameButton = new Button("Start Game");
+    private Label nameLabel = new Label("Name: ");
+    private TextField nameInput = new TextField();
+    private Image selectedCharacterImage;
     private TableView<SaveFile> savedGamesTable = new TableView<>();
-    Group root = new Group();
     private ObservableList<SaveFile> saves = FXCollections.observableArrayList();
+
+
+    Group root = new Group();
 
     public NewGameView(){
 
         //TODO: Add options for which slot to save to
-        setUpSaves();
+        final ToggleGroup group = new ToggleGroup();
+
 
         GridPane grid = new GridPane();
-        grid.gridLinesVisibleProperty();
-        grid.setVgap(10);
-        grid.setHgap(10);
-        grid.setPadding(new Insets(10,10,10,10));
+        BorderPane borderpane = new BorderPane();
 
-        if (avatar[0] != null) {
-                for (int i = 0; i < 3; ++i) {
-                    avatar[i].setFitWidth(30);
-                    avatar[i].setFitHeight(30);
-                    grid.add(avatar[i], 4 + i, 2);
-                }
-        }
+        HBox nameBox = new HBox();
+        nameBox.getChildren().addAll(nameLabel,nameInput);
 
-        grid.add(backToMainButton,4,5);
+        HBox returnMenuBox = new HBox();
+        returnMenuBox.getChildren().addAll(backToMainButton,startGameButton);
+        startGameButton.setDisable(true);
 
-        createButton.setDisable(true);
-        grid.add(createButton,4,7);
 
         //Setting up the table view for the saved games
+        setUpSaves();
+
         savedGamesTable.setEditable(false);
         savedGamesTable.setMinWidth(400);
         savedGamesTable.setMaxHeight(100);
@@ -74,9 +76,67 @@ public class NewGameView extends Parent {
         savedGamesTable.getSelectionModel().selectFirst();
         savedGamesTable.getColumns().addAll(savedGameNames, lastPlayedDate,pathToFile);
 
-        grid.add(savedGamesTable,4,4, 3, 1);
+        grid.add(savedGamesTable,5,5, 15, 1);
 
-        this.getChildren().add(grid);
+
+        Image image = new Image(getClass().getResourceAsStream("briefcase.png"));
+        //set toggles with character images
+        //TODO Add different character image sprites
+
+        ToggleButton tb1 = new ToggleButton("Press me", new ImageView(image));
+        ToggleButton tb2 = new ToggleButton("Press me", new ImageView(image));
+        ToggleButton tb3 = new ToggleButton ("Press me", new ImageView(image));
+
+        tb1.setSelected(true);
+        //Assign toggles to one group
+        tb1.setToggleGroup(group);
+        tb2.setToggleGroup(group);
+        tb3.setToggleGroup(group);
+
+        //Set user data
+
+        tb1.setUserData(new Image(getClass().getResourceAsStream("briefcase.png")));
+        tb2.setUserData(new Image(getClass().getResourceAsStream("briefcase.png")));
+        tb3.setUserData(new Image(getClass().getResourceAsStream("briefcase.png")));
+
+        grid.setVgap(10);
+        grid.setHgap(10);
+        grid.setPadding(new Insets(10,10,20,10));
+        //Set toggles in grid
+        grid.add(tb1,5,20);
+        grid.add(tb2,10,20);
+        grid.add(tb3,15,20);
+
+
+        group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+            @Override
+            public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
+                if(newValue != null){
+                    selectedCharacterImage = (Image) group.getSelectedToggle().getUserData();
+                }
+            }
+        });
+
+
+        //Anchor down the Hbox for the return to main menu button
+        AnchorPane anchorpane = new AnchorPane();
+        anchorpane.getChildren().addAll(returnMenuBox);   // Add grid from Example 1-5
+        AnchorPane.setBottomAnchor(returnMenuBox, 30.0);
+        AnchorPane.setLeftAnchor(returnMenuBox, 5.0);
+
+        borderpane.setTop(nameBox);
+        borderpane.setCenter(grid);
+        borderpane.setBottom(anchorpane);
+
+        this.getChildren().add(borderpane);
+    }
+
+    public Image getSelectedImage(){
+        return selectedCharacterImage;
+    }
+
+    public String getSelectedName(){
+        return nameInput.getText();
     }
 
 
@@ -89,21 +149,20 @@ public class NewGameView extends Parent {
     }
 
     public void enableCreateButton(){
-        createButton.setDisable(false);
+        startGameButton.setDisable(false);
     }
 
     public SaveFile getSelectedFile(){
-
         return savedGamesTable.getSelectionModel().getSelectedItem();
     }
 
-    public void addCreateGameListener(EventHandler<ActionEvent> handlerForCreateGame){
-        createButton.setOnAction(handlerForCreateGame);
+    public void addStartGaneListener(EventHandler<ActionEvent> handlerForBackButton){
+        startGameButton.setOnAction(handlerForBackButton);
     }
 
     private void setUpSaves() {
         File folder;
-        File [] files;
+        File [] files = new File[0];
         String saveSlot = "SaveSlot";
 
         for (int i = 1; i < 4; ++i) {
@@ -124,5 +183,4 @@ public class NewGameView extends Parent {
         }
 
     }
-
 }

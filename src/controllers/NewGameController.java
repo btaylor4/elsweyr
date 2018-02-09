@@ -1,3 +1,4 @@
+
 package controllers;
 
 import javafx.event.ActionEvent;
@@ -8,27 +9,61 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import models.Character;
 import models.GlobalLevel;
-import models.ReadFiles;
 import models.SaveFile;
 import views.GlobalGameplayView;
 import views.MainMenuView;
 import views.NewGameView;
 
-import java.io.IOException;
 
 public class NewGameController {
 
+
+    private Character character;
     private NewGameView view;
-    private  String newMap = "TheMap.txt";
-    private  String newCharacter = "TheCharacter.txt";
+    private GlobalLevel global;
 
     public NewGameController(NewGameView newView) {
-        view = newView;
+        this.character = new Character();
+        this.view = newView;
+        this.global = new GlobalLevel();
         this.view.addBackToMainListener(new NewGameController.backToMainButtonHandler());
-        this.view.addCreateGameListener(new NewGameController.CreateGameHandler());
+        this.view.addStartGaneListener(new NewGameController.startNewGameButtonHandler());
         this.view.addTableClickListener(new NewGameController.tableClickedEventHandler());
     }
 
+
+    class startNewGameButtonHandler implements EventHandler<ActionEvent>{
+
+        @Override
+        public void handle(ActionEvent event){
+            SaveFile saveFile = view.getSelectedFile();
+            System.out.println(saveFile.getFileName());
+            //Set up custom character settings
+            character.setCharacterSprite(view.getSelectedImage());
+            character.setCharacterName(view.getSelectedName());
+
+            //TODO: send view to Global gameplay view
+            System.out.println("Go to global gameplay");
+            GlobalGameplayView globalView = new GlobalGameplayView();
+            GlobalGameplayController globalController = new GlobalGameplayController(globalView,character,global);
+
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene globalScene = new Scene(globalView, 500, 500);
+
+            window.setScene(globalScene);
+
+        }
+
+
+    }
+
+    class tableClickedEventHandler implements EventHandler<MouseEvent> {
+
+        @Override
+        public void handle(MouseEvent event) {
+            view.enableCreateButton();
+        }
+    }
 
     class backToMainButtonHandler implements EventHandler<ActionEvent> {
 
@@ -44,51 +79,4 @@ public class NewGameController {
             window.setScene(mainScene);
         }
     }
-
-    class tableClickedEventHandler implements EventHandler<MouseEvent> {
-
-        @Override
-        public void handle(MouseEvent event) {
-            view.enableCreateButton();
-        }
-    }
-
-    class CreateGameHandler implements EventHandler<ActionEvent> {
-
-        @Override
-        public void handle(ActionEvent event) {
-
-            SaveFile file = view.getSelectedFile();
-            Character character;
-            GlobalLevel map;
-
-            //copyAndRenameFiles(view.getName());
-
-            try {
-                character = ReadFiles.loadCharacter(newCharacter);
-                map = ReadFiles.loadGame(newMap);
-            }
-            catch(IOException e){
-                System.out.println("Default game files not found.");
-                return;
-            }
-
-            System.out.println("Create Game Button Clicked");
-
-
-
-
-            GlobalGameplayView globalView = new GlobalGameplayView();
-
-            System.out.println("Loading... " + newMap);
-            System.out.println("Loading... " + newCharacter);
-            GlobalGameplayController globalController = new GlobalGameplayController(globalView, character, map);
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene globalScene = new Scene(globalView, 500, 500);
-            window.setTitle("Global Level");
-            window.setScene(globalScene);
-
-        }
-    }
-
 }
