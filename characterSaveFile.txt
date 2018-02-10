@@ -12,10 +12,17 @@ PlaceHolderForImages\Character.png
 Equipped NONE
 5
 4
+<<<<<<< HEAD
 models.TakeableItem@7f552bd3 1
 models.TakeableItem@7f552bd3 1
 models.TakeableItem@3c22fc4c 1
 models.TakeableItem@460d0a57 1
+=======
+models.TakeableItem@49d904ec 1
+models.TakeableItem@49d904ec 1
+models.TakeableItem@48e4374 1
+models.TakeableItem@3d680b5a 1
+>>>>>>> develop
 3
 HEALTHEFFECT 1000 4 poison
 HEALTHEFFECT 2000 6 Chocolate cake

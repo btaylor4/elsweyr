@@ -69,7 +69,6 @@ public class NewGameController {
             character.setCharacterName(view.getSelectedName());
             character.setOnLocal(false);
 
-            //TODO: send view to Global gameplay view
             System.out.println("Go to global gameplay");
             GlobalGameplayView globalView = new GlobalGameplayView();
             Scene globalScene = new Scene(globalView, 500, 500);
@@ -148,7 +147,6 @@ public class NewGameController {
 
         @Override
         public void handle(ActionEvent event) {
-            //TODO: Send view back to main menu
             System.out.println("Back To Main Menu Buttonstuff");
             MainMenuView mainView = new MainMenuView();
             MainMenuController mainController = new MainMenuController(mainView);
