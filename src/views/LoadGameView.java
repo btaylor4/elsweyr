@@ -95,18 +95,33 @@ public class LoadGameView extends Parent {   //
             folder = new File (saveSlot + i + File.separator);
             files = folder.listFiles();
 
-            if (files.length == 2) {
-                Date lastPlayed = new Date (files[0].lastModified());
-                // file name = playerName + Map + .txt -> ignore "Map.txt"
-                if (files[0].getName().contains("Map")) {
-                    saves.add(new SaveFile("save" + i, "" + lastPlayed.toString(), files[1].getName(), files[0].getName()));
-                } else {
-                    saves.add(new SaveFile("save" + i, "" + lastPlayed.toString(), files[0].getName(), files[1].getName()));
+            System.out.println(files.length);
+            if (files != null && files.length > 1) {
+                Date lastPlayed = new Date(0);
+                String mapFilePath = "";
+                String characterFileNamePath = "";
+
+                for (int j = 0; j < files.length; ++j) {
+                    if (files[j].getName().equals("DefaultMap.txt")) {
+                        lastPlayed = new Date (files[j].lastModified());
+                        mapFilePath = saveSlot + i + File.separator + files[j].getName();
+                    } else if (files[j].getName().equals("DefaultCharacter.txt")) {
+                        characterFileNamePath = saveSlot + i + File.separator + files[j].getName();
+                    }
                 }
+
+                if (!mapFilePath.equals("") && !characterFileNamePath.equals("")) {
+                    saves.add(new SaveFile("save " + i, lastPlayed.toString(), characterFileNamePath, mapFilePath));
+                } else {
+                    saves.add(new SaveFile("Empty", "0/0/0 00:00", "No File SaveSlot" + i, "No File SaveSlot" + i));
+                }
+
             } else {
-                saves.add(new SaveFile("Empty", "0/0/0 00:00", "No File", "No File"));
+                saves.add(new SaveFile("Empty", "0/0/0 00:00", "No File SaveSlot" + i, "No File SaveSlot" + i));
             }
         }
+
+
     }
 
 

@@ -17,6 +17,7 @@ public class Write {
 
         characterSaveFile = new FileWriter("characterSaveFile.txt");
 
+        characterSaveFile.write(newString.format("%s%n", characterBeingSaved.getCharacterName()));
         characterSaveFile.write(newString.format("%d%n", characterBeingSaved.getBaseHP()));
         characterSaveFile.write(newString.format("%d%n",characterBeingSaved.getCurrentHP()));
         characterSaveFile.write(newString.format("%d%n",characterBeingSaved.getBonusHP()));
@@ -46,13 +47,11 @@ public class Write {
         characterSaveFile.write(newString.format("%d%n",characterBeingSaved.getInventory().getMaxSize()));
         characterSaveFile.write(newString.format("%d%n",characterBeingSaved.getInventory().getItems().size()));
 
-        ArrayList<String> itemNamesArrayList = characterBeingSaved.getInventory().getHashMapNameArray();
+        ArrayList<Item> items = characterBeingSaved.getInventory().getItems();
 
-        for(int i = 0; i < characterBeingSaved.getInventory().getItems().size(); i++)
+        for(int i = 0; i < items.size(); i++)
         {
-            String nameOfItem = itemNamesArrayList.get(i);
-            List<Item> temp = characterBeingSaved.getInventory().getItems().get(nameOfItem);
-            characterSaveFile.write(newString.format("%s %d%n",nameOfItem ,temp.size()));
+            characterSaveFile.write(newString.format("%s %d%n",items.get(i) ,1));
 
         }
 

@@ -120,6 +120,10 @@ public class ReadFiles {
 
         Character loadedCharacter = new Character();
 
+        //character name
+        currentLine = reader.readLine();
+        loadedCharacter.setCharacterName(currentLine);
+
         //base hp
         currentLine = reader.readLine();
         loadedCharacter.setBaseHP(Integer.parseInt(currentLine));
