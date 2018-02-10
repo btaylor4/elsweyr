@@ -67,6 +67,7 @@ public class GlobalGameplayView extends Parent {   //
         gd.intializeMap();
 
         OS = System.getProperty("os.name");
+
         if(!OS.contains("Windows") && !OS.contains("windows")) {
             path.append("\\");
         }
@@ -77,7 +78,6 @@ public class GlobalGameplayView extends Parent {   //
         //TODO: Remove the hardcoding of the characters, and tiles width and height
         //TODO: Animate Character Movement along with the direction the character is facing
         //TODO: Figure out an appropariate method for moving the characters based on changing user input, and all directions.
-
     }
     //Creates ImageViews for the character and map tiles.
     public void initializeSprites(){
