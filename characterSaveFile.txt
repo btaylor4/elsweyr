@@ -12,10 +12,10 @@ PlaceHolderForImages\Character.png
 Equipped NONE
 5
 4
-models.TakeableItem@6f96c77 1
-models.TakeableItem@6f96c77 1
-models.TakeableItem@be64738 1
-models.TakeableItem@3ba9ad43 1
+models.TakeableItem@418e7838 1
+models.TakeableItem@418e7838 1
+models.TakeableItem@61230f6a 1
+models.TakeableItem@3c130745 1
 3
 HEALTHEFFECT 1000 4 poison
 HEALTHEFFECT 2000 6 Chocolate cake
