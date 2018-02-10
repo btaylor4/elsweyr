@@ -64,13 +64,13 @@ public class TestGlobalGameplayController extends ApplicationTest {
         primaryWindow = new Stage();
 
         globalView = new GlobalGameplayView();
+        localScene = new Scene(globalView, 500, 500);
         Character playerCharacter = new Character();
         Zone localLevel = new Zone();
 
         GlobalLevel global = new GlobalLevel();
         GlobalGameplayController globalGameplayController = new GlobalGameplayController(globalView, playerCharacter, global);
 
-        localScene = new Scene(globalView, 500, 500);
         primaryWindow.setScene(localScene);
         primaryWindow.show();
     }
@@ -225,7 +225,7 @@ public class TestGlobalGameplayController extends ApplicationTest {
         controller = new GlobalGameplayController(globalView, character, globalLevel);
         movementHandler = controller.new GlobalMovementListener();
 
-        assertFalse(movementHandler.checkVaildMove(direction));
+        assertFalse(movementHandler.checkValidMove(direction));
     }
 
     @Test
@@ -238,7 +238,7 @@ public class TestGlobalGameplayController extends ApplicationTest {
         controller = new GlobalGameplayController(globalView, character, globalLevel);
         movementHandler = controller.new GlobalMovementListener();
 
-        assertFalse(movementHandler.checkVaildMove(direction));
+        assertFalse(movementHandler.checkValidMove(direction));
     }
 
     @Test
@@ -251,7 +251,7 @@ public class TestGlobalGameplayController extends ApplicationTest {
         controller = new GlobalGameplayController(globalView, character, globalLevel);
         movementHandler = controller.new GlobalMovementListener();
 
-        assertFalse(movementHandler.checkVaildMove(direction));
+        assertFalse(movementHandler.checkValidMove(direction));
     }
 
     @Test
@@ -264,7 +264,7 @@ public class TestGlobalGameplayController extends ApplicationTest {
         controller = new GlobalGameplayController(globalView, character, globalLevel);
         movementHandler = controller.new GlobalMovementListener();
 
-        assertFalse(movementHandler.checkVaildMove(direction));
+        assertFalse(movementHandler.checkValidMove(direction));
     }
 
     @Test
@@ -277,7 +277,7 @@ public class TestGlobalGameplayController extends ApplicationTest {
         controller = new GlobalGameplayController(globalView, character, globalLevel);
         movementHandler = controller.new GlobalMovementListener();
 
-        assertFalse(movementHandler.checkVaildMove(direction));
+        assertFalse(movementHandler.checkValidMove(direction));
     }
 
     @Test
@@ -290,7 +290,7 @@ public class TestGlobalGameplayController extends ApplicationTest {
         controller = new GlobalGameplayController(globalView, character, globalLevel);
         movementHandler = controller.new GlobalMovementListener();
 
-        assertFalse(movementHandler.checkVaildMove(direction));
+        assertFalse(movementHandler.checkValidMove(direction));
     }
 
     @Test
@@ -303,7 +303,7 @@ public class TestGlobalGameplayController extends ApplicationTest {
         controller = new GlobalGameplayController(globalView, character, globalLevel);
         movementHandler = controller.new GlobalMovementListener();
 
-        assertFalse(movementHandler.checkVaildMove(direction));
+        assertFalse(movementHandler.checkValidMove(direction));
     }
 
     @Test
@@ -316,7 +316,7 @@ public class TestGlobalGameplayController extends ApplicationTest {
         controller = new GlobalGameplayController(globalView, character, globalLevel);
         movementHandler = controller.new GlobalMovementListener();
 
-        assertFalse(movementHandler.checkVaildMove(direction));
+        assertFalse(movementHandler.checkValidMove(direction));
     }
 
     @Ignore

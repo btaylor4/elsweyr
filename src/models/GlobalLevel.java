@@ -10,7 +10,7 @@ public class GlobalLevel {
         globalMap = new Zone[10][10];
     }
 
-    GlobalLevel(int rows, int cols)   {
+    public GlobalLevel(int rows, int cols)   {
         globalMap = new Zone[rows][cols];
     }
 

@@ -14,6 +14,7 @@ public class Zone {
     private Image zoneSprite;
     private String zoneSpritePath;
     private boolean isPassable;
+    private boolean hasLevel;
 
     public Zone() {
     }
@@ -75,5 +76,13 @@ public class Zone {
 
     public void setPassable(boolean passable) {
         isPassable = passable;
+    }
+
+    public boolean getHasLevel() {
+        return hasLevel;
+    }
+
+    public void setHasLevel(boolean hasLevel) {
+        this.hasLevel = hasLevel;
     }
 }
