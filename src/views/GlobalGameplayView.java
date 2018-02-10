@@ -22,7 +22,7 @@ public class GlobalGameplayView extends Parent {   //
 
     private Button inGameMenuButton= new Button("In-Game Menu");
     private Button changeToLocal = new Button("Change To Local View");
-    private Image charachterSprite;
+    private Image characterSprite;
     private Image [][] tileSprites;
     private Image[][] itemSprites;
     private Image [][] terrainSprites;
@@ -37,7 +37,12 @@ public class GlobalGameplayView extends Parent {   //
     private ImageView [][] itemView;
     //Max number of tiles display in each row and column
     private int viewableTilesNum;
-    private int globalMapSize;
+    private int globalMapHeight;
+    private int globalMapWidth;
+    //Displays the position of the character
+    private String characterDirection;
+    private StringBuffer path = new StringBuffer("file:PlaceHolderForImages/");
+
     Group root = new Group();
     Scene localScene = new Scene(root,800,800);
 
@@ -45,10 +50,11 @@ public class GlobalGameplayView extends Parent {   //
 
         globalCharacterPrevPos.setLocation(15,15);
         globalCharacterPos.setLocation(15,15);
-        globalMapSize = 30;
-        tileSprites = new Image[globalMapSize][globalMapSize];
+        globalMapHeight = 30;
+        globalMapWidth = 20;
+        tileSprites = new Image[globalMapHeight][globalMapWidth];
         viewableTilesNum = 9;
-        tileImageView = new ImageView[globalMapSize][globalMapSize];
+        tileImageView = new ImageView[globalMapHeight][globalMapWidth];
 
 
         viewableGlobalMap = new GridPane();
@@ -56,6 +62,7 @@ public class GlobalGameplayView extends Parent {   //
         viewableGlobalMap.setHgap(0);
 
         initializeSprites();
+        characterDirection = "DOWN";
 
         GlobalDisplay gd = new GlobalDisplay(this);
         gd.intializeMap();
@@ -63,33 +70,34 @@ public class GlobalGameplayView extends Parent {   //
         //TODO: Remove the hardcoding of the characters, and tiles width and height
         //TODO: Animate Character Movement along with the direction the character is facing
         //TODO: Figure out an appropariate method for moving the characters based on changing user input, and all directions.
-
     }
     //Creates ImageViews for the character and map tiles.
     public void initializeSprites(){
         //Intializes the characterSprite with an Image
-        charachterSprite =  charachterSprite = new Image("file:PlaceHolderForImages/Character.png", 80.,80.,true,true);
+        characterSprite = new Image(path + "Character.png", 80.,80.,true,true);
         //Creates a characterView
-        characterView = new ImageView(charachterSprite);
+        characterView = new ImageView(characterSprite);
         //Character height and width must be smaller than tile's height and width.
         characterView.setFitHeight(30);
         characterView.setFitWidth(30);
 
-        for(int i = 0; i < globalMapSize; i++) {
-            for (int j = 0; j < globalMapSize; j++) {
+        updateCharacterImageView(path + "Character_Front.png");
+
+        for(int i = 0; i < globalMapHeight; i++) {
+            for (int j = 0; j < globalMapWidth; j++) {
                 int temp = (int)(Math.random() * 3);
                 if(temp == 2)
-                    tileSprites[i][j] = new Image("file:PlaceHolderForImages/Water.png",100.,100., true,true);
+                    tileSprites[i][j] = new Image(path + "WATER.png",100.,100., true,true);
                 else if( temp == 1 )
-                    tileSprites[i][j] = new Image("file:PlaceHolderForImages/GRASS.png",100.,100., true,true);
+                    tileSprites[i][j] = new Image(path + "GRASS.png",100.,100., true,true);
                 else
-                    tileSprites[i][j] = new Image("file:PlaceHolderForImages/MOUNTAIN.png",100.,100., true,true);
+                    tileSprites[i][j] = new Image(path + "MOUNTAIN.png",100.,100., true,true);
             }
         }
 
         //Creates imageViews of each tile
-        for(int i = 0; i < globalMapSize; i++)
-            for (int j = 0; j < globalMapSize; j++) {
+        for(int i = 0; i < globalMapHeight; i++)
+            for (int j = 0; j < globalMapWidth; j++) {
                 tileImageView[i][j] = new ImageView(tileSprites[i][j]);
                 //Note the width and height are dependent on the number of viewable tiles and the window size
                 // squareroot(500*500/81)
@@ -97,6 +105,17 @@ public class GlobalGameplayView extends Parent {   //
                 tileImageView[i][j].setFitWidth(55.555555555);
                 tileImageView[i][j].setFitHeight(55.55555555);
             }
+
+    }
+
+    private void updateCharacterImageView(String image){
+        //Intializes the characterSprite with an Image
+        characterSprite = new Image(image);
+        //Creates a characterView
+        characterView = new ImageView(characterSprite);
+        //Character height and width must be smaller than tile's height and width.
+        characterView.setFitHeight(40);
+        characterView.setFitWidth(40);
 
     }
 
@@ -115,6 +134,51 @@ public class GlobalGameplayView extends Parent {   //
 
     public void updateCharacterPos(Point updatedPos){
         globalCharacterPos = updatedPos;
+    }
+
+    public void updateMove(String move){
+        characterDirection = move;
+        updateCharacterImageView();
+    }
+
+    private void updateCharacterImageView(){
+        switch(characterDirection){
+            case "UP": // 8
+                updateCharacterImageView(path + "Character_Back.png");
+                break;
+
+            case "DOWN": // 2
+                updateCharacterImageView(path + "Character_Front.png");
+                break;
+
+            case "LEFT": // 4
+                updateCharacterImageView(path + "Character_East.png");
+                break;
+
+            case "RIGHT": //6
+
+                break;
+
+            case "END": // 1 DOWN_LEFT
+
+                break;
+
+            case "PAGE_DOWN":  // DOWN_RIGHT
+                updateCharacterImageView(path + "Character_South_East.png");
+                break;
+
+            case "HOME":  // UP_LEFT
+
+                break;
+
+
+            case "PAGE_UP": // UP_RIGHT
+
+                break;
+
+            default:
+
+        }
     }
 
 
@@ -169,7 +233,6 @@ public class GlobalGameplayView extends Parent {   //
         }
 
         public void intializeMap(){
-
             outer.getChildren().addAll(viewableGlobalMap);
             start();
         }
@@ -213,9 +276,7 @@ public class GlobalGameplayView extends Parent {   //
             else if(globalCharacterPrevPos.x < globalCharacterPos.x)
                 return "DOWN";
             else if(globalCharacterPrevPos.y > globalCharacterPos.y)
-            {
                 return "LEFT";
-            }
             else
                 return "RIGHT";
         }
@@ -238,6 +299,7 @@ public class GlobalGameplayView extends Parent {   //
         //Number of Columnstobecisplayed
         int numCols = DisplayColEnd - DisplayColStart;
         int temp = DisplayColStart;
+        //Adds the rows and the columns that are viewable to the globalmap gridpane
         for(int i = 0; i < numRows; i++) {
             temp = DisplayColStart;
             for (int j = 0; j < numCols; j++) {
@@ -258,9 +320,9 @@ public class GlobalGameplayView extends Parent {   //
     //Cannot display a row that is not in the map.
     private int getDisplayRowEnd(int row){
         int DisplayRowEnd = row + viewableTilesNum / 2 + 1;
-        if(DisplayRowEnd > globalMapSize - 1)
+        if(DisplayRowEnd > globalMapHeight - 1)
         {
-            DisplayRowEnd = globalMapSize;
+            DisplayRowEnd = globalMapHeight;
         }
         return DisplayRowEnd;
     }
@@ -276,8 +338,8 @@ public class GlobalGameplayView extends Parent {   //
     private int getDisplayColEnd(int col){
         //The plus one is for the for loop
         int DisplayColEnd = col + viewableTilesNum / 2 + 1;
-        if(DisplayColEnd > globalMapSize - 1){
-            DisplayColEnd = globalMapSize;
+        if(DisplayColEnd > globalMapWidth - 1){
+            DisplayColEnd = globalMapWidth;
         }
         return DisplayColEnd;
     }

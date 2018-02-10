@@ -30,7 +30,6 @@ public class GlobalGameplayController {
     }
 
     public class GlobalMovementListener implements EventHandler<KeyEvent> {
-
         public boolean checkVaildMove(Point projectedMove) {
             Point characterPosition = character.getGlobalPos();
             int xPositionChange = characterPosition.x + projectedMove.x;
@@ -85,7 +84,10 @@ public class GlobalGameplayController {
 
                 default:
                     projectedMove = new Point(0, 0);
+
             }
+            //Sends the view the characters move.
+            view.updateMove(move);
 
             if(checkVaildMove(projectedMove)) {
                 Point newPosition = new Point(character.getGlobalPos().x + projectedMove.x,
