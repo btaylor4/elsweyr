@@ -163,6 +163,9 @@ public class LocalGameplayView extends Parent {   //
     }
 
     private void intializeDecalView(){
+        //Note the width and height are dependent on the number of viewable tiles and the window size
+        // squareroot(500*500/81)
+        //squareroot(windowWidth*windowHeight)/(tilesWidth * tilesHeight))
         double decalHeight = 55.555555555;
         double decalWidth = 55.555555555;
         decalSprites = new Image[localMapSize][localMapSize];

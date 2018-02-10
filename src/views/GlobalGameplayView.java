@@ -61,21 +61,24 @@ public class GlobalGameplayView extends Parent {   //
         viewableGlobalMap = new GridPane();
         viewableGlobalMap.setVgap(0);
         viewableGlobalMap.setHgap(0);
-
-        initializeSprites();
-        characterDirection = "DOWN";
-
-        GlobalDisplay gd = new GlobalDisplay(this);
-        gd.intializeMap();
-
+        
         OS = System.getProperty("os.name");
-
         if(!OS.contains("Windows") && !OS.contains("windows")) {
             path.append("\\");
         }
 
         else
             path.append("/");
+        initializeSprites();
+        characterDirection = "DOWN";
+
+
+        GlobalDisplay gd = new GlobalDisplay(this);
+        gd.intializeMap();
+
+
+
+
 
         //TODO: Remove the hardcoding of the characters, and tiles width and height
         //TODO: Animate Character Movement along with the direction the character is facing
@@ -97,7 +100,7 @@ public class GlobalGameplayView extends Parent {   //
             for (int j = 0; j < globalMapWidth; j++) {
                 int temp = (int)(Math.random() * 3);
                 if(temp == 2)
-                    tileSprites[i][j] = new Image(path + "Water.png",100.,100., true,true);
+                    tileSprites[i][j] = new Image("file:PlaceHolderForImages/" + "Water.png",100.,100., true,true);
                 else if( temp == 1 )
                     tileSprites[i][j] = new Image(path + "GRASS.png",100.,100., true,true);
                 else
