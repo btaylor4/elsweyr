@@ -84,7 +84,7 @@ public class GlobalGameplayView extends Parent {   //
     //Creates ImageViews for the character and map tiles.
     public void initializeSprites(){
         //Intializes the characterSprite with an Image
-        characterSprite = new Image("file:PlaceHolderForImages/Character.png", 80.,80.,true,true);
+        characterSprite = new Image(path + "Character.png", 80.,80.,true,true);
         //Creates a characterView
         characterView = new ImageView(characterSprite);
         //Character height and width must be smaller than tile's height and width.
