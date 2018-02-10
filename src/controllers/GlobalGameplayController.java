@@ -110,9 +110,10 @@ public class GlobalGameplayController {
         public void handle(KeyEvent event) {
 
             String move = event.getCode().toString();
-            if(move != "DOWN" && move != "LEFT" && move != "RIGHT" && move != "END" && move != "PAGE_DOWN" && move != "HOME" && move != "PAGE_UP" ){
+            if(move != "DOWN" && move != "UP" && move != "LEFT" && move != "RIGHT" && move != "END" && move != "PAGE_DOWN" && move != "HOME" && move != "PAGE_UP" ){
                 return;
             }
+            System.out.println(move);
             updateCharacterPosition(move);
             if(checkForLocalLevel()) {
                 System.out.println("Changing View To Local Level");
