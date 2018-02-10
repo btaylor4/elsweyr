@@ -74,13 +74,15 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character playerCharacter = new Character();
         Zone localLevel = new Zone();
 
+        localScene = new Scene(localView, 500, 500);
+        primaryWindow.setScene(localScene);
+
         GlobalLevel global = new GlobalLevel();
+
 
         LocalGameplayController localGameplayController = new LocalGameplayController(localView, playerCharacter, global);
 
 
-        localScene = new Scene(localView, 500, 500);
-        primaryWindow.setScene(localScene);
         primaryWindow.show();
     }
 

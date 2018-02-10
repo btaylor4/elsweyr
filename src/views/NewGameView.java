@@ -32,7 +32,7 @@ public class NewGameView extends Parent {
     private Button startGameButton = new Button("Start Game");
     private Label nameLabel = new Label("Name: ");
     private TextField nameInput = new TextField();
-    private Image selectedCharacterImage;
+    private String selectedCharacterFilePath;
     private TableView<SaveFile> savedGamesTable = new TableView<>();
     private ObservableList<SaveFile> saves = FXCollections.observableArrayList();
 
@@ -79,6 +79,7 @@ public class NewGameView extends Parent {
         grid.add(savedGamesTable,5,5, 15, 1);
 
 
+        String imageFile = "src" + File.separator + "views" + File.separator + "briefcase.png";
         Image image = new Image(getClass().getResourceAsStream("briefcase.png"));
         //set toggles with character images
         //TODO Add different character image sprites
@@ -88,6 +89,7 @@ public class NewGameView extends Parent {
         ToggleButton tb3 = new ToggleButton ("Press me", new ImageView(image));
 
         tb1.setSelected(true);
+        selectedCharacterFilePath = imageFile; // this is the image path of tb1's image!!!
         //Assign toggles to one group
         tb1.setToggleGroup(group);
         tb2.setToggleGroup(group);
@@ -96,8 +98,11 @@ public class NewGameView extends Parent {
         //Set user data
 
         tb1.setUserData(new Image(getClass().getResourceAsStream("briefcase.png")));
+        tb1.setAccessibleHelp(imageFile);
         tb2.setUserData(new Image(getClass().getResourceAsStream("briefcase.png")));
+        tb2.setAccessibleHelp(imageFile);
         tb3.setUserData(new Image(getClass().getResourceAsStream("briefcase.png")));
+        tb3.setAccessibleHelp(imageFile);
 
         grid.setVgap(10);
         grid.setHgap(10);
@@ -112,7 +117,7 @@ public class NewGameView extends Parent {
             @Override
             public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
                 if(newValue != null){
-                    selectedCharacterImage = (Image) group.getSelectedToggle().getUserData();
+                    selectedCharacterFilePath = ((ToggleButton) group.getSelectedToggle()).getAccessibleHelp();
                 }
             }
         });
@@ -131,14 +136,11 @@ public class NewGameView extends Parent {
         this.getChildren().add(borderpane);
     }
 
-    public Image getSelectedImage(){
-        return selectedCharacterImage;
-    }
+    public String getSelectedCharacterFilePath() {return selectedCharacterFilePath; }
 
     public String getSelectedName(){
         return nameInput.getText();
     }
-
 
     public void addBackToMainListener(EventHandler<ActionEvent> handlerForBackButton){
         backToMainButton.setOnAction(handlerForBackButton);
@@ -156,7 +158,7 @@ public class NewGameView extends Parent {
         return savedGamesTable.getSelectionModel().getSelectedItem();
     }
 
-    public void addStartGaneListener(EventHandler<ActionEvent> handlerForBackButton){
+    public void addStartGameListener(EventHandler<ActionEvent> handlerForBackButton){
         startGameButton.setOnAction(handlerForBackButton);
     }
 
@@ -176,21 +178,21 @@ public class NewGameView extends Parent {
                 String characterFileNamePath = "";
 
                 for (int j = 0; j < files.length; ++j) {
-                    if (files[j].getName().equals("TheMap.txt")) {
-                        lastPlayed = new Date (files[0].lastModified());
-                        mapFilePath = saveSlot + i + "TheMap.txt";
-                    } else if (files[j].getName().equals("TheCharacter.txt")) {
-                        characterFileNamePath = saveSlot + i + "TheCharacter.txt";
+                    if (files[j].getName().equals("DefaultMap.txt")) {
+                        lastPlayed = new Date (files[j].lastModified());
+                        mapFilePath = saveSlot + i + File.separator + files[j].getName();
+                    } else if (files[j].getName().equals("DefaultCharacter.txt")) {
+                        characterFileNamePath = saveSlot + i + File.separator + files[j].getName();
                     }
                 }
                 if (!mapFilePath.equals("") && !characterFileNamePath.equals("")) {
                     saves.add(new SaveFile("save " + i, lastPlayed.toString(), characterFileNamePath, mapFilePath));
                 } else {
-                    saves.add(new SaveFile("Empty", "0/0/0 00:00", "No File", "No File"));
+                    saves.add(new SaveFile("Empty", "0/0/0 00:00", "No File SaveSlot" + i, "No File SaveSlot" + i));
                 }
 
             } else {
-                saves.add(new SaveFile("Empty", "0/0/0 00:00", "No File", "No File"));
+                saves.add(new SaveFile("Empty", "0/0/0 00:00", "No File SaveSlot" + i, "No File SaveSlot" + i));
             }
         }
 

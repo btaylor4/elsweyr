@@ -30,8 +30,7 @@ public class GlobalGameplayController {
     }
 
     public class GlobalMovementListener implements EventHandler<KeyEvent> {
-
-        public boolean checkVaildMove(Point projectedMove) {
+        public boolean checkValidMove(Point projectedMove) {
             Point characterPosition = character.getGlobalPos();
             int xPositionChange = characterPosition.x + projectedMove.x;
             int yPositionChange = characterPosition.y + projectedMove.y;
@@ -46,7 +45,7 @@ public class GlobalGameplayController {
                 return true;
         }
 
-        public void updateCharacterPosition(String move) {
+        public boolean updateCharacterPosition(String move) {
             Point projectedMove;
 
             switch (move) {
@@ -84,22 +83,27 @@ public class GlobalGameplayController {
                     break;
 
                 default:
-                    projectedMove = new Point(0, 0);
+                    return false;
             }
+            //Sends the view the characters move.
+            view.updateMove(move);
 
-            if(checkVaildMove(projectedMove)) {
+
+            if(checkValidMove(projectedMove)) {
                 Point newPosition = new Point(character.getGlobalPos().x + projectedMove.x,
                         character.getGlobalPos().y + projectedMove.y);
                 character.updateGlobalPos(newPosition);
                 //Sends the character position to the view
                 view.updateCharacterPos(newPosition);
+                return true;
             }
 
+            return false;
         }
 
         public boolean checkForLocalLevel() {
             Point globalPos = character.getGlobalPos();
-            if(map.getGlobalMap()[globalPos.x][globalPos.y].getStartTile() != null)
+            if(map.getGlobalMap()[globalPos.x][globalPos.y].getHasLevel())
                 return true;
 
             else
@@ -110,16 +114,14 @@ public class GlobalGameplayController {
         public void handle(KeyEvent event) {
 
             String move = event.getCode().toString();
-
-            updateCharacterPosition(move);
-            if(checkForLocalLevel()) {
+            System.out.println(move);
+            if(updateCharacterPosition(move) && checkForLocalLevel()) {
                 System.out.println("Changing View To Local Level");
                 LocalGameplayView localGameplayView = new LocalGameplayView();
+                Scene globalScene = new Scene(localGameplayView, 500, 500);
                 LocalGameplayController localGameplayController = new LocalGameplayController(localGameplayView, character, map);
-
                 Stage window = (Stage)(((Scene)event.getSource()).getWindow());
-                Scene globalScene = new Scene(localGameplayView, 600, 500);
-
+                window.setTitle("Local Level");
                 window.setScene(globalScene);
             }
         }
@@ -145,10 +147,10 @@ public class GlobalGameplayController {
             System.out.println("Changing View To Global Level");
 
             LocalGameplayView localGameplayView = new LocalGameplayView();
+            Scene globalScene = new Scene(localGameplayView, 500, 500);
             LocalGameplayController localGameplayController = new LocalGameplayController(localGameplayView, character, map);
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-            Scene globalScene = new Scene(localGameplayView, 500, 500);
 
             window.setScene(globalScene);
         }

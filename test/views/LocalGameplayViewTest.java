@@ -14,39 +14,32 @@ import java.awt.*;
 
 import static org.junit.Assert.*;
 
+public class LocalGameplayViewTest extends ApplicationTest{
 
-public class GlobalGameplayViewTest extends ApplicationTest {
-
-
-    private GlobalGameplayView view;
+    private LocalGameplayView view;
     @Override
     public void start(Stage stage) throws Exception {
         Stage window = new Stage();
-        view = new GlobalGameplayView();
+        view = new LocalGameplayView();
         Scene localScene = new Scene(view, 500, 500);
         window.setScene(localScene);
         window.show();
+
 
     }
 
     @Test
     public void tryTest() throws InterruptedException {
 
-
-
-
-        Thread.sleep(1000);
-        view.updateMove("DOWN");
-        view.updateCharacterPos(new Point(16,15));
-        Thread.sleep(1000);
-        view.updateMove("LEFT");
-        view.updateCharacterPos(new Point(16,16));
-        Thread.sleep(1000);
-        view.updateMove("UP");
-        view.updateCharacterPos(new Point(15,16));
-        Thread.sleep(1000);
-        view.updateCharacterPos(new Point(15,15));
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
+        //view.updateCharacterPos(new Point(16,15));
+       // Thread.sleep(1000);
+        //view.updateCharacterPos(new Point(16,16));
+       // Thread.sleep(1000);
+        //view.updateCharacterPos(new Point(15,16));
+       // Thread.sleep(1000);
+       // view.updateCharacterPos(new Point(15,15));
+       // Thread.sleep(1000);
 
     }
 

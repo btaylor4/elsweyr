@@ -10,60 +10,57 @@ public class Write {
 
     private FileWriter characterSaveFile;
     private FileWriter mapSaveFile;
-    private String mapFileName;
-    private String characterFileName;
 
-    public String getMapFileName() {
-        return mapFileName;
-    }
-
-    public String getCharacterFileName() {
-        return characterFileName;
-    }
-
-    public void writeCharacterFile(String filePath, Character characterBeingSaved) throws IOException {
+    public void writeCharacterFile( Character characterBeingSaved, int selectedSaveSlot) throws IOException
+    {
         String newString = new String();
 
-        characterSaveFile = new FileWriter(filePath + "characterSaveFile");
+        characterSaveFile = new FileWriter("characterSaveFile.txt");
 
+        characterSaveFile.write(newString.format("%s%n", characterBeingSaved.getCharacterName()));
         characterSaveFile.write(newString.format("%d%n", characterBeingSaved.getBaseHP()));
-        characterSaveFile.write(newString.format("%d%n", characterBeingSaved.getCurrentHP()));
-        characterSaveFile.write(newString.format("%d%n", characterBeingSaved.getBonusHP()));
-        characterSaveFile.write(newString.format("%d%n", characterBeingSaved.getCurrExp()));
-        characterSaveFile.write(newString.format("%d%n", characterBeingSaved.getExpToNextLevel()));
-        characterSaveFile.write(newString.format("%d%n", characterBeingSaved.getLevel()));
-        if (characterBeingSaved.isOnLocal()) {
-            characterSaveFile.write(newString.format("%d%n", 1));
-        } else {
-            characterSaveFile.write(newString.format("%d%n", 0));
+        characterSaveFile.write(newString.format("%d%n",characterBeingSaved.getCurrentHP()));
+        characterSaveFile.write(newString.format("%d%n",characterBeingSaved.getBonusHP()));
+        characterSaveFile.write(newString.format("%d%n",characterBeingSaved.getCurrExp()));
+        characterSaveFile.write(newString.format("%d%n",characterBeingSaved.getExpToNextLevel()));
+        characterSaveFile.write(newString.format("%d%n",characterBeingSaved.getLevel()));
+        if(characterBeingSaved.isOnLocal()) {
+            characterSaveFile.write(newString.format("%d%n",1));
         }
-        characterSaveFile.write(newString.format("%d ", (int) characterBeingSaved.getLocalPos().getX()));
-        characterSaveFile.write(newString.format("%d%n", (int) characterBeingSaved.getLocalPos().getY()));
-        characterSaveFile.write(newString.format("%d ", (int) characterBeingSaved.getGlobalPos().getX()));
-        characterSaveFile.write(newString.format("%d%n", (int) characterBeingSaved.getGlobalPos().getY()));
+        else{
+            characterSaveFile.write(newString.format("%d%n",0));
+        }
+        characterSaveFile.write(newString.format("%d ",(int)characterBeingSaved.getLocalPos().getX()));
+        characterSaveFile.write(newString.format("%d%n",(int)characterBeingSaved.getLocalPos().getY()));
+        characterSaveFile.write(newString.format("%d ",(int)characterBeingSaved.getGlobalPos().getX()));
+        characterSaveFile.write(newString.format("%d%n",(int)characterBeingSaved.getGlobalPos().getY()));
         characterSaveFile.write(newString.format("%s%n", characterBeingSaved.getCharacterSpritePath()));
-        if (characterBeingSaved.getEquippedItem() == null) {
+        if(characterBeingSaved.getEquippedItem() == null)
+        {
             characterSaveFile.write(newString.format("Equipped N/A%n"));
-        } else {
-            characterSaveFile.write(newString.format("Equipped %s%n", characterBeingSaved.getEquippedItem().getName()));
         }
-        characterSaveFile.write(newString.format("%d%n", characterBeingSaved.getInventory().getMaxSize()));
-        characterSaveFile.write(newString.format("%d%n", characterBeingSaved.getInventory().getItems().size()));
+        else
+        {
+            characterSaveFile.write(newString.format("Equipped %s%n",characterBeingSaved.getEquippedItem().getName()));
 
-        ArrayList<String> itemNamesArrayList = characterBeingSaved.getInventory().getHashMapNameArray();
+        }
+        characterSaveFile.write(newString.format("%d%n",characterBeingSaved.getInventory().getMaxSize()));
+        characterSaveFile.write(newString.format("%d%n",characterBeingSaved.getInventory().getItems().size()));
 
-        for (int i = 0; i < characterBeingSaved.getInventory().getItems().size(); i++) {
-            String nameOfItem = itemNamesArrayList.get(i);
-            List<Item> temp = characterBeingSaved.getInventory().getItems().get(nameOfItem);
-            characterSaveFile.write(newString.format("%s %d%n", nameOfItem, temp.size()));
+        ArrayList<Item> items = characterBeingSaved.getInventory().getItems();
+
+        for(int i = 0; i < items.size(); i++)
+        {
+            characterSaveFile.write(newString.format("%s %d%n",items.get(i) ,1));
 
         }
 
 
         ArrayList<Buffs> characterBuffs = characterBeingSaved.getActiveBuffs();
-        characterSaveFile.write(newString.format("%d%n", characterBeingSaved.getActiveBuffs().size()));
+        characterSaveFile.write(newString.format("%d%n",characterBeingSaved.getActiveBuffs().size()));
 
-        for (Buffs buff : characterBuffs) {
+        for(Buffs buff : characterBuffs)
+        {
             characterSaveFile.write(newString.format("%s ", buff.getHealthEffect().getEffectType()));
             characterSaveFile.write(newString.format("%d ", buff.getHealthEffect().getTimeInterval()));
             characterSaveFile.write(newString.format("%d ", buff.getHealthEffect().getHealthChange()));
@@ -73,12 +70,10 @@ public class Write {
         characterSaveFile.close();
     }
 
-    public void writeMapFile(String filePath, GlobalLevel mapBeingSaved) throws IOException {
+    public void writeMapFile(GlobalLevel mapBeingSaved, int selectedSaveSlot) throws IOException
+    {
+        mapSaveFile = new FileWriter("mapSaveFile.txt");
         String newString = new String();
-
-        mapFileName = "mapSaveFile.txt";
-
-        mapSaveFile = new FileWriter(filePath + mapFileName);
 
         Zone[][] globalMap = mapBeingSaved.getGlobalMap();
 
@@ -87,37 +82,38 @@ public class Write {
         mapSaveFile.write(newString.format("%d%n", mapBeingSaved.getGameTime()));
 
 
-        for (int i = 0; i < globalMap.length; i++) {
-            for (int j = 0; j < globalMap[i].length; j++) {
-                System.out.println(i + " " + j);
+        for(int i = 0; i<globalMap.length; i++)
+        {
+            for(int j = 0; j<globalMap[i].length; j++)
+            {
                 //each zone
                 Zone zone = globalMap[i][j];
-
                 Tile[][] zoneLocalMap = zone.getLocalMap();
-
                 mapSaveFile.write(newString.format("%d %d%n", zoneLocalMap.length, zoneLocalMap[0].length));
-                mapSaveFile.write(newString.format("%d %d%n", (int) zone.getExitTile().getX(), (int) zone.getExitTile().getY()));
-                mapSaveFile.write(newString.format("%d %d%n", (int) zone.getStartTile().getX(), (int) zone.getStartTile().getY()));
+                mapSaveFile.write(newString.format("%d %d%n", (int)zone.getExitTile().getX(), (int)zone.getExitTile().getY()));
+                mapSaveFile.write(newString.format("%d %d%n", (int)zone.getStartTile().getX(), (int)zone.getStartTile().getY()));
                 mapSaveFile.write(newString.format("%s%n", zone.getZoneSpritePath()));
-                if (!zone.isPassable()) {
+                if(!zone.isPassable()) {
                     mapSaveFile.write(newString.format("%d%n", 0));
-                } else {
+                }
+                else {
                     mapSaveFile.write(newString.format("%d%n", 1));
                 }
 
-                for (int u = 0; u < zoneLocalMap.length; u++) {
-                    for (int h = 0; h < zoneLocalMap[u].length; h++) {
+                for(int u = 0; u<zoneLocalMap.length; u++)
+                {
+                    for(int h = 0; h<zoneLocalMap[u].length; h++)
+                    {
                         //each tile
                         Tile tile = zoneLocalMap[u][h];
                         int numberOfLinesForEachTile = 0;
-
-                        if (!tile.getAreaEffect().getEffectType().equals(EffectType.NONE)) {
+                        if(!tile.getAreaEffect().getEffectType().equals(EffectType.NONE)) {
                             numberOfLinesForEachTile++;
                         }
-                        if (!tile.getItem().getItemType().equals(ItemType.NONE)) {
+                        if(!tile.getItem().getItemType().equals(ItemType.NONE)) {
                             numberOfLinesForEachTile++;
                         }
-                        if (tile.getDecalSpritePath() != null) {
+                        if(tile.getDecalSpritePath() != null) {
                             numberOfLinesForEachTile++;
                         }
 
@@ -126,7 +122,7 @@ public class Write {
                         //AreaEffects
 
                         //new stuff
-                        if (!tile.getAreaEffect().getEffectType().equals(EffectType.NONE)) {
+                        if(!tile.getAreaEffect().getEffectType().equals(EffectType.NONE)) {
                             mapSaveFile.write(newString.format("Effect %s ", tile.getAreaEffect().getEffectType()));
                             if (tile.getAreaEffect().getEffectType().equals(EffectType.HEALTHEFFECT)) {
                                 HealthEffect tileEffect = (HealthEffect) tile.getAreaEffect();
@@ -140,7 +136,7 @@ public class Write {
                                 }
                             }
                         }
-                        if (!tile.getItem().getItemType().equals(ItemType.NONE)) {
+                        if(!tile.getItem().getItemType().equals(ItemType.NONE)) {
                             //Item
                             if (tile.getItem().getItemType().equals(ItemType.TAKEABLE)) {
                                 TakeableItem tileItem = (TakeableItem) tile.getItem();
@@ -156,7 +152,7 @@ public class Write {
                                 mapSaveFile.write(newString.format("Item ONESHOT %s %s%n", tileItem.getName(), tileItem.getItemSpritePath()));
                             }
                         }
-                        if (tile.getDecalSpritePath() != null) {
+                        if(tile.getDecalSpritePath() != null) {
                             mapSaveFile.write(newString.format("Decal %s%n", tile.getDecalSpritePath()));
 
                         }
