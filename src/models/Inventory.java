@@ -1,25 +1,22 @@
 package models;
 
-    import java.util.ArrayList;
-    import java.util.HashMap;
-    import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Inventory {
 
-    private HashMap<String, List<Item>> items;
+    private ArrayList<Item> items;
     private int maxSize;
-    private int hashMapSize;
-    private ArrayList<String> hashMapNameArray;
 
     Inventory(){
-        items = new HashMap<String, List<Item>>();
-        hashMapNameArray = new ArrayList<String>();
+        items = new ArrayList<Item>();
     }
 
-    public HashMap<String, List<Item>> getItems() {
+    public ArrayList<Item> getItems() {
         return items;
     }
 
-    public void setItems(HashMap<String, List<Item>> items) {
+    public void setItems(ArrayList<Item> items) {
         this.items = items;
     }
 
@@ -36,57 +33,13 @@ public class Inventory {
         if(items.size() == maxSize) // if number of item types < max then user can have infinite of one or more types?
             return false;
         else{
-            //Returns a list of the same items
-            List<Item> sameItem = items.get(item.getName());
-
-            /*
-            If the list is empty, i.e. there are none of this item in the inventory.
-            Therefore a list of that item is created and added to the inventory.
-            */
-            if(sameItem == null) {
-                List<Item> temp = new ArrayList<Item>();
-                temp.add(item);
-                items.put(item.getName(),temp);
-                hashMapNameArray.add(item.getName());
-            }
-            //There already exists a list of that item.
-            else{
-                sameItem.add(item);
-                items.put(item.getName(), sameItem); // no need to put, sameItem has reference to same list?
-            }
+            items.add(item);
         }
         return true;
-
-    }
-    public ArrayList<String> getHashMapNameArray()
-    {
-        return hashMapNameArray;
-    }
-    public void setHashMapSize()
-    {
-        hashMapSize = items.size();
-    }
-
-    public int getHashMapSize()
-    {
-        return hashMapSize;
     }
 
     public boolean removeItem(Item item) {
-        List<Item> sameItem = items.get(item.getName());
-        if(sameItem == null){
-            return false;
-        }
-        //The item is removed from the array list.
-        if(sameItem.size() > 1){
-            sameItem.remove(1);
-            return true;
-        }
-        //The list of the item is cleared and the itemlist is removed from the hashmap.
-        sameItem.clear();
-        items.remove(item.getName());
-        return true;
-
+        return items.remove(item);
     }
 
     public void updateCapactiy(int newMaxSize) {
@@ -94,7 +47,7 @@ public class Inventory {
     }
 
     public boolean hasItem(Item item){
-        return null != items.get(item.getName());
+        return items.contains(item);
     }
 
 }
