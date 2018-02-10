@@ -70,10 +70,11 @@ public class LocalGameplayController {
             if(localPos.getX() == localMap.getExitTile().getX() && localPos.getY() == localMap.getExitTile().getY() ){
 
                 GlobalGameplayView globalView = new GlobalGameplayView();
+                Scene scene = new Scene(globalView,500,500);
                 GlobalGameplayController globalGameplay = new GlobalGameplayController(globalView,character,globalMap);
                 Stage window = (Stage)(((Scene)event.getSource()).getWindow());
 
-                Scene scene = new Scene(globalView,500,500);
+
                 window.setScene(scene);
             }
 
@@ -186,6 +187,7 @@ public class LocalGameplayController {
 
             Point newCharacterPosition = new Point((int)characterPositionInMap.getX()+(int)moveDirection.getX(),(int)characterPositionInMap.getY()+(int)moveDirection.getY());
             character.updateLocalPos(newCharacterPosition);
+            System.out.println(character.getLocalPos());
 
         }
 
