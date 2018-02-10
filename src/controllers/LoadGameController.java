@@ -11,6 +11,7 @@ import models.ReadFiles;
 import models.SaveFile;
 import models.Character;
 import views.GlobalGameplayView;
+import views.LocalGameplayView;
 import views.MainMenuView;
 import views.LoadGameView;
 
@@ -26,7 +27,6 @@ public class LoadGameController {
         this.view.addLoadGameListener(new LoadGameController.loadGameHandler());
         this.view.addTableClickListener(new tableClickedEventHandler());
     }
-
 
 
 
@@ -52,7 +52,7 @@ public class LoadGameController {
     }
 
     class loadGameHandler implements EventHandler<ActionEvent> {
-    // TODO: Figure out whether to load into local gameplay or global gameplay,right now its just loading into global
+
         @Override
         public void handle(ActionEvent event) {
             SaveFile file = view.getSelectedFile();
@@ -64,19 +64,33 @@ public class LoadGameController {
             }
             catch(IOException e){
                 System.out.println("No game associated with this file name");
+                e.printStackTrace();
                 return;
             }
 
             System.out.println("Load into game Button");
-            GlobalGameplayView globalView = new GlobalGameplayView();
 
-            System.out.println("Loading... " + file.getPathToMapFile());
-            System.out.println("Loading... " + file.getPathToCharacterFile());
-            GlobalGameplayController globalController = new GlobalGameplayController(globalView,character,map);
-            Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            Scene globalScene = new Scene(globalView,500,500);
-            window.setTitle("Global Level");
-            window.setScene(globalScene);
+            if (character.isOnLocal()) {
+                LocalGameplayView localView = new LocalGameplayView();
+
+                System.out.println("Loading... " + file.getPathToMapFile());
+                System.out.println("Loading... " + file.getPathToCharacterFile());
+                LocalGameplayController localController = new LocalGameplayController(localView, character, map);
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Scene localScene = new Scene(localView, 500, 500);
+                window.setTitle("Local Level");
+                window.setScene(localScene);
+            } else {
+                GlobalGameplayView globalView = new GlobalGameplayView();
+
+                System.out.println("Loading... " + file.getPathToMapFile());
+                System.out.println("Loading... " + file.getPathToCharacterFile());
+                GlobalGameplayController globalController = new GlobalGameplayController(globalView, character, map);
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Scene globalScene = new Scene(globalView, 500, 500);
+                window.setTitle("Global Level");
+                window.setScene(globalScene);
+            }
         }
     }
 

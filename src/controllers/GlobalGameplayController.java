@@ -1,14 +1,13 @@
 package controllers;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import models.Character;
 import models.GlobalLevel;
-import models.Zone;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import views.GlobalGameplayView;
 import views.LocalGameplayView;
 

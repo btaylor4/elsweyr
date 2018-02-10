@@ -2,7 +2,6 @@ package models;
 
 import javafx.scene.image.Image;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
@@ -19,7 +18,7 @@ public abstract class Item {
 
     public void setItemSpritePath(String itemSpritePath)
     {
-        this.itemSpritePath = itemSpritePath + File.separator;
+        this.itemSpritePath = itemSpritePath;
     }
 
     public void createItemImage() throws FileNotFoundException

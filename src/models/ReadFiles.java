@@ -56,8 +56,8 @@ public class ReadFiles {
             currentZone.setStartTile(size);
 
             currentLine = reader.readLine();
-            Image image = new Image(new FileInputStream(IMAGE_PATH + currentLine));
-            currentZone.setZoneSprite(image);
+            currentZone.setZoneSpritePath(currentLine);
+            currentZone.createZoneImage();
 
             currentLine = reader.readLine();
             currentZone.setPassable(trueOrFalse(currentLine, gameFile));
@@ -69,11 +69,13 @@ public class ReadFiles {
 
                 line = reader.readLine().split(" ");
                 tile.setTerrain(getTerrain(line[0]));
-                tile.setTileSprite(new Image(new FileInputStream(IMAGE_PATH + line[0] + ".png")));
+                tile.setTileSpritePath(IMAGE_PATH + line[0] + ".png");
+                tile.createTileImage();
 
                 int tileAttributes = Integer.parseInt(line[1]);
                 for (int k = 0; k < tileAttributes; ++k) {
                     line = reader.readLine().split(" ");
+                    System.out.println();
                     setUpTile(tile, line, gameFile);
                 }
 
@@ -102,6 +104,10 @@ public class ReadFiles {
         reader = new BufferedReader(inStream);
 
         Character loadedCharacter = new Character();
+
+        //character name
+        currentLine = reader.readLine();
+        loadedCharacter.setCharacterName(currentLine);
 
         //base hp
         currentLine = reader.readLine();
@@ -222,31 +228,35 @@ public class ReadFiles {
         } else if (line[0].equals("Item")) {
             if (line[1].equals(ItemType.TAKEABLE.name())) {
                 TakeableItem TI = new TakeableItem();
-                TI.setName(getID(line, 2));
-                TI.setItemSprite(new Image(new FileInputStream(IMAGE_PATH + "Takeable.png")));
+                TI.setName(getID(line, 2, line.length - 1));
+                TI.setItemSpritePath(line[line.length - 1]);
+                TI.createItemImage();
                 tile.setItem(TI);
             } else if (line[1].equals(ItemType.OBSTACLE.name())) {
                 ObstacleItem OI = new ObstacleItem();
-                OI.setName(getID(line, 2));
-                OI.setItemSprite(new Image(new FileInputStream(IMAGE_PATH + "Obstacle.png")));
+                OI.setName(getID(line, 2, line.length - 1));
+                OI.setItemSpritePath(line[line.length - 1]);
+                OI.createItemImage();
                 tile.setItem(OI);
             } else if (line[1].equals(ItemType.ONESHOT.name())) {
                 OneShotItem OSI = new OneShotItem();
-                OSI.setName(getID(line, 2));
-                OSI.setItemSprite(new Image(new FileInputStream(IMAGE_PATH + "OneShot.png")));
+                OSI.setName(getID(line, 2, line.length - 1));
+                OSI.setItemSpritePath(line[line.length - 1]);
+                OSI.createItemImage();
                 tile.setItem(OSI);
             } else if (line[1].equals(ItemType.INTERACTIVE.name())) {
                 InteractiveItem II = new InteractiveItem();
-                II.setName(getID(line, 2));
-                II.setItemSprite(new Image(new FileInputStream(IMAGE_PATH + "Interactive.png")));
+                II.setName(getID(line, 2, line.length - 1));
+                II.setItemSpritePath(line[line.length - 1]);
+                II.createItemImage();
                 tile.setItem(II);
             } else {
                 System.out.println("Improper Item Property @ " + gameFile + "should be Obstacle, Interactive, OneShot, or Takeable");
                 assert false;
             }
         } else if (line[0].equals("Decal")) {
-            Image decal = new Image(new FileInputStream(IMAGE_PATH + line[1]));
-            tile.setDecal(decal);
+            tile.setDecalSpritePath(line[1]);
+            tile.createDecalImage();
         } else {
             System.out.println("Improper Tile Property @ " + gameFile + "should be Effect, Item, or Decal");
             assert false;
@@ -278,7 +288,7 @@ public class ReadFiles {
         String realID = "";
 
         for (int i = startPos; i < id.length && i < endPos; ++i) {
-            if (i != id.length - 1) {
+            if (i != id.length - 1 && i != endPos - 1) {
                 realID += id[i] + " ";
             } else {
                 realID += id[i];
