@@ -64,7 +64,6 @@ public class LoadGameController {
             }
             catch(IOException e){
                 System.out.println("No game associated with this file name");
-                e.printStackTrace();
                 return;
             }
 
@@ -72,22 +71,20 @@ public class LoadGameController {
 
             if (character.isOnLocal()) {
                 LocalGameplayView localView = new LocalGameplayView();
-
+                Scene localScene = new Scene(localView, 500, 500);
                 System.out.println("Loading... " + file.getPathToMapFile());
                 System.out.println("Loading... " + file.getPathToCharacterFile());
                 LocalGameplayController localController = new LocalGameplayController(localView, character, map);
                 Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                Scene localScene = new Scene(localView, 500, 500);
                 window.setTitle("Local Level");
                 window.setScene(localScene);
             } else {
                 GlobalGameplayView globalView = new GlobalGameplayView();
-
+                Scene globalScene = new Scene(globalView, 500, 500);
                 System.out.println("Loading... " + file.getPathToMapFile());
                 System.out.println("Loading... " + file.getPathToCharacterFile());
                 GlobalGameplayController globalController = new GlobalGameplayController(globalView, character, map);
                 Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                Scene globalScene = new Scene(globalView, 500, 500);
                 window.setTitle("Global Level");
                 window.setScene(globalScene);
             }

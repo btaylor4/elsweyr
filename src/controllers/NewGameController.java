@@ -71,11 +71,9 @@ public class NewGameController {
 
             System.out.println("Go to global gameplay");
             GlobalGameplayView globalView = new GlobalGameplayView();
-            GlobalGameplayController globalController = new GlobalGameplayController(globalView,character,global);
-
-            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
             Scene globalScene = new Scene(globalView, 500, 500);
-
+            GlobalGameplayController globalController = new GlobalGameplayController(globalView,character,global);
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
             window.setScene(globalScene);
 
         }

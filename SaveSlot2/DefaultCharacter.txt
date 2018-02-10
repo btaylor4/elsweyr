@@ -8,7 +8,7 @@ Bob
 0
 0 0
 0 0
-PlaceHolderForImages\Character.png
+PlaceHolderForImages/Character.png
 Equipped NONE
 5
 0

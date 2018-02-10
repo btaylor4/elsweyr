@@ -87,7 +87,7 @@ public class TestHealthEffect {
         healthEffect.setTimeInterval(500);
         healthEffect.setHealthChange(-1);
         healthEffect.applyEffect(character);
-        Thread.sleep(490);
+        Thread.sleep(480);
         healthEffect.stopTimer();
 
         Thread.sleep(2000);
