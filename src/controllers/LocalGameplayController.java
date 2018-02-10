@@ -1,22 +1,18 @@
 package controllers;
 
-import javafx.fxml.FXMLLoader;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
-import models.*;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import models.Character;
-import models.GlobalLevel;
-import models.Zone;
+import models.*;
 import views.GlobalGameplayView;
+import views.InGameMenuView;
 import views.LocalGameplayView;
 
 import java.awt.*;
-import java.io.IOException;
 
 
 public class LocalGameplayController {
@@ -89,8 +85,14 @@ public class LocalGameplayController {
 
         @Override
         public void handle(ActionEvent event) {
-            //Do Menu stuff
-            //switch into in-game menu
+            // go to in gmae menu
+            InGameMenuView inGameMenuView = new InGameMenuView();
+            InGameMenuController inGameController = new InGameMenuController(inGameMenuView, character, globalMap);
+
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene globalScene = new Scene(inGameMenuView, 500, 500);
+
+            window.setScene(globalScene);
             System.out.println("menu Buttonstuff");
         }
     }
@@ -197,7 +199,6 @@ public class LocalGameplayController {
     void interactWithAreaEffects(Character character, Zone localMap){
         //TODO: implement similiar way as above method
     }
-
 
 
     class ChangeToGlobalHandler implements EventHandler<ActionEvent> {

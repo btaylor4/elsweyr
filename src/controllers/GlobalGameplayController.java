@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import models.Character;
 import models.GlobalLevel;
 import views.GlobalGameplayView;
+import views.InGameMenuView;
 import views.LocalGameplayView;
 
 import java.awt.*;
@@ -129,8 +130,14 @@ public class GlobalGameplayController {
 
         @Override
         public void handle(ActionEvent event) {
-            //Do Menu stuff
-            //switch into in-game menu
+            // go to in game menu
+            InGameMenuView inGameMenuView = new InGameMenuView();
+            InGameMenuController inGameController = new InGameMenuController(inGameMenuView, character, map);
+
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene globalScene = new Scene(inGameMenuView, 500, 500);
+
+            window.setScene(globalScene);
             System.out.println("menu Buttonstuff");
         }
     }

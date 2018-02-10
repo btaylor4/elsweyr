@@ -57,11 +57,6 @@ public class NewGameController {
 
     }
 
-
-
-
-
-
     class tableClickedEventHandler implements EventHandler<MouseEvent> {
 
         @Override

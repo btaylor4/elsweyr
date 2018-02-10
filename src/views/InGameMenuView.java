@@ -44,4 +44,5 @@ public class InGameMenuView extends Parent {
     public void addExitListener(EventHandler<ActionEvent> handlerForExitButton){
         exitGameButton.setOnAction(handlerForExitButton);
     }
+
 }
