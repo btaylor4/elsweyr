@@ -85,6 +85,7 @@ public class GlobalGameplayController {
 
                 default:
                     projectedMove = new Point(0, 0);
+
             }
 
             if(checkVaildMove(projectedMove)) {
