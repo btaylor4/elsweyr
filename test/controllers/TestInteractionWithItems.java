@@ -84,9 +84,6 @@ public class TestInteractionWithItems extends ApplicationTest {
         item = new TakeableItem();
         item.setName("sword");
 
-        character.setBaseHP(200);
-        character.setCurrentHP(200);
-        character.setTotalHP(200);
         character.setInventory(inventory);
 
         character.updateGlobalPos(new Point(0,0));
@@ -103,5 +100,37 @@ public class TestInteractionWithItems extends ApplicationTest {
         movementHandler.handle(event);
         assertTrue(character.getInventory().hasItem(item));
         assertTrue(character.getInventory().getItems().contains(item));
+    }
+
+    @Test
+    public void testInteractiveItemIsAddedAfterMove() throws InterruptedException {
+        HealthEffect effect = new HealthEffect();
+        effect.setEffectType(EffectType.NONE);
+
+        Inventory inventory = new Inventory();
+        inventory.setMaxSize(10);
+
+        Door lockedDoor = new Door();
+        lockedDoor.setName("door");
+
+        item = new TakeableItem();
+        item.setName("key");
+
+        character.setInventory(inventory);
+        character.getInventory().addItem(item);
+
+        character.updateGlobalPos(new Point(0,0));
+        character.updateLocalPos(new Point(0,0));
+        zones[0][0].getLocalMap()[0][1].setItem(lockedDoor);
+        zones[0][0].getLocalMap()[0][1].setEffectType(effect);
+
+        controller = new LocalGameplayController(localview, character, globalLevel);
+        movementHandler = controller.new MovementHandler();
+
+        KeyEvent event = new KeyEvent(KeyEvent.KEY_PRESSED, "", "", KeyCode.RIGHT, false,
+                false,false,false);
+
+        movementHandler.handle(event);
+        assertTrue(lockedDoor.isDoorOpen());
     }
 }
