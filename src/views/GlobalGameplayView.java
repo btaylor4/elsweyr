@@ -40,6 +40,9 @@ public class GlobalGameplayView extends Parent {   //
     private int globalMapSize;
     //Displays the position of the character
     private String characterDirection;
+    private String OS;
+    private static StringBuffer path = new StringBuffer("file:PlaceHolderForImages");
+
     Group root = new Group();
     Scene localScene = new Scene(root,800,800);
 
@@ -63,7 +66,13 @@ public class GlobalGameplayView extends Parent {   //
         GlobalDisplay gd = new GlobalDisplay(this);
         gd.intializeMap();
 
+        OS = System.getProperty("os.name");
+        if(!OS.contains("Windows") && !OS.contains("windows")) {
+            path.append("\\");
+        }
 
+        else
+            path.append("/");
 
         //TODO: Remove the hardcoding of the characters, and tiles width and height
         //TODO: Animate Character Movement along with the direction the character is facing
@@ -73,17 +82,17 @@ public class GlobalGameplayView extends Parent {   //
     //Creates ImageViews for the character and map tiles.
     public void initializeSprites(){
 
-        updateCharacterImageView("file:PlaceHolderForImages/Character_Front.png");
+        updateCharacterImageView(path + "Character_Front.png");
 
         for(int i = 0; i < globalMapSize; i++) {
             for (int j = 0; j < globalMapSize; j++) {
                 int temp = (int)(Math.random() * 3);
                 if(temp == 2)
-                    tileSprites[i][j] = new Image("file:PlaceHolderForImages/Water.png",100.,100., true,true);
+                    tileSprites[i][j] = new Image(path + "Water.png",100.,100., true,true);
                 else if( temp == 1 )
-                    tileSprites[i][j] = new Image("file:PlaceHolderForImages/GRASS.png",100.,100., true,true);
+                    tileSprites[i][j] = new Image(path + "GRASS.png",100.,100., true,true);
                 else
-                    tileSprites[i][j] = new Image("file:PlaceHolderForImages/MOUNTAIN.png",100.,100., true,true);
+                    tileSprites[i][j] = new Image(path + "MOUNTAIN.png",100.,100., true,true);
             }
         }
 
@@ -136,15 +145,15 @@ public class GlobalGameplayView extends Parent {   //
     private void updateCharacterImageView(){
         switch(characterDirection){
             case "UP": // 8
-                updateCharacterImageView("file:PlaceHolderForImages/Character_Back.png");
+                updateCharacterImageView(path + "Character_Back.png");
                 break;
 
             case "DOWN": // 2
-                updateCharacterImageView("file:PlaceHolderForImages/Character_Front.png");
+                updateCharacterImageView(path + "Character_Front.png");
                 break;
 
             case "LEFT": // 4
-                updateCharacterImageView("file:PlaceHolderForImages/Character_East.png");
+                updateCharacterImageView(path + "Character_East.png");
                 break;
 
             case "RIGHT": //6
@@ -156,7 +165,7 @@ public class GlobalGameplayView extends Parent {   //
                 break;
 
             case "PAGE_DOWN":  // DOWN_RIGHT
-                updateCharacterImageView("file:PlaceHolderForImages/Character_South_East.png");
+                updateCharacterImageView(path + "Character_South_East.png");
                 break;
 
             case "HOME":  // UP_LEFT
