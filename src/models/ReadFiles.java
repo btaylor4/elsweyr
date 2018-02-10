@@ -17,7 +17,7 @@ public class ReadFiles {
         int currentNum;
         FileReader inStream;
         BufferedReader reader;
-        Zone [][] local;
+        Zone [][] global;
         Tile [][] tiles;
         Point size;
 
@@ -27,62 +27,80 @@ public class ReadFiles {
         currentLine = reader.readLine();
         size = getMatrixSize(currentLine.split(" "));
 
-        local = new Zone[size.x][size.y];
+        global = new Zone[size.x][size.y];
 
         currentLine = reader.readLine();
         currentNum = Integer.parseInt(currentLine);
 
         // build map structure
         GlobalLevel loadedMap = new GlobalLevel();
-        loadedMap.setGlobalMap(local);
+        loadedMap.setGlobalMap(global);
         loadedMap.setGameTime(currentNum);
 
         // build zones
-        int i = 0;
-        while (i < size.x * size.y) {
-            Zone currentZone = new Zone();
-
-            currentLine = reader.readLine();
-            size = getMatrixSize(currentLine.split(" "));
-            tiles = new Tile[size.x][size.y];
-            currentZone.setLocalMap(tiles);
-
-            currentLine = reader.readLine();
-            size = getMatrixSize(currentLine.split(" "));
-            currentZone.setExitTile(size);
-
-            currentLine = reader.readLine();
-            size = getMatrixSize(currentLine.split(" "));
-            currentZone.setStartTile(size);
-
-            currentLine = reader.readLine();
-            Image image = new Image(new FileInputStream(IMAGE_PATH + currentLine));
-            currentZone.setZoneSprite(image);
-
-            currentLine = reader.readLine();
-            currentZone.setPassable(trueOrFalse(currentLine, gameFile));
-
-            int j = 0;
-            while (j < local.length * local[0].length) {
-                Tile tile = new Tile();
-                String [] line;
-
-                line = reader.readLine().split(" ");
-                tile.setTerrain(getTerrain(line[0]));
-                tile.setTileSprite(new Image(new FileInputStream(IMAGE_PATH + line[0] + ".png")));
-
-                int tileAttributes = Integer.parseInt(line[1]);
-                for (int k = 0; k < tileAttributes; ++k) {
-                    line = reader.readLine().split(" ");
-                    setUpTile(tile, line, gameFile);
+        for(int globRow = 0; globRow < global.length; globRow++) {
+            for(int globCol = 0; globCol < global[0].length; globCol++) {
+                Zone currentZone = new Zone();
+                currentLine = reader.readLine();
+                size = getMatrixSize(currentLine.split(" "));
+                tiles = new Tile[size.x][size.y];
+                System.out.println("tiles is " + size.x + ", " + size.y);
+                currentZone.setLocalMap(tiles);
+                currentZone.setHasLevel(true);
+                if (size.x == 0 && size.y == 0) {
+                    currentZone.setHasLevel(false);
                 }
 
-                tiles[j / tiles.length][j % tiles[0].length] = tile;
-                ++j;
-            }
+                currentLine = reader.readLine();
+                size = getMatrixSize(currentLine.split(" "));
+                System.out.println("exit tile is " + size.x + ", " + size.y);
+                currentZone.setExitTile(size);
 
-            local[i / local.length][i % local[0].length] = currentZone;
-            ++i;
+                currentLine = reader.readLine();
+                size = getMatrixSize(currentLine.split(" "));
+                System.out.println("start tile is " + size.x + ", " + size.y);
+                currentZone.setStartTile(size);
+
+                currentLine = reader.readLine();
+                currentZone.setZoneSpritePath(currentLine);
+                System.out.println("sprite path is " + currentLine);
+                currentZone.createZoneImage();
+
+                currentLine = reader.readLine();
+                currentZone.setPassable(trueOrFalse(currentLine, gameFile));
+                System.out.println("passable is " + currentLine);
+
+                if(currentZone.getHasLevel()) {
+                    for (int locRow = 0; locRow < tiles.length; locRow++) {
+                        for (int locCol = 0; locCol < tiles[0].length; locCol++) {
+                            Tile tile = new Tile();
+                            String[] line;
+
+                            line = reader.readLine().split(" ");
+                            tile.setTerrain(getTerrain(line[0]));
+                            tile.setTileSpritePath(IMAGE_PATH + line[0] + ".png");
+                            tile.createTileImage();
+
+                            int tileAttributes = Integer.parseInt(line[1]);
+                            for (int k = 0; k < tileAttributes; ++k) {
+                                line = reader.readLine().split(" ");
+                                System.out.println();
+                                setUpTile(tile, line, gameFile);
+                            }
+
+                            if (tile.getItem() == null) {
+                                tile.setItem(new NoneItem());
+                            }
+                            if (tile.getAreaEffect() == null) {
+                                tile.setEffectType(new NoneEffect());
+                            }
+
+                            tiles[locRow][locCol] = tile;
+                        }
+                    }
+                }
+                global[globRow][globCol] = currentZone;
+            }
         }
 
         reader.close();
@@ -102,6 +120,10 @@ public class ReadFiles {
         reader = new BufferedReader(inStream);
 
         Character loadedCharacter = new Character();
+
+        //character name
+        currentLine = reader.readLine();
+        loadedCharacter.setCharacterName(currentLine);
 
         //base hp
         currentLine = reader.readLine();
@@ -222,42 +244,41 @@ public class ReadFiles {
         } else if (line[0].equals("Item")) {
             if (line[1].equals(ItemType.TAKEABLE.name())) {
                 TakeableItem TI = new TakeableItem();
-                TI.setName(getID(line, 2));
-                TI.setItemSprite(new Image(new FileInputStream(IMAGE_PATH + "Takeable.png")));
+                TI.setName(getID(line, 2, line.length - 1));
+                TI.setItemSpritePath(line[line.length - 1]);
+                TI.createItemImage();
                 tile.setItem(TI);
             } else if (line[1].equals(ItemType.OBSTACLE.name())) {
                 ObstacleItem OI = new ObstacleItem();
-                OI.setName(getID(line, 2));
-                OI.setItemSprite(new Image(new FileInputStream(IMAGE_PATH + "Obstacle.png")));
+                OI.setName(getID(line, 2, line.length - 1));
+                OI.setItemSpritePath(line[line.length - 1]);
+                OI.createItemImage();
                 tile.setItem(OI);
             } else if (line[1].equals(ItemType.ONESHOT.name())) {
                 OneShotItem OSI = new OneShotItem();
-                OSI.setName(getID(line, 2));
-                OSI.setItemSprite(new Image(new FileInputStream(IMAGE_PATH + "OneShot.png")));
+                OSI.setName(getID(line, 2, line.length - 1));
+                OSI.setItemSpritePath(line[line.length - 1]);
+                OSI.createItemImage();
                 tile.setItem(OSI);
             } else if (line[1].equals(ItemType.INTERACTIVE.name())) {
                 InteractiveItem II = new InteractiveItem();
-                II.setName(getID(line, 2));
-                II.setItemSprite(new Image(new FileInputStream(IMAGE_PATH + "Interactive.png")));
+                II.setName(getID(line, 2, line.length - 1));
+                II.setItemSpritePath(line[line.length - 1]);
+                II.createItemImage();
                 tile.setItem(II);
             } else {
                 System.out.println("Improper Item Property @ " + gameFile + "should be Obstacle, Interactive, OneShot, or Takeable");
                 assert false;
             }
         } else if (line[0].equals("Decal")) {
-            Image decal = new Image(new FileInputStream(IMAGE_PATH + line[1]));
-            tile.setDecal(decal);
+            tile.setDecalSpritePath(line[1]);
+            tile.createDecalImage();
         } else {
             System.out.println("Improper Tile Property @ " + gameFile + "should be Effect, Item, or Decal");
             assert false;
         }
 
-        if (tile.getItem() == null) {
-            tile.setItem(new NoneItem());
-        }
-        if (tile.getAreaEffect() == null) {
-            tile.setEffectType(new NoneEffect());
-        }
+
     }
 
     private static String getID(String [] id, int startPos) {
@@ -278,7 +299,7 @@ public class ReadFiles {
         String realID = "";
 
         for (int i = startPos; i < id.length && i < endPos; ++i) {
-            if (i != id.length - 1) {
+            if (i != id.length - 1 && i != endPos - 1) {
                 realID += id[i] + " ";
             } else {
                 realID += id[i];

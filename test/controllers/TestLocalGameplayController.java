@@ -7,10 +7,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import models.*;
 import models.Character;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
+import org.testfx.api.FxRobot;
 import org.testfx.api.FxToolkit;
 import org.testfx.framework.junit.ApplicationTest;
 import views.GlobalGameplayView;
@@ -25,10 +23,7 @@ import static org.junit.Assert.assertEquals;
 
 public class TestLocalGameplayController extends ApplicationTest {
 
-    private GlobalGameplayController.GlobalMovementListener movementHandler;
     private LocalGameplayController.MovementHandler localMovementHandler;
-
-    private GlobalGameplayController controller;
     private LocalGameplayController localController;
 
     private GlobalGameplayView globalView;
@@ -79,13 +74,15 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character playerCharacter = new Character();
         Zone localLevel = new Zone();
 
+        localScene = new Scene(localView, 500, 500);
+        primaryWindow.setScene(localScene);
+
         GlobalLevel global = new GlobalLevel();
+
 
         LocalGameplayController localGameplayController = new LocalGameplayController(localView, playerCharacter, global);
 
 
-        localScene = new Scene(localView, 500, 500);
-        primaryWindow.setScene(localScene);
         primaryWindow.show();
     }
 
@@ -662,6 +659,28 @@ public class TestLocalGameplayController extends ApplicationTest {
         assertEquals(expected.x, character.getLocalPos().x);
         assertEquals(expected.y, character.getLocalPos().y);
 
+    }
+
+    @Ignore
+    public void testSceneSwapWhenTileIsExitTile() {
+        //Set an obstacle that character can't move on
+        globalLevel.getGlobalMap()[0][0].setExitTile(new Point(4,4));
+        globalLevel.getGlobalMap()[0][0].getLocalMap()[4][4].setTerrain(Terrain.GRASS);
+        Point expected = new Point(4,4);
+        Character character = new Character();
+        character.updateGlobalPos(new Point(0,0));
+        character.updateLocalPos(new Point(4,3));
+
+        localController = new LocalGameplayController(localView,character,globalLevel);
+
+        localMovementHandler = localController.new MovementHandler();
+
+        KeyEvent event = new KeyEvent(KeyEvent.KEY_PRESSED, "", "", KeyCode.RIGHT, false,
+                false,false,false);
+
+        localScene.setOnKeyPressed(localController.new MovementHandler());
+        FxRobot robot = new FxRobot();
+        robot.press(KeyCode.RIGHT);
     }
 
     @After

@@ -15,6 +15,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import models.SaveFile;
 
+import java.io.File;
+import java.util.Date;
+
 
 public class LoadGameView extends Parent {   //
 
@@ -24,15 +27,12 @@ public class LoadGameView extends Parent {   //
     private Button loadButton = new Button("Load Selected Game");
     private TableView<SaveFile> savedGamesTable = new TableView<>();
     Group root = new Group();
-    private ObservableList<SaveFile> saves =
-        FXCollections.observableArrayList(
-            new SaveFile("dummyFile", "2018/12/5 12:00","TheCharacter.txt", "TheMap.txt"),
-            new SaveFile("otherDummyFile", "2017/12/3-12:00)","TheCharacter.txt", "TheMap.txt"),
-            new SaveFile("anotherDummyFile", "1999/12/31-12:00","SomeCharacterFile", "SomeMapFile")
-        );
+    private ObservableList<SaveFile> saves = FXCollections.observableArrayList();
 
     public LoadGameView(){
         //TODO: Check files and find any loaded games and add them to a dropdown menu
+        setUpSaves();
+
         GridPane grid = new GridPane();
         grid.setVgap(10);
         grid.setHgap(10);
@@ -46,7 +46,7 @@ public class LoadGameView extends Parent {   //
 
         //Setting up the table view for the saved games
         savedGamesTable.setEditable(false);
-        savedGamesTable.setMinWidth(400);
+        savedGamesTable.setMinWidth(450);
 
         TableColumn savedGameNames = new TableColumn("Saves");
         savedGameNames.setCellValueFactory( new PropertyValueFactory<>("fileName"));
@@ -59,7 +59,7 @@ public class LoadGameView extends Parent {   //
 
         savedGamesTable.setItems(saves);
         savedGamesTable.getSelectionModel().selectFirst();
-        savedGamesTable.getColumns().addAll(savedGameNames, lastPlayedDate,pathToFile);
+        savedGamesTable.getColumns().addAll(savedGameNames, lastPlayedDate, pathToFile);
 
         grid.add(savedGamesTable,4,0);
         this.getChildren().add(grid);
@@ -82,11 +82,47 @@ public class LoadGameView extends Parent {   //
         return savedGamesTable.getSelectionModel().getSelectedItem();
     }
 
-
     public void addLoadGameListener(EventHandler<ActionEvent> handlerForLoadGame){
         loadButton.setOnAction(handlerForLoadGame);
     }
 
+    private void setUpSaves() {
+        File folder;
+        File [] files;
+        String saveSlot = "SaveSlot";
+
+        for (int i = 1; i < 4; ++i) {
+            folder = new File (saveSlot + i + File.separator);
+            files = folder.listFiles();
+
+            System.out.println(files.length);
+            if (files != null && files.length > 1) {
+                Date lastPlayed = new Date(0);
+                String mapFilePath = "";
+                String characterFileNamePath = "";
+
+                for (int j = 0; j < files.length; ++j) {
+                    if (files[j].getName().equals("DefaultMap.txt")) {
+                        lastPlayed = new Date (files[j].lastModified());
+                        mapFilePath = saveSlot + i + File.separator + files[j].getName();
+                    } else if (files[j].getName().equals("DefaultCharacter.txt")) {
+                        characterFileNamePath = saveSlot + i + File.separator + files[j].getName();
+                    }
+                }
+
+                if (!mapFilePath.equals("") && !characterFileNamePath.equals("")) {
+                    saves.add(new SaveFile("save " + i, lastPlayed.toString(), characterFileNamePath, mapFilePath));
+                } else {
+                    saves.add(new SaveFile("Empty", "0/0/0 00:00", "No File SaveSlot" + i, "No File SaveSlot" + i));
+                }
+
+            } else {
+                saves.add(new SaveFile("Empty", "0/0/0 00:00", "No File SaveSlot" + i, "No File SaveSlot" + i));
+            }
+        }
+
+
+    }
 
 
 }
