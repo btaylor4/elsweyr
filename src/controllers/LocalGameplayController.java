@@ -64,8 +64,20 @@ public class LocalGameplayController {
             //CHECK IF THERE IS AN ITEM IN TILE, IF IT'S INTERACTIVE ACTIVATE IT
             //IF IT'S TAKEABLE TAKE IT
 
-            if(localMap.getLocalMap()[(int)localPos.getX()][(int)localPos.getY()].getItem() != null)
-                localMap.getLocalMap()[(int)localPos.getX()][(int)localPos.getY()].getItem().onTouchAction(character);
+            if(localMap.getLocalMap()[(int)localPos.getX()][(int)localPos.getY()].getItem() != null) {
+                Tile tile = localMap.getLocalMap()[(int) localPos.getX()][(int) localPos.getY()];
+                Item itemOnTile = tile.getItem();
+                boolean shouldBeRemoved = itemOnTile.onTouchAction(character);
+                switch (itemOnTile.getItemType()) {
+                    case TAKEABLE:
+                        if (shouldBeRemoved)
+                            tile.removeItem();
+                        break;
+                    case ONESHOT:
+                        tile.removeItem();
+                        break;
+                }
+            }
 
 
             //CHECK IF THERE'S AN EXIT TILE
