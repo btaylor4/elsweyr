@@ -14,8 +14,8 @@ import views.LocalGameplayView;
 import java.awt.*;
 
 import static junit.framework.TestCase.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 /**
  * Created by Bryan on 2/6/18.
