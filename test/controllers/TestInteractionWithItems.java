@@ -102,6 +102,6 @@ public class TestInteractionWithItems extends ApplicationTest {
 
         movementHandler.handle(event);
         assertTrue(character.getInventory().hasItem(item));
-        assertTrue(character.getInventory().getItems().containsKey(item.getName()));
+        assertTrue(character.getInventory().getItems().contains(item));
     }
 }
