@@ -41,8 +41,7 @@ public class GlobalGameplayView extends Parent {   //
     private int globalMapWidth;
     //Displays the position of the character
     private String characterDirection;
-    private String OS;
-    private static StringBuffer path = new StringBuffer("file:PlaceHolderForImages/");
+    private StringBuffer path = new StringBuffer("file:PlaceHolderForImages/");
 
     Group root = new Group();
     Scene localScene = new Scene(root,800,800);

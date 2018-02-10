@@ -44,6 +44,7 @@ public class LocalGameplayView extends Parent {   //
 
     private Point localCharacterPos;
     private Point localCharacterPrevPos;
+    private StringBuffer path = new StringBuffer("file:PlaceHolderForImages/");
 
     Group root = new Group();
     Scene localScene = new Scene(root,800,800);
@@ -101,7 +102,7 @@ public class LocalGameplayView extends Parent {   //
 
         double characterHeight = 30;
         double characterWidth = 30;
-        characterSprite = new Image("file:PlaceHolderForImage/Character.png");
+        characterSprite = new Image(path + "Character.png");
         characterImageView = new ImageView(characterSprite);
         characterImageView.setFitHeight(characterHeight);
         characterImageView.setFitWidth(characterWidth);
@@ -117,11 +118,11 @@ public class LocalGameplayView extends Parent {   //
             for (int j = 0; j < localMapSize; j++) {
                 int temp = (int) (Math.random() * 3);
                 if (temp == 2)
-                    tileSprites[i][j] = new Image("file:PlaceHolderForImages/Water.png", 100., 100., true, true);
+                    tileSprites[i][j] = new Image(path +"WATER.png", 100., 100., true, true);
                 else if (temp == 1)
-                    tileSprites[i][j] = new Image("file:PlaceHolderForImages/GRASS.png", 100., 100., true, true);
+                    tileSprites[i][j] = new Image(path+"GRASS.png", 100., 100., true, true);
                 else
-                    tileSprites[i][j] = new Image("file:PlaceHolderForImages/MOUNTAIN.png", 100., 100., true, true);
+                    tileSprites[i][j] = new Image(path+"MOUNTAIN.png", 100., 100., true, true);
             }
 
         //Creates imageViews of each tile
@@ -147,7 +148,7 @@ public class LocalGameplayView extends Parent {   //
         for(int i = 0; i < localMapSize; i++)
             for(int j = 0; j < localMapSize; j++){
                 if(Math.random() > .8)
-                    itemSprites[i][j] = new Image("file:PlaceHolderForImages/Takeable.png");
+                    itemSprites[i][j] = new Image(path+"Takeable.png");
 
             }
 
@@ -174,7 +175,7 @@ public class LocalGameplayView extends Parent {   //
         for(int i = 0; i < localMapSize; i++)
             for(int j = 0; j < localMapSize; j++){
                 if(Math.random() > .8)
-                    decalSprites[i][j] = new Image("file:PlaceHolderForImages/Death.png");
+                    decalSprites[i][j] = new Image(path+"Death.png");
 
             }
 
