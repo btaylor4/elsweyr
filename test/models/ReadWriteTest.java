@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class ReadWriteTest {
 
     private static final String IMAGE_PATH = "PlaceHolderForImages" + File.separator;
+    private static final String FILE_PATH = "SaveSlot" + File.separator;
 
     private static GlobalLevel actualMap;
     private static  Character actualChar;
@@ -262,7 +263,7 @@ public class ReadWriteTest {
     public void testMap() throws IOException {
         Write write = new Write();
         String mapFile ="mapSaveFile.txt";
-        write.writeMapFile(actualMap, 0);
+        write.writeMapFile(FILE_PATH, actualMap);
         GlobalLevel GL = null;
 
         try {
@@ -396,7 +397,7 @@ public class ReadWriteTest {
         Write write = new Write();
         Character expectedChar;
 
-        write.writeCharacterFile(actualChar, 0);
+        write.writeCharacterFile(FILE_PATH, actualChar);
         expectedChar = ReadFiles.loadCharacter("characterSaveFile.txt");
 
         Assert.assertEquals(expectedChar.getBaseHP(), actualChar.getBaseHP());
