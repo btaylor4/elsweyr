@@ -113,11 +113,11 @@ public class LoadGameView extends Parent {   //
                 if (!mapFilePath.equals("") && !characterFileNamePath.equals("")) {
                     saves.add(new SaveFile("save " + i, lastPlayed.toString(), characterFileNamePath, mapFilePath));
                 } else {
-                    saves.add(new SaveFile("Empty", "0/0/0 00:00", "No File", "No File"));
+                    saves.add(new SaveFile("Empty", "0/0/0 00:00", "No File SaveSlot" + i, "No File SaveSlot" + i));
                 }
 
             } else {
-                saves.add(new SaveFile("Empty", "0/0/0 00:00", "No File", "No File"));
+                saves.add(new SaveFile("Empty", "0/0/0 00:00", "No File SaveSlot" + i, "No File SaveSlot" + i));
             }
         }
 
