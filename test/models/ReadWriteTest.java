@@ -94,7 +94,7 @@ public class ReadWriteTest {
         TI.setItemSpritePath(IMAGE_PATH + "Interactive.png");
         TI.createItemImage();
         tiles[1][1].setItem(TI);
-        tiles[1][1].setTileSpritePath(IMAGE_PATH + "GRASS.png");
+        tiles[1][1].setTileSpritePath(IMAGE_PATH + "WATER.png");
         tiles[1][1].createTileImage();
 
         tiles = new Tile[1][2];
@@ -259,7 +259,6 @@ public class ReadWriteTest {
     }
 
     @Test
-    @Ignore
     public void testMap() throws IOException {
         Write write = new Write();
         String mapFile ="mapSaveFile.txt";
@@ -277,16 +276,20 @@ public class ReadWriteTest {
             // test the map components based on file.
             checkGlobalAttributes(GL);
 
-            for (int i = 0; i < GL.getGlobalMap().length * GL.getGlobalMap()[0].length; ++i) {
-                Zone current = GL.getGlobalMap()[i / GL.getGlobalMap().length][i % GL.getGlobalMap()[0].length];
-                Zone actualZone = actualMap.getGlobalMap()[i / GL.getGlobalMap().length][i % GL.getGlobalMap()[0].length];
-                //check each zone
-                checkZoneAttributes(current, actualZone);
-                for (int j = 0; j < current.getLocalMap().length * current.getLocalMap()[0].length; ++j) {
-                    Tile tile = current.getLocalMap()[i / current.getLocalMap().length] [i % current.getLocalMap()[0].length];
-                    Tile actualTile = actualZone.getLocalMap()[i / current.getLocalMap().length] [i % current.getLocalMap()[0].length];
-                    //check each tile
-                    checkTilesAttributes(tile, actualTile);
+            for(int globRow = 0; globRow < GL.getGlobalMap().length; globRow++) {
+                for (int globCol = 0; globCol < GL.getGlobalMap()[0].length; globCol++) {
+                    Zone current = GL.getGlobalMap()[globRow][globCol];
+                    Zone actualZone = actualMap.getGlobalMap()[globRow][globCol];
+                    //check each zone
+                    checkZoneAttributes(current, actualZone);
+                    for (int locRow = 0; locRow < current.getLocalMap().length; locRow++) {
+                        for (int locCol = 0; locCol < current.getLocalMap()[0].length; locCol++) {
+                            Tile tile = current.getLocalMap()[locRow][locCol];
+                            Tile actualTile = actualZone.getLocalMap()[locRow][locCol];
+                            //check each tile
+                            checkTilesAttributes(tile, actualTile);
+                        }
+                    }
                 }
             }
 
