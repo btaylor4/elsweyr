@@ -46,6 +46,7 @@ public class ReadFiles {
                 tiles = new Tile[size.x][size.y];
                 System.out.println("tiles is " + size.x + ", " + size.y);
                 currentZone.setLocalMap(tiles);
+                currentZone.setHasLevel(true);
                 if (size.x == 0 && size.y == 0) {
                     currentZone.setHasLevel(false);
                 }
