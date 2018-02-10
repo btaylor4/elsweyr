@@ -37,7 +37,8 @@ public class GlobalGameplayView extends Parent {   //
     private ImageView [][] itemView;
     //Max number of tiles display in each row and column
     private int viewableTilesNum;
-    private int globalMapSize;
+    private int globalMapHeight;
+    private int globalMapWidth;
     //Displays the position of the character
     private String characterDirection;
     Group root = new Group();
@@ -47,10 +48,11 @@ public class GlobalGameplayView extends Parent {   //
 
         globalCharacterPrevPos.setLocation(15,15);
         globalCharacterPos.setLocation(15,15);
-        globalMapSize = 30;
-        tileSprites = new Image[globalMapSize][globalMapSize];
+        globalMapHeight = 30;
+        globalMapWidth = 20;
+        tileSprites = new Image[globalMapHeight][globalMapWidth];
         viewableTilesNum = 9;
-        tileImageView = new ImageView[globalMapSize][globalMapSize];
+        tileImageView = new ImageView[globalMapHeight][globalMapWidth];
 
 
         viewableGlobalMap = new GridPane();
@@ -75,8 +77,8 @@ public class GlobalGameplayView extends Parent {   //
 
         updateCharacterImageView("file:PlaceHolderForImages/Character_Front.png");
 
-        for(int i = 0; i < globalMapSize; i++) {
-            for (int j = 0; j < globalMapSize; j++) {
+        for(int i = 0; i < globalMapHeight; i++) {
+            for (int j = 0; j < globalMapWidth; j++) {
                 int temp = (int)(Math.random() * 3);
                 if(temp == 2)
                     tileSprites[i][j] = new Image("file:PlaceHolderForImages/Water.png",100.,100., true,true);
@@ -88,8 +90,8 @@ public class GlobalGameplayView extends Parent {   //
         }
 
         //Creates imageViews of each tile
-        for(int i = 0; i < globalMapSize; i++)
-            for (int j = 0; j < globalMapSize; j++) {
+        for(int i = 0; i < globalMapHeight; i++)
+            for (int j = 0; j < globalMapWidth; j++) {
                 tileImageView[i][j] = new ImageView(tileSprites[i][j]);
                 //Note the width and height are dependent on the number of viewable tiles and the window size
                 // squareroot(500*500/81)
@@ -268,9 +270,7 @@ public class GlobalGameplayView extends Parent {   //
             else if(globalCharacterPrevPos.x < globalCharacterPos.x)
                 return "DOWN";
             else if(globalCharacterPrevPos.y > globalCharacterPos.y)
-            {
                 return "LEFT";
-            }
             else
                 return "RIGHT";
         }
@@ -293,6 +293,7 @@ public class GlobalGameplayView extends Parent {   //
         //Number of Columnstobecisplayed
         int numCols = DisplayColEnd - DisplayColStart;
         int temp = DisplayColStart;
+        //Adds the rows and the columns that are viewable to the globalmap gridpane
         for(int i = 0; i < numRows; i++) {
             temp = DisplayColStart;
             for (int j = 0; j < numCols; j++) {
@@ -313,9 +314,9 @@ public class GlobalGameplayView extends Parent {   //
     //Cannot display a row that is not in the map.
     private int getDisplayRowEnd(int row){
         int DisplayRowEnd = row + viewableTilesNum / 2 + 1;
-        if(DisplayRowEnd > globalMapSize - 1)
+        if(DisplayRowEnd > globalMapHeight - 1)
         {
-            DisplayRowEnd = globalMapSize;
+            DisplayRowEnd = globalMapHeight;
         }
         return DisplayRowEnd;
     }
@@ -331,8 +332,8 @@ public class GlobalGameplayView extends Parent {   //
     private int getDisplayColEnd(int col){
         //The plus one is for the for loop
         int DisplayColEnd = col + viewableTilesNum / 2 + 1;
-        if(DisplayColEnd > globalMapSize - 1){
-            DisplayColEnd = globalMapSize;
+        if(DisplayColEnd > globalMapWidth - 1){
+            DisplayColEnd = globalMapWidth;
         }
         return DisplayColEnd;
     }
