@@ -8,7 +8,7 @@ public class Inventory {
     private ArrayList<Item> items;
     private int maxSize;
 
-    Inventory(){
+    public Inventory(){
         items = new ArrayList<Item>();
     }
 
