@@ -41,9 +41,9 @@ public class TestInteractionWithItems extends ApplicationTest {
         character = new Character();
         Zone localLevel = new Zone();
 
+        localScene = new Scene(localview, 500, 500);
         LocalGameplayController localGameplayController = new LocalGameplayController(localview, character, globalLevel);
 
-        localScene = new Scene(localview, 500, 500);
         primaryWindow.setScene(localScene);
         primaryWindow.show();
     }
