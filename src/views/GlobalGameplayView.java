@@ -42,7 +42,7 @@ public class GlobalGameplayView extends Parent {   //
     //Displays the position of the character
     private String characterDirection;
     private String OS;
-    private static StringBuffer path = new StringBuffer("file:PlaceHolderForImages");
+    private static StringBuffer path = new StringBuffer("file:PlaceHolderForImages/");
 
     Group root = new Group();
     Scene localScene = new Scene(root,800,800);
@@ -61,24 +61,12 @@ public class GlobalGameplayView extends Parent {   //
         viewableGlobalMap = new GridPane();
         viewableGlobalMap.setVgap(0);
         viewableGlobalMap.setHgap(0);
-        
-        OS = System.getProperty("os.name");
-        if(!OS.contains("Windows") && !OS.contains("windows")) {
-            path.append("\\");
-        }
 
-        else
-            path.append("/");
         initializeSprites();
         characterDirection = "DOWN";
 
-
         GlobalDisplay gd = new GlobalDisplay(this);
         gd.intializeMap();
-
-
-
-
 
         //TODO: Remove the hardcoding of the characters, and tiles width and height
         //TODO: Animate Character Movement along with the direction the character is facing
@@ -100,7 +88,7 @@ public class GlobalGameplayView extends Parent {   //
             for (int j = 0; j < globalMapWidth; j++) {
                 int temp = (int)(Math.random() * 3);
                 if(temp == 2)
-                    tileSprites[i][j] = new Image("file:PlaceHolderForImages/" + "Water.png",100.,100., true,true);
+                    tileSprites[i][j] = new Image(path + "WATER.png",100.,100., true,true);
                 else if( temp == 1 )
                     tileSprites[i][j] = new Image(path + "GRASS.png",100.,100., true,true);
                 else
