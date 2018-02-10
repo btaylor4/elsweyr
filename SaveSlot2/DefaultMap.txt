@@ -20,6 +20,7 @@ Item TAKEABLE me PlaceHolderForImages\Takeable.png
 1 2
 0 1
 0 0
+PlaceHolderForImages\mapImage.png
 0
 GRASS 2
 Effect LEVELUPEFFECT 0
@@ -28,6 +29,7 @@ WATER 0
 2 2
 0 0
 0 1
+PlaceHolderForImages\mapImage.png
 1
 WATER 0
 WATER 0
