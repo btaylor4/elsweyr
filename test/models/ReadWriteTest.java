@@ -275,20 +275,16 @@ public class ReadWriteTest {
             // test the map components based on file.
             checkGlobalAttributes(GL);
 
-            for (int i = 0; i < GL.getGlobalMap().length; ++i) {
-                for (int r = 0; r < GL.getGlobalMap()[0].length; ++r) {
-                    Zone current = GL.getGlobalMap()[i][r];
-                    Zone actualZone = actualMap.getGlobalMap()[i][r];
+            for(int globRow = 0; globRow < GL.getGlobalMap().length; globRow++) {
+                for (int globCol = 0; globCol < GL.getGlobalMap()[0].length; globCol++) {
+                    Zone current = GL.getGlobalMap()[globRow][globCol];
+                    Zone actualZone = actualMap.getGlobalMap()[globRow][globCol];
                     //check each zone
                     checkZoneAttributes(current, actualZone);
-                    for (int j = 0; j < current.getLocalMap().length; ++j) {
-                        for (int l = 0; l < current.getLocalMap()[0].length; ++l) {
-                            Tile tile = current.getLocalMap()[j][l];
-                            Tile actualTile = actualZone.getLocalMap()[j][l];
-
-                            System.out.println("i: " + i + " r: " + r);
-                            System.out.println("j: " + j + " l: " + l);
-                            System.out.println(tile.getTerrain() + " : " + actualTile.getTerrain());
+                    for (int locRow = 0; locRow < current.getLocalMap().length; locRow++) {
+                        for (int locCol = 0; locCol < current.getLocalMap()[0].length; locCol++) {
+                            Tile tile = current.getLocalMap()[locRow][locCol];
+                            Tile actualTile = actualZone.getLocalMap()[locRow][locCol];
                             //check each tile
                             checkTilesAttributes(tile, actualTile);
                         }

@@ -17,7 +17,7 @@ public class ReadFiles {
         int currentNum;
         FileReader inStream;
         BufferedReader reader;
-        Zone [][] local;
+        Zone [][] global;
         Tile [][] tiles;
         Point size;
 
@@ -28,7 +28,7 @@ public class ReadFiles {
        // System.out.println(currentLine);
         size = getMatrixSize(currentLine.split(" "));
 
-        local = new Zone[size.x][size.y];
+        global = new Zone[size.x][size.y];
 
         currentLine = reader.readLine();
         //System.out.println(currentLine);
@@ -36,76 +36,72 @@ public class ReadFiles {
 
         //build map structure
         GlobalLevel loadedMap = new GlobalLevel();
-        loadedMap.setGlobalMap(local);
+        loadedMap.setGlobalMap(global);
         loadedMap.setGameTime(currentNum);
 
         // build zones
-        for (int i = 0; i < local.length; ++i) {
-            for (int r = 0; r < local[0].length; ++r) {
-
+        for(int globRow = 0; globRow < global.length; globRow++) {
+            for(int globCol = 0; globCol < global[0].length; globCol++) {
                 Zone currentZone = new Zone();
-
                 currentLine = reader.readLine();
-                 //System.out.println(currentLine);
                 size = getMatrixSize(currentLine.split(" "));
                 tiles = new Tile[size.x][size.y];
+                System.out.println("tiles is " + size.x + ", " + size.y);
                 currentZone.setLocalMap(tiles);
+                currentZone.setHasLevel(true);
+                if (size.x == 0 && size.y == 0) {
+                    currentZone.setHasLevel(false);
+                }
 
                 currentLine = reader.readLine();
-                //System.out.println(currentLine);
                 size = getMatrixSize(currentLine.split(" "));
+                System.out.println("exit tile is " + size.x + ", " + size.y);
                 currentZone.setExitTile(size);
 
                 currentLine = reader.readLine();
-                //System.out.println(currentLine);
                 size = getMatrixSize(currentLine.split(" "));
+                System.out.println("start tile is " + size.x + ", " + size.y);
                 currentZone.setStartTile(size);
 
                 currentLine = reader.readLine();
-                //System.out.println(currentLine);
                 currentZone.setZoneSpritePath(currentLine);
+                System.out.println("sprite path is " + currentLine);
                 currentZone.createZoneImage();
 
                 currentLine = reader.readLine();
-                //System.out.println(currentLine);
                 currentZone.setPassable(trueOrFalse(currentLine, gameFile));
+                System.out.println("passable is " + currentLine);
 
+                if(currentZone.getHasLevel()) {
+                    for (int locRow = 0; locRow < tiles.length; locRow++) {
+                        for (int locCol = 0; locCol < tiles[0].length; locCol++) {
+                            Tile tile = new Tile();
+                            String[] line;
 
-                for (int j = 0; j < tiles.length; ++j) {
-                    for (int l = 0; l < tiles[0].length; ++l) {
+                            line = reader.readLine().split(" ");
+                            tile.setTerrain(getTerrain(line[0]));
+                            tile.setTileSpritePath(IMAGE_PATH + line[0] + ".png");
+                            tile.createTileImage();
 
-                        Tile tile = new Tile();
-                        String[] line;
+                            int tileAttributes = Integer.parseInt(line[1]);
+                            for (int k = 0; k < tileAttributes; ++k) {
+                                line = reader.readLine().split(" ");
+                                System.out.println();
+                                setUpTile(tile, line, gameFile);
+                            }
 
-                        currentLine = reader.readLine();
-                        //System.out.println(currentLine);
-                        line = currentLine.split(" ");
-                        tile.setTerrain(getTerrain(line[0]));
-                        tile.setTileSpritePath(IMAGE_PATH + line[0] + ".png");
-                        tile.createTileImage();
+                            if (tile.getItem() == null) {
+                                tile.setItem(new NoneItem());
+                            }
+                            if (tile.getAreaEffect() == null) {
+                                tile.setEffectType(new NoneEffect());
+                            }
 
-                        int tileAttributes = Integer.parseInt(line[1]);
-                        for (int k = 0; k < tileAttributes; ++k) {
-                            currentLine = reader.readLine();
-                            //System.out.println(currentLine);
-                            line = currentLine.split(" ");
-                            setUpTile(tile, line, gameFile);
+                            tiles[locRow][locCol] = tile;
                         }
-
-                        if (tile.getItem() == null) {
-                            tile.setItem(new NoneItem());
-                        }
-                        if (tile.getAreaEffect() == null) {
-                            tile.setEffectType(new NoneEffect());
-                        }
-
-                        //System.out.println(i + " i:r " + r);
-                        //System.out.println(j + " j:l " + l);
-                        tiles[j][l] = tile;
                     }
                 }
-
-                local[i][r] = currentZone;
+                global[globRow][globCol] = currentZone;
             }
         }
 
