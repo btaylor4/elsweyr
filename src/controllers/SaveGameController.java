@@ -89,13 +89,13 @@ public class SaveGameController {
             Write writeObject = new Write();
             FILE_PATH = "SaveSlot" + saveSlot + File.separator;
             try {
-                writeObject.writeMapFile(FILE_PATH, map);
+                writeObject.writeMapFile(map, 0);
             } catch (IOException ex) {
                 System.out.println("Map cannot be saved" + ex);
             }
 
             try {
-                writeObject.writeCharacterFile(FILE_PATH, character);
+                writeObject.writeCharacterFile(character,0);
             } catch (IOException ex) {
                 System.out.println("Character cannot be saved " + ex);
             }

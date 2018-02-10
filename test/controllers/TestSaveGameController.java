@@ -28,11 +28,11 @@ public class TestSaveGameController extends ApplicationTest{
     private int height = 500;
 
     public void createCharacter() throws IOException {
-        this.character =  ReadFiles.loadCharacter("characterSaveFile.txt");
+        this.character =  ReadFiles.loadCharacter("DefaultCharacter.txt");
     }
 
     public GlobalLevel createMap() throws IOException  {
-        return ReadFiles.loadGame("mapSaveFile.txt");
+        return ReadFiles.loadGame("Defaultmap.txt");
     }
 
     @Override
