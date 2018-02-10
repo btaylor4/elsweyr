@@ -84,6 +84,7 @@ public class GlobalGameplayController {
 
                 default:
                     projectedMove = new Point(0, 0);
+
             }
             //Sends the view the characters move.
             view.updateMove(move);
