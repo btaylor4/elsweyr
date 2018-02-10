@@ -22,7 +22,7 @@ public class GlobalGameplayView extends Parent {   //
 
     private Button inGameMenuButton= new Button("In-Game Menu");
     private Button changeToLocal = new Button("Change To Local View");
-    private Image charachterSprite;
+    private Image characterSprite;
     private Image [][] tileSprites;
     private Image[][] itemSprites;
     private Image [][] terrainSprites;
@@ -38,6 +38,8 @@ public class GlobalGameplayView extends Parent {   //
     //Max number of tiles display in each row and column
     private int viewableTilesNum;
     private int globalMapSize;
+    //Displays the position of the character
+    private String characterDirection;
     Group root = new Group();
     Scene localScene = new Scene(root,800,800);
 
@@ -56,9 +58,12 @@ public class GlobalGameplayView extends Parent {   //
         viewableGlobalMap.setHgap(0);
 
         initializeSprites();
+        characterDirection = "DOWN";
 
         GlobalDisplay gd = new GlobalDisplay(this);
         gd.intializeMap();
+
+
 
         //TODO: Remove the hardcoding of the characters, and tiles width and height
         //TODO: Animate Character Movement along with the direction the character is facing
@@ -67,23 +72,18 @@ public class GlobalGameplayView extends Parent {   //
     }
     //Creates ImageViews for the character and map tiles.
     public void initializeSprites(){
-        //Intializes the characterSprite with an Image
-        charachterSprite =  charachterSprite = new Image("PlaceHolderForImages/Character.png", 80.,80.,true,true);
-        //Creates a characterView
-        characterView = new ImageView(charachterSprite);
-        //Character height and width must be smaller than tile's height and width.
-        characterView.setFitHeight(30);
-        characterView.setFitWidth(30);
+
+        updateCharacterImageView("file:PlaceHolderForImages/Character_Front.png");
 
         for(int i = 0; i < globalMapSize; i++) {
             for (int j = 0; j < globalMapSize; j++) {
                 int temp = (int)(Math.random() * 3);
                 if(temp == 2)
-                    tileSprites[i][j] = new Image("PlaceHolderForImages/Water.png",100.,100., true,true);
+                    tileSprites[i][j] = new Image("file:PlaceHolderForImages/Water.png",100.,100., true,true);
                 else if( temp == 1 )
-                    tileSprites[i][j] = new Image("PlaceHolderForImages/GRASS.png",100.,100., true,true);
+                    tileSprites[i][j] = new Image("file:PlaceHolderForImages/GRASS.png",100.,100., true,true);
                 else
-                    tileSprites[i][j] = new Image("PlaceHolderForImages/MOUNTAIN.png",100.,100., true,true);
+                    tileSprites[i][j] = new Image("file:PlaceHolderForImages/MOUNTAIN.png",100.,100., true,true);
             }
         }
 
@@ -97,6 +97,17 @@ public class GlobalGameplayView extends Parent {   //
                 tileImageView[i][j].setFitWidth(55.555555555);
                 tileImageView[i][j].setFitHeight(55.55555555);
             }
+
+    }
+
+    private void updateCharacterImageView(String image){
+        //Intializes the characterSprite with an Image
+        characterSprite = new Image(image);
+        //Creates a characterView
+        characterView = new ImageView(characterSprite);
+        //Character height and width must be smaller than tile's height and width.
+        characterView.setFitHeight(40);
+        characterView.setFitWidth(40);
 
     }
 
@@ -115,6 +126,51 @@ public class GlobalGameplayView extends Parent {   //
 
     public void updateCharacterPos(Point updatedPos){
         globalCharacterPos = updatedPos;
+    }
+
+    public void updateMove(String move){
+        characterDirection = move;
+        updateCharacterImageView();
+    }
+
+    private void updateCharacterImageView(){
+        switch(characterDirection){
+            case "UP": // 8
+                updateCharacterImageView("file:PlaceHolderForImages/Character_Back.png");
+                break;
+
+            case "DOWN": // 2
+                updateCharacterImageView("file:PlaceHolderForImages/Character_Front.png");
+                break;
+
+            case "LEFT": // 4
+                updateCharacterImageView("file:PlaceHolderForImages/Character_East.png");
+                break;
+
+            case "RIGHT": //6
+
+                break;
+
+            case "END": // 1 DOWN_LEFT
+
+                break;
+
+            case "PAGE_DOWN":  // DOWN_RIGHT
+                updateCharacterImageView("file:PlaceHolderForImages/Character_South_East.png");
+                break;
+
+            case "HOME":  // UP_LEFT
+
+                break;
+
+
+            case "PAGE_UP": // UP_RIGHT
+
+                break;
+
+            default:
+
+        }
     }
 
 
@@ -169,7 +225,6 @@ public class GlobalGameplayView extends Parent {   //
         }
 
         public void intializeMap(){
-
             outer.getChildren().addAll(viewableGlobalMap);
             start();
         }

@@ -33,11 +33,17 @@ public class GlobalGameplayViewTest extends ApplicationTest {
     @Test
     public void tryTest() throws InterruptedException {
 
+
+
+
         Thread.sleep(1000);
+        view.updateMove("DOWN");
         view.updateCharacterPos(new Point(16,15));
-         Thread.sleep(1000);
+        Thread.sleep(1000);
+        view.updateMove("LEFT");
         view.updateCharacterPos(new Point(16,16));
         Thread.sleep(1000);
+        view.updateMove("UP");
         view.updateCharacterPos(new Point(15,16));
         Thread.sleep(1000);
         view.updateCharacterPos(new Point(15,15));
