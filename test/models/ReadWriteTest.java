@@ -3,6 +3,7 @@ package models;
 import javafx.scene.image.Image;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.awt.*;
@@ -258,6 +259,7 @@ public class ReadWriteTest {
     }
 
     @Test
+    @Ignore
     public void testMap() throws IOException {
         Write write = new Write();
         String mapFile ="mapSaveFile.txt";
