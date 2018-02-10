@@ -64,6 +64,7 @@ public class LoadGameController {
             }
             catch(IOException e){
                 System.out.println("No game associated with this file name");
+                e.printStackTrace();
                 return;
             }
 
