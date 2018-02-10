@@ -31,7 +31,7 @@ public class GlobalGameplayController {
 
     public class GlobalMovementListener implements EventHandler<KeyEvent> {
 
-        public boolean checkVaildMove(Point projectedMove) {
+        public boolean checkValidMove(Point projectedMove) {
             Point characterPosition = character.getGlobalPos();
             int xPositionChange = characterPosition.x + projectedMove.x;
             int yPositionChange = characterPosition.y + projectedMove.y;
@@ -87,7 +87,7 @@ public class GlobalGameplayController {
                     projectedMove = new Point(0, 0);
             }
 
-            if(checkVaildMove(projectedMove)) {
+            if(checkValidMove(projectedMove)) {
                 Point newPosition = new Point(character.getGlobalPos().x + projectedMove.x,
                         character.getGlobalPos().y + projectedMove.y);
                 character.updateGlobalPos(newPosition);
@@ -99,7 +99,7 @@ public class GlobalGameplayController {
 
         public boolean checkForLocalLevel() {
             Point globalPos = character.getGlobalPos();
-            if(map.getGlobalMap()[globalPos.x][globalPos.y].getStartTile() != null)
+            if(map.getGlobalMap()[globalPos.x][globalPos.y].getHasLevel())
                 return true;
 
             else
@@ -115,10 +115,9 @@ public class GlobalGameplayController {
             if(checkForLocalLevel()) {
                 System.out.println("Changing View To Local Level");
                 LocalGameplayView localGameplayView = new LocalGameplayView();
-                LocalGameplayController localGameplayController = new LocalGameplayController(localGameplayView, character, map);
-
-                Stage window = (Stage)(((Scene)event.getSource()).getWindow());
                 Scene globalScene = new Scene(localGameplayView, 600, 500);
+                LocalGameplayController localGameplayController = new LocalGameplayController(localGameplayView, character, map);
+                Stage window = (Stage)(((Scene)event.getSource()).getWindow());
 
                 window.setScene(globalScene);
             }
@@ -145,10 +144,10 @@ public class GlobalGameplayController {
             System.out.println("Changing View To Global Level");
 
             LocalGameplayView localGameplayView = new LocalGameplayView();
+            Scene globalScene = new Scene(localGameplayView, 500, 500);
             LocalGameplayController localGameplayController = new LocalGameplayController(localGameplayView, character, map);
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-            Scene globalScene = new Scene(localGameplayView, 500, 500);
 
             window.setScene(globalScene);
         }

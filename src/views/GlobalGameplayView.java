@@ -39,7 +39,6 @@ public class GlobalGameplayView extends Parent {   //
     private int viewableTilesNum;
     private int globalMapSize;
     Group root = new Group();
-    Scene localScene = new Scene(root,800,800);
 
     public GlobalGameplayView(){
 
@@ -88,7 +87,7 @@ public class GlobalGameplayView extends Parent {   //
         }
 
         //Creates imageViews of each tile
-        for(int i = 0; i < globalMapSize; i++)
+        for(int i = 0; i < globalMapSize; i++) {
             for (int j = 0; j < globalMapSize; j++) {
                 tileImageView[i][j] = new ImageView(tileSprites[i][j]);
                 //Note the width and height are dependent on the number of viewable tiles and the window size
@@ -97,7 +96,7 @@ public class GlobalGameplayView extends Parent {   //
                 tileImageView[i][j].setFitWidth(55.555555555);
                 tileImageView[i][j].setFitHeight(55.55555555);
             }
-
+        }
     }
 
 
@@ -106,7 +105,7 @@ public class GlobalGameplayView extends Parent {   //
     }
 
     public void addKeyPressListener(EventHandler<KeyEvent> handlerForKeypress){
-        this.localScene.setOnKeyPressed(handlerForKeypress);
+        this.getScene().setOnKeyPressed(handlerForKeypress);
     }
 
     public void addChangeToLocalListener(EventHandler<ActionEvent> handlerForChangeToLocal){
