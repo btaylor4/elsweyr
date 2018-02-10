@@ -14,7 +14,6 @@ import views.GlobalGameplayView;
 import views.LocalGameplayView;
 import views.MainMenuView;
 import views.LoadGameView;
-
 import java.io.IOException;
 
 public class LoadGameController {
@@ -92,5 +91,4 @@ public class LoadGameController {
             }
         }
     }
-
 }

@@ -261,7 +261,8 @@ public class ReadWriteTest {
     public void testMap() throws IOException {
         Write write = new Write();
         String mapFile ="mapSaveFile.txt";
-        write.writeMapFile(actualMap, 0);
+        String filePath = "";
+        write.writeMapFile(filePath, actualMap);
         GlobalLevel GL = null;
 
         try {
@@ -390,8 +391,8 @@ public class ReadWriteTest {
     public void testChar() throws IOException {
         Write write = new Write();
         Character expectedChar;
-
-        write.writeCharacterFile(actualChar, 0);
+        String filePath = "";
+        write.writeCharacterFile(filePath, actualChar);
         expectedChar = ReadFiles.loadCharacter("characterSaveFile.txt");
 
         Assert.assertEquals(expectedChar.getBaseHP(), actualChar.getBaseHP());

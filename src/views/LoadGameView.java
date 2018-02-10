@@ -95,19 +95,17 @@ public class LoadGameView extends Parent {   //
             folder = new File (saveSlot + i + File.separator);
             files = folder.listFiles();
 
-            if (files.length == 2) {
-                Date lastPlayed = new Date (files[0].lastModified());
+            if (files.length == 3) {
+                Date lastPlayed = new Date (files[1].lastModified());
                 // file name = playerName + Map + .txt -> ignore "Map.txt"
-                if (files[0].getName().contains("Map")) {
-                    saves.add(new SaveFile("save" + i, "" + lastPlayed.toString(), files[1].getName(), files[0].getName()));
+                if (files[1].getName().contains("Map")) {
+                    saves.add(new SaveFile("save" + i, "" + lastPlayed.toString(), files[2].getName(), files[1].getName()));
                 } else {
-                    saves.add(new SaveFile("save" + i, "" + lastPlayed.toString(), files[0].getName(), files[1].getName()));
+                    saves.add(new SaveFile("save" + i, "" + lastPlayed.toString(), files[1].getName(), files[2].getName()));
                 }
             } else {
                 saves.add(new SaveFile("Empty", "0/0/0 00:00", "No File", "No File"));
             }
         }
     }
-
-
 }

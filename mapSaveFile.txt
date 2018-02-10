@@ -1,41 +1,40 @@
-3 1
-15
 2 2
+0
+1 2
 0 1
 1 1
 PlaceHolderForImages\mapImage.png
 1
-GRASS 3 
-Effect HEALTHEFFECT 10 -5 1015
-Item INTERACTIVE bob ob PlaceHolderForImages\Interactive.png
-Decal PlaceHolderForImages\Death.png
-MOUNTAIN 3 
-Effect LEVELUPEFFECT 0
-Item OBSTACLE blob PlaceHolderForImages\Interactive.png
-Decal PlaceHolderForImages\Level.png
-WATER 1 
-Item ONESHOT one PlaceHolderForImages\Interactive.png
-WATER 1 
-Item TAKEABLE me PlaceHolderForImages\Interactive.png
-1 2
-0 1
-0 0
-PlaceHolderForImages\mapImage.png
-0
+GRASS 2 
+Effect HEALTHEFFECT 10 -5 1023
+Item INTERACTIVE puppy PlaceHolderForImages\Interactive.png
 GRASS 2 
 Effect LEVELUPEFFECT 1
-Decal PlaceHolderForImages\Level.png
-WATER 0 
-2 2
-0 0
+Item OBSTACLE spikes PlaceHolderForImages\Obstacle.png
+1 2
 0 1
+1 1
+PlaceHolderForImages\mapImage.png
+0
+MOUNTAIN 2 
+Effect HEALTHEFFECT 6 -1 764
+Item ONESHOT vitaminC PlaceHolderForImages\OneShot.png
+WATER 0 
+1 2
+0 1
+1 1
 PlaceHolderForImages\mapImage.png
 1
-WATER 0 
-WATER 0 
-GRASS 2 
-Effect HEALTHEFFECT 5 5 101
-Decal PlaceHolderForImages\Health.png
 MOUNTAIN 2 
-Effect HEALTHEFFECT 0 -1000 1420
-Decal PlaceHolderForImages\Death.png
+Effect HEALTHEFFECT 6 -1 764
+Item ONESHOT vitaminC PlaceHolderForImages\OneShot.png
+WATER 0 
+1 2
+0 1
+1 1
+PlaceHolderForImages\mapImage.png
+1
+MOUNTAIN 2 
+Effect HEALTHEFFECT 6 -1 764
+Item ONESHOT vitaminC PlaceHolderForImages\OneShot.png
+WATER 0 
