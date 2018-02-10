@@ -17,6 +17,7 @@ public class Write {
 
         characterSaveFile = new FileWriter("characterSaveFile.txt");
 
+        characterSaveFile.write(newString.format("%s%n", characterBeingSaved.getCharacterName()));
         characterSaveFile.write(newString.format("%d%n", characterBeingSaved.getBaseHP()));
         characterSaveFile.write(newString.format("%d%n",characterBeingSaved.getCurrentHP()));
         characterSaveFile.write(newString.format("%d%n",characterBeingSaved.getBonusHP()));

@@ -14,6 +14,8 @@ import views.GlobalGameplayView;
 import views.MainMenuView;
 import views.NewGameView;
 
+import java.io.File;
+
 
 public class NewGameController {
 
@@ -37,10 +39,23 @@ public class NewGameController {
         @Override
         public void handle(ActionEvent event){
             SaveFile saveFile = view.getSelectedFile();
-            System.out.println(saveFile.getFileName());
+
+            // there are files to be deleted
+        //    deleteCurrentFile(saveFile.getPathToMapFile());
+         //   deleteCurrentFile(saveFile.getPathToCharacterFile());
+
+            // create new files from default
+
+
             //Set up custom character settings
             character.setCharacterSprite(view.getSelectedImage());
             character.setCharacterName(view.getSelectedName());
+
+
+
+
+
+
 
             //TODO: send view to Global gameplay view
             System.out.println("Go to global gameplay");
@@ -54,6 +69,12 @@ public class NewGameController {
 
         }
 
+        private void deleteCurrentFile(String fileName) {
+            File file = new File(fileName);
+            if (file.exists()) {
+                file.delete();
+            }
+        }
 
     }
 
