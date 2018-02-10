@@ -50,7 +50,7 @@ public class LocalGameplayView extends Parent {   //
     }
 
     public void addKeyPressListener(EventHandler<KeyEvent> handlerForKeypress){
-        this.localScene.setOnKeyPressed(handlerForKeypress);
+        this.getScene().setOnKeyPressed(handlerForKeypress);
     }
 
     public void addChangeToGlobalListener(EventHandler<ActionEvent> handlerForChangeToGlobal){
