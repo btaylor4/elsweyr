@@ -74,6 +74,8 @@ public class LocalGameplayController {
             if(localPos.getX() == localMap.getExitTile().getX() && localPos.getY() == localMap.getExitTile().getY() ){
 
                 GlobalGameplayView globalView = new GlobalGameplayView();
+                //Set the characters position to be in the global map when stepping on the exit tile
+                character.setOnLocal(false);
                 GlobalGameplayController globalGameplay = new GlobalGameplayController(globalView,character,globalMap);
                 Stage window = (Stage)(((Scene)event.getSource()).getWindow());
 
