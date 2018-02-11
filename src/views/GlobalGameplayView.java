@@ -46,9 +46,9 @@ public class GlobalGameplayView extends Parent {   //
 
     Group root = new Group();
 
-    public GlobalGameplayView(String path){
+    public GlobalGameplayView(String spritePath){
 
-        this.characterSpritePath = new StringBuffer(path);
+        this.characterSpritePath = new StringBuffer(spritePath);
         globalCharacterPrevPos.setLocation(15,15);
         globalCharacterPos.setLocation(15,15);
         globalMapHeight = 30;
@@ -76,6 +76,9 @@ public class GlobalGameplayView extends Parent {   //
     public void initializeSprites(){
         //Intializes the characterSprite with an Image
         System.out.println(characterSpritePath);
+        if (characterSpritePath == null)
+            characterSpritePath = path;
+
         characterSprite = new Image(characterSpritePath + "Character.png", 80.,80.,true,true);
         //Creates a characterView
         characterView = new ImageView(characterSprite);
