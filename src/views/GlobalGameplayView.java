@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
 import java.awt.*;
@@ -32,6 +33,8 @@ public class GlobalGameplayView extends Parent {   //
     private Point globalCharacterPos = new Point();
     //Contains the section of the globalmap that the character can view.
     private GridPane viewableGlobalMap;
+
+    private BorderPane globalView;
     private ImageView characterView;
     private ImageView [][] tileImageView;
     private ImageView [][] itemView;
@@ -49,14 +52,16 @@ public class GlobalGameplayView extends Parent {   //
 
     public GlobalGameplayView(){
 
-        viewableTilesRow = 3;
-        viewableTilesCol = 1;
-        //tileImageView = new ImageView[globalMapHeight][globalMapWidth];
-
+        viewableTilesRow = 9;
+        viewableTilesCol = 9;
 
         viewableGlobalMap = new GridPane();
         viewableGlobalMap.setVgap(0);
         viewableGlobalMap.setHgap(0);
+
+        globalView = new BorderPane();
+        globalView.setCenter(viewableGlobalMap);
+        globalView.setBottom(inGameMenuButton);
 
         characterDirection = "DOWN";
 
@@ -67,7 +72,7 @@ public class GlobalGameplayView extends Parent {   //
         //TODO: Animate Character Movement along with the direction the character is facing
         //TODO: Figure out an appropariate method for moving the characters based on changing user input, and all directions.
     }
-    //Creates ImageViews for the character and map tiles.
+
 
 
     public void createCharacterView(Image characterImage) {
@@ -94,25 +99,25 @@ public class GlobalGameplayView extends Parent {   //
 //                tileImageView[i][j].setFitWidth(Math.sqrt((500*500)/(viewableTilesCol*viewableTilesRow)));
 //                tileImageView[i][j].setFitHeight(Math.sqrt((500*500)/(viewableTilesCol*viewableTilesRow)));
 
-                tileImageView[i][j].setFitWidth(70);
-                tileImageView[i][j].setFitHeight(70);
+                tileImageView[i][j].setFitWidth(45.55555);
+                tileImageView[i][j].setFitHeight(45.5555);
 
             }
         }
 
-        //Surrounding Tile
+        //Creates the Surrounding Tile
         Image temp = new Image(path + "MOUNTAIN.png");
         surroundingTile = new ImageView(temp);
 //        surroundingTile.setFitHeight(Math.sqrt((500*500)/(viewableTilesCol*viewableTilesRow)));
 //        surroundingTile.setFitWidth(Math.sqrt((500*500)/(viewableTilesCol*viewableTilesRow)));
 
-        surroundingTile.setFitHeight(70);
-        surroundingTile.setFitWidth(70);
+        surroundingTile.setFitHeight(45.55555);
+        surroundingTile.setFitWidth(45.555555);
 
     }
 
 
-
+    //Updates the character ImageView based on the direction the character is facing.
     private void updateCharacterImageView(String image){
         //Intializes the characterSprite with an Image
         characterSprite = new Image(image);
@@ -130,7 +135,8 @@ public class GlobalGameplayView extends Parent {   //
     }
 
     public void addKeyPressListener(EventHandler<KeyEvent> handlerForKeypress){
-        this.getScene().setOnKeyPressed(handlerForKeypress);
+        //This gets around buttons listening to keypresses.
+        this.getScene().setOnKeyReleased(handlerForKeypress);
     }
 
     public void addChangeToLocalListener(EventHandler<ActionEvent> handlerForChangeToLocal){
@@ -146,6 +152,7 @@ public class GlobalGameplayView extends Parent {   //
         characterDirection = move;
         updateCharacterImageView();
     }
+
 
     private void updateCharacterImageView(){
         switch(characterDirection){
@@ -191,12 +198,12 @@ public class GlobalGameplayView extends Parent {   //
 
     public class GlobalDisplay extends AnimationTimer{
         //The outerclass GlobalGamePlayView need to add the JavaFX viewable contents to the view.
-        private GlobalGameplayView outer;
+        private GlobalGameplayView globalGameplayView;
         //Determines the time between showing the character movement and map updating
         private long elapsedTime = 0;
 
         public GlobalDisplay(GlobalGameplayView a){
-            outer = a;
+            globalGameplayView = a;
         }
 
         @Override
@@ -206,8 +213,12 @@ public class GlobalGameplayView extends Parent {   //
             if(globalCharacterPos.x != globalCharacterPrevPos.x || globalCharacterPos.y != globalCharacterPrevPos.y)
             {
                 //Moves the character and causes a one second wait.
+                globalView.getChildren().clear();
                 viewableGlobalMap.getChildren().clear();
-                if(now - elapsedTime < 500_000_000)
+                globalView.setCenter(viewableGlobalMap);
+                globalView.setBottom(inGameMenuButton);
+
+                if(now - elapsedTime < 000_000_000)
                 {
                     updateViewAfterMovement();
                     moveCharacterView();
@@ -227,7 +238,13 @@ public class GlobalGameplayView extends Parent {   //
             }
             //Keeps the maps display when their is no input.
             else {
+                globalView.getChildren().clear();
                 viewableGlobalMap.getChildren().clear();
+                globalView.setCenter(viewableGlobalMap);
+                globalView.setBottom(inGameMenuButton);
+
+
+
                 updateViewAfterMovement();
                 //Places the character into the center of the map
                 viewableGlobalMap.add(characterView,viewableTilesCol/2,viewableTilesRow/2);
@@ -239,13 +256,14 @@ public class GlobalGameplayView extends Parent {   //
         }
 
         public void intializeMap(){
-            outer.getChildren().addAll(viewableGlobalMap);
+
+            globalGameplayView.getChildren().addAll(globalView);
             start();
         }
 
         //Displays the characters position based on the movement input.
         public void moveCharacterView(){
-            String move = calculateMovementType();
+            String move = characterDirection;
             switch (move) {
                 case "UP": // 8
                     viewableGlobalMap.add(characterView,viewableTilesCol/2,viewableTilesRow/2 - 1);
@@ -270,21 +288,34 @@ public class GlobalGameplayView extends Parent {   //
                     viewableGlobalMap.setValignment(characterView, VPos.CENTER);
                     viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
                     break;
+
+                case "END": // 1 DOWN_LEFT
+                    viewableGlobalMap.add(characterView, viewableTilesCol / 2 - 1, viewableTilesRow / 2 + 1);
+                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
+                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
+                    break;
+
+                case "PAGE_DOWN":  // DOWN_RIGHT
+                    viewableGlobalMap.add(characterView, viewableTilesCol / 2 + 1, viewableTilesRow / 2 + 1);
+                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
+                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
+                    break;
+
+                case "HOME":  // UP_LEFT
+                    viewableGlobalMap.add(characterView, viewableTilesCol / 2 - 1, viewableTilesRow / 2 - 1);
+                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
+                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
+                    break;
+
+
+                case "PAGE_UP": // UP_RIGHT
+                    viewableGlobalMap.add(characterView, viewableTilesCol / 2 + 1, viewableTilesRow / 2 - 1);
+                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
+                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
+                    break;
             }
             }
 
-        }
-
-        //This only accounts for left right up down.
-        public String calculateMovementType(){
-            if(globalCharacterPrevPos.x > globalCharacterPos.x)
-                return "UP";
-            else if(globalCharacterPrevPos.x < globalCharacterPos.x)
-                return "DOWN";
-            else if(globalCharacterPrevPos.y > globalCharacterPos.y)
-                return "LEFT";
-            else
-                return "RIGHT";
         }
 
     //Updates the map based on the characters previous position
@@ -327,6 +358,7 @@ public class GlobalGameplayView extends Parent {   //
                 {
                     viewableGlobalMap.add(surroundingTile,j,i);
                 }
+                //When the tile is in the map
                 else
                     {
                     viewableGlobalMap.add(tileImageView[displayRowStart][temp++], j, i);
@@ -339,35 +371,23 @@ public class GlobalGameplayView extends Parent {   //
     //Cannot display a row that is before the 0th row.
     private int getDisplayStart(int row){
         int DisplayRowStart = row - viewableTilesRow / 2;
-       // if(DisplayRowStart < 0){
-           // DisplayRowStart = 0;
-        //}
         return DisplayRowStart;
     }
+
     //Cannot display a row that is not in the map.
     private int getDisplayRowEnd(int row){
         int DisplayRowEnd = row + viewableTilesRow / 2 + 1;
-//        if(DisplayRowEnd > globalMapHeight - 1)
-//        {
-//            DisplayRowEnd = globalMapHeight;
-//        }
         return DisplayRowEnd;
     }
 
     private int getDisplayColStart(int col){
         int DisplayColStart = col - viewableTilesCol / 2;
-//        if(DisplayColStart < 0){
-//            DisplayColStart = 0;
-//        }
         return DisplayColStart;
     }
 
     private int getDisplayColEnd(int col){
         //The plus one is for the for loop
         int DisplayColEnd = col + viewableTilesCol / 2 + 1;
-//        if(DisplayColEnd > globalMapWidth - 1){
-//            DisplayColEnd = globalMapWidth;
-//        }
         return DisplayColEnd;
     }
 }
