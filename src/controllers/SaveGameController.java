@@ -34,6 +34,7 @@ public class SaveGameController {
         this.view.addSaveSlotTwoListener(new saveSlotTwoHandler());
         this.view.addSaveSlotThreeListener(new saveSlotThreeHandler());
         this.view.addSaveListener(new saveGameHandler());
+
         saveSlot = 0;
     }
 
@@ -89,13 +90,15 @@ public class SaveGameController {
             Write writeObject = new Write();
             FILE_PATH = "SaveSlot" + saveSlot + File.separator;
             try {
-                writeObject.writeMapFile(map, 0);
+                writeObject.writeMapFile(FILE_PATH, map);
+                //view.addSaveSlotThreeListener(new saveSlotThreeHandler());
+                //view.addSaveListener(new saveGameHandler());
             } catch (IOException ex) {
                 System.out.println("Map cannot be saved" + ex);
             }
 
             try {
-                writeObject.writeCharacterFile(character,0);
+                writeObject.writeCharacterFile(FILE_PATH, character);
             } catch (IOException ex) {
                 System.out.println("Character cannot be saved " + ex);
             }

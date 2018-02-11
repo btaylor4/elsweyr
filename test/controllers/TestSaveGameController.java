@@ -27,6 +27,7 @@ public class TestSaveGameController extends ApplicationTest{
     private int width = 500;
     private int height = 500;
 
+
     public void createCharacter() throws IOException {
         this.character =  ReadFiles.loadCharacter("DefaultCharacter.txt");
     }
@@ -38,9 +39,11 @@ public class TestSaveGameController extends ApplicationTest{
     @Override
     public void start(Stage stage) throws Exception {
         Stage window = new Stage();
-        createCharacter();
+
+        this.character = createCharacter();
         this.map = createMap();
         saveGameView = new SaveGameView(this.character, this.map);
+
         Scene saveGameScene = new Scene(saveGameView, width, height);
         window.setScene(saveGameScene);
         window.show();

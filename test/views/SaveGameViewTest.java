@@ -1,4 +1,3 @@
-/*
 package views;
 
 import javafx.scene.Scene;
@@ -12,11 +11,9 @@ import org.testfx.framework.junit.ApplicationTest;
 import models.Character;
 import models.GlobalLevel;
 import models.ReadFiles;
-
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
-
 import static org.junit.Assert.*;
 
 
@@ -55,5 +52,5 @@ public class SaveGameViewTest extends ApplicationTest{
         saveGameView.addSaveSlotOneListener();
         saveGameView.addSaveListener();
     }
+
 }
-*/

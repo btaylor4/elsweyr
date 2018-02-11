@@ -11,11 +11,13 @@ public class Write {
     private FileWriter characterSaveFile;
     private FileWriter mapSaveFile;
 
-    public void writeCharacterFile( Character characterBeingSaved, int selectedSaveSlot) throws IOException
+    private static String FILE_PATH;
+
+    public void writeCharacterFile( String filePath, Character characterBeingSaved) throws IOException
     {
         String newString = new String();
 
-        characterSaveFile = new FileWriter("characterSaveFile.txt");
+        characterSaveFile = new FileWriter(filePath + "characterSaveFile.txt");
 
         characterSaveFile.write(newString.format("%s%n", characterBeingSaved.getCharacterName()));
         characterSaveFile.write(newString.format("%d%n", characterBeingSaved.getBaseHP()));
@@ -51,10 +53,8 @@ public class Write {
 
         for(int i = 0; i < items.size(); i++)
         {
-            characterSaveFile.write(newString.format("%s %d%n",items.get(i) ,1));
-
+            characterSaveFile.write(newString.format("%s %d%n",items.get(i).getName() ,1));
         }
-
 
         ArrayList<Buffs> characterBuffs = characterBeingSaved.getActiveBuffs();
         characterSaveFile.write(newString.format("%d%n",characterBeingSaved.getActiveBuffs().size()));
@@ -70,9 +70,9 @@ public class Write {
         characterSaveFile.close();
     }
 
-    public void writeMapFile(GlobalLevel mapBeingSaved, int selectedSaveSlot) throws IOException
+    public void writeMapFile(String filePath, GlobalLevel mapBeingSaved) throws IOException
     {
-        mapSaveFile = new FileWriter("mapSaveFile.txt");
+        mapSaveFile = new FileWriter(filePath + "mapSaveFile.txt");
         String newString = new String();
 
         Zone[][] globalMap = mapBeingSaved.getGlobalMap();
