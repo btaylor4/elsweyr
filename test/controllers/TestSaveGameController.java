@@ -27,20 +27,23 @@ public class TestSaveGameController extends ApplicationTest{
     private int width = 500;
     private int height = 500;
 
-    public Character createCharacter() throws IOException {
-        return ReadFiles.loadCharacter("characterSaveFile.txt");
+
+    public void createCharacter() throws IOException {
+        this.character =  ReadFiles.loadCharacter("DefaultCharacter.txt");
     }
 
     public GlobalLevel createMap() throws IOException  {
-        return ReadFiles.loadGame("mapSaveFile.txt");
+        return ReadFiles.loadGame("Defaultmap.txt");
     }
 
     @Override
     public void start(Stage stage) throws Exception {
         Stage window = new Stage();
+
         this.character = createCharacter();
         this.map = createMap();
-        saveGameView = new SaveGameView();
+        saveGameView = new SaveGameView(this.character, this.map);
+
         Scene saveGameScene = new Scene(saveGameView, width, height);
         window.setScene(saveGameScene);
         window.show();

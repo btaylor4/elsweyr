@@ -32,6 +32,9 @@ public class SaveGameController {
         this.view.addBackToGameListener(new backToGameButtonHandler());
         this.view.addSaveSlotOneListener(new saveSlotOneHandler());
         this.view.addSaveSlotTwoListener(new saveSlotTwoHandler());
+        this.view.addSaveSlotThreeListener(new saveSlotThreeHandler());
+        this.view.addSaveListener(new saveGameHandler());
+
         saveSlot = 0;
     }
 

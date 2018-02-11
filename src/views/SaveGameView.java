@@ -29,10 +29,10 @@ public class SaveGameView extends Parent{
     private Button saveButton = new Button("Confirm Save");
     private Button backToGameButton = new Button("Return to Game");
     //private ArrayList<SaveFile> savedGamesList = new ArrayList<SaveFile>();
-    //private Character character;
-    //private GlobalLevel map;
+    private Character character;
+    private GlobalLevel map;
 
-    public SaveGameView(){
+    public SaveGameView(Character character, GlobalLevel map){
         GridPane grid = new GridPane();
         grid.setVgap(10);
         grid.setHgap(10);
@@ -46,8 +46,8 @@ public class SaveGameView extends Parent{
         grid.add(saveButton, 1,9);
         saveButton.setDisable(true);
         this.getChildren().add(grid);
-        //this.character = character;
-        //this.map = map;
+        this.character = character;
+        this.map = map;
     }
 
     public void addBackToGameListener(EventHandler<MouseEvent> handlerForBackToGameButton){
@@ -71,4 +71,10 @@ public class SaveGameView extends Parent{
     }
     public void enableSaveButton(){ saveButton.setDisable(false);}
 
+    public Character getCharacter(){
+        return character;
+    }
+    public GlobalLevel getMap(){
+        return map;
+    }
 }
