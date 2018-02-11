@@ -1,19 +1,19 @@
 package controllers;
 
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import models.*;
 import models.Character;
-import views.*;
+import models.GlobalLevel;
+import models.Write;
+import views.GlobalGameplayView;
+import views.LocalGameplayView;
+import views.SaveGameView;
 
-import java.util.ArrayList;
 import java.io.File;
 import java.io.IOException;
-import java.util.Date;
 
 public class SaveGameController {
 
@@ -38,6 +38,8 @@ public class SaveGameController {
         saveSlot = 0;
     }
 
+    public int getSaveSlot(){return saveSlot;};
+
     class backToGameButtonHandler implements EventHandler<MouseEvent> {
         @Override
         public void handle(MouseEvent event) {
@@ -50,9 +52,9 @@ public class SaveGameController {
                 window.setScene(localScene);
             } else { //(!character.isOnLocal())
                 GlobalGameplayView globalGameplayView = new GlobalGameplayView();
+                Scene globalScene = new Scene(globalGameplayView, 500, 500);
                 GlobalGameplayController globalGameplayController = new GlobalGameplayController(globalGameplayView, character, map);
                 Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                Scene globalScene = new Scene(globalGameplayView, 500, 500);
                 window.setScene(globalScene);
             }
 
@@ -66,7 +68,6 @@ public class SaveGameController {
             view.enableSaveButton();
         }
     }
-
 
     class saveSlotTwoHandler implements EventHandler<MouseEvent> {
         @Override
@@ -103,6 +104,21 @@ public class SaveGameController {
                 System.out.println("Character cannot be saved " + ex);
             }
             //After save, the user will have to click Go Back to Game to return to the game
+
+            System.out.println("Back to the Game!");
+            if (character.isOnLocal()) {
+                LocalGameplayView localGameplayView = new LocalGameplayView();
+                Scene localScene = new Scene(localGameplayView, 500, 500);
+                LocalGameplayController localGameplayController = new LocalGameplayController(localGameplayView, character, map);
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                window.setScene(localScene);
+            } else { //(!character.isOnLocal())
+                GlobalGameplayView globalGameplayView = new GlobalGameplayView();
+                Scene globalScene = new Scene(globalGameplayView, 500, 500);
+                GlobalGameplayController globalGameplayController = new GlobalGameplayController(globalGameplayView, character, map);
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                window.setScene(globalScene);
+            }
         }
     }
 }

@@ -1,17 +1,18 @@
 package controllers;
 
 import javafx.scene.Scene;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import models.*;
 import models.Character;
 import models.GlobalLevel;
-import org.junit.*;
+import models.ReadFiles;
+import org.junit.Assert;
+import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 import views.SaveGameView;
+
 import java.io.IOException;
-import static org.junit.Assert.assertEquals;
 
 public class TestSaveGameController extends ApplicationTest{
     private SaveGameController.backToGameButtonHandler localMovementHandler;
@@ -28,8 +29,8 @@ public class TestSaveGameController extends ApplicationTest{
     private int height = 500;
 
 
-    public void createCharacter() throws IOException {
-        this.character =  ReadFiles.loadCharacter("DefaultCharacter.txt");
+    public Character createCharacter() throws IOException {
+        return ReadFiles.loadCharacter("DefaultCharacter.txt");
     }
 
     public GlobalLevel createMap() throws IOException  {
@@ -54,11 +55,19 @@ public class TestSaveGameController extends ApplicationTest{
         saveGameController = new SaveGameController(saveGameView, this.character, this.map);
 
         saveSlotOneHandler = saveGameController.new saveSlotOneHandler();
-        MouseEvent mouseEvent = new MouseEvent(MouseEvent.MOUSE_CLICKED, width, height, 10, 10, MouseButton.PRIMARY, 1, false, false, false, false, true, false, false, false, false, true, null);
-        saveSlotOneHandler.handle(mouseEvent);
+        saveSlotTwoHandler = saveGameController.new saveSlotTwoHandler();
+        saveSlotThreeHandler = saveGameController.new saveSlotThreeHandler();
 
-        saveGameHandler = saveGameController.new saveGameHandler();
-        saveGameHandler.handle(mouseEvent);
+        MouseEvent mouseEvent = new MouseEvent(MouseEvent.MOUSE_CLICKED, width, height, 10, 10, MouseButton.PRIMARY, 1, false, false, false, false, true, false, false, false, false, true, null);
+
+        saveSlotOneHandler.handle(mouseEvent);
+        Assert.assertEquals(1, saveGameController.getSaveSlot());
+
+        mouseEvent = new MouseEvent(MouseEvent.MOUSE_CLICKED, width, height, 10, 10, MouseButton.PRIMARY, 1, false, false, false, false, true, false, false, false, false, true, null);
+        saveSlotTwoHandler.handle(mouseEvent);
+        Assert.assertEquals(2, saveGameController.getSaveSlot());
+        saveSlotThreeHandler.handle(mouseEvent);
+        Assert.assertEquals(3, saveGameController.getSaveSlot());
     }
 
 }

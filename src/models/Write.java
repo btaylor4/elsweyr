@@ -3,7 +3,6 @@ package models;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class Write {
@@ -17,7 +16,7 @@ public class Write {
     {
         String newString = new String();
 
-        characterSaveFile = new FileWriter(filePath + "characterSaveFile.txt");
+        characterSaveFile = new FileWriter(filePath + "DefaultCharacter.txt");
 
         characterSaveFile.write(newString.format("%s%n", characterBeingSaved.getCharacterName()));
         characterSaveFile.write(newString.format("%d%n", characterBeingSaved.getBaseHP()));
@@ -72,7 +71,7 @@ public class Write {
 
     public void writeMapFile(String filePath, GlobalLevel mapBeingSaved) throws IOException
     {
-        mapSaveFile = new FileWriter(filePath + "mapSaveFile.txt");
+        mapSaveFile = new FileWriter(filePath + "DefaultMap.txt");
         String newString = new String();
 
         Zone[][] globalMap = mapBeingSaved.getGlobalMap();
