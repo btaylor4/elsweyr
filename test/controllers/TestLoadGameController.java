@@ -1,19 +1,13 @@
 package controllers;
 
 import javafx.scene.Scene;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import models.*;
-import models.Character;
-import models.GlobalLevel;
-import org.junit.*;
+import org.junit.Assert;
+import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 import views.LoadGameView;
-import java.io.IOException;
-import static org.junit.Assert.assertEquals;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 
 public class TestLoadGameController extends ApplicationTest{
 
@@ -43,8 +37,6 @@ public class TestLoadGameController extends ApplicationTest{
         MouseEvent mouseEvent = new MouseEvent(MouseEvent.MOUSE_CLICKED, width, height, 10, 10, MouseButton.PRIMARY, 1, false, false, false, false, true, false, false, false, false, true, null);
         tableClickedHandler.handle(mouseEvent);
 
-        ActionEvent actionEvent = new ActionEvent();
-        loadGameHandler = loadGameController.new loadGameHandler();
-        loadGameHandler.handle(actionEvent);
+        Assert.assertTrue(loadGameView.getSelectedFile().getPathToMapFile().contains("SaveSlot"));
     }
 }
