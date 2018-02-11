@@ -206,6 +206,7 @@ public class ReadWriteTest {
         actualChar.setEquippedItem(new NoneItem());
         actualChar.setInventory(new Inventory());
         actualChar.getInventory().setMaxSize(5);
+        actualChar.setCharacterName("Bob");
 
         TakeableItem TI = new TakeableItem();
         TI.setName("hula-hoop");
@@ -421,6 +422,7 @@ public class ReadWriteTest {
         Character expectedChar;
 
         boolean found = true;
+        actualChar.setCharacterName("Bobby");
         for (Item i : actualChar.getInventory().getItems()) {
             if (!found && i.getName().equals("hula-hoop")) {
                 actualChar.setEquippedItem(i);
