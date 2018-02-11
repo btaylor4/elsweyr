@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class ReadWriteTest {
 
-    private static final String IMAGE_PATH = "PlaceHolderForImages" + File.separator;
+    private static final String IMAGE_PATH = "file:PlaceHolderForImages/";
 
     private static GlobalLevel actualMap;
     private static  Character actualChar;

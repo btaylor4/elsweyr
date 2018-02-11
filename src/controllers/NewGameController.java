@@ -59,6 +59,7 @@ public class NewGameController {
                 e.printStackTrace();
             }
 
+
             character.setCharacterSpritePath(view.getSelectedCharacterFilePath());
             System.out.println("Chosen file path: "+ view.getSelectedCharacterFilePath());
             try {

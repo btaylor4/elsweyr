@@ -15,7 +15,7 @@ public class Write {
     {
         String newString = new String();
 
-        characterSaveFile = new FileWriter("characterSaveFile.txt");
+        characterSaveFile = new FileWriter("DefaultCharacter.txt");
 
         characterSaveFile.write(newString.format("%s%n", characterBeingSaved.getCharacterName()));
         characterSaveFile.write(newString.format("%d%n", characterBeingSaved.getBaseHP()));
@@ -72,7 +72,7 @@ public class Write {
 
     public void writeMapFile(GlobalLevel mapBeingSaved, int selectedSaveSlot) throws IOException
     {
-        mapSaveFile = new FileWriter("mapSaveFile.txt");
+        mapSaveFile = new FileWriter("DefaultMap.txt");
         String newString = new String();
 
         Zone[][] globalMap = mapBeingSaved.getGlobalMap();

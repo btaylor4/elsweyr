@@ -8,7 +8,7 @@ Bob
 0
 0 0
 0 0
-PlaceHolderForImages/
+file:PlaceHolderForImages/
 Equipped NONE
 5
 0
