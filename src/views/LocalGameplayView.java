@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -32,17 +33,22 @@ public class LocalGameplayView extends Parent {   //
     displayed 4th/last is character
      */
     private Image characterSprite;
-    private Image [][] tileSprites;
-    private Image[][] itemSprites;
-    private Image [][] decalSprites;
     private ImageView characterImageView;
     private ImageView [][] tileImageView;
     private ImageView [][] decalImageView;
     private ImageView [][] itemImageView;
-    private int localMapSize;
-    private int viewableTilesNum;
-
+    private ImageView surroundingTile;
+    private int localMapHeight;
+    private int localMapWidth;
+    //The numbers of rows that can be viewed
+    private int viewableTilesRow;
+    //The number of columns that can be viewed
+    private int viewableTilesCol;
+    //The direction the character is facing.
+    private String characterDirection;
+    //Needed to display the character at the correct location.
     private Point localCharacterPos;
+    //Used to detect if the character moved.
     private Point localCharacterPrevPos;
     private StringBuffer path = new StringBuffer("file:PlaceHolderForImages/");
 
@@ -51,24 +57,10 @@ public class LocalGameplayView extends Parent {   //
 
     public LocalGameplayView(){
 
-        /*
-        GridPane grid = new GridPane();
-        grid.setVgap(10);
-        grid.setHgap(10);
-        grid.setPadding(new Insets(10,10,10,10));
+        viewableTilesRow = 9;
+        viewableTilesCol = 9;
+        characterDirection = "DOWN";
 
-
-        grid.add(inventoryButton,1,1);
-        grid.add(inGameMenuButton, 1,0);
-        grid.add(changeToGlobal,4,4);
-        this.getChildren().add(grid);
-        */
-
-        localMapSize = 30;
-        viewableTilesNum = 9;
-        localCharacterPrevPos = new Point(15,15);
-
-        intializeImageViews();
         LocalDisplay ld = new LocalDisplay(this);
         ld.intializeMap();
     }
@@ -82,20 +74,13 @@ public class LocalGameplayView extends Parent {   //
     }
 
     public void addKeyPressListener(EventHandler<KeyEvent> handlerForKeypress){
-        this.getScene().setOnKeyPressed(handlerForKeypress);
+        this.getScene().setOnKeyReleased(handlerForKeypress);
     }
 
     public void addChangeToGlobalListener(EventHandler<ActionEvent> handlerForChangeToGlobal){
         this.changeToGlobal.setOnAction(handlerForChangeToGlobal);
     }
 
-    public void intializeImageViews(){
-
-        intializeCharacterImageView();
-        intializeTileImageView();
-        intializeItemImageView();
-        intializeDecalView();
-    }
 
     //Creates a characterImageView
     private void intializeCharacterImageView(){
@@ -108,92 +93,90 @@ public class LocalGameplayView extends Parent {   //
         characterImageView.setFitWidth(characterWidth);
     }
 
-    private void intializeTileImageView(){
-        double tileHeight = 55.555555555;
-        double tileWidth = 55.555555555;
-        tileSprites = new Image[localMapSize][localMapSize];
-        tileImageView = new ImageView[localMapSize][localMapSize];
 
-        for(int i = 0; i < localMapSize; i++)
-            for (int j = 0; j < localMapSize; j++) {
-                int temp = (int) (Math.random() * 3);
-                if (temp == 2)
-                    tileSprites[i][j] = new Image(path +"WATER.png", 100., 100., true, true);
-                else if (temp == 1)
-                    tileSprites[i][j] = new Image(path+"GRASS.png", 100., 100., true, true);
-                else
-                    tileSprites[i][j] = new Image(path+"MOUNTAIN.png", 100., 100., true, true);
-            }
 
-        //Creates imageViews of each tile
-        for(int i = 0; i < localMapSize; i++)
-            for (int j = 0; j < localMapSize; j++) {
+    //Creates a tile ImageView
+    public void createTileViews(Image[][] tileSprites) {
+        localMapHeight = tileSprites.length;
+        localMapWidth = tileSprites[0].length;
+
+        double tileHeight = 45.55555;
+        double tileWidth = 45.55555;
+        tileImageView = new ImageView[localMapHeight][localMapWidth];
+        for(int i = 0; i < tileImageView.length; i++)
+            for(int j = 0; j < tileImageView[0].length; j++) {
                 tileImageView[i][j] = new ImageView(tileSprites[i][j]);
-                //Note the width and height are dependent on the number of viewable tiles and the window size
-                // squareroot(500*500/81)
-                //squareroot(windowWidth*windowHeight)/(tilesWidth * tilesHeight))
-                tileImageView[i][j].setFitWidth(tileWidth);
                 tileImageView[i][j].setFitHeight(tileHeight);
+                tileImageView[i][j].setFitWidth(tileWidth);
+            }
+
+
+        //Creates the Surrounding Tile
+        Image temp = new Image(path + "MOUNTAIN.png");
+        surroundingTile = new ImageView(temp);
+        surroundingTile.setFitHeight(45.55555);
+        surroundingTile.setFitWidth(45.555555);
+
+
+    }
+
+    //Creates a decal ImageView
+    public void createDecalViews(Image[][] decalSprites) {
+
+        double decalHeight = 45.55555;
+        double decalWidth = 45.55555;
+        decalImageView = new ImageView[localMapHeight][localMapWidth];
+
+        for(int i = 0; i < decalImageView.length; i++)
+            for(int j = 0; j < decalImageView[0].length; j++) {
+            if(decalSprites[i][j] != null) {
+                decalImageView[i][j] = new ImageView(decalSprites[i][j]);
+                decalImageView[i][j].setFitHeight(decalHeight);
+                decalImageView[i][j].setFitWidth(decalWidth);
+            }
             }
 
     }
 
+    //Creates an item ImageView
+    public void createItemViews(Image[][] itemSprites) {
+        double itemHeight = 45.55555;
+        double itemWidth = 45.55555;
+        itemImageView = new ImageView[localMapHeight][localMapWidth];
 
-    private void intializeItemImageView(){
-        double imageWidth = 20;
-        double imageHeight = 20;
-        itemSprites = new Image[localMapSize][localMapSize];
-        itemImageView = new ImageView[localMapSize][localMapSize];
-
-        for(int i = 0; i < localMapSize; i++)
-            for(int j = 0; j < localMapSize; j++){
-                if(Math.random() > .8)
-                    itemSprites[i][j] = new Image(path+"Takeable.png");
-
-            }
-
-        for(int i = 0; i < localMapSize; i++)
-            for(int j = 0; j < localMapSize; j++){
-                if(itemSprites[i][j] != null){
+        for(int i = 0; i < itemImageView.length; i++)
+            for(int j = 0; j < itemImageView[0].length; j++) {
+                if(itemSprites[i][j] != null) {
                     itemImageView[i][j] = new ImageView(itemSprites[i][j]);
-                    itemImageView[i][j].setFitWidth(imageWidth);
-                    itemImageView[i][j].setFitHeight(imageHeight);
-
+                    itemImageView[i][j].setFitHeight(itemHeight);
+                    itemImageView[i][j].setFitWidth(itemWidth);
                 }
             }
     }
 
-    private void intializeDecalView(){
-        //Note the width and height are dependent on the number of viewable tiles and the window size
-        // squareroot(500*500/81)
-        //squareroot(windowWidth*windowHeight)/(tilesWidth * tilesHeight))
-        double decalHeight = 55.555555555;
-        double decalWidth = 55.555555555;
-        decalSprites = new Image[localMapSize][localMapSize];
-        decalImageView = new ImageView[localMapSize][localMapSize];
+    public void createCharacterView(Image characterSprite) {
+        characterImageView = new ImageView(characterSprite);
+        characterImageView.setFitHeight(40);
+        characterImageView.setFitWidth(40);
+    }
 
-        for(int i = 0; i < localMapSize; i++)
-            for(int j = 0; j < localMapSize; j++){
-                if(Math.random() > .8)
-                    decalSprites[i][j] = new Image(path+"Death.png");
+    public void updateCharacterPos(Point startTile) {
+        localCharacterPos = startTile;
+    }
 
-            }
+    public void setCharacterPrevPos(Point characterPrevPos) {
+        this.localCharacterPrevPos = characterPrevPos;
+    }
 
-        for(int i = 0; i < localMapSize; i++)
-            for(int j = 0; j < localMapSize; j++){
-                if(decalSprites[i][j] != null){
-                    decalImageView[i][j] = new ImageView(decalSprites[i][j]);
-                    decalImageView[i][j].setFitWidth(decalWidth);
-                    decalImageView[i][j].setFitHeight(decalHeight);
-
-                }
-            }
+    public void setCharacterDirection(String characterDirection) {
+        this.characterDirection = characterDirection;
     }
 
 
     public class LocalDisplay extends AnimationTimer {
         private LocalGameplayView localGameplayView;
         private GridPane localMap;
+        private BorderPane localView;
         private long elapsedTime;
 
         public LocalDisplay(LocalGameplayView view){
@@ -201,102 +184,130 @@ public class LocalGameplayView extends Parent {   //
             localMap = new GridPane();
             localMap.setHgap(0);
             localMap.setVgap(0);
+
+
+            localView = new BorderPane();
+            localView.setCenter(localMap);
+            localView.setBottom(inGameMenuButton);
+            localView.setRight(inventoryButton);
             elapsedTime = 0;
         }
 
         @Override
         public void handle(long now) {
 
-            //if(now - elapsedTime > 2_000_000_000){
+            //Detects when the character moves and moves the map
+            if(localCharacterPos.x != localCharacterPrevPos.x || localCharacterPos.y != localCharacterPrevPos.y) {
+                //Updates the position to be the position moved to
+                setCharacterPrevPos(localCharacterPos);
                 localMap.getChildren().clear();
                 displayMapAndContents();
                 elapsedTime = now;
-            //}
+
+
+                localMap.add(characterImageView, viewableTilesCol / 2, viewableTilesRow / 2);
+                localMap.setValignment(characterImageView, VPos.CENTER);
+                localMap.setHalignment(characterImageView, HPos.CENTER);
+            }
+            else{
+                localMap.getChildren().clear();
+                displayMapAndContents();
+
+                localMap.add(characterImageView, viewableTilesCol / 2, viewableTilesRow / 2);
+                localMap.setValignment(characterImageView, VPos.CENTER);
+                localMap.setHalignment(characterImageView, HPos.CENTER);
+            }
 
 
         }
 
         public void intializeMap(){
-
-            displayMapAndContents();
-            localGameplayView.getChildren().addAll(localMap);
+            localGameplayView.getChildren().addAll(localView);
             start();
         }
 
 
 
-
+        //Displays the map and contents (including tiles, decals, and items)
         private void displayMapAndContents(){
 
             int row = localCharacterPrevPos.x;
             int col = localCharacterPrevPos.y;
 
             //The first row to be displayed
-            int DisplayRowStart = getDisplayStart(row);
-            int DisplayRowEnd = getDisplayRowEnd(row);
+            int displayRowStart = getDisplayStart(row);
+            int displayRowEnd = getDisplayRowEnd(row);
             //The first column to be displayed.
-            int DisplayColStart = getDisplayColStart(col);
-            int DisplayColEnd = getDisplayColEnd(col);
+            int displayColStart = getDisplayColStart(col);
+            int displayColEnd = getDisplayColEnd(col);
 
 
             //Number of rows to be displayed
-            int numRows = DisplayRowEnd - DisplayRowStart;
+            int numRows = displayRowEnd - displayRowStart;
             //Number of Columnstobecisplayed
-            int numCols = DisplayColEnd - DisplayColStart;
-            int temp = DisplayColStart;
+            int numCols = displayColEnd - displayColStart;
+            int temp = displayColStart;
             for(int i = 0; i < numRows; i++) {
-                temp = DisplayColStart;
+                temp = displayColStart;
                 for (int j = 0; j < numCols; j++) {
-                    localMap.add(tileImageView[DisplayRowStart][temp],j, i);
-                    if(decalImageView[DisplayRowStart][temp] != null){
-                        localMap.add(decalImageView[DisplayRowStart][temp], j, i);
-                    }
-                    if(itemImageView[DisplayRowStart][temp] != null){
-                        localMap.add(itemImageView[DisplayRowStart][temp], j, i);
-                        localMap.setValignment(itemImageView[DisplayRowStart][temp], VPos.CENTER);
-                        localMap.setHalignment(itemImageView[DisplayRowStart][temp], HPos.CENTER);
 
+                    //If the tile is not in the map.
+                    if(displayRowStart < 0)
+                    {
+                        localMap.add(surroundingTile,j,i);
+                    }
+                    else if(displayRowEnd > localMapHeight){
+                        localMap.add(surroundingTile,j,i);
+                    }
+                    else if(temp < 0)
+                    {
+                        localMap.add(surroundingTile,j,i);
+                        temp++;
+                    }
+                    else if(temp > localMapWidth)
+                    {
+                        localMap.add(surroundingTile,j,i);
+                    }
+                    else {
+                        //When the tile is in the map
+                        localMap.add(tileImageView[displayRowStart][temp], j, i);
+                        if (decalImageView[displayRowStart][temp] != null) {
+                            localMap.add(decalImageView[displayRowStart][temp], j, i);
+                        }
+                        if (itemImageView[displayRowStart][temp] != null) {
+                            localMap.add(itemImageView[displayRowStart][temp], j, i);
+                            localMap.setValignment(itemImageView[displayRowStart][temp], VPos.CENTER);
+                            localMap.setHalignment(itemImageView[displayRowStart][temp], HPos.CENTER);
+
+                        }
                     }
 
                     temp++;
                 }
-                DisplayRowStart++;
+                displayRowStart++;
             }
-        }
+    }
 
         //Cannot display a row that is before the 0th row.
         private int getDisplayStart(int row){
-            int DisplayRowStart = row - viewableTilesNum / 2;
-            if(DisplayRowStart < 0){
-                DisplayRowStart = 0;
-            }
-            return DisplayRowStart;
+            int displayRowStart = row - viewableTilesRow / 2;
+            return displayRowStart;
         }
         //Cannot display a row that is not in the map.
         private int getDisplayRowEnd(int row){
-            int DisplayRowEnd = row + viewableTilesNum / 2 + 1;
-            if(DisplayRowEnd > localMapSize - 1)
-            {
-                DisplayRowEnd = localMapSize;
-            }
-            return DisplayRowEnd;
+            int displayRowEnd = row + viewableTilesRow / 2 + 1;
+            return displayRowEnd;
         }
 
         private int getDisplayColStart(int col){
-            int DisplayColStart = col - viewableTilesNum /2;
-            if(DisplayColStart < 0){
-                DisplayColStart = 0;
-            }
-            return DisplayColStart;
+            int displayColStart = col - viewableTilesCol /2;
+            return displayColStart;
         }
 
         private int getDisplayColEnd(int col){
             //The plus one is for the for loop
-            int DisplayColEnd = col + viewableTilesNum / 2 + 1;
-            if(DisplayColEnd > localMapSize - 1){
-                DisplayColEnd = localMapSize;
-            }
-            return DisplayColEnd;
+            int displayColEnd = col + viewableTilesCol / 2 + 1;
+            return displayColEnd;
         }
     }
 }
