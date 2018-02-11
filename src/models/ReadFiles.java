@@ -172,7 +172,7 @@ public class ReadFiles {
 
         //equipped item
         currentLine = reader.readLine();
-        loadedCharacter.setEquippedItem(getItem(currentLine.split(" ")[1]));
+        String toBeEquipped = currentLine.split(" ")[1];
 
         //max inventory size
         currentLine = reader.readLine();
@@ -180,20 +180,33 @@ public class ReadFiles {
         in.setMaxSize(Integer.parseInt(currentLine));
 
         //fill inventory
+        boolean equipped = false;
+        TakeableItem TI = new TakeableItem();
+        TI.setItemType(ItemType.NONE);
+        TI.setName("");
         currentNum = Integer.parseInt(reader.readLine());
         for (int i = 0; i < currentNum; ++i) {
             String [] itemLine = reader.readLine().split(" ");
             int num = Integer.parseInt(itemLine[itemLine.length - 1]);
 
             for (int j = 0; j < num; ++j) {
-                TakeableItem TI = new TakeableItem();
-
+                TI = new TakeableItem();
                 TI.setName(getID(itemLine, 0, itemLine.length - 1));
-                TI.setItemSprite(new Image(new FileInputStream(IMAGE_PATH + "Takeable.png")));
+                TI.setItemSpritePath(IMAGE_PATH + "Takeable.png");
+                TI.createItemImage();
                 in.addItem(TI);
+            }
+
+            if (!equipped && TI.getName().equals(toBeEquipped)) {
+                equipped = true;
+                loadedCharacter.setEquippedItem(TI);
             }
         }
 
+        if (!equipped) {
+            loadedCharacter.setEquippedItem(new NoneItem());
+            loadedCharacter.getEquippedItem().setItemType(ItemType.NONE);
+        }
         loadedCharacter.setInventory(in);
 
         //buff array size

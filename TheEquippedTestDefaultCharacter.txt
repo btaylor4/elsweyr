@@ -1,4 +1,4 @@
-null
+Bobby
 10
 5
 3
@@ -6,8 +6,8 @@ null
 4
 4
 0
-4 3
-7 8
+0 0
+0 0
 PlaceHolderForImages\Character.png
 Equipped NONE
 5
