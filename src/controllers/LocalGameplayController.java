@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import models.*;
@@ -32,6 +33,41 @@ public class LocalGameplayController {
         this.view.addKeyPressListener(new MovementHandler());
         this.view.addMenuButtonListener(new MenuButtonHandler());
         this.view.addInventoryButtonListener(new InvButtonHandler());
+
+        populateView();
+    }
+
+    public void populateView(){
+
+        Point zoneLoc = character.getGlobalPos();
+        Zone localLevel = globalMap.getGlobalMap()[zoneLoc.x][zoneLoc.y];
+        Tile[][] tiles = localLevel.getLocalMap();
+        int zoneHeight = tiles.length;
+        int zoneWidth = tiles[0].length;
+
+        Image characterSprite = character.getCharacterSprite();
+        Image[][] tileSprites = new Image[zoneHeight][zoneWidth];
+        Image[][] decalSprites = new Image[zoneHeight][zoneWidth];
+        Image[][] itemSprites = new Image[zoneHeight][zoneWidth];
+
+        for(int i = 0; i < zoneHeight; i++)
+            for(int j = 0; j < zoneWidth; j++){
+            tileSprites[i][j] = tiles[i][j].getTileSprite();
+            if(tiles[i][j].getDecal() != null) {
+                decalSprites[i][j] = tiles[i][j].getDecal();
+            }
+            if(tiles[i][j].getItem().getItemSprite() != null) {
+                itemSprites[i][j] = tiles[i][j].getItem().getItemSprite();
+            }
+            }
+
+        view.createTileViews(tileSprites);
+        view.createDecalViews(decalSprites);
+        view.createItemViews(itemSprites);
+        view.createCharacterView(characterSprite);
+        view.setCharacterPrevPos(localLevel.getStartTile());
+        view.updateCharacterPos(localLevel.getStartTile());
+
     }
     public LocalGameplayController(){};
 
@@ -188,6 +224,8 @@ public class LocalGameplayController {
             default:
                 moveDirection = new Point(0,0);
 
+            view.setCharacterDirection(numKeyPressed);
+
         }
 
         // If charachter isn't out of bounds and there isn't an obstacle item or impassable terrain, update his position
@@ -198,6 +236,9 @@ public class LocalGameplayController {
                     characterPositionInMap.y + moveDirection.y);
 
             character.updateLocalPos(newCharacterPosition);
+
+            //Updates the localViewsCharacterPosition
+            view.updateCharacterPos(newCharacterPosition);
         }
 
         AreaEffect effect = localMap.getLocalMap()[character.getLocalPos().x][character.getLocalPos().y].getAreaEffect();

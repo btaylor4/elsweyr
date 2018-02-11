@@ -13,7 +13,6 @@ public class Tile {
     private Item item;
     private Image decal;
     private String tileSpritePath;
-    private Image decalSprite;
     private String decalSpritePath;
 
     public void removeItem(){
@@ -65,7 +64,7 @@ public class Tile {
     }
 
     public void createDecalImage() throws FileNotFoundException {
-        decalSprite = new Image(new FileInputStream(decalSpritePath));
+        decal = new Image(new FileInputStream(decalSpritePath));
     }
 
     public String getDecalSpritePath() {
