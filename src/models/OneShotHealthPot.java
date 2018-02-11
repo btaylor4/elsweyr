@@ -5,10 +5,11 @@ import java.io.FileNotFoundException;
 
 public class OneShotHealthPot extends OneShotItem {
     private int healthToAdd;
-    private String imageFile = "file:ArtAssets" + File.separator + "ItemImages" + File.separator + "HealthPot.png";
+    private String imageFile = "ArtAssets" + File.separator + "ItemImages" + File.separator + "HealthPot.png";
 
     public OneShotHealthPot() {
-        this.healthToAdd = 5;
+        this.healthToAdd = 10;
+        this.setName("Health Pot");
         this.setItemSpritePath(imageFile);
         try {
             this.createItemImage();

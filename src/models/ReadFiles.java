@@ -247,29 +247,65 @@ public class ReadFiles {
             }
         } else if (line[0].equals("Item")) {
             if (line[1].equals(ItemType.TAKEABLE.name())) {
-                TakeableItem TI = new TakeableItem();
-                TI.setName(getID(line, 2, line.length - 1));
-                TI.setItemSpritePath(line[line.length - 1]);
-                TI.createItemImage();
-                tile.setItem(TI);
+                if (line[2].equalsIgnoreCase("key")) {
+                    TakeableKey TK = new TakeableKey();
+                    TK.setItemType(ItemType.TAKEABLE);
+                    tile.setItem(TK);
+                } else if (line[2].equalsIgnoreCase("food")) {
+                    Food food = new Food();
+                    food.setItemType(ItemType.TAKEABLE);
+                    tile.setItem(food);
+                } else if (line[2].equalsIgnoreCase("sword")) {
+                    TakeableSword TS = new TakeableSword();
+                    TS.setItemType(ItemType.TAKEABLE);
+                    tile.setItem(TS);
+                } else {
+                    System.out.println("Improper Takable Item: " + line[2]);
+                    assert false;
+                }
             } else if (line[1].equals(ItemType.OBSTACLE.name())) {
-                ObstacleItem OI = new ObstacleItem();
-                OI.setName(getID(line, 2, line.length - 1));
-                OI.setItemSpritePath(line[line.length - 1]);
-                OI.createItemImage();
-                tile.setItem(OI);
+                if (line[2].equalsIgnoreCase("Bed Of Spikes")) {
+                    BedOfSpikes BOS = new BedOfSpikes();
+                    BOS.setItemType(ItemType.OBSTACLE);
+                    tile.setItem(BOS);
+                } else if (line[2].equalsIgnoreCase("Wall")) {
+                    Wall wall = new Wall();
+                    wall.setItemType(ItemType.OBSTACLE);
+                    tile.setItem(wall);
+                } else {
+                    System.out.println("Improper Obstacle Item: " + line[2]);
+                    assert false;
+                }
             } else if (line[1].equals(ItemType.ONESHOT.name())) {
-                OneShotItem OSI = new OneShotItem();
-                OSI.setName(getID(line, 2, line.length - 1));
-                OSI.setItemSpritePath(line[line.length - 1]);
-                OSI.createItemImage();
-                tile.setItem(OSI);
+                if (line[2].equalsIgnoreCase("Health Pot")) {
+                    OneShotHealthPot OSHP = new OneShotHealthPot();
+                    OSHP.setItemType(ItemType.ONESHOT);
+                    tile.setItem(OSHP);
+                } else if (line[2].equalsIgnoreCase("Banana Peel")) {
+                    OneShotBananaPeel OSBP = new OneShotBananaPeel();
+                    OSBP.setItemType(ItemType.ONESHOT);
+                    tile.setItem(OSBP);
+                } else if (line[2].equalsIgnoreCase("Book")) {
+                    OneShotBook book = new OneShotBook();
+                    book.setItemType(ItemType.ONESHOT);
+                    tile.setItem(book);
+                } else {
+                    System.out.println("Improper OneShot Item: " + line[2]);
+                    assert false;
+                }
             } else if (line[1].equals(ItemType.INTERACTIVE.name())) {
-                InteractiveItem II = new InteractiveItem();
-                II.setName(getID(line, 2, line.length - 1));
-                II.setItemSpritePath(line[line.length - 1]);
-                II.createItemImage();
-                tile.setItem(II);
+                if (line[2].equalsIgnoreCase("Door")) {
+                    Door door = new Door();
+                    door.setItemType(ItemType.INTERACTIVE);
+                    tile.setItem(door);
+                } else if (line[2].equalsIgnoreCase("Animal")) {
+                    Animal animal = new Animal();
+                    animal.setItemType(ItemType.INTERACTIVE);
+                    tile.setItem(animal);
+                } else {
+                    System.out.println("Improper Interacticve Item: " + line[2]);
+                    assert false;
+                }
             } else {
                 System.out.println("Improper Item Property @ " + gameFile + "should be Obstacle, Interactive, OneShot, or Takeable");
                 assert false;

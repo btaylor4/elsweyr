@@ -9,7 +9,7 @@ import java.io.FileNotFoundException;
 public class OneShotBook extends OneShotItem{
 
     private  int expIncrease;
-    private String imageFile = "file:ArtAssets" + File.separator + "ItemImages" + File.separator + "Book.png";
+    private String imageFile = "ArtAssets" + File.separator + "ItemImages" + File.separator + "Book.png";
 
     public OneShotBook() {
         this.expIncrease = 10;

@@ -1,9 +1,10 @@
 package models;
 
+import javafx.scene.image.Image;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import javafx.scene.image.Image;
 
 public class Food extends TakeableItem{
 
@@ -13,7 +14,7 @@ public class Food extends TakeableItem{
 
     public Food()throws FileNotFoundException {
         itemName = "Food";
-        itemSpritePath = "file: ArtAssets" + File.separator + "ItemImages" + File.separator + "Food.png";
+        itemSpritePath = "ArtAssets" + File.separator + "ItemImages" + File.separator + "Food.png";
         itemSprite = new Image(new FileInputStream((itemSpritePath)));
     }
 

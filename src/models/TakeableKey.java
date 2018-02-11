@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
  */
 public class TakeableKey extends TakeableItem{
 
-    private String imageFile = "file:ArtAssets" + File.separator + "ItemImages" + File.separator + "Key.png";
+    private String imageFile = "ArtAssets" + File.separator + "ItemImages" + File.separator + "Key.png";
 
     public TakeableKey() {
         this.setName("Key");

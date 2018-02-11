@@ -9,7 +9,7 @@ import java.io.FileNotFoundException;
 public class OneShotBananaPeel extends OneShotItem{
 
     private  int healthIncrease;
-    private String imageFile = "file:ArtAssets" + File.separator + "ItemImages" + File.separator + "BananaPeel.png";
+    private String imageFile = "ArtAssets" + File.separator + "ItemImages" + File.separator + "BananaPeel.png";
 
     public OneShotBananaPeel() {
         this.healthIncrease = -3;
@@ -28,11 +28,11 @@ public class OneShotBananaPeel extends OneShotItem{
         return true;
     }
 
-    public void setExpIncrease(int healthIncrease) {
+    public void setHealthIncrease(int healthIncrease) {
         this.healthIncrease = healthIncrease;
     }
 
-    public int getExpIncrease() {
+    public int getHealthIncrease() {
         return this.healthIncrease;
     }
 }
