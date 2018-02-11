@@ -211,10 +211,7 @@ public class GlobalGameplayView extends Parent {   //
             if(globalCharacterPos.x != globalCharacterPrevPos.x || globalCharacterPos.y != globalCharacterPrevPos.y)
             {
                 //Moves the character and causes a one second wait.
-                globalView.getChildren().clear();
                 viewableGlobalMap.getChildren().clear();
-                globalView.setCenter(viewableGlobalMap);
-                globalView.setBottom(inGameMenuButton);
 
                 if(now - elapsedTime < 000_000_000)
                 {
@@ -236,10 +233,7 @@ public class GlobalGameplayView extends Parent {   //
             }
             //Keeps the maps display when their is no input.
             else {
-                globalView.getChildren().clear();
                 viewableGlobalMap.getChildren().clear();
-                globalView.setCenter(viewableGlobalMap);
-                globalView.setBottom(inGameMenuButton);
 
 
 
