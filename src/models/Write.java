@@ -3,19 +3,19 @@ package models;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class Write {
 
     private FileWriter characterSaveFile;
     private FileWriter mapSaveFile;
+    private String path = "";
 
     public void writeCharacterFile( Character characterBeingSaved, int selectedSaveSlot) throws IOException
     {
         String newString = new String();
 
-        characterSaveFile = new FileWriter("DefaultCharacter.txt");
+        characterSaveFile = new FileWriter(path + "DefaultCharacter.txt");
 
         characterSaveFile.write(newString.format("%s%n", characterBeingSaved.getCharacterName()));
         characterSaveFile.write(newString.format("%d%n", characterBeingSaved.getBaseHP()));
@@ -35,9 +35,9 @@ public class Write {
         characterSaveFile.write(newString.format("%d ",(int)characterBeingSaved.getGlobalPos().getX()));
         characterSaveFile.write(newString.format("%d%n",(int)characterBeingSaved.getGlobalPos().getY()));
         characterSaveFile.write(newString.format("%s%n", characterBeingSaved.getCharacterSpritePath()));
-        if(characterBeingSaved.getEquippedItem() == null)
+        if(characterBeingSaved.getEquippedItem().getItemType().equals(ItemType.NONE))
         {
-            characterSaveFile.write(newString.format("Equipped N/A%n"));
+            characterSaveFile.write(newString.format("Equipped NONE%n"));
         }
         else
         {
@@ -51,7 +51,7 @@ public class Write {
 
         for(int i = 0; i < items.size(); i++)
         {
-            characterSaveFile.write(newString.format("%s %d%n",items.get(i) ,1));
+            characterSaveFile.write(newString.format("%s %d%n",items.get(i).getName() ,1));
 
         }
 
@@ -162,6 +162,12 @@ public class Write {
         }
 
         mapSaveFile.close();
+    }
+
+    public String getPath() {return path;}
+
+    public void setPath(String newPath) {
+        path = newPath;
     }
 }
 

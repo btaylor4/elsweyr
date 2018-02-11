@@ -8,9 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import models.Character;
-import models.GlobalLevel;
-import models.ReadFiles;
-import models.SaveFile;
+import models.*;
 import views.GlobalGameplayView;
 import views.MainMenuView;
 import views.NewGameView;
@@ -105,9 +103,15 @@ public class NewGameController {
                     try {
                         newMap.createNewFile();
                         newCharacter.createNewFile();
+                        Character c = ReadFiles.loadCharacter(newCharacter.getName());
+                        c.setCharacterSpritePath(view.getSelectedCharacterFilePath());
+
+                        Write write = new Write();
+                        write.setPath("SaveSlot" + i + File.separator);
+                        write.writeCharacterFile(c, i);
 
                         copyDefaultToNewFile(map, newMap);
-                        copyDefaultToNewFile(character, newCharacter);
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -128,6 +132,9 @@ public class NewGameController {
             while ((bytesRead = in.read(chunk)) > 0) {
                 out.write(chunk, 0, bytesRead);
             }
+
+            out.close();
+            in.close();
         }
 
     }
