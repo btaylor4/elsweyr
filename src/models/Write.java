@@ -36,9 +36,9 @@ public class Write {
         characterSaveFile.write(newString.format("%d ",(int)characterBeingSaved.getGlobalPos().getX()));
         characterSaveFile.write(newString.format("%d%n",(int)characterBeingSaved.getGlobalPos().getY()));
         characterSaveFile.write(newString.format("%s%n", characterBeingSaved.getCharacterSpritePath()));
-        if(characterBeingSaved.getEquippedItem() == null)
+        if(characterBeingSaved.getEquippedItem().getItemType().equals(ItemType.NONE))
         {
-            characterSaveFile.write(newString.format("Equipped N/A%n"));
+            characterSaveFile.write(newString.format("Equipped NONE%n"));
         }
         else
         {
