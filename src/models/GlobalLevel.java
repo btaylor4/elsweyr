@@ -1,5 +1,7 @@
 package models;
 
+import java.awt.*;
+
 public class GlobalLevel {
 
     private Zone[][] globalMap;
@@ -28,5 +30,9 @@ public class GlobalLevel {
 
     public void setGameTime(int gameTime) {
         this.gameTime = gameTime;
+    }
+
+    public Point getStartPosOfTile(Point levelCoord){
+        return globalMap[levelCoord.x][levelCoord.y].getStartTile();
     }
 }
