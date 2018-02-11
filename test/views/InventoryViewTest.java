@@ -46,6 +46,7 @@ public class InventoryViewTest extends ApplicationTest {
         items.add(item1);
         inventory.setItems(items);
         character.setInventory(inventory);
+        //character.setEquippedItem(character.getInventory().getItems().get(1));
     }
 
     @Test
@@ -82,6 +83,13 @@ public class InventoryViewTest extends ApplicationTest {
     @Test
     public void tryExitingInventory() {
         view.getBackToGameButton().fire();
+    }
+
+    @Test
+    public void tryInteracting() {
+        while(true) {
+
+        }
     }
 
 }
