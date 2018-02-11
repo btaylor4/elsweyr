@@ -140,9 +140,8 @@ public class GlobalGameplayController {
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
             Scene globalScene = new Scene(inGameMenuView, 500, 500);
-
-            window.setScene(globalScene);
             System.out.println("menu Buttonstuff");
+            window.setScene(globalScene);
         }
     }
 

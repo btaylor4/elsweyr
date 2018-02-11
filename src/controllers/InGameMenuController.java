@@ -58,7 +58,7 @@ public class InGameMenuController {
 
         @Override
         public void handle(ActionEvent event) {
-            //Switch View To Load Game Menu
+            //Switch View To Save Game Menu
             System.out.println("Save Game Buttonstuff");
 
             // add go to save view!!!

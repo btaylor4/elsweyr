@@ -194,6 +194,8 @@ public class ReadFiles {
             }
         }
 
+        loadedCharacter.setInventory(in);
+
         //buff array size
         currentNum = Integer.parseInt(reader.readLine());
 
