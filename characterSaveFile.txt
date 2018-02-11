@@ -1,6 +1,6 @@
-Bob
+null
 10
-29
+5
 3
 0
 4
@@ -9,18 +9,14 @@ Bob
 4 3
 7 8
 PlaceHolderForImages\Character.png
-Equipped block
-12
-7
+Equipped NONE
+5
+4
 hula-hoop 1
 hula-hoop 1
-hula-hoop 1
-block 1
 block 1
 shoe 1
-block 1
-4
-HEALTHEFFECT 1000 -8 poison
-HEALTHEFFECT 1000 -4 poison
-HEALTHEFFECT 2000 6 vitaminC
-HEALTHEFFECT 3000 -3 poison
+3
+HEALTHEFFECT 1000 4 poison
+HEALTHEFFECT 2000 6 Chocolate cake
+HEALTHEFFECT 3000 3 poison
