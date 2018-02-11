@@ -173,9 +173,8 @@ public class GlobalGameplayController {
         //TODO: Clean thi
         @Override
         public void handle(ActionEvent event) {
-            //Do Menu stuff
-            //switch into in-game menu
-            System.out.println("Changing View To Global Level");
+            // load local map
+            System.out.println("Changing View To Local Level");
 
             LocalGameplayView localGameplayView = new LocalGameplayView();
             Scene globalScene = new Scene(localGameplayView, 500, 500);
