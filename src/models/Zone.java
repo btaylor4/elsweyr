@@ -13,7 +13,7 @@ public class Zone {
     private Point startTile = new Point(0,0);
     private Image zoneSprite;
     private String zoneSpritePath;
-    private boolean isPassable;
+    private boolean isPassable = true;
     private boolean hasLevel;
 
     public Zone() {
