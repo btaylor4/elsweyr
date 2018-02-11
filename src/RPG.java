@@ -13,17 +13,19 @@ public class RPG extends Application {
     public void start(Stage stage) throws Exception {
         Stage primaryWindow = new Stage();
 //        LocalGameplayView localView = new LocalGameplayView();
-//        Character playerCharacter = new Character();
+//        Character playerCharacter = ReadFiles.loadCharacter("DefaultCharacter.txt");
 //        Zone localLevel = new Zone();
 //
-//        GlobalLevel global = new GlobalLevel();
+//        GlobalLevel global = ReadFiles.loadGame("DefaultMap.txt");
 //        LocalGameplayController localController = new LocalGameplayController(localView, playerCharacter, global);
 
         MainMenuView mainMenu = new MainMenuView();
         MainMenuController mainController = new MainMenuController(mainMenu);
+//        SaveGameView saveView = new SaveGameView(playerCharacter, global);
+//        SaveGameController saveController = new SaveGameController(saveView, playerCharacter, global);
         Scene menuScene = new Scene(mainMenu, 500, 500);
         primaryWindow.setScene(menuScene);
-        primaryWindow.setTitle("Main Menu");
+        primaryWindow.setTitle("Save View");
         primaryWindow.show();
     }
 

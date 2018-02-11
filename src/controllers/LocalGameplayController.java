@@ -60,8 +60,20 @@ public class LocalGameplayController {
             //CHECK IF THERE IS AN ITEM IN TILE, IF IT'S INTERACTIVE ACTIVATE IT
             //IF IT'S TAKEABLE TAKE IT
 
-            if(localMap.getLocalMap()[(int)localPos.getX()][(int)localPos.getY()].getItem() != null)
-                localMap.getLocalMap()[(int)localPos.getX()][(int)localPos.getY()].getItem().onTouchAction(character);
+            if(localMap.getLocalMap()[(int)localPos.getX()][(int)localPos.getY()].getItem() != null) {
+                Tile tile = localMap.getLocalMap()[(int) localPos.getX()][(int) localPos.getY()];
+                Item itemOnTile = tile.getItem();
+                boolean shouldBeRemoved = itemOnTile.onTouchAction(character);
+                switch (itemOnTile.getItemType()) {
+                    case TAKEABLE:
+                        if (shouldBeRemoved)
+                            tile.removeItem();
+                        break;
+                    case ONESHOT:
+                        tile.removeItem();
+                        break;
+                }
+            }
 
 
             //CHECK IF THERE'S AN EXIT TILE
@@ -70,14 +82,11 @@ public class LocalGameplayController {
             if(localPos.getX() == localMap.getExitTile().getX() && localPos.getY() == localMap.getExitTile().getY() ){
 
                 GlobalGameplayView globalView = new GlobalGameplayView();
-
                 Scene scene = new Scene(globalView,500,500);
                 //Set the characters position to be in the global map when stepping on the exit tile
                 character.setOnLocal(false);
                 GlobalGameplayController globalGameplay = new GlobalGameplayController(globalView,character,globalMap);
                 Stage window = (Stage)(((Scene)event.getSource()).getWindow());
-
-
                 window.setScene(scene);
             }
 
