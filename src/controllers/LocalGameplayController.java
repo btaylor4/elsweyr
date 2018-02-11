@@ -33,7 +33,6 @@ public class LocalGameplayController {
 
         this.view.getStatusView().setDefaultHealth(character.getBaseHP());
         this.view.getStatusView().getCurrentHealth().setWidth(character.getCurrentHP());
-        this.view.getStatusView().updateCharacterHealth(character.getCurrentHP());
         this.view.getStatusView().updateCharacterLevel(character.getLevel());
 
         populateView();
