@@ -27,6 +27,7 @@ public class GlobalGameplayViewTest extends ApplicationTest {
         window.setScene(localScene);
         window.show();
 
+
     }
 
     @Test
