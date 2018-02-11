@@ -8,7 +8,7 @@ null
 0
 4 3
 7 8
-PlaceHolderForImages/Character.png
+PlaceHolderForImages\Character.png
 Equipped NONE
 5
 4
