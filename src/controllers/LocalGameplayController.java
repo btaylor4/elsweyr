@@ -11,6 +11,7 @@ import models.Character;
 import models.*;
 import views.GlobalGameplayView;
 import views.InGameMenuView;
+import views.InventoryView;
 import views.LocalGameplayView;
 
 import java.awt.*;
@@ -61,8 +62,8 @@ public class LocalGameplayController {
         view.createDecalViews(decalSprites);
         view.createItemViews(itemSprites);
         view.createCharacterView(characterSprite);
-        view.setCharacterPrevPos(localLevel.getStartTile());
-        view.updateCharacterPos(localLevel.getStartTile());
+        view.setCharacterPrevPos(character.getLocalPos());
+        view.updateCharacterPos(character.getLocalPos());
 
     }
 
@@ -151,6 +152,15 @@ public class LocalGameplayController {
         public void handle(ActionEvent event) {
             //Do inv menu stuff
             //switch to inventory view
+
+//            InGameMenuView inGameMenuView = new InGameMenuView();
+            InventoryView inventoryView = new InventoryView();
+
+            Scene inventoryScene = new Scene(inventoryView , 500, 500);
+            InventoryController inventoryController = new InventoryController(inventoryView,character,globalMap);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(inventoryScene);
+
             System.out.println("InvButton Stuff");
         }
     }
