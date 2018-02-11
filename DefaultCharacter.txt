@@ -1,4 +1,4 @@
-Bob
+null
 10
 5
 3
@@ -6,8 +6,8 @@ Bob
 4
 4
 0
-0 0
-0 0
+4 3
+7 8
 PlaceHolderForImages\Character.png
 Equipped NONE
 5

@@ -63,6 +63,9 @@ public class GlobalGameplayController {
 
             else if(yPositionChange < 0 || yPositionChange > map.getGlobalMap()[0].length - 1)
                 return false;
+            //Checks if the zone is passable if it is not passable returns false.
+            else if(!map.getGlobalMap()[xPositionChange][yPositionChange].isPassable())
+                return false;
 
             else
                 return true;
@@ -144,6 +147,9 @@ public class GlobalGameplayController {
                 //Set the characters location to be in the Local view when changing to it
                 character.setOnLocal(true);
                 LocalGameplayView localGameplayView = new LocalGameplayView();
+
+                Point startTile = map.getGlobalMap()[character.getGlobalPos().x][character.getGlobalPos().y].getStartTile();
+                character.updateLocalPos(startTile);
                 Scene globalScene = new Scene(localGameplayView, 500, 500);
                 LocalGameplayController localGameplayController = new LocalGameplayController(localGameplayView, character, map);
                 Stage window = (Stage)(((Scene)event.getSource()).getWindow());
