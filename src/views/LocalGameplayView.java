@@ -25,6 +25,8 @@ public class LocalGameplayView extends Parent {   //
     private Button inventoryButton = new Button("Inventory");
     private Button inGameMenuButton = new Button("In-Game Menu");
     private Button changeToGlobal = new Button("Change To Global View");
+
+    private StatusView statusView = new StatusView();
     /*
     Order of operation of sprite display.
     displayed 1st is tilesprite
@@ -172,6 +174,9 @@ public class LocalGameplayView extends Parent {   //
         this.characterDirection = characterDirection;
     }
 
+    public StatusView getStatusView() {
+        return statusView;
+    }
 
     public class LocalDisplay extends AnimationTimer {
         private LocalGameplayView localGameplayView;
@@ -189,6 +194,7 @@ public class LocalGameplayView extends Parent {   //
             localView = new BorderPane();
             localView.setCenter(localMap);
             localView.setBottom(inGameMenuButton);
+            localView.setTop(statusView);
             localView.setRight(inventoryButton);
             elapsedTime = 0;
         }

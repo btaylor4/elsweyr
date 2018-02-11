@@ -1,5 +1,7 @@
 package models;
 
+import views.StatusView;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -46,6 +48,19 @@ public class HealthEffect extends AreaEffect {
             @Override
             public void run() {
                 character.updateHealth(healthChange);
+            }
+        }, 0, timeInterval);
+    }
+
+    @Override
+    public void applyEffect(Character character, StatusView view) {
+        buf = new Timer();
+        character.addEffect(this);
+        buf.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                character.updateHealth(healthChange);
+                view.updateCharacterHealth(healthChange);
             }
         }, 0, timeInterval);
     }

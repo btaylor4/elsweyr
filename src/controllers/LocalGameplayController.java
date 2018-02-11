@@ -30,6 +30,7 @@ public class LocalGameplayController {
         this.view.addKeyPressListener(new MovementHandler());
         this.view.addMenuButtonListener(new MenuButtonHandler());
         this.view.addInventoryButtonListener(new InvButtonHandler());
+        this.view.getStatusView().updateCharacterLevel(character.getLevel());
 
         populateView();
     }
@@ -66,11 +67,6 @@ public class LocalGameplayController {
         view.updateCharacterPos(character.getLocalPos());
 
     }
-
-    public LocalGameplayController() {
-    }
-
-    ;
 
     class MovementHandler implements EventHandler<KeyEvent> {
 
@@ -267,14 +263,17 @@ public class LocalGameplayController {
                     }
 
                     if (!hasEffectId) {
-                        effect.applyEffect(character);
+                        for (HealthEffect effects : character.getHealthEffects()) {
+                            effects.stopTimer(); //TODO: This applies one extra tick
+                        }
+                        effect.applyEffect(character, view.getStatusView());
                     }
                 }
                 break;
             case LEVELUPEFFECT:
                 boolean activated = ((LevelUpEffect) effect).hasBeenActivated();
                 if (!activated) {
-                    effect.applyEffect(character);
+                    effect.applyEffect(character, view.getStatusView());
                 }
                 break;
             case NONE:
@@ -282,6 +281,8 @@ public class LocalGameplayController {
                     for (HealthEffect effects : character.getHealthEffects()) {
                         effects.stopTimer(); //TODO: This applies one extra tick
                     }
+
+                    character.getHealthEffects().clear();
                 }
 
         }
