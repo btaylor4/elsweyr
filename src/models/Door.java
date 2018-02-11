@@ -12,6 +12,7 @@ public class Door extends InteractiveItem {
 
     public Door() {
         isOpen = false;
+        this.setName("Door");
         this.setItemSpritePath(imageFile);
         try {
             this.createItemImage();
