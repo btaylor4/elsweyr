@@ -69,10 +69,10 @@ public class Character {
     public void updateHealth(int healthChange){
         currentHP += healthChange;
         //Character max currentHP is his/her TotalHP
-        if(currentHP > baseHP) //TODO: Change this to base + bonus
+        if(currentHP >= baseHP) //TODO: Change this to base + bonus
             currentHP = baseHP;
         //Character min currentHP is 0.
-        else if(currentHP < 0)
+        else if(currentHP <= 0)
             currentHP = 0;
     }
 

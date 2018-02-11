@@ -52,10 +52,6 @@ public class InventoryController {
             Scene localScene = new Scene(localView, 500, 500);
             LocalGameplayController localController = new LocalGameplayController(localView, character, globalMap);
 
-            for(HealthEffect effect: character.getHealthEffects()) {
-                effect.applyEffect(character);
-            }
-
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
             window.setTitle("Local Level");
             window.setScene(localScene);
