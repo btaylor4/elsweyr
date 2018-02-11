@@ -3,6 +3,7 @@ package models;
 import javafx.scene.image.Image;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.awt.*;
@@ -15,7 +16,6 @@ import java.util.ArrayList;
 public class ReadWriteTest {
 
     private static final String IMAGE_PATH = "PlaceHolderForImages" + File.separator;
-    private static final String FILE_PATH = "SaveSlot" + File.separator;
 
     private static GlobalLevel actualMap;
     private static  Character actualChar;
@@ -262,8 +262,7 @@ public class ReadWriteTest {
     public void testMap() throws IOException {
         Write write = new Write();
         String mapFile ="mapSaveFile.txt";
-        write.writeMapFile(mapFile, actualMap);
-
+        write.writeMapFile(actualMap, 0);
         GlobalLevel GL = null;
 
         try {
@@ -396,8 +395,8 @@ public class ReadWriteTest {
     public void testChar() throws IOException {
         Write write = new Write();
         Character expectedChar;
-        write.writeCharacterFile("", actualChar);
 
+        write.writeCharacterFile(actualChar, 0);
         expectedChar = ReadFiles.loadCharacter("characterSaveFile.txt");
 
         Assert.assertEquals(expectedChar.getBaseHP(), actualChar.getBaseHP());

@@ -3,6 +3,7 @@ package models;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Write {
@@ -10,13 +11,11 @@ public class Write {
     private FileWriter characterSaveFile;
     private FileWriter mapSaveFile;
 
-    private static String FILE_PATH;
-
-    public void writeCharacterFile( String filePath, Character characterBeingSaved) throws IOException
+    public void writeCharacterFile( Character characterBeingSaved, int selectedSaveSlot) throws IOException
     {
         String newString = new String();
 
-        characterSaveFile = new FileWriter(filePath + "DefaultCharacter.txt");
+        characterSaveFile = new FileWriter("characterSaveFile.txt");
 
         characterSaveFile.write(newString.format("%s%n", characterBeingSaved.getCharacterName()));
         characterSaveFile.write(newString.format("%d%n", characterBeingSaved.getBaseHP()));
@@ -52,8 +51,10 @@ public class Write {
 
         for(int i = 0; i < items.size(); i++)
         {
-            characterSaveFile.write(newString.format("%s %d%n",items.get(i).getName() ,1));
+            characterSaveFile.write(newString.format("%s %d%n",items.get(i) ,1));
+
         }
+
 
         ArrayList<Buffs> characterBuffs = characterBeingSaved.getActiveBuffs();
         characterSaveFile.write(newString.format("%d%n",characterBeingSaved.getActiveBuffs().size()));
@@ -69,9 +70,9 @@ public class Write {
         characterSaveFile.close();
     }
 
-    public void writeMapFile(String filePath, GlobalLevel mapBeingSaved) throws IOException
+    public void writeMapFile(GlobalLevel mapBeingSaved, int selectedSaveSlot) throws IOException
     {
-        mapSaveFile = new FileWriter(filePath + "DefaultMap.txt");
+        mapSaveFile = new FileWriter("mapSaveFile.txt");
         String newString = new String();
 
         Zone[][] globalMap = mapBeingSaved.getGlobalMap();
