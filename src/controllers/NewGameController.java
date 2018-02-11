@@ -105,6 +105,7 @@ public class NewGameController {
                         newCharacter.createNewFile();
                         Character c = ReadFiles.loadCharacter(newCharacter.getName());
                         c.setCharacterSpritePath(view.getSelectedCharacterFilePath());
+                        c.setCharacterName(view.getSelectedName());
 
                         Write write = new Write();
                         write.setPath("SaveSlot" + i + File.separator);
