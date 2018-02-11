@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -45,6 +46,7 @@ public class InventoryController {
     class backToGameButtonHandler implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
+            // TODO breaks tests can be fixed with platform runner
             System.out.println("Back To Game Buttonstuff");
             LocalGameplayView localView = new LocalGameplayView();
             Scene localScene = new Scene(localView, 500, 500);
@@ -73,6 +75,7 @@ public class InventoryController {
         @Override
         public void handle(ActionEvent event) {
             character.getInventory().getItems().remove(view.getSelectedItemIndex());
+            // TODO breaks test can be fixed with platform runner
             view.getItemsFlow().getChildren().remove(view.getSelectedItemIndex());
             view.setSelectedItemIndex(-1);
             view.updateView(getSprites());

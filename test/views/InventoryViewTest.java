@@ -13,7 +13,6 @@ import org.testfx.framework.junit.ApplicationTest;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import java.sql.Time;
 import java.util.ArrayList;
 
 public class InventoryViewTest extends ApplicationTest {
