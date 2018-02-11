@@ -37,16 +37,16 @@ public class InGameMenuController {
 
             if (character.isOnLocal()) {
                 LocalGameplayView localView = new LocalGameplayView();
+                Scene loadScene = new Scene(localView,500,500);
                 LocalGameplayController localGameplayController = new LocalGameplayController(localView, character, map);
                 Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-                Scene loadScene = new Scene(localView,500,500);
                 window.setTitle("Local Game");
                 window.setScene(loadScene);
             } else {
                 GlobalGameplayView globalView = new GlobalGameplayView();
+                Scene loadScene = new Scene(globalView,500,500);
                 GlobalGameplayController globalGameplayController = new GlobalGameplayController(globalView, character, map);
                 Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-                Scene loadScene = new Scene(globalView,500,500);
                 window.setTitle("Global Game");
                 window.setScene(loadScene);
             }
@@ -61,7 +61,13 @@ public class InGameMenuController {
             //Switch View To Save Game Menu
             System.out.println("Save Game Buttonstuff");
 
-            // add go to save view!!!
+
+            SaveGameView saveView = new SaveGameView(character, map);
+            Scene loadScene = new Scene(saveView,500,500);
+            SaveGameController saveGameController = new SaveGameController(saveView, character, map);
+            Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            window.setTitle("Save Menu");
+            window.setScene(loadScene);
         }
     }
 
@@ -73,9 +79,9 @@ public class InGameMenuController {
             System.out.println("Exit Game Buttonstuff");
 
             MainMenuView mainMenuView = new MainMenuView();
+            Scene loadScene = new Scene(mainMenuView,500,500);
             MainMenuController mainMenuController = new MainMenuController(mainMenuView);
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            Scene loadScene = new Scene(mainMenuView,500,500);
             window.setTitle("Main Menu");
             window.setScene(loadScene);
         }

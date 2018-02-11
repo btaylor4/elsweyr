@@ -14,7 +14,7 @@ import javafx.scene.layout.GridPane;
 public class InGameMenuView extends Parent {
     //Initialize all the buttons and assets the main menu view will need
     private Button resumeGameButton = new Button("Resume Game");
-    private Button saveGameButton = new Button("New Game");
+    private Button saveGameButton = new Button("Save Game");
     private Button exitGameButton = new Button("Quit to Main Menu");
     Group root = new Group();
 
