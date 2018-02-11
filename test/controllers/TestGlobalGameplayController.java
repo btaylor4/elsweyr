@@ -2,6 +2,7 @@ package controllers;
 
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
@@ -43,6 +44,7 @@ public class TestGlobalGameplayController extends ApplicationTest {
             for(int j = 0; j < 5; j++) {
                 zones[i][j] = new Zone();
                 zones[i][j].setExitTile(new Point(1,1));
+                zones[i][j].setZoneSprite(new Image("file:PlaceHolderForImages/GRASS.png"));
             }
         }
 
@@ -66,10 +68,8 @@ public class TestGlobalGameplayController extends ApplicationTest {
         globalView = new GlobalGameplayView();
         localScene = new Scene(globalView, 500, 500);
         Character playerCharacter = new Character();
-        Zone localLevel = new Zone();
 
-        GlobalLevel global = new GlobalLevel();
-        GlobalGameplayController globalGameplayController = new GlobalGameplayController(globalView, playerCharacter, global);
+        GlobalGameplayController globalGameplayController = new GlobalGameplayController(globalView, playerCharacter, globalLevel);
 
         primaryWindow.setScene(localScene);
         primaryWindow.show();
@@ -79,6 +79,7 @@ public class TestGlobalGameplayController extends ApplicationTest {
     public void testValidUPMove() {
         Point expected = new Point(0,0);
         Character character = new Character();
+        character.setCharacterSprite(new Image("file:PlaceHolderForImages/GRASS.png"));
         character.updateGlobalPos(new Point(1,0));
         character.updateLocalPos(new Point(0,0));
 
