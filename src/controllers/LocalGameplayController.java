@@ -276,6 +276,7 @@ public class LocalGameplayController {
                     effects.stopTimer(); //TODO: This applies one extra tick
                 }
 
+                character.getHealthEffects().clear();
                 effect.applyEffect(character, view.getStatusView());
                 //TODO: Logic below needs to be refactored when we have full areas with a bunch of aread effects of same
 //                boolean hasEffectId = false;
@@ -301,6 +302,12 @@ public class LocalGameplayController {
 //                }
                 break;
             case LEVELUPEFFECT:
+                for (HealthEffect effects : character.getHealthEffects()) {
+                    effects.stopTimer(); //TODO: This applies one extra tick
+                }
+
+                character.getHealthEffects().clear();
+                
                 boolean activated = ((LevelUpEffect) effect).hasBeenActivated();
                 if (!activated) {
                     effect.applyEffect(character, view.getStatusView());
