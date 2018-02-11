@@ -5,6 +5,7 @@ public class LevelUpEffect extends AreaEffect {
 
     public LevelUpEffect(){
         setEffectType(EffectType.LEVELUPEFFECT);
+        hasBeenActivated = false;
     }
 
     public void levelUp(Character character){
@@ -21,6 +22,7 @@ public class LevelUpEffect extends AreaEffect {
     @Override
     public void applyEffect(Character character) {
         int nextLevelExperience = character.getExpToNextLevel();
+        hasBeenActivated = true;
         character.setCurrExp(nextLevelExperience);
         character.updateLevel();
     }

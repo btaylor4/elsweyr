@@ -84,7 +84,7 @@ public class GlobalGameplayView extends Parent {   //
         globalMapHeight = tileSprites.length;
         globalMapWidth = tileSprites[0].length;
         //Intializes the imageview the surrounding tiles that are not accessible shall be represneted by a dummy tile
-        tileImageView = new ImageView[globalMapHeight + viewableTilesRow - 1][globalMapWidth + viewableTilesCol - 1];
+        tileImageView = new ImageView[globalMapHeight][globalMapWidth];
 
         //Creates imageViews of each tile
         for(int i = 0; i < globalMapHeight; i++) {

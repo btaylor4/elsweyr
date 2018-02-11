@@ -25,12 +25,16 @@ public class Character {
     private Image characterSprite;
     private String characterSpritePath;
     private ArrayList<Buffs> activeBuffs;
-    private ArrayList<HealthEffect> effects = new ArrayList<>();
+    private ArrayList<HealthEffect> effects;
+
+    public ArrayList<HealthEffect> getHealthEffects() {
+        return effects;
+    }
 
     //TODO CREATE A DEFAULT CONSTRUCTOR THAT ONLY TAKES IN AN IMAGE AND SETS EVERYTHING ELSE UP FROM A FILE
-    public Character()
-    {
+    public Character() {
         activeBuffs = new ArrayList<Buffs>();
+        effects = new ArrayList<>();
     }
 
     public void createCharacterImage() throws FileNotFoundException {
@@ -85,7 +89,7 @@ public class Character {
     }
 
     public void unEquip(Item item){
-
+        equippedItem = null;
     }
 
     public void useEquipped(){
