@@ -62,7 +62,7 @@ public class HealthEffect extends AreaEffect {
                 character.updateHealth(healthChange);
                 view.updateCharacterHealth(healthChange);
             }
-        }, 0, timeInterval);
+        }, 0, timeInterval*100); //TODO: This interval times 100 will break a test for now, need to chane default map attributes
     }
 
     public void stopTimer() {
