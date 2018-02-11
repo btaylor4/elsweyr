@@ -2,14 +2,19 @@ package views;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 
@@ -23,6 +28,7 @@ public class InventoryView extends Parent {   //
     private Button unEquipButton = new Button("UnEquip");
     private Button dropButton = new Button("Drop");
     private int selectedItemIndex;
+    private int equippedItemIndex;
     Group root = new Group();
 
     public InventoryView(){
@@ -38,6 +44,7 @@ public class InventoryView extends Parent {   //
         itemsFlow.setMinHeight(450);
 
         //Add the buttons to the hBox that will be at the bottom
+        disableButtons();
         buttons.getChildren().addAll(backToGameButton,equipButton,unEquipButton, dropButton);
         //Add the flowpane and the buttons hbox to the vbox
         vbox.getChildren().add(itemsFlow);
@@ -46,17 +53,32 @@ public class InventoryView extends Parent {   //
         this.getChildren().add(vbox);
     }
 
-    public void initializeSprites(ArrayList<Image> sprites) {
+    public void initializeSprites(ArrayList<Image> sprites, int indexOfEquippedItem) {
+        DropShadow borderGlow = new DropShadow();
+        borderGlow.setColor(Color.RED);
+        borderGlow.setOffsetX(0f);
+        borderGlow.setOffsetY(0f);
+        setEquippedItemIndex(indexOfEquippedItem);
+
         int i = 0;
         for(Image sprite : sprites) {
-            ImageView dummy = new ImageView(sprite);
-            dummy.setFitHeight(110);
-            dummy.setFitWidth(110);
-            itemsFlow.getChildren().add(dummy);
+            ImageView imageView = new ImageView(sprite);
+            imageView.setFitHeight(110);
+            imageView.setFitWidth(110);
+            ImageView equippedPlaceHolder = new ImageView();
+            equippedPlaceHolder.setFitWidth(25);
+            equippedPlaceHolder.setFitHeight(25);
+
+            StackPane stackPane = new StackPane();
+            stackPane.getChildren().add(imageView);
+            stackPane.getChildren().add(equippedPlaceHolder);
+            stackPane.setAlignment(Pos.BASELINE_RIGHT);
+            itemsFlow.getChildren().add(stackPane);
             int finalI = i;
-            dummy.setOnMouseClicked(e -> setSelectedItemIndex(finalI));
+            imageView.setOnMouseClicked(e -> setSelectedItem(finalI, borderGlow, imageView));
             ++i;
         }
+        updateEquippedBadge(getEquippedItemIndex());
     }
 
     public void setSelectedItemIndex(int selectedItemIndex) {
@@ -65,6 +87,8 @@ public class InventoryView extends Parent {   //
     public int getSelectedItemIndex() {
         return selectedItemIndex;
     }
+    public void setEquippedItemIndex(int equippedItemIndex) { this.equippedItemIndex = equippedItemIndex; }
+    public int getEquippedItemIndex() { return equippedItemIndex; }
     public Button getBackToGameButton() {
         return backToGameButton;
     }
@@ -98,8 +122,55 @@ public class InventoryView extends Parent {   //
         dropButton.setOnAction(handlerForDropButton);
     }
 
-    public void updateView(ArrayList<Image> sprites) {
+    public void updateItems (ArrayList<Image> sprites) {
         itemsFlow.getChildren().clear();
-        initializeSprites(sprites);
+        initializeSprites(sprites, getEquippedItemIndex());
+    }
+
+    private void setSelectedItem(int i, DropShadow boderGlow, ImageView imageView) {
+        if (getSelectedItemIndex() != -1) {
+            StackPane stackPane = (StackPane) itemsFlow.getChildren().get(getSelectedItemIndex());
+            stackPane.getChildren().get(0).setEffect(null);
+        }
+        if (getSelectedItemIndex() == -1) {
+            dropButton.setDisable(false);
+        }
+
+        setSelectedItemIndex(i);
+        if (getSelectedItemIndex() == getEquippedItemIndex()) {
+            equipButton.setDisable(true);
+            unEquipButton.setDisable(false);
+        }
+        if (getSelectedItemIndex() != getEquippedItemIndex()) {
+            equipButton.setDisable(false);
+            unEquipButton.setDisable(true);
+        }
+        imageView.setEffect(boderGlow);
+    }
+
+    public void updateEquippedBadge(int index) {
+        removeBadgeFromPreviouslyEquipped();
+
+        if (index != -1) {
+            StackPane stackPane = (StackPane) itemsFlow.getChildren().get(index);
+            ImageView imageView = (ImageView) stackPane.getChildren().get(1);
+            imageView.setImage((new Image("file:PlaceHolderForImages/EquippedBadge.png", 100., 100., true, true)));
+            setEquippedItemIndex(index);
+        }
+    }
+
+    public void removeBadgeFromPreviouslyEquipped() {
+        if (getEquippedItemIndex() != -1) {
+            StackPane stackPaneOldEquipped = (StackPane) itemsFlow.getChildren().get(getEquippedItemIndex());
+            ImageView imageViewOldEquipped = (ImageView) stackPaneOldEquipped.getChildren().get(1);
+            imageViewOldEquipped.setImage(null);
+            setEquippedItemIndex(-1);
+        }
+    }
+
+    public void disableButtons() {
+        equipButton.setDisable(true);
+        unEquipButton.setDisable(true);
+        dropButton.setDisable(true);
     }
 }
