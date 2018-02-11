@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import models.Character;
@@ -28,6 +29,27 @@ public class GlobalGameplayController {
         this.view.addKeyPressListener(new GlobalMovementListener());
         this.view.addMenuButtonListener(new MenuButtonHandler());
         this.view.addChangeToLocalListener(new ChangeToLocalHandler());
+
+        populateView();
+    }
+
+    public void populateView()
+    {
+        int mapHeight = map.getGlobalMap().length;
+        int mapWidth = map.getGlobalMap()[0].length;
+        Image characterImage = character.getCharacterSprite();
+        Image[][] zoneImages = new Image[mapHeight][mapWidth];
+        for(int i = 0; i < mapHeight; i++)
+            for(int j = 0; j < mapWidth; j++)
+                zoneImages[i][j] = map.getGlobalMap()[i][j].getZoneSprite();
+
+
+        view.createTileViews(zoneImages);
+        view.createCharacterView(characterImage);
+        view.setGlobalCharacterPrevPos(character.getGlobalPos());
+        view.updateCharacterPos(character.getGlobalPos());
+
+
     }
 
     public class GlobalMovementListener implements EventHandler<KeyEvent> {
