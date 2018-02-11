@@ -9,8 +9,8 @@ import java.io.FileNotFoundException;
 public class Zone {
 
     private Tile[][] localMap;
-    private Point exitTile;
-    private Point startTile;
+    private Point exitTile = new Point(0,0);
+    private Point startTile = new Point(0,0);
     private Image zoneSprite;
     private String zoneSpritePath;
     private boolean isPassable;

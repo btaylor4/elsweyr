@@ -19,18 +19,22 @@ public class Character {
     private String name;
 
     private boolean onLocal;
-    private Point globalPos;
-    private Point localPos;
+    private Point globalPos = new Point(0,0);
+    private Point localPos = new Point(0,0);
     private Item equippedItem;
     private Image characterSprite;
     private String characterSpritePath;
     private ArrayList<Buffs> activeBuffs;
-    private ArrayList<HealthEffect> effects = new ArrayList<>();
+    private ArrayList<HealthEffect> effects;
+
+    public ArrayList<HealthEffect> getHealthEffects() {
+        return effects;
+    }
 
     //TODO CREATE A DEFAULT CONSTRUCTOR THAT ONLY TAKES IN AN IMAGE AND SETS EVERYTHING ELSE UP FROM A FILE
-    public Character()
-    {
+    public Character() {
         activeBuffs = new ArrayList<Buffs>();
+        effects = new ArrayList<>();
     }
 
     public void createCharacterImage() throws FileNotFoundException {

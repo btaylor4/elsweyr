@@ -22,8 +22,6 @@ import java.io.IOException;
 public class LocalGameplayController {
     private Character character;
     private GlobalLevel globalMap;
-    private EventHandler<ActionEvent> localMovementListener;
-    private EventHandler<ActionEvent> inventoryListener;
     private LocalGameplayView view;
 
     public LocalGameplayController(LocalGameplayView localView, Character playerCharacter, GlobalLevel global) {
@@ -34,7 +32,6 @@ public class LocalGameplayController {
         this.view.addKeyPressListener(new MovementHandler());
         this.view.addMenuButtonListener(new MenuButtonHandler());
         this.view.addInventoryButtonListener(new InvButtonHandler());
-        this.view.addChangeToGlobalListener(new ChangeToGlobalHandler());
     }
     public LocalGameplayController(){};
 
@@ -64,8 +61,20 @@ public class LocalGameplayController {
             //CHECK IF THERE IS AN ITEM IN TILE, IF IT'S INTERACTIVE ACTIVATE IT
             //IF IT'S TAKEABLE TAKE IT
 
-            if(localMap.getLocalMap()[(int)localPos.getX()][(int)localPos.getY()].getItem() != null)
-                localMap.getLocalMap()[(int)localPos.getX()][(int)localPos.getY()].getItem().onTouchAction(character);
+            if(localMap.getLocalMap()[(int)localPos.getX()][(int)localPos.getY()].getItem() != null) {
+                Tile tile = localMap.getLocalMap()[(int) localPos.getX()][(int) localPos.getY()];
+                Item itemOnTile = tile.getItem();
+                boolean shouldBeRemoved = itemOnTile.onTouchAction(character);
+                switch (itemOnTile.getItemType()) {
+                    case TAKEABLE:
+                        if (shouldBeRemoved)
+                            tile.removeItem();
+                        break;
+                    case ONESHOT:
+                        tile.removeItem();
+                        break;
+                }
+            }
 
 
             //CHECK IF THERE'S AN EXIT TILE
@@ -74,10 +83,12 @@ public class LocalGameplayController {
             if(localPos.getX() == localMap.getExitTile().getX() && localPos.getY() == localMap.getExitTile().getY() ){
 
                 GlobalGameplayView globalView = new GlobalGameplayView();
+                Scene scene = new Scene(globalView,500,500);
+                //Set the characters position to be in the global map when stepping on the exit tile
+                character.setOnLocal(false);
                 GlobalGameplayController globalGameplay = new GlobalGameplayController(globalView,character,globalMap);
                 Stage window = (Stage)(((Scene)event.getSource()).getWindow());
 
-                Scene scene = new Scene(globalView,500,500);
                 window.setScene(scene);
             }
 
@@ -180,42 +191,47 @@ public class LocalGameplayController {
         }
 
         // If charachter isn't out of bounds and there isn't an obstacle item or impassable terrain, update his position
-        if(!outOfMapBounds(characterPositionInMap,moveDirection,mapRows,mapCols) && !obstacleOrTerrainBlocking(characterPositionInMap,moveDirection,localMap)){
+        if(!outOfMapBounds(characterPositionInMap,moveDirection,mapRows,mapCols) &&
+                !obstacleOrTerrainBlocking(characterPositionInMap,moveDirection,localMap)) {
 
-            Point newCharacterPosition = new Point((int)characterPositionInMap.getX()+(int)moveDirection.getX(),(int)characterPositionInMap.getY()+(int)moveDirection.getY());
+            Point newCharacterPosition = new Point(characterPositionInMap.x + moveDirection.x,
+                    characterPositionInMap.y + moveDirection.y);
+
             character.updateLocalPos(newCharacterPosition);
-
         }
 
-        if(localMap.getLocalMap()[character.getLocalPos().x][character.getLocalPos().y].getAreaEffect().getEffectType() != EffectType.NONE) {
-            localMap.getLocalMap()[character.getLocalPos().x][character.getLocalPos().y].getAreaEffect().applyEffect(character);
-        }
+        AreaEffect effect = localMap.getLocalMap()[character.getLocalPos().x][character.getLocalPos().y].getAreaEffect();
 
+        switch (effect.getEffectType()) {
+            case HEALTHEFFECT:
+                boolean hasEffectId = false;
+                if(!character.hasEffect((HealthEffect)effect)) {
+                    for(HealthEffect myEffects: character.getHealthEffects()) {
+                        if(myEffects.getEffectId().equalsIgnoreCase(((HealthEffect) effect).getEffectId())) {
+                            hasEffectId = true;
+                        }
+                    }
 
-    }
+                    if(!hasEffectId) {
+                        effect.applyEffect(character);
+                    }
+                }
+                break;
+            case LEVELUPEFFECT:
+                boolean activated = ((LevelUpEffect)effect).hasBeenActivated();
+                if(!activated)  {
+                    effect.applyEffect(character);
+                }
+                break;
+            case NONE:
+                if(!character.getHealthEffects().isEmpty()) {
+                    for(HealthEffect effects: character.getHealthEffects()) {
+                        effects.stopTimer(); //TODO: This applies one extra tick
+                    }
 
-    void interactWithAreaEffects(Character character, Zone localMap){
-        //TODO: implement similiar way as above method
-    }
-
-
-
-    class ChangeToGlobalHandler implements EventHandler<ActionEvent> {
-
-        @Override
-        public void handle(ActionEvent event) {
-            //Do Menu stuff
-            //switch into in-game menu
-
-
-//            System.out.println("Changing View To Global Level");
-//
-//            GlobalGameplayView globalView = new GlobalGameplayView();
-//            GlobalGameplayController controller = new GlobalGameplayController(globalView,character,globalMap);
-//            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-//            window = globalView;
-//            window.show();
-
+                    character.getHealthEffects().clear();
+                }
+                break;
         }
     }
 }
