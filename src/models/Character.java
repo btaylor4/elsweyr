@@ -89,7 +89,7 @@ public class Character {
     }
 
     public void unEquip(Item item){
-
+        equippedItem = null;
     }
 
     public void useEquipped(){
