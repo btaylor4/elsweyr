@@ -12,7 +12,6 @@ public class HealthEffect extends AreaEffect {
 
     public HealthEffect(){
         setEffectType(EffectType.HEALTHEFFECT);
-        buf = new Timer();
     }
 
     public int getTimeInterval() {
@@ -41,6 +40,8 @@ public class HealthEffect extends AreaEffect {
 
     @Override
     public void applyEffect(Character character) {
+        buf = new Timer();
+        character.addEffect(this);
         buf.schedule(new TimerTask() {
             @Override
             public void run() {
