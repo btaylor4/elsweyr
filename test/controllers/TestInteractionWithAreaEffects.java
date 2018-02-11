@@ -40,6 +40,8 @@ public class TestInteractionWithAreaEffects extends ApplicationTest {
 
         localview = new LocalGameplayView();
         character = new Character();
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
+
         Zone localLevel = new Zone();
         localScene = new Scene(localview, 500, 500);
 
@@ -80,6 +82,7 @@ public class TestInteractionWithAreaEffects extends ApplicationTest {
         character.setBaseHP(200);
         character.setCurrentHP(200);
         character.setTotalHP(200);
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
         healthEffect.setTimeInterval(500);
         healthEffect.setHealthChange(-1);
@@ -105,6 +108,7 @@ public class TestInteractionWithAreaEffects extends ApplicationTest {
         character.setLevel(1);
         character.setCurrExp(1);
         character.setExpToNextLevel(10);
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(0,0));

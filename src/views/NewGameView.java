@@ -79,17 +79,23 @@ public class NewGameView extends Parent {
         grid.add(savedGamesTable,5,5, 15, 1);
 
 
-        String imageFile = "src" + File.separator + "views" + File.separator + "briefcase.png";
-        Image image = new Image(getClass().getResourceAsStream("briefcase.png"));
+        //
+        String characterOneImageFile = "file:Character1MovementSprites/";
+        String characterTwoImageFile = "file:Character2MovementSprites/";
+        String characterThreeImageFile = "file:Character3MovementSprites/";
+
+        Image CharacterOneImage = new Image(characterOneImageFile+ "briefcase.png");
+        Image CharacterTwoImage = new Image(characterTwoImageFile+ "briefcase.png");
+        Image CharacterThreeImage = new Image(characterThreeImageFile+ "briefcase.png");
         //set toggles with character images
         //TODO Add different character image sprites
 
-        ToggleButton tb1 = new ToggleButton("Press me", new ImageView(image));
-        ToggleButton tb2 = new ToggleButton("Press me", new ImageView(image));
-        ToggleButton tb3 = new ToggleButton ("Press me", new ImageView(image));
+        ToggleButton tb1 = new ToggleButton("Press me", new ImageView(CharacterOneImage));
+        ToggleButton tb2 = new ToggleButton("Press me", new ImageView(CharacterTwoImage));
+        ToggleButton tb3 = new ToggleButton ("Press me", new ImageView(CharacterThreeImage));
 
         tb1.setSelected(true);
-        selectedCharacterFilePath = imageFile; // this is the image path of tb1's image!!!
+        selectedCharacterFilePath = characterOneImageFile; // this is the image path of tb1's image!!!
         //Assign toggles to one group
         tb1.setToggleGroup(group);
         tb2.setToggleGroup(group);
@@ -97,12 +103,11 @@ public class NewGameView extends Parent {
 
         //Set user data
 
-        tb1.setUserData(new Image(getClass().getResourceAsStream("briefcase.png")));
-        tb1.setAccessibleHelp(imageFile);
-        tb2.setUserData(new Image(getClass().getResourceAsStream("briefcase.png")));
-        tb2.setAccessibleHelp(imageFile);
-        tb3.setUserData(new Image(getClass().getResourceAsStream("briefcase.png")));
-        tb3.setAccessibleHelp(imageFile);
+        tb1.setUserData(characterOneImageFile);
+
+        tb2.setUserData(characterTwoImageFile);
+
+        tb3.setUserData(characterThreeImageFile);
 
         grid.setVgap(10);
         grid.setHgap(10);
@@ -117,7 +122,7 @@ public class NewGameView extends Parent {
             @Override
             public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
                 if(newValue != null){
-                    selectedCharacterFilePath = ((ToggleButton) group.getSelectedToggle()).getAccessibleHelp();
+                    selectedCharacterFilePath = ((ToggleButton) group.getSelectedToggle()).getUserData().toString();
                 }
             }
         });

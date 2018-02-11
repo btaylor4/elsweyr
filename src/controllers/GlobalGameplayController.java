@@ -27,6 +27,7 @@ public class GlobalGameplayController {
         this.view.addKeyPressListener(new GlobalMovementListener());
         this.view.addMenuButtonListener(new MenuButtonHandler());
         this.view.addChangeToLocalListener(new ChangeToLocalHandler());
+        this.view.setCharacterSpritesPath(character.getCharacterSpritePath());
     }
 
     public class GlobalMovementListener implements EventHandler<KeyEvent> {

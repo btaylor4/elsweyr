@@ -72,6 +72,8 @@ public class TestLocalGameplayController extends ApplicationTest {
         localView = new LocalGameplayView();
 
         Character playerCharacter = new Character();
+        playerCharacter.setCharacterSpritePath("file:PlaceHolderForImages/");
+
         Zone localLevel = new Zone();
 
         localScene = new Scene(localView, 500, 500);
@@ -93,6 +95,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(0,0));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
 //        controller = new GlobalGameplayController(globalView, character, globalLevel);
 
@@ -121,6 +124,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(1,0));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
 //        controller = new GlobalGameplayController(globalView, character, globalLevel);
 
@@ -147,6 +151,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(0,0));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
 //        controller = new GlobalGameplayController(globalView, character, globalLevel);
 
@@ -175,6 +180,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(0,2));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
 //        controller = new GlobalGameplayController(globalView, character, globalLevel);
 
@@ -201,6 +207,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(1,2));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
 //        controller = new GlobalGameplayController(globalView, character, globalLevel);
 
@@ -228,6 +235,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(1,2));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
 //        controller = new GlobalGameplayController(globalView, character, globalLevel);
 
@@ -254,6 +262,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(1,2));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
 //        controller = new GlobalGameplayController(globalView, character, globalLevel);
 
@@ -282,6 +291,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(1,2));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
 //        controller = new GlobalGameplayController(globalView, character, globalLevel);
 
@@ -315,6 +325,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(4,0));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
 //        controller = new GlobalGameplayController(globalView, character, globalLevel);
 
@@ -343,6 +354,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(0,0));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
 //        controller = new GlobalGameplayController(globalView, character, globalLevel);
 
@@ -369,6 +381,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(0,4));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
 //        controller = new GlobalGameplayController(globalView, character, globalLevel);
 
@@ -397,6 +410,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(0,0));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
 //        controller = new GlobalGameplayController(globalView, character, globalLevel);
 
@@ -423,6 +437,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(0,3));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
 //        controller = new GlobalGameplayController(globalView, character, globalLevel);
 
@@ -450,6 +465,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(0,3));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
 //        controller = new GlobalGameplayController(globalView, character, globalLevel);
 
@@ -476,6 +492,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(4,1));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
 //        controller = new GlobalGameplayController(globalView, character, globalLevel);
 
@@ -504,6 +521,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(4,3));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
 //        controller = new GlobalGameplayController(globalView, character, globalLevel);
 
@@ -537,6 +555,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(4,3));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
         localController = new LocalGameplayController(localView,character,globalLevel);
 
@@ -562,6 +581,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(4,3));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
         localController = new LocalGameplayController(localView,character,globalLevel);
 
@@ -589,6 +609,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(4,3));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
         localController = new LocalGameplayController(localView,character,globalLevel);
 
@@ -616,6 +637,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(4,3));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
         localController = new LocalGameplayController(localView,character,globalLevel);
 
@@ -644,6 +666,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(4,3));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
         localController = new LocalGameplayController(localView,character,globalLevel);
 
@@ -670,6 +693,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         Character character = new Character();
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(4,3));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
 
         localController = new LocalGameplayController(localView,character,globalLevel);
 

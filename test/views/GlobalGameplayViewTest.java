@@ -22,7 +22,7 @@ public class GlobalGameplayViewTest extends ApplicationTest {
     @Override
     public void start(Stage stage) throws Exception {
         Stage window = new Stage();
-        view = new GlobalGameplayView();
+        view = new GlobalGameplayView("file:Character1MovementSprites/");
         Scene localScene = new Scene(view, 500, 500);
         window.setScene(localScene);
         window.show();

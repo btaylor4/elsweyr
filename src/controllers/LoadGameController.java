@@ -79,7 +79,7 @@ public class LoadGameController {
                 window.setTitle("Local Level");
                 window.setScene(localScene);
             } else {
-                GlobalGameplayView globalView = new GlobalGameplayView();
+                GlobalGameplayView globalView = new GlobalGameplayView(character.getCharacterSpritePath());
                 Scene globalScene = new Scene(globalView, 500, 500);
                 System.out.println("Loading... " + file.getPathToMapFile());
                 System.out.println("Loading... " + file.getPathToCharacterFile());

@@ -85,7 +85,7 @@ public class LocalGameplayController {
 
             if(localPos.getX() == localMap.getExitTile().getX() && localPos.getY() == localMap.getExitTile().getY() ){
 
-                GlobalGameplayView globalView = new GlobalGameplayView();
+                GlobalGameplayView globalView = new GlobalGameplayView(character.getCharacterSpritePath());
                 Scene scene = new Scene(globalView,500,500);
                 //Set the characters position to be in the global map when stepping on the exit tile
                 character.setOnLocal(false);

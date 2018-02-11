@@ -60,6 +60,7 @@ public class NewGameController {
             }
 
             character.setCharacterSpritePath(view.getSelectedCharacterFilePath());
+            System.out.println("Chosen file path: "+ view.getSelectedCharacterFilePath());
             try {
                 character.createCharacterImage();
             } catch (FileNotFoundException e) {
@@ -70,7 +71,7 @@ public class NewGameController {
             character.setOnLocal(false);
 
             System.out.println("Go to global gameplay");
-            GlobalGameplayView globalView = new GlobalGameplayView();
+            GlobalGameplayView globalView = new GlobalGameplayView(view.getSelectedCharacterFilePath());
             Scene globalScene = new Scene(globalView, 500, 500);
             GlobalGameplayController globalController = new GlobalGameplayController(globalView,character,global);
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

@@ -41,12 +41,14 @@ public class GlobalGameplayView extends Parent {   //
     private int globalMapWidth;
     //Displays the position of the character
     private String characterDirection;
+    private StringBuffer characterSpritePath;
     private StringBuffer path = new StringBuffer("file:PlaceHolderForImages/");
 
     Group root = new Group();
 
-    public GlobalGameplayView(){
+    public GlobalGameplayView(String path){
 
+        this.characterSpritePath = new StringBuffer(path);
         globalCharacterPrevPos.setLocation(15,15);
         globalCharacterPos.setLocation(15,15);
         globalMapHeight = 30;
@@ -73,14 +75,15 @@ public class GlobalGameplayView extends Parent {   //
     //Creates ImageViews for the character and map tiles.
     public void initializeSprites(){
         //Intializes the characterSprite with an Image
-        characterSprite = new Image(path + "Character.png", 80.,80.,true,true);
+        System.out.println(characterSpritePath);
+        characterSprite = new Image(characterSpritePath + "Character.png", 80.,80.,true,true);
         //Creates a characterView
         characterView = new ImageView(characterSprite);
         //Character height and width must be smaller than tile's height and width.
         characterView.setFitHeight(30);
         characterView.setFitWidth(30);
 
-        updateCharacterImageView(path + "Character_Front.png");
+        updateCharacterImageView(characterSpritePath + "Character_Front.png");
 
         for(int i = 0; i < globalMapHeight; i++) {
             for (int j = 0; j < globalMapWidth; j++) {
@@ -143,15 +146,15 @@ public class GlobalGameplayView extends Parent {   //
     private void updateCharacterImageView(){
         switch(characterDirection){
             case "UP": // 8
-                updateCharacterImageView(path + "Character_Back.png");
+                updateCharacterImageView(characterSpritePath + "Character_Back.png");
                 break;
 
             case "DOWN": // 2
-                updateCharacterImageView(path + "Character_Front.png");
+                updateCharacterImageView(characterSpritePath + "Character_Front.png");
                 break;
 
             case "LEFT": // 4
-                updateCharacterImageView(path + "Character_East.png");
+                updateCharacterImageView(characterSpritePath + "Character_East.png");
                 break;
 
             case "RIGHT": //6
@@ -163,7 +166,7 @@ public class GlobalGameplayView extends Parent {   //
                 break;
 
             case "PAGE_DOWN":  // DOWN_RIGHT
-                updateCharacterImageView(path + "Character_South_East.png");
+                updateCharacterImageView(characterSpritePath + "Character_South_East.png");
                 break;
 
             case "HOME":  // UP_LEFT
@@ -180,6 +183,7 @@ public class GlobalGameplayView extends Parent {   //
         }
     }
 
+    public void setCharacterSpritesPath(String path){this.characterSpritePath = new StringBuffer(path);}
 
 
     public class GlobalDisplay extends AnimationTimer{

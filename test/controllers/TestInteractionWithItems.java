@@ -40,6 +40,8 @@ public class TestInteractionWithItems extends ApplicationTest {
 
         localview = new LocalGameplayView();
         character = new Character();
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
+
         Zone localLevel = new Zone();
 
         localScene = new Scene(localview, 500, 500);
@@ -78,6 +80,8 @@ public class TestInteractionWithItems extends ApplicationTest {
 
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(0,0));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
+
         zones[0][0].getLocalMap()[0][1].setEffectType(effect);
     }
 
