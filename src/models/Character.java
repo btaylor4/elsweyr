@@ -46,7 +46,8 @@ public class Character {
 
 
     public void addEffect(HealthEffect effect) {
-        effects.add(effect);
+        if(!effects.contains(effect))
+            effects.add(effect);
     }
 
     public boolean hasEffect(HealthEffect effect) {

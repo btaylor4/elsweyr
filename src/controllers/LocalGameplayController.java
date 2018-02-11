@@ -35,6 +35,10 @@ public class LocalGameplayController {
         this.view.getStatusView().getCurrentHealth().setWidth(character.getCurrentHP());
         this.view.getStatusView().updateCharacterLevel(character.getLevel());
 
+        for(HealthEffect effect: character.getHealthEffects()) {
+            effect.applyEffect(character, this.view.getStatusView());
+        }
+
         populateView();
     }
 
@@ -140,6 +144,11 @@ public class LocalGameplayController {
             Scene globalScene = new Scene(inGameMenuView, 500, 500);
             InGameMenuController inGameController = new InGameMenuController(inGameMenuView, character, globalMap);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            for(HealthEffect effect: character.getHealthEffects()) {
+                effect.stopTimer();
+            }
+
             window.setScene(globalScene);
             System.out.println("menu Buttonstuff");
         }
@@ -158,6 +167,11 @@ public class LocalGameplayController {
             Scene inventoryScene = new Scene(inventoryView , 500, 500);
             InventoryController inventoryController = new InventoryController(inventoryView,character,globalMap);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            for(HealthEffect effect: character.getHealthEffects()) {
+                effect.stopTimer();
+            }
+
             window.setScene(inventoryScene);
 
             System.out.println("InvButton Stuff");
@@ -257,21 +271,34 @@ public class LocalGameplayController {
 
         switch (effect.getEffectType()) {
             case HEALTHEFFECT:
-                boolean hasEffectId = false;
-                if (!character.hasEffect((HealthEffect) effect)) {
-                    for (HealthEffect myEffects : character.getHealthEffects()) {
-                        if (myEffects.getEffectId().equalsIgnoreCase(((HealthEffect) effect).getEffectId())) {
-                            hasEffectId = true;
-                        }
-                    }
 
-                    if (!hasEffectId) {
-                        for (HealthEffect effects : character.getHealthEffects()) {
-                            effects.stopTimer(); //TODO: This applies one extra tick
-                        }
-                        effect.applyEffect(character, view.getStatusView());
-                    }
+                for (HealthEffect effects : character.getHealthEffects()) {
+                    effects.stopTimer(); //TODO: This applies one extra tick
                 }
+
+                effect.applyEffect(character, view.getStatusView());
+                //TODO: Logic below needs to be refactored when we have full areas with a bunch of aread effects of same
+//                boolean hasEffectId = false;
+//                if (!character.getHealthEffects().isEmpty()) {
+//                    for (HealthEffect effects : character.getHealthEffects()) {
+//                        effects.stopTimer();
+//                    }
+//                }
+//
+//                if (!character.hasEffect((HealthEffect) effect)) {
+//                    for (HealthEffect myEffects : character.getHealthEffects()) {
+//                        if (myEffects.getEffectId().equalsIgnoreCase(((HealthEffect) effect).getEffectId())) {
+//                            hasEffectId = true;
+//                        }
+//                    }
+//
+//                    if (!hasEffectId) {
+//                        for (HealthEffect effects : character.getHealthEffects()) {
+//                            effects.stopTimer();
+//                        }
+//                        effect.applyEffect(character, view.getStatusView());
+//                    }
+//                }
                 break;
             case LEVELUPEFFECT:
                 boolean activated = ((LevelUpEffect) effect).hasBeenActivated();
