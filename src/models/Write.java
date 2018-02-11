@@ -87,7 +87,19 @@ public class Write {
             {
                 //each zone
                 Zone zone = globalMap[i][j];
-                if(zone.getHasLevel()){
+                if(!zone.getHasLevel()){
+                    mapSaveFile.write(newString.format("%d %d%n", 0, 0));
+                    mapSaveFile.write(newString.format("%d %d%n", (int)zone.getExitTile().getX(), (int)zone.getExitTile().getY()));
+                    mapSaveFile.write(newString.format("%d %d%n", (int)zone.getStartTile().getX(), (int)zone.getStartTile().getY()));
+                    mapSaveFile.write(newString.format("%s%n", zone.getZoneSpritePath()));
+                    if(!zone.isPassable()) {
+                        mapSaveFile.write(newString.format("%d%n", 0));
+                    }
+                    else{
+                        mapSaveFile.write(newString.format("%d%n", 1));
+                    }
+                }
+                else {
                     Tile[][] zoneLocalMap = zone.getLocalMap();
                     mapSaveFile.write(newString.format("%d %d%n", zoneLocalMap.length, zoneLocalMap[0].length));
                     mapSaveFile.write(newString.format("%d %d%n", (int)zone.getExitTile().getX(), (int)zone.getExitTile().getY()));
