@@ -14,7 +14,6 @@ import views.GlobalGameplayView;
 import views.LocalGameplayView;
 import views.MainMenuView;
 import views.LoadGameView;
-
 import java.io.IOException;
 
 public class LoadGameController {
@@ -35,9 +34,9 @@ public class LoadGameController {
         public void handle(ActionEvent event) {
             System.out.println("Back To Main Menu Buttonstuff");
             MainMenuView mainView = new MainMenuView();
+            Scene mainScene = new Scene(mainView, 500, 500);
             MainMenuController mainController = new MainMenuController(mainView);
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            Scene mainScene = new Scene(mainView, 500, 500);
             window.setTitle("Main Menu");
             window.setScene(mainScene);
         }
@@ -90,5 +89,4 @@ public class LoadGameController {
             }
         }
     }
-
 }

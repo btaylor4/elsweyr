@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import models.Character;
 import models.GlobalLevel;
 import views.GlobalGameplayView;
+import views.InGameMenuView;
 import views.LocalGameplayView;
 
 import java.awt.*;
@@ -25,9 +26,9 @@ public class GlobalGameplayController {
         this.character = playerCharacter;
         this.map = global;
         this.view = globalView;
-        this.view.addKeyPressListener(new GlobalMovementListener());
-        this.view.addMenuButtonListener(new MenuButtonHandler());
-        this.view.addChangeToLocalListener(new ChangeToLocalHandler());
+        this.view.addKeyPressListener(new GlobalGameplayController.GlobalMovementListener());
+        this.view.addMenuButtonListener(new GlobalGameplayController.MenuButtonHandler());
+        this.view.addChangeToLocalListener(new GlobalGameplayController.ChangeToLocalHandler());
 
         populateView();
     }
@@ -156,9 +157,14 @@ public class GlobalGameplayController {
 
         @Override
         public void handle(ActionEvent event) {
-            //Do Menu stuff
-            //switch into in-game menu
+            // go to in game menu
             System.out.println("menu Buttonstuff");
+
+            InGameMenuView inGameMenuView = new InGameMenuView();
+            Scene globalScene = new Scene(inGameMenuView, 500, 500);
+            InGameMenuController inGameController = new InGameMenuController(inGameMenuView, character, map);
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(globalScene);
         }
     }
 
@@ -167,16 +173,13 @@ public class GlobalGameplayController {
         //TODO: Clean thi
         @Override
         public void handle(ActionEvent event) {
-            //Do Menu stuff
-            //switch into in-game menu
-            System.out.println("Changing View To Global Level");
+            // load local map
+            System.out.println("Changing View To Local Level");
 
             LocalGameplayView localGameplayView = new LocalGameplayView();
             Scene globalScene = new Scene(localGameplayView, 500, 500);
             LocalGameplayController localGameplayController = new LocalGameplayController(localGameplayView, character, map);
-
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
             window.setScene(globalScene);
         }
     }

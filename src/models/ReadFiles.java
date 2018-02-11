@@ -25,14 +25,16 @@ public class ReadFiles {
         reader = new BufferedReader(inStream);
 
         currentLine = reader.readLine();
+       // System.out.println(currentLine);
         size = getMatrixSize(currentLine.split(" "));
 
         global = new Zone[size.x][size.y];
 
         currentLine = reader.readLine();
+        //System.out.println(currentLine);
         currentNum = Integer.parseInt(currentLine);
 
-        // build map structure
+        //build map structure
         GlobalLevel loadedMap = new GlobalLevel();
         loadedMap.setGlobalMap(global);
         loadedMap.setGameTime(currentNum);
@@ -192,6 +194,8 @@ public class ReadFiles {
             }
         }
 
+        loadedCharacter.setInventory(in);
+
         //buff array size
         currentNum = Integer.parseInt(reader.readLine());
 
@@ -277,7 +281,6 @@ public class ReadFiles {
             System.out.println("Improper Tile Property @ " + gameFile + "should be Effect, Item, or Decal");
             assert false;
         }
-
 
     }
 

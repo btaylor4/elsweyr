@@ -7,16 +7,13 @@ import javafx.geometry.HPos;
 import javafx.geometry.VPos;
 import javafx.scene.Group;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
 import java.awt.*;
-
 
 
 public class GlobalGameplayView extends Parent {   //
@@ -131,10 +128,10 @@ public class GlobalGameplayView extends Parent {   //
 
 
     public void addMenuButtonListener(EventHandler<ActionEvent> handlerForMenuButton){
-        inGameMenuButton.setOnAction(handlerForMenuButton);
+            inGameMenuButton.setOnAction(handlerForMenuButton);
     }
 
-    public void addKeyPressListener(EventHandler<KeyEvent> handlerForKeypress){
+    public void addKeyPressListener(EventHandler<javafx.scene.input.KeyEvent> handlerForKeypress){
         //This gets around buttons listening to keypresses.
         this.getScene().setOnKeyReleased(handlerForKeypress);
     }
@@ -213,10 +210,7 @@ public class GlobalGameplayView extends Parent {   //
             if(globalCharacterPos.x != globalCharacterPrevPos.x || globalCharacterPos.y != globalCharacterPrevPos.y)
             {
                 //Moves the character and causes a one second wait.
-                globalView.getChildren().clear();
                 viewableGlobalMap.getChildren().clear();
-                globalView.setCenter(viewableGlobalMap);
-                globalView.setBottom(inGameMenuButton);
 
                 if(now - elapsedTime < 000_000_000)
                 {
@@ -238,10 +232,7 @@ public class GlobalGameplayView extends Parent {   //
             }
             //Keeps the maps display when their is no input.
             else {
-                globalView.getChildren().clear();
                 viewableGlobalMap.getChildren().clear();
-                globalView.setCenter(viewableGlobalMap);
-                globalView.setBottom(inGameMenuButton);
 
 
 
