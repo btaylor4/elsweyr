@@ -53,10 +53,8 @@ public class Write {
 
         for(int i = 0; i < items.size(); i++)
         {
-            characterSaveFile.write(newString.format("%s %d%n",items.get(i) ,1));
-
+            characterSaveFile.write(newString.format("%s %d%n",items.get(i).getName() ,1));
         }
-
 
         ArrayList<Buffs> characterBuffs = characterBeingSaved.getActiveBuffs();
         characterSaveFile.write(newString.format("%d%n",characterBeingSaved.getActiveBuffs().size()));
