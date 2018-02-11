@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
@@ -57,6 +58,7 @@ public class MainMenuController {
         public void handle(ActionEvent event) {
             //Exit the Game
             System.out.println("Exit Game Buttonstuff");
+            Platform.exit();
         }
     }
 }
