@@ -1,4 +1,4 @@
-null
+test
 10
 5
 3
@@ -7,8 +7,8 @@ null
 4
 0
 4 3
-7 8
-PlaceHolderForImages\Character.png
+9 9
+src\views\briefcase.png
 Equipped NONE
 5
 4
