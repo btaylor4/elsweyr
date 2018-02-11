@@ -29,8 +29,6 @@ public class LocalGameplayController {
     public LocalGameplayController(LocalGameplayView localView, Character playerCharacter, GlobalLevel global) {
         this.character = playerCharacter;
         this.globalMap = global;
-        Point gpos = playerCharacter.getGlobalPos();
-        playerCharacter.updateLocalPos(global.getStartPosOfTile(playerCharacter.getGlobalPos()));
         //TODO: make sure the correct map is loaded from the global map during this constructor
         this.view = localView;
         this.view.addKeyPressListener(new MovementHandler());

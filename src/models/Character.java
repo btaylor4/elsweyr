@@ -19,8 +19,8 @@ public class Character {
     private String name;
 
     private boolean onLocal;
-    private Point globalPos;
-    private Point localPos;
+    private Point globalPos = new Point(0,0);
+    private Point localPos = new Point(0,0);
     private Item equippedItem;
     private Image characterSprite;
     private String characterSpritePath;

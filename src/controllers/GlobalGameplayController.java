@@ -117,6 +117,7 @@ public class GlobalGameplayController {
             System.out.println(move);
             if(updateCharacterPosition(move) && checkForLocalLevel()) {
                 System.out.println("Changing View To Local Level");
+                character.updateLocalPos(map.getStartPosOfTile(character.getGlobalPos()));
                 LocalGameplayView localGameplayView = new LocalGameplayView();
                 Scene globalScene = new Scene(localGameplayView, 500, 500);
                 LocalGameplayController localGameplayController = new LocalGameplayController(localGameplayView, character, map);

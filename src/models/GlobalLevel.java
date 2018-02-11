@@ -33,6 +33,9 @@ public class GlobalLevel {
     }
 
     public Point getStartPosOfTile(Point levelCoord){
+        if(levelCoord.x > globalMap.length || levelCoord.y > globalMap[0].length){
+            return new Point(0,0);
+        }
         return globalMap[levelCoord.x][levelCoord.y].getStartTile();
     }
 }
