@@ -3,18 +3,17 @@ package views;
 import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.*;
+import javafx.geometry.HPos;
+import javafx.geometry.VPos;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
 import java.awt.*;
-
 
 
 public class GlobalGameplayView extends Parent {   //
@@ -132,7 +131,7 @@ public class GlobalGameplayView extends Parent {   //
             inGameMenuButton.setOnAction(handlerForMenuButton);
     }
 
-    public void addKeyPressListener(EventHandler<KeyEvent> handlerForKeypress){
+    public void addKeyPressListener(EventHandler<javafx.scene.input.KeyEvent> handlerForKeypress){
         //This gets around buttons listening to keypresses.
         this.getScene().setOnKeyReleased(handlerForKeypress);
     }
