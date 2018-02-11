@@ -3299,7 +3299,7 @@ GRASS 2
 Effect HEALTHEFFECT 3 24 546
 Decal ArtAssets/healDecal.png
 GRASS 2
-Effect LEVELUPEFFECT 576
+Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 GRASS 0
 GRASS 0
@@ -3318,11 +3318,11 @@ WATER 0
 WATER 0
 WATER 0
 GRASS 2
-Effect LEVELUPEFFECT 187
+Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 GRASS 0
 GRASS 2
-Effect LEVELUPEFFECT 247
+Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 GRASS 0
 GRASS 2
@@ -3373,7 +3373,7 @@ GRASS 0
 GRASS 0
 GRASS 0
 GRASS 2
-Effect LEVELUPEFFECT 398
+Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 MOUNTAIN 0
 GRASS 0
@@ -3407,7 +3407,7 @@ GRASS 2
 Effect HEALTHEFFECT 4 -10 249
 Decal ArtAssets/damageDecal.png
 GRASS 2
-Effect LEVELUPEFFECT 279
+Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 GRASS 0
 GRASS 0
@@ -3452,7 +3452,7 @@ GRASS 0
 GRASS 0
 GRASS 0
 GRASS 2
-Effect LEVELUPEFFECT 370
+Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 GRASS 0
 GRASS 2
@@ -3460,7 +3460,7 @@ Effect HEALTHEFFECT 4 17 430
 Decal ArtAssets/healDecal.png
 GRASS 0
 GRASS 2
-Effect LEVELUPEFFECT 490
+Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 GRASS 2
 Effect HEALTHEFFECT 4 22 520
@@ -3470,7 +3470,7 @@ Effect HEALTHEFFECT 4 -4 550
 Decal ArtAssets/damageDecal.png
 GRASS 0
 GRASS 2
-Effect LEVELUPEFFECT 610
+Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 MOUNTAIN 0
 MOUNTAIN 0
@@ -3489,7 +3489,7 @@ WATER 0
 WATER 0
 GRASS 0
 GRASS 2
-Effect LEVELUPEFFECT 221
+Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 GRASS 0
 GRASS 0
@@ -3501,7 +3501,7 @@ GRASS 0
 MOUNTAIN 0
 GRASS 0
 GRASS 2
-Effect LEVELUPEFFECT 461
+Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 GRASS 0
 GRASS 0
@@ -3637,7 +3637,7 @@ Effect HEALTHEFFECT 10 -25 644
 Decal ArtAssets/damageDecal.png
 GRASS 0
 GRASS 2
-Effect LEVELUPEFFECT 704
+Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 WATER 0
 WATER 0
@@ -3659,7 +3659,7 @@ GRASS 0
 GRASS 0
 GRASS 0
 GRASS 2
-Effect LEVELUPEFFECT 345
+Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 MOUNTAIN 0
 GRASS 0
@@ -3690,7 +3690,7 @@ WATER 0
 WATER 0
 WATER 0
 GRASS 2
-Effect LEVELUPEFFECT 196
+Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 GRASS 0
 MOUNTAIN 0
@@ -3698,7 +3698,7 @@ GRASS 2
 Effect HEALTHEFFECT 2 13 286
 Decal ArtAssets/healDecal.png
 GRASS 2
-Effect LEVELUPEFFECT 316
+Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 GRASS 0
 GRASS 0
@@ -3719,7 +3719,7 @@ GRASS 2
 Effect HEALTHEFFECT 6 -17 616
 Decal ArtAssets/damageDecal.png
 GRASS 2
-Effect LEVELUPEFFECT 646
+Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 GRASS 0
 GRASS 0
@@ -3745,7 +3745,7 @@ MOUNTAIN 0
 GRASS 0
 GRASS 0
 GRASS 2
-Effect LEVELUPEFFECT 407
+Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 GRASS 0
 GRASS 0
@@ -3792,7 +3792,7 @@ Effect HEALTHEFFECT 2 16 438
 Decal ArtAssets/healDecal.png
 GRASS 0
 GRASS 2
-Effect LEVELUPEFFECT 498
+Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 GRASS 0
 GRASS 0
@@ -3822,12 +3822,12 @@ WATER 0
 GRASS 0
 GRASS 0
 GRASS 2
-Effect LEVELUPEFFECT 319
+Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 GRASS 0
 GRASS 0
 GRASS 2
-Effect LEVELUPEFFECT 409
+Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 WATER 0
 GRASS 0
