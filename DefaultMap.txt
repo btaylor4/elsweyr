@@ -3271,8 +3271,9 @@ WATER 0
 WATER 0
 WATER 0
 WATER 0
-GRASS 2
+GRASS 3
 Effect HEALTHEFFECT 4 5 186
+Item Interactive Key
 Decal ArtAssets/healDecal.png
 GRASS 2
 Effect HEALTHEFFECT 3 -22 216
