@@ -100,11 +100,9 @@ public class LocalGameplayController {
         public void handle(ActionEvent event) {
             // go to in gmae menu
             InGameMenuView inGameMenuView = new InGameMenuView();
-            InGameMenuController inGameController = new InGameMenuController(inGameMenuView, character, globalMap);
-
-            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
             Scene globalScene = new Scene(inGameMenuView, 500, 500);
-
+            InGameMenuController inGameController = new InGameMenuController(inGameMenuView, character, globalMap);
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
             window.setScene(globalScene);
             System.out.println("menu Buttonstuff");
         }

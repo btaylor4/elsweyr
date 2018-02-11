@@ -3,8 +3,7 @@ package views;
 import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.HPos;
-import javafx.geometry.VPos;
+import javafx.geometry.*;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
@@ -130,7 +129,7 @@ public class GlobalGameplayView extends Parent {   //
 
 
     public void addMenuButtonListener(EventHandler<ActionEvent> handlerForMenuButton){
-        inGameMenuButton.setOnAction(handlerForMenuButton);
+            inGameMenuButton.setOnAction(handlerForMenuButton);
     }
 
     public void addKeyPressListener(EventHandler<KeyEvent> handlerForKeypress){
