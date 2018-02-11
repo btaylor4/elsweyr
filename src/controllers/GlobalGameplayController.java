@@ -63,6 +63,9 @@ public class GlobalGameplayController {
 
             else if(yPositionChange < 0 || yPositionChange > map.getGlobalMap()[0].length - 1)
                 return false;
+            //Checks if the zone is passable if it is not passable returns false.
+            else if(!map.getGlobalMap()[xPositionChange][yPositionChange].isPassable())
+                return false;
 
             else
                 return true;
