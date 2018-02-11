@@ -102,15 +102,6 @@ public class GlobalGameplayView extends Parent {   //
             }
         }
 
-        //Creates the Surrounding Tile
-        Image temp = new Image(path + "MOUNTAIN.png");
-        surroundingTile = new ImageView(temp);
-//        surroundingTile.setFitHeight(Math.sqrt((500*500)/(viewableTilesCol*viewableTilesRow)));
-//        surroundingTile.setFitWidth(Math.sqrt((500*500)/(viewableTilesCol*viewableTilesRow)));
-
-        surroundingTile.setFitHeight(45.55555);
-        surroundingTile.setFitWidth(45.555555);
-
     }
 
 
@@ -333,27 +324,7 @@ public class GlobalGameplayView extends Parent {   //
             temp = displayColStart;
             for (int j = 0; j < numCols; j++) {
                 //If the tile is not in the map.
-                if(displayRowStart < 0)
-                {
-                    viewableGlobalMap.add(surroundingTile,j,i);
-                }
-                else if(displayRowEnd > globalMapHeight){
-                    viewableGlobalMap.add(surroundingTile,j,i);
-                }
-                else if(temp < 0)
-                {
-                    viewableGlobalMap.add(surroundingTile,j,i);
-                    temp++;
-                }
-                else if(temp > globalMapWidth)
-                {
-                    viewableGlobalMap.add(surroundingTile,j,i);
-                }
-                //When the tile is in the map
-                else
-                    {
-                    viewableGlobalMap.add(tileImageView[displayRowStart][temp++], j, i);
-                }
+                viewableGlobalMap.add(tileImageView[displayRowStart][temp++], j, i);
             }
             displayRowStart++;
         }
@@ -361,25 +332,33 @@ public class GlobalGameplayView extends Parent {   //
 
     //Cannot display a row that is before the 0th row.
     private int getDisplayStart(int row){
-        int DisplayRowStart = row - viewableTilesRow / 2;
-        return DisplayRowStart;
+        int displayRowStart = row - viewableTilesRow / 2;
+        if(displayRowStart < 0)
+            return 0;
+        return displayRowStart;
     }
 
     //Cannot display a row that is not in the map.
     private int getDisplayRowEnd(int row){
-        int DisplayRowEnd = row + viewableTilesRow / 2 + 1;
-        return DisplayRowEnd;
+        int displayRowEnd = row + viewableTilesRow / 2 + 1;
+        if(displayRowEnd > globalMapHeight - 1)
+            return globalMapHeight - 1;
+        return displayRowEnd;
     }
 
     private int getDisplayColStart(int col){
-        int DisplayColStart = col - viewableTilesCol / 2;
-        return DisplayColStart;
+        int displayColStart = col - viewableTilesCol / 2;
+        if(displayColStart < 0)
+            return 0;
+        return displayColStart;
     }
 
     private int getDisplayColEnd(int col){
         //The plus one is for the for loop
-        int DisplayColEnd = col + viewableTilesCol / 2 + 1;
-        return DisplayColEnd;
+        int displayColEnd = col + viewableTilesCol / 2 + 1;
+        if(displayColEnd > globalMapWidth - 1)
+            return globalMapWidth - 1;
+        return displayColEnd;
     }
 }
 

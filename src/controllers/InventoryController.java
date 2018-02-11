@@ -1,23 +1,16 @@
 package controllers;
 
-import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Toggle;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import models.*;
 import models.Character;
-import views.GlobalGameplayView;
 import views.InventoryView;
 import views.LocalGameplayView;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class InventoryController {
@@ -30,7 +23,7 @@ public class InventoryController {
     public InventoryController(InventoryView invView, Character playerCharacter, GlobalLevel global) {
         this.character = playerCharacter;
         view = invView;
-        invView.initializeSprites(getSprites());
+        invView.initializeSprites(getSprites(), character.getInventory().getItems().indexOf(character.getEquippedItem()));
         this.globalMap = global;
 
         this.view.addBackToGameListener(new InventoryController.backToGameButtonHandler());
@@ -62,6 +55,9 @@ public class InventoryController {
         @Override
         public void handle(ActionEvent event) {
             character.setEquippedItem(character.getInventory().getItems().get(view.getSelectedItemIndex()));
+            view.updateEquippedBadge(view.getSelectedItemIndex());
+            view.getEquipButton().setDisable(true);
+            view.getUnEquipButton().setDisable(false);
         }
     }
 
@@ -69,17 +65,29 @@ public class InventoryController {
         @Override
         public void handle(ActionEvent event) {
             character.unEquip(character.getInventory().getItems().get(view.getSelectedItemIndex()));
+            if (view.getSelectedItemIndex() == view.getEquippedItemIndex()) {
+                view.removeBadgeFromPreviouslyEquipped();
+            }
+            view.getEquipButton().setDisable(false);
+            view.getUnEquipButton().setDisable(true);
         }
     }
 
     class dropButtonHandler implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
+            if (character.getInventory().getItems().indexOf(character.getEquippedItem()) == view.getSelectedItemIndex()) {
+                character.unEquip(character.getInventory().getItems().get(view.getSelectedItemIndex()));
+            }
             character.getInventory().getItems().remove(view.getSelectedItemIndex());
             // TODO breaks test can be fixed with platform runner
+            if (view.getSelectedItemIndex() == view.getEquippedItemIndex()) {
+                view.removeBadgeFromPreviouslyEquipped();
+            }
             view.getItemsFlow().getChildren().remove(view.getSelectedItemIndex());
             view.setSelectedItemIndex(-1);
-            view.updateView(getSprites());
+            view.disableButtons();
+            view.updateItems(getSprites());
         }
     }
 
