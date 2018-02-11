@@ -63,6 +63,7 @@ public class LoadGameController {
                 map = ReadFiles.loadGame(file.getPathToMapFile());
             }
             catch(IOException e){
+                e.printStackTrace();
                 System.out.println("No game associated with this file name");
                 return;
             }
