@@ -72,7 +72,7 @@ public class Write {
 
     public void writeMapFile(String filePath, GlobalLevel mapBeingSaved) throws IOException
     {
-        mapSaveFile = new FileWriter(filePath + "DefaultMap.txt");
+        mapSaveFile = new FileWriter(filePath + "DemoMap.txt");
         String newString = new String();
 
         Zone[][] globalMap = mapBeingSaved.getGlobalMap();

@@ -12,7 +12,7 @@ public class BedOfSpikes extends ObstacleItem {
     private Image imageSprite;
 
     public BedOfSpikes() throws FileNotFoundException {
-        this.setName("BedOfSpikes");
+        this.setName("Bed Of Spikes");
         this.setItemSpritePath("ArtAssets" + File.separator + "ItemImages" + File.separator + "BedOfSpikes.png");
         this.createItemImage();
     }
