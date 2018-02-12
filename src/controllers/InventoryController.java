@@ -44,6 +44,7 @@ public class InventoryController {
             LocalGameplayView localView = new LocalGameplayView();
             Scene localScene = new Scene(localView, 500, 500);
             LocalGameplayController localController = new LocalGameplayController(localView, character, globalMap);
+
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
             window.setTitle("Local Level");
             window.setScene(localScene);

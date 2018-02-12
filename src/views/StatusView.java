@@ -19,16 +19,16 @@ public class StatusView extends Parent{
     private Rectangle maxHealth;
     private Rectangle currentHealth;
     private TextField field;
-    private int curLevel;
+
+    private int defaultHealth;
 
     public StatusView() {
-        curLevel = 1;
         GridPane pane = new GridPane();
         pane.setHgap(10);
 
         field = new TextField();
         field.setEditable(false);
-        field.setPrefWidth(50);
+        field.setPrefWidth(100);
         pane.add(field, 0, 0);
 
         maxHealth = new Rectangle(0,0, 100, 10);
@@ -46,11 +46,33 @@ public class StatusView extends Parent{
     }
 
     public void updateCharacterHealth(int change) {
-        currentHealth.setWidth(currentHealth.getWidth() + change);
+        if(currentHealth.getWidth() + change > defaultHealth) {
+            currentHealth.setWidth(defaultHealth);
+        }
+
+        else if(currentHealth.getWidth() + change <= 0) {
+            currentHealth.setWidth(0);
+        }
+
+        else
+            currentHealth.setWidth(currentHealth.getWidth() + change);
+    }
+
+    public void setDefaultHealth(int defaultHealth) {
+        this.defaultHealth = defaultHealth;
+        this.currentHealth.setWidth(defaultHealth);
+        this.maxHealth.setWidth(defaultHealth);
     }
 
     public void updateCharacterLevel(int levelChange) {
-        curLevel += levelChange;
-        field.setText(Integer.toString(curLevel));
+        field.setText("Level " + Integer.toString(levelChange));
+    }
+
+    public Rectangle getMaxHealth() {
+        return maxHealth;
+    }
+
+    public Rectangle getCurrentHealth() {
+        return currentHealth;
     }
 }
