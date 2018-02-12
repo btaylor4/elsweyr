@@ -26,9 +26,10 @@ public class GlobalGameplayController {
         this.character = playerCharacter;
         this.map = global;
         this.view = globalView;
-        this.view.addKeyPressListener(new GlobalGameplayController.GlobalMovementListener());
-        this.view.addMenuButtonListener(new GlobalGameplayController.MenuButtonHandler());
-        this.view.addChangeToLocalListener(new GlobalGameplayController.ChangeToLocalHandler());
+        this.view.addKeyPressListener(new GlobalMovementListener());
+        this.view.addMenuButtonListener(new MenuButtonHandler());
+        this.view.addChangeToLocalListener(new ChangeToLocalHandler());
+        this.view.setCharacterSpritesPath(character.getCharacterSpritePath());
 
         populateView();
     }
@@ -37,6 +38,7 @@ public class GlobalGameplayController {
     {
         int mapHeight = map.getGlobalMap().length;
         int mapWidth = map.getGlobalMap()[0].length;
+        character.setCharacterSprite(new Image(character.getCharacterSpritePath()+ "Character_Front.png"));
         Image characterImage = character.getCharacterSprite();
         Image[][] zoneImages = new Image[mapHeight][mapWidth];
         for(int i = 0; i < mapHeight; i++)
@@ -146,7 +148,7 @@ public class GlobalGameplayController {
                 character.updateLocalPos(map.getStartPosOfTile(character.getGlobalPos()));
                 //Set the characters location to be in the Local view when changing to it
                 character.setOnLocal(true);
-                LocalGameplayView localGameplayView = new LocalGameplayView();
+                LocalGameplayView localGameplayView = new LocalGameplayView(character.getCharacterSpritePath());
 
                 Point startTile = map.getGlobalMap()[character.getGlobalPos().x][character.getGlobalPos().y].getStartTile();
                 character.updateLocalPos(startTile);
@@ -182,7 +184,7 @@ public class GlobalGameplayController {
             // load local map
             System.out.println("Changing View To Local Level");
 
-            LocalGameplayView localGameplayView = new LocalGameplayView();
+            LocalGameplayView localGameplayView = new LocalGameplayView(character.getCharacterSpritePath());
             Scene globalScene = new Scene(localGameplayView, 500, 500);
             LocalGameplayController localGameplayController = new LocalGameplayController(localGameplayView, character, map);
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

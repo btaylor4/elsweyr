@@ -160,7 +160,6 @@ public class ReadFiles {
         //player image
         currentLine = reader.readLine();
         loadedCharacter.setCharacterSpritePath(currentLine);
-        loadedCharacter.createCharacterImage();
 
         //equipped item
         currentLine = reader.readLine();

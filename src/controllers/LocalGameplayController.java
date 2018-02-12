@@ -37,6 +37,8 @@ public class LocalGameplayController {
         this.view.getStatusView().setDefaultHealth(character.getBaseHP());
         this.view.getStatusView().getCurrentHealth().setWidth(character.getCurrentHP());
         this.view.getStatusView().updateCharacterLevel(character.getLevel());
+        this.view.setCharacterSpritesPath(character.getCharacterSpritePath());
+
 
         for(HealthEffect effect: character.getHealthEffects()) {
             effect.applyEffect(character, this.view.getStatusView());
@@ -114,7 +116,9 @@ public class LocalGameplayController {
 
             Zone localMap = globalMap.getGlobalMap()[globalCharacterXPos][globalCharacterYPos];
 
-            moveCharacter(keyPressed, character, localMap);
+            if(moveCharacter(keyPressed, character, localMap))  {
+
+            }
 
             Point localPos = character.getLocalPos();
 
@@ -181,7 +185,7 @@ public class LocalGameplayController {
 
             if (localPos.getX() == localMap.getExitTile().getX() && localPos.getY() == localMap.getExitTile().getY()) {
                 gameChecks.cancel();
-                GlobalGameplayView globalView = new GlobalGameplayView();
+                GlobalGameplayView globalView = new GlobalGameplayView(character.getCharacterSpritePath());
                 Scene scene = new Scene(globalView, 500, 500);
                 //Set the characters position to be in the global map when stepping on the exit tile
                 character.setOnLocal(false);
@@ -294,7 +298,7 @@ public class LocalGameplayController {
     }
 
     //Determines if move in map is a valid one
-    void moveCharacter(String numKeyPressed, Character character, Zone localMap) {
+    boolean moveCharacter(String numKeyPressed, Character character, Zone localMap) {
 
         int mapRows = (localMap.getLocalMap().length) - 1; //get rows of map
         int mapCols = (localMap.getLocalMap()[0].length) - 1; //get cols of map
@@ -328,11 +332,12 @@ public class LocalGameplayController {
                 moveDirection = new Point(0, -1);
                 break;
             default:
-                moveDirection = new Point(0, 0);
+                return false;
 
-                view.setCharacterDirection(numKeyPressed);
 
         }
+        view.updateMove(numKeyPressed);
+
 
         // If charachter isn't out of bounds and there isn't an obstacle item or impassable terrain, update his position
         if (!outOfMapBounds(characterPositionInMap, moveDirection, mapRows, mapCols) &&
@@ -417,5 +422,7 @@ public class LocalGameplayController {
                 }
 
         }
+
+        return true;
     }
 }

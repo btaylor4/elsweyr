@@ -1,14 +1,14 @@
-Bob
+bob
 100
 100
-0
+3
 0
 4
 4
 0
 10 10
 10 10
-PlaceHolderForImages/Character.png
+file:Character2MovementSprites/
 Equipped NONE
 6
 0
