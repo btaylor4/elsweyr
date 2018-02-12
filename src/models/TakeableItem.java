@@ -18,6 +18,6 @@ public class TakeableItem extends Item{
 
     @Override
     public boolean onTouchAction(Character character, StatusView view) {
-        return false;
+        return character.getInventory().addItem(this);
     }
 }
