@@ -7,7 +7,7 @@ import views.MainMenuView;
 /**
  * Created by Bryan on 2/2/18.
  */
-public class RPG extends Application {
+public class RunGame extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
