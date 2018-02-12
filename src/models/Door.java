@@ -1,5 +1,7 @@
 package models;
 
+import views.StatusView;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 
@@ -31,6 +33,11 @@ public class Door extends InteractiveItem {
         }
 
         return false;
+    }
+
+    @Override
+    public boolean onTouchAction(Character character, StatusView view){
+        return checkRequirements(character);
     }
 
     public boolean isDoorOpen() {

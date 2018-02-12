@@ -1,5 +1,7 @@
 package models;
 
+import views.StatusView;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 
@@ -15,13 +17,26 @@ public class Animal extends InteractiveItem {
     }
 
     @Override
+    public boolean checkRequirements(Character character) {
+        for(Item item: character.getInventory().getItems()) {
+            if(item.getName().equalsIgnoreCase("food")) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    @Override
     public boolean onTouchAction(Character character){
         //check to make sure the inventory contains food
-        Inventory inventory = character.getInventory();
-        if(inventory.hasItem(foodItem)) {
-            return true;
-        }
-        return false;
+        return checkRequirements(character);
+    }
+
+    @Override
+    public boolean onTouchAction(Character character, StatusView view){
+        //check to make sure the inventory contains food
+       return  checkRequirements(character);
     }
 
 }

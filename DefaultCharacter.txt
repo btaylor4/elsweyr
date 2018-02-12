@@ -10,11 +10,8 @@ Bob
 10 10
 PlaceHolderForImages/Character.png
 Equipped NONE
-5
-3
-key 1
-sword 1
-food 1
+6
+0
 3
 HEALTHEFFECT 1000 4 poison
 HEALTHEFFECT 2000 6 Chocolate cake
