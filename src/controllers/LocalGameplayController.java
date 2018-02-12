@@ -235,11 +235,6 @@ public class LocalGameplayController {
         predictedMove.y = userLocation.y + userMove.y;
 
         //Check if there's an obstacle item on tile where character wants to move
-        if (map.getLocalMap()[predictedMove.x][predictedMove.y].getItem() == null) {
-            System.out.println("NULL item @ " + predictedMove.x + " : " + predictedMove.y);
-        } else {
-            System.out.println(map.getLocalMap()[predictedMove.x][predictedMove.y].getItem().getName());
-        }
         if (map.getLocalMap()[predictedMove.x][predictedMove.y].getItem().getItemType().equals(ItemType.OBSTACLE)) {
             return true;
         }
@@ -300,7 +295,6 @@ public class LocalGameplayController {
             Point newCharacterPosition = new Point(characterPositionInMap.x + moveDirection.x,
                     characterPositionInMap.y + moveDirection.y);
             character.updateLocalPos(newCharacterPosition);
-            System.out.println(character.getLocalPos());
 
             character.updateLocalPos(newCharacterPosition);
 
