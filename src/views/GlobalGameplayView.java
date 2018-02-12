@@ -150,33 +150,27 @@ public class GlobalGameplayView extends Parent {   //
         switch(characterDirection){
             case "UP": // 8
                 updateCharacterImageView(characterSpritePath + "Character_Back.png");
-                System.out.println(characterSpritePath);
 
                 break;
 
             case "DOWN": // 2
                 updateCharacterImageView(characterSpritePath + "Character_Front.png");
-                System.out.println(characterSpritePath);
                 break;
 
             case "LEFT": // 4
-                System.out.println(characterSpritePath);
                 updateCharacterImageView(characterSpritePath + "Character_East.png");
                 break;
 
             case "RIGHT": //6
-                System.out.println(characterSpritePath);
                 updateCharacterImageView(characterSpritePath + "Character_East.png");
                 break;
 
             case "END": // 1 DOWN_LEFT
-                System.out.println(characterSpritePath);
 
                 break;
 
             case "PAGE_DOWN":  // DOWN_RIGHT
                 updateCharacterImageView(characterSpritePath + "Character_South_East.png");
-                System.out.println(characterSpritePath);
                 break;
 
             case "HOME":  // UP_LEFT

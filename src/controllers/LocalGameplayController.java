@@ -251,9 +251,10 @@ public class LocalGameplayController {
             default:
                 moveDirection = new Point(0, 0);
 
-                view.updateMove(numKeyPressed);
 
         }
+        view.updateMove(numKeyPressed);
+
 
         // If charachter isn't out of bounds and there isn't an obstacle item or impassable terrain, update his position
         if (!outOfMapBounds(characterPositionInMap, moveDirection, mapRows, mapCols) &&

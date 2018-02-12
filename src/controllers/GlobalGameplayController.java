@@ -38,6 +38,7 @@ public class GlobalGameplayController {
     {
         int mapHeight = map.getGlobalMap().length;
         int mapWidth = map.getGlobalMap()[0].length;
+        character.setCharacterSprite(new Image(character.getCharacterSpritePath()+ "Character_Front.png"));
         Image characterImage = character.getCharacterSprite();
         Image[][] zoneImages = new Image[mapHeight][mapWidth];
         for(int i = 0; i < mapHeight; i++)

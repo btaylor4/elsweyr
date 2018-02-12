@@ -114,22 +114,18 @@ public class LocalGameplayView extends Parent {   //
         switch(characterDirection){
             case "UP": // 8
                 updateCharacterImageView(characterSpritePath + "Character_Back.png");
-                System.out.println(characterSpritePath);
                 break;
 
             case "DOWN": // 2
                 updateCharacterImageView(characterSpritePath + "Character_Front.png");
-                System.out.println(characterSpritePath);
                 break;
 
             case "LEFT": // 4
                 updateCharacterImageView(characterSpritePath + "Character_East.png");
-                System.out.println(characterSpritePath);
                 break;
 
             case "RIGHT": //6
                 updateCharacterImageView(characterSpritePath + "Character_East.png");
-                System.out.println("; L");
                 break;
 
             case "END": // 1 DOWN_LEFT
@@ -137,7 +133,6 @@ public class LocalGameplayView extends Parent {   //
                 break;
 
             case "PAGE_DOWN":  // DOWN_RIGHT
-                System.out.println(characterSpritePath);
                 updateCharacterImageView(characterSpritePath + "Character_South_East.png");
                 break;
 

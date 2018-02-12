@@ -8,7 +8,7 @@
 0
 10 10
 10 10
-file:Character1MovementSprites/
+file:Character3MovementSprites/
 Equipped NONE
 5
 4
