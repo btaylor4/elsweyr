@@ -146,7 +146,7 @@ public class LocalGameplayController {
                         break;
                     case INTERACTIVE:
                         if (shouldBeRemoved) {
-                            if (itemOnTile instanceof Animal) {
+                            /*if (itemOnTile instanceof Animal) {
                                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                                 alert.setTitle("Animal Interaction");
                                 alert.setHeaderText("It is an Animal");
@@ -158,9 +158,9 @@ public class LocalGameplayController {
                                 alert.setHeaderText("It is a Door");
                                 alert.setContentText("You may enter the door!");
                                 alert.showAndWait();
-                            }
+                            }*/
                         } else {
-                            if (itemOnTile instanceof Animal) {
+                            /*if (itemOnTile instanceof Animal) {
                                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                                 alert.setTitle("Animal Interaction");
                                 alert.setHeaderText("It is an Animal");
@@ -172,7 +172,7 @@ public class LocalGameplayController {
                                 alert.setHeaderText("It is a Door");
                                 alert.setContentText("You need a key to enter...");
                                 alert.showAndWait();
-                            }
+                            }*/
                         }
                 }
             }
@@ -270,7 +270,29 @@ public class LocalGameplayController {
         }
 
         return false;
+    }
 
+    boolean hasInteractiveItem(Point userLocation, Point userMove, Zone map) {
+        Point predictedMove = new Point();
+        predictedMove.x = userLocation.x + userMove.x;
+        predictedMove.y = userLocation.y + userMove.y;
+
+        //Check if there's an interactive item on tile where character wants to move
+        if (map.getLocalMap()[predictedMove.x][predictedMove.y].getItem().getItemType().equals(ItemType.INTERACTIVE)) {
+                return true;
+        }
+
+        return false;
+    }
+
+    boolean hasInteractiveItemShouldMove(Point userLocation, Point userMove, Zone map) {
+        Point predictedMove = new Point();
+        predictedMove.x = userLocation.x + userMove.x;
+        predictedMove.y = userLocation.y + userMove.y;
+        if (map.getLocalMap()[predictedMove.x][predictedMove.y].getItem().onTouchAction(character)) {
+            return true;
+        }
+        return false;
     }
 
     //Determines if move in map is a valid one
@@ -319,14 +341,27 @@ public class LocalGameplayController {
         if (!outOfMapBounds(characterPositionInMap, moveDirection, mapRows, mapCols) &&
                 !obstacleOrTerrainBlocking(characterPositionInMap, moveDirection, localMap)) {
 
-            Point newCharacterPosition = new Point(characterPositionInMap.x + moveDirection.x,
-                    characterPositionInMap.y + moveDirection.y);
-            character.updateLocalPos(newCharacterPosition);
+            if (hasInteractiveItem(characterPositionInMap, moveDirection, localMap)) {
+                if (hasInteractiveItemShouldMove(characterPositionInMap, moveDirection, localMap)) {
+                    Point newCharacterPosition = new Point(characterPositionInMap.x + moveDirection.x,
+                            characterPositionInMap.y + moveDirection.y);
+                    character.updateLocalPos(newCharacterPosition);
 
-            character.updateLocalPos(newCharacterPosition);
+                    character.updateLocalPos(newCharacterPosition);
 
-            //Updates the localViewsCharacterPosition
-            view.updateCharacterPos(newCharacterPosition);
+                    //Updates the localViewsCharacterPosition
+                    view.updateCharacterPos(newCharacterPosition);
+                }
+            } else {
+                Point newCharacterPosition = new Point(characterPositionInMap.x + moveDirection.x,
+                        characterPositionInMap.y + moveDirection.y);
+                character.updateLocalPos(newCharacterPosition);
+
+                character.updateLocalPos(newCharacterPosition);
+
+                //Updates the localViewsCharacterPosition
+                view.updateCharacterPos(newCharacterPosition);
+            }
         }
 
         AreaEffect effect = localMap.getLocalMap()[character.getLocalPos().x][character.getLocalPos().y].getAreaEffect();
