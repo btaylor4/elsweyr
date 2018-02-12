@@ -24,7 +24,7 @@ public class TestHealthEffect {
 
     @Test
     public void testPositiveEffectIsBeingApplied() throws InterruptedException {
-        character.setBaseHP(100);
+        character.setBaseHP(200);
         character.setCurrentHP(100);
         character.setTotalHP(200);
 
