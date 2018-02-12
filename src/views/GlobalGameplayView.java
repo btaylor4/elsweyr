@@ -78,8 +78,8 @@ public class GlobalGameplayView extends Parent {   //
     public void createCharacterView(Image characterImage) {
         characterSprite = characterImage;
         characterView = new ImageView(characterImage);
-        characterView.setFitHeight(30);
-        characterView.setFitWidth(30);
+        characterView.setFitHeight(40);
+        characterView.setFitWidth(40);
         //updateCharacterImageView(path + "Character_Front.png");
     }
 
@@ -158,7 +158,7 @@ public class GlobalGameplayView extends Parent {   //
                 break;
 
             case "LEFT": // 4
-                updateCharacterImageView(characterSpritePath + "Character_East.png");
+                updateCharacterImageView(characterSpritePath + "Character_West.png");
                 break;
 
             case "RIGHT": //6
@@ -166,7 +166,7 @@ public class GlobalGameplayView extends Parent {   //
                 break;
 
             case "END": // 1 DOWN_LEFT
-
+                updateCharacterImageView(characterSpritePath + "Character_South_West.png");
                 break;
 
             case "PAGE_DOWN":  // DOWN_RIGHT
@@ -174,12 +174,12 @@ public class GlobalGameplayView extends Parent {   //
                 break;
 
             case "HOME":  // UP_LEFT
-
+                updateCharacterImageView(characterSpritePath + "Character_North_West.png");
                 break;
 
 
             case "PAGE_UP": // UP_RIGHT
-
+                updateCharacterImageView(characterSpritePath + "Character_North_East.png");
                 break;
 
             default:
