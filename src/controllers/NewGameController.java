@@ -109,7 +109,7 @@ public class NewGameController {
 
                         Write write = new Write();
                         write.setPath("SaveSlot" + i + File.separator);
-                        write.writeCharacterFile(c, i);
+                        write.writeCharacterFile("", c);
 
                         copyDefaultToNewFile(map, newMap);
 
@@ -139,11 +139,6 @@ public class NewGameController {
         }
 
     }
-
-
-
-
-
 
     class tableClickedEventHandler implements EventHandler<MouseEvent> {
 

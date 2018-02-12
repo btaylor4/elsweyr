@@ -38,7 +38,7 @@ public class TestInteractionWithItems extends ApplicationTest {
     public void start(Stage stage) throws Exception {
         primaryWindow = new Stage();
 
-        localview = new LocalGameplayView();
+        localview = new LocalGameplayView(character.getCharacterSpritePath());
         character = new Character();
         character.setCharacterSpritePath("file:PlaceHolderForImages/");
 

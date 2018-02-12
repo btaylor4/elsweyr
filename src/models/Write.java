@@ -11,11 +11,13 @@ public class Write {
     private FileWriter mapSaveFile;
     private String path = "";
 
-    public void writeCharacterFile( Character characterBeingSaved, int selectedSaveSlot) throws IOException
+    private static String FILE_PATH;
+
+    public void writeCharacterFile( String filePath, Character characterBeingSaved) throws IOException
     {
         String newString = new String();
 
-        characterSaveFile = new FileWriter(path + "DefaultCharacter.txt");
+        characterSaveFile = new FileWriter(filePath + "DefaultCharacter.txt");
 
         characterSaveFile.write(newString.format("%s%n", characterBeingSaved.getCharacterName()));
         characterSaveFile.write(newString.format("%d%n", characterBeingSaved.getBaseHP()));
@@ -52,9 +54,7 @@ public class Write {
         for(int i = 0; i < items.size(); i++)
         {
             characterSaveFile.write(newString.format("%s %d%n",items.get(i).getName() ,1));
-
         }
-
 
         ArrayList<Buffs> characterBuffs = characterBeingSaved.getActiveBuffs();
         characterSaveFile.write(newString.format("%d%n",characterBeingSaved.getActiveBuffs().size()));
@@ -70,9 +70,9 @@ public class Write {
         characterSaveFile.close();
     }
 
-    public void writeMapFile(GlobalLevel mapBeingSaved, int selectedSaveSlot) throws IOException
+    public void writeMapFile(String filePath, GlobalLevel mapBeingSaved) throws IOException
     {
-        mapSaveFile = new FileWriter("DefaultMap.txt");
+        mapSaveFile = new FileWriter(filePath + "DefaultMap.txt");
         String newString = new String();
 
         Zone[][] globalMap = mapBeingSaved.getGlobalMap();
@@ -88,76 +88,91 @@ public class Write {
             {
                 //each zone
                 Zone zone = globalMap[i][j];
-                Tile[][] zoneLocalMap = zone.getLocalMap();
-                mapSaveFile.write(newString.format("%d %d%n", zoneLocalMap.length, zoneLocalMap[0].length));
-                mapSaveFile.write(newString.format("%d %d%n", (int)zone.getExitTile().getX(), (int)zone.getExitTile().getY()));
-                mapSaveFile.write(newString.format("%d %d%n", (int)zone.getStartTile().getX(), (int)zone.getStartTile().getY()));
-                mapSaveFile.write(newString.format("%s%n", zone.getZoneSpritePath()));
-                if(!zone.isPassable()) {
-                    mapSaveFile.write(newString.format("%d%n", 0));
+                if(!zone.getHasLevel()){
+                    mapSaveFile.write(newString.format("%d %d%n", 0, 0));
+                    mapSaveFile.write(newString.format("%d %d%n", (int)zone.getExitTile().getX(), (int)zone.getExitTile().getY()));
+                    mapSaveFile.write(newString.format("%d %d%n", (int)zone.getStartTile().getX(), (int)zone.getStartTile().getY()));
+                    mapSaveFile.write(newString.format("%s%n", zone.getZoneSpritePath()));
+                    if(!zone.isPassable()) {
+                        mapSaveFile.write(newString.format("%d%n", 0));
+                    }
+                    else{
+                        mapSaveFile.write(newString.format("%d%n", 1));
+                    }
                 }
                 else {
-                    mapSaveFile.write(newString.format("%d%n", 1));
-                }
+                    Tile[][] zoneLocalMap = zone.getLocalMap();
+                    mapSaveFile.write(newString.format("%d %d%n", zoneLocalMap.length, zoneLocalMap[0].length));
+                    mapSaveFile.write(newString.format("%d %d%n", (int)zone.getExitTile().getX(), (int)zone.getExitTile().getY()));
+                    mapSaveFile.write(newString.format("%d %d%n", (int)zone.getStartTile().getX(), (int)zone.getStartTile().getY()));
+                    mapSaveFile.write(newString.format("%s%n", zone.getZoneSpritePath()));
+                    if(!zone.isPassable()) {
+                        mapSaveFile.write(newString.format("%d%n", 0));
+                    }
+                    else {
+                        mapSaveFile.write(newString.format("%d%n", 1));
+                    }
 
-                for(int u = 0; u<zoneLocalMap.length; u++)
-                {
-                    for(int h = 0; h<zoneLocalMap[u].length; h++)
+                    for(int u = 0; u<zoneLocalMap.length; u++)
                     {
-                        //each tile
-                        Tile tile = zoneLocalMap[u][h];
-                        int numberOfLinesForEachTile = 0;
-                        if(!tile.getAreaEffect().getEffectType().equals(EffectType.NONE)) {
-                            numberOfLinesForEachTile++;
-                        }
-                        if(!tile.getItem().getItemType().equals(ItemType.NONE)) {
-                            numberOfLinesForEachTile++;
-                        }
-                        if(tile.getDecalSpritePath() != null) {
-                            numberOfLinesForEachTile++;
-                        }
+                        for(int h = 0; h<zoneLocalMap[u].length; h++)
+                        {
+                            //each tile
+                            Tile tile = zoneLocalMap[u][h];
+                            int numberOfLinesForEachTile = 0;
+                            if(!tile.getAreaEffect().getEffectType().equals(EffectType.NONE)) {
+                                numberOfLinesForEachTile++;
+                            }
+                            if(!tile.getItem().getItemType().equals(ItemType.NONE)) {
+                                numberOfLinesForEachTile++;
+                            }
+                            if(tile.getDecalSpritePath() != null) {
+                                numberOfLinesForEachTile++;
+                            }
 
-                        mapSaveFile.write(newString.format("%s %d %n", tile.getTerrain(), numberOfLinesForEachTile));
+                            mapSaveFile.write(newString.format("%s %d %n", tile.getTerrain(), numberOfLinesForEachTile));
 
-                        //AreaEffects
+                            //AreaEffects
 
-                        //new stuff
-                        if(!tile.getAreaEffect().getEffectType().equals(EffectType.NONE)) {
-                            mapSaveFile.write(newString.format("Effect %s ", tile.getAreaEffect().getEffectType()));
-                            if (tile.getAreaEffect().getEffectType().equals(EffectType.HEALTHEFFECT)) {
-                                HealthEffect tileEffect = (HealthEffect) tile.getAreaEffect();
-                                mapSaveFile.write(newString.format("%d %d %s%n", tileEffect.getTimeInterval(), tileEffect.getHealthChange(), tileEffect.getEffectId()));
-                            } else if (tile.getAreaEffect().getEffectType().equals(EffectType.LEVELUPEFFECT)) {
-                                LevelUpEffect tileEffect = (LevelUpEffect) tile.getAreaEffect();
-                                if (tileEffect.hasBeenActivated()) {
-                                    mapSaveFile.write(newString.format("%d%n", 1));
-                                } else {
-                                    mapSaveFile.write(newString.format("%d%n", 0));
+                            //new stuff
+                            if(!tile.getAreaEffect().getEffectType().equals(EffectType.NONE)) {
+                                mapSaveFile.write(newString.format("Effect %s ", tile.getAreaEffect().getEffectType()));
+                                if (tile.getAreaEffect().getEffectType().equals(EffectType.HEALTHEFFECT)) {
+                                    HealthEffect tileEffect = (HealthEffect) tile.getAreaEffect();
+                                    mapSaveFile.write(newString.format("%d %d %s%n", tileEffect.getTimeInterval(), tileEffect.getHealthChange(), tileEffect.getEffectId()));
+                                } else if (tile.getAreaEffect().getEffectType().equals(EffectType.LEVELUPEFFECT)) {
+                                    LevelUpEffect tileEffect = (LevelUpEffect) tile.getAreaEffect();
+                                    if (tileEffect.hasBeenActivated()) {
+                                        mapSaveFile.write(newString.format("%d%n", 1));
+                                    } else {
+                                        mapSaveFile.write(newString.format("%d%n", 0));
+                                    }
                                 }
                             }
-                        }
-                        if(!tile.getItem().getItemType().equals(ItemType.NONE)) {
-                            //Item
-                            if (tile.getItem().getItemType().equals(ItemType.TAKEABLE)) {
-                                TakeableItem tileItem = (TakeableItem) tile.getItem();
-                                mapSaveFile.write(newString.format("Item TAKEABLE %s %s%n", tileItem.getName(), tileItem.getItemSpritePath()));
-                            } else if (tile.getItem().getItemType().equals(ItemType.INTERACTIVE)) {
-                                InteractiveItem tileItem = (InteractiveItem) tile.getItem();
-                                mapSaveFile.write(newString.format("Item INTERACTIVE %s %s%n", tileItem.getName(), tileItem.getItemSpritePath()));
-                            } else if (tile.getItem().getItemType().equals(ItemType.OBSTACLE)) {
-                                ObstacleItem tileItem = (ObstacleItem) tile.getItem();
-                                mapSaveFile.write(newString.format("Item OBSTACLE %s %s%n", tileItem.getName(), tileItem.getItemSpritePath()));
-                            } else if (tile.getItem().getItemType().equals(ItemType.ONESHOT)) {
-                                OneShotItem tileItem = (OneShotItem) tile.getItem();
-                                mapSaveFile.write(newString.format("Item ONESHOT %s %s%n", tileItem.getName(), tileItem.getItemSpritePath()));
+                            if(!tile.getItem().getItemType().equals(ItemType.NONE)) {
+                                //Item
+                                if (tile.getItem().getItemType().equals(ItemType.TAKEABLE)) {
+                                    TakeableItem tileItem = (TakeableItem) tile.getItem();
+                                    mapSaveFile.write(newString.format("Item TAKEABLE %s %s%n", tileItem.getName(), tileItem.getItemSpritePath()));
+                                } else if (tile.getItem().getItemType().equals(ItemType.INTERACTIVE)) {
+                                    InteractiveItem tileItem = (InteractiveItem) tile.getItem();
+                                    mapSaveFile.write(newString.format("Item INTERACTIVE %s %s%n", tileItem.getName(), tileItem.getItemSpritePath()));
+                                } else if (tile.getItem().getItemType().equals(ItemType.OBSTACLE)) {
+                                    ObstacleItem tileItem = (ObstacleItem) tile.getItem();
+                                    mapSaveFile.write(newString.format("Item OBSTACLE %s %s%n", tileItem.getName(), tileItem.getItemSpritePath()));
+                                } else if (tile.getItem().getItemType().equals(ItemType.ONESHOT)) {
+                                    OneShotItem tileItem = (OneShotItem) tile.getItem();
+                                    mapSaveFile.write(newString.format("Item ONESHOT %s %s%n", tileItem.getName(), tileItem.getItemSpritePath()));
+                                }
                             }
-                        }
-                        if(tile.getDecalSpritePath() != null) {
-                            mapSaveFile.write(newString.format("Decal %s%n", tile.getDecalSpritePath()));
+                            if(tile.getDecalSpritePath() != null) {
+                                mapSaveFile.write(newString.format("Decal %s%n", tile.getDecalSpritePath()));
 
+                            }
                         }
                     }
                 }
+
             }
         }
 

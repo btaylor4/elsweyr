@@ -3,7 +3,6 @@ package models;
 import javafx.scene.image.Image;
 import org.junit.Assert;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.awt.*;
@@ -16,6 +15,7 @@ import java.util.ArrayList;
 public class ReadWriteTest {
 
     private static final String IMAGE_PATH = "file:PlaceHolderForImages/";
+    private static final String FILE_PATH = "SaveSlot" + File.separator;
 
     private static GlobalLevel actualMap;
     private static  Character actualChar;
@@ -199,13 +199,14 @@ public class ReadWriteTest {
         actualChar.setExpToNextLevel(4);
         actualChar.setLevel(4);
         actualChar.setOnLocal(false);
-        actualChar.updateLocalPos(new Point(4, 3));
-        actualChar.updateGlobalPos(new Point (7, 8));
+        actualChar.updateLocalPos(new Point(0, 0));
+        actualChar.updateGlobalPos(new Point (0, 0));
         actualChar.setCharacterSpritePath(IMAGE_PATH + "Character.png");
         actualChar.createCharacterImage();
         actualChar.setEquippedItem(new NoneItem());
         actualChar.setInventory(new Inventory());
         actualChar.getInventory().setMaxSize(5);
+        actualChar.setCharacterName("Bob");
 
         TakeableItem TI = new TakeableItem();
         TI.setName("hula-hoop");
@@ -261,8 +262,9 @@ public class ReadWriteTest {
     @Test
     public void testMap() throws IOException {
         Write write = new Write();
-        String mapFile ="mapSaveFile.txt";
-        write.writeMapFile(actualMap, 0);
+        String mapFile ="DefaultMap.txt";
+        write.writeMapFile("", actualMap);
+
         GlobalLevel GL = null;
 
         try {
@@ -395,9 +397,42 @@ public class ReadWriteTest {
     public void testChar() throws IOException {
         Write write = new Write();
         Character expectedChar;
+        write.writeCharacterFile("", actualChar);
 
-        write.writeCharacterFile(actualChar, 0);
-        expectedChar = ReadFiles.loadCharacter("characterSaveFile.txt");
+        expectedChar = ReadFiles.loadCharacter("DefaultCharacter.txt");
+
+        Assert.assertEquals(expectedChar.getBaseHP(), actualChar.getBaseHP());
+        Assert.assertEquals(expectedChar.getCurrentHP(), actualChar.getCurrentHP());
+        Assert.assertEquals(expectedChar.getBonusHP(), actualChar.getBonusHP());
+        Assert.assertEquals(expectedChar.getCurrExp(), actualChar.getCurrExp());
+        Assert.assertEquals(expectedChar.getExpToNextLevel(), actualChar.getExpToNextLevel());
+        Assert.assertEquals(expectedChar.getLevel(), actualChar.getLevel());
+        Assert.assertEquals(expectedChar.isOnLocal(), actualChar.isOnLocal());
+        Assert.assertEquals(expectedChar.getLocalPos(), actualChar.getLocalPos());
+        Assert.assertEquals(expectedChar.getGlobalPos(), actualChar.getGlobalPos());
+        Assert.assertEquals(expectedChar.getCharacterSpritePath(), actualChar.getCharacterSpritePath());
+
+        checkEquipped(expectedChar.getEquippedItem(), actualChar.getEquippedItem());
+        checkBuffs(expectedChar.getActiveBuffs(), actualChar.getActiveBuffs());
+    } // none in equipped
+
+    @Test
+    public void testCharWithEquipped() throws IOException {
+        Write write = new Write();
+        Character expectedChar;
+
+        boolean found = true;
+        actualChar.setCharacterName("Bobby");
+        for (Item i : actualChar.getInventory().getItems()) {
+            if (!found && i.getName().equals("hula-hoop")) {
+                actualChar.setEquippedItem(i);
+                found = true;
+            }
+        }
+
+        write.writeCharacterFile("TheEquippedTest", actualChar);
+
+        expectedChar = ReadFiles.loadCharacter("TheEquippedTestDefaultCharacter.txt");
 
         Assert.assertEquals(expectedChar.getBaseHP(), actualChar.getBaseHP());
         Assert.assertEquals(expectedChar.getCurrentHP(), actualChar.getCurrentHP());

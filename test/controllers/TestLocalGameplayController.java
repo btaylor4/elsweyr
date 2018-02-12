@@ -2,6 +2,7 @@ package controllers;
 
 
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
@@ -46,6 +47,7 @@ public class TestLocalGameplayController extends ApplicationTest {
             for(int j = 0; j < 5; j++) {
                 zones[i][j] = new Zone();
                 zones[i][j].setExitTile(new Point(1,1));
+                zones[i][j].setZoneSprite(new Image("file:PlaceHolderForImages/GRASS.png"));
             }
         }
 
@@ -56,6 +58,9 @@ public class TestLocalGameplayController extends ApplicationTest {
                 tiles[i][j].setItem(new InteractiveItem());
                 tiles[i][j].setTerrain(Terrain.GRASS);
                 tiles[i][j].setEffectType(healthEffect);
+                tiles[i][j].setTileSprite(new Image("file:PlaceHolderForImages/GRASS.png"));
+                tiles[i][j].setDecal(new Image("file:PlaceHolderForImages/GRASS.png"));
+                tiles[i][j].getItem().setItemSprite(new Image("file:PlaceHolderForImages/GRASS.png"));
             }
         }
 
@@ -69,7 +74,7 @@ public class TestLocalGameplayController extends ApplicationTest {
         primaryWindow = new Stage();
 
 //        globalView = new GlobalGameplayView();
-        localView = new LocalGameplayView();
+        localView = new LocalGameplayView("file:PlaceHolderForImages/");
 
         Character playerCharacter = new Character();
         playerCharacter.setCharacterSpritePath("file:PlaceHolderForImages/");
@@ -79,10 +84,10 @@ public class TestLocalGameplayController extends ApplicationTest {
         localScene = new Scene(localView, 500, 500);
         primaryWindow.setScene(localScene);
 
-        GlobalLevel global = new GlobalLevel();
+        //GlobalLevel global = new GlobalLevel();
 
 
-        LocalGameplayController localGameplayController = new LocalGameplayController(localView, playerCharacter, global);
+        LocalGameplayController localGameplayController = new LocalGameplayController(localView, playerCharacter, globalLevel);
 
 
         primaryWindow.show();
@@ -122,6 +127,7 @@ public class TestLocalGameplayController extends ApplicationTest {
     public void testValidUpMove() {
         Point expected = new Point(0,0);
         Character character = new Character();
+        character.setCharacterSprite(new Image("file:PlaceHolderForImages/GRASS.png"));
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(1,0));
         character.setCharacterSpritePath("file:PlaceHolderForImages/");

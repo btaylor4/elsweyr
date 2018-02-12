@@ -1,10 +1,13 @@
 package models;
 
+import views.StatusView;
+
 public class LevelUpEffect extends AreaEffect {
     private boolean hasBeenActivated;
 
     public LevelUpEffect(){
         setEffectType(EffectType.LEVELUPEFFECT);
+        hasBeenActivated = false;
     }
 
     public void levelUp(Character character){
@@ -21,7 +24,17 @@ public class LevelUpEffect extends AreaEffect {
     @Override
     public void applyEffect(Character character) {
         int nextLevelExperience = character.getExpToNextLevel();
+        hasBeenActivated = true;
         character.setCurrExp(nextLevelExperience);
         character.updateLevel();
+    }
+
+    @Override
+    public void applyEffect(Character character, StatusView view) {
+        int nextLevelExperience = character.getExpToNextLevel();
+        hasBeenActivated = true;
+        character.setCurrExp(nextLevelExperience);
+        character.updateLevel();
+        view.updateCharacterLevel(character.getLevel());
     }
 }

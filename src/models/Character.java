@@ -25,12 +25,16 @@ public class Character {
     private Image characterSprite;
     private String characterSpritePath;
     private ArrayList<Buffs> activeBuffs;
-    private ArrayList<HealthEffect> effects = new ArrayList<>();
+    private ArrayList<HealthEffect> effects;
+
+    public ArrayList<HealthEffect> getHealthEffects() {
+        return effects;
+    }
 
     //TODO CREATE A DEFAULT CONSTRUCTOR THAT ONLY TAKES IN AN IMAGE AND SETS EVERYTHING ELSE UP FROM A FILE
-    public Character()
-    {
+    public Character() {
         activeBuffs = new ArrayList<Buffs>();
+        effects = new ArrayList<>();
     }
 
     public void createCharacterImage() throws FileNotFoundException {
@@ -42,7 +46,8 @@ public class Character {
 
 
     public void addEffect(HealthEffect effect) {
-        effects.add(effect);
+        if(!effects.contains(effect))
+            effects.add(effect);
     }
 
     public boolean hasEffect(HealthEffect effect) {
@@ -64,10 +69,10 @@ public class Character {
     public void updateHealth(int healthChange){
         currentHP += healthChange;
         //Character max currentHP is his/her TotalHP
-        if(currentHP > totalHP)
-            currentHP = totalHP;
+        if(currentHP >= baseHP) //TODO: Change this to base + bonus
+            currentHP = baseHP;
         //Character min currentHP is 0.
-        else if(currentHP < 0)
+        else if(currentHP <= 0)
             currentHP = 0;
     }
 
@@ -85,7 +90,7 @@ public class Character {
     }
 
     public void unEquip(Item item){
-
+        equippedItem = null;
     }
 
     public void useEquipped(){

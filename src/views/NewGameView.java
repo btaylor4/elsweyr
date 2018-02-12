@@ -23,7 +23,7 @@ import models.SaveFile;
 import java.io.File;
 import java.util.Date;
 
-//TODO PASS CHARACHTER IMAGE INTO NEW CHARACTER CLASS
+//TODO PASS CHARACTER IMAGE INTO NEW CHARACTER CLASS
 public class NewGameView extends Parent {
 
     //Declare all the buttons and assets the Load Game view will need
