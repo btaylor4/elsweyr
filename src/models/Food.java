@@ -11,8 +11,8 @@ public class Food extends TakeableItem{
         this.createItemImage();
     }
 
-   /* @Override
+    @Override
     public boolean onTouchAction(Character character) {
         return character.getInventory().addItem(this);
-    }*/
+    }
 }

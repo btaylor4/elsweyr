@@ -107,10 +107,11 @@ public class LocalGameplayController {
                 boolean shouldBeRemoved = itemOnTile.onTouchAction(character);
                 switch (itemOnTile.getItemType()) {
                     case TAKEABLE:
-                        if (shouldBeRemoved)
+                        if (shouldBeRemoved) {
                             tile.removeItem();
                             tile.setItem(new NoneItem());
                             view.removeItemImageView(character.getLocalPos());
+                        }
                         break;
                     case ONESHOT:
                         tile.removeItem();
