@@ -24,13 +24,11 @@ public class ReadFiles {
 
         currentLine = reader.readLine();
         size = getMatrixSize(currentLine.split(" "));
-        System.out.println(size);
 
         global = new Zone[size.x][size.y];
 
         currentLine = reader.readLine();
         currentNum = Integer.parseInt(currentLine);
-        System.out.println(currentNum);
 
         //build map structure
         GlobalLevel loadedMap = new GlobalLevel();
@@ -43,7 +41,6 @@ public class ReadFiles {
                 Zone currentZone = new Zone();
                 currentLine = reader.readLine();
                 size = getMatrixSize(currentLine.split(" "));
-                System.out.println(size);
                 tiles = new Tile[size.x][size.y];
                 currentZone.setLocalMap(tiles);
                 currentZone.setHasLevel(true);
@@ -54,21 +51,17 @@ public class ReadFiles {
                 currentLine = reader.readLine();
                 size = getMatrixSize(currentLine.split(" "));
                 currentZone.setExitTile(size);
-                System.out.println(size);
 
                 currentLine = reader.readLine();
                 size = getMatrixSize(currentLine.split(" "));
                 currentZone.setStartTile(size);
-                System.out.println(size);
 
                 currentLine = reader.readLine();
                 currentZone.setZoneSpritePath(currentLine);
                 currentZone.createZoneImage();
-                System.out.println(currentLine);
 
                 currentLine = reader.readLine();
                 currentZone.setPassable(trueOrFalse(currentLine, gameFile));
-                System.out.println(currentLine);
 
                 if(currentZone.getHasLevel()) {
                     for (int locRow = 0; locRow < tiles.length; locRow++) {
@@ -77,7 +70,6 @@ public class ReadFiles {
                             String[] line;
 
                             currentLine = reader.readLine();
-                            System.out.println(currentLine);
                             line = currentLine.split(" ");
                             tile.setTerrain(getTerrain(line[0]));
                             tile.setTileSpritePath(IMAGE_PATH + line[0] + ".png");
@@ -87,7 +79,6 @@ public class ReadFiles {
                             for (int k = 0; k < tileAttributes; ++k) {
                                 currentLine = reader.readLine();
                                 line = currentLine.split(" ");
-                                System.out.println(currentLine);
                                 setUpTile(tile, line, gameFile);
                             }
 
