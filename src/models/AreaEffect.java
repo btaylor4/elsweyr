@@ -1,5 +1,7 @@
 package models;
 
+import views.StatusView;
+
 public abstract class AreaEffect {
     private EffectType effectType;
 
@@ -12,4 +14,6 @@ public abstract class AreaEffect {
     }
 
     public abstract void applyEffect(Character character);
+
+    public void applyEffect(Character character, StatusView view){}
 }

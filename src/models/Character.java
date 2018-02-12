@@ -46,7 +46,8 @@ public class Character {
 
 
     public void addEffect(HealthEffect effect) {
-        effects.add(effect);
+        if(!effects.contains(effect))
+            effects.add(effect);
     }
 
     public boolean hasEffect(HealthEffect effect) {
@@ -68,10 +69,10 @@ public class Character {
     public void updateHealth(int healthChange){
         currentHP += healthChange;
         //Character max currentHP is his/her TotalHP
-        if(currentHP > totalHP)
-            currentHP = totalHP;
+        if(currentHP >= baseHP) //TODO: Change this to base + bonus
+            currentHP = baseHP;
         //Character min currentHP is 0.
-        else if(currentHP < 0)
+        else if(currentHP <= 0)
             currentHP = 0;
     }
 

@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import models.Character;
 import models.GlobalLevel;
+import models.HealthEffect;
 import views.*;
 
 /**
@@ -40,6 +41,7 @@ public class InGameMenuController {
                 Scene loadScene = new Scene(localView,500,500);
                 LocalGameplayController localGameplayController = new LocalGameplayController(localView, character, map);
                 Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
                 window.setTitle("Local Game");
                 window.setScene(loadScene);
             } else {
