@@ -1238,7 +1238,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1268,32 +1268,32 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1308,22 +1308,22 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1333,7 +1333,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1343,7 +1343,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1353,17 +1353,17 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1443,7 +1443,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1458,17 +1458,17 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1483,12 +1483,12 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1498,7 +1498,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -1508,12 +1508,12 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1523,7 +1523,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1533,22 +1533,22 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1563,12 +1563,12 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1630,11 +1630,6 @@ ArtAssets/Lava.png
 0 0
 ArtAssets/Lava.png
 0
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
 0 0
 0 0
 0 0
@@ -1653,12 +1648,12 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1688,7 +1683,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -1713,17 +1708,17 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1738,7 +1733,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1748,12 +1743,12 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -1769,6 +1764,11 @@ ArtAssets/Path2.png
 0 0
 0 0
 ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1838,7 +1838,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1863,12 +1863,12 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1884,16 +1884,11 @@ ArtAssets/Path2.png
 0 0
 0 0
 ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -1903,7 +1898,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -1913,7 +1908,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -1933,7 +1928,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -1958,17 +1953,22 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
 ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -2033,12 +2033,12 @@ ArtAssets/Lava.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -2068,12 +2068,12 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -2093,17 +2093,17 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2113,7 +2113,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -2128,7 +2128,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2143,7 +2143,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2153,7 +2153,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -2168,7 +2168,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2239,11 +2239,6 @@ ArtAssets/Path1.png
 0 0
 0 0
 ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2258,7 +2253,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2273,17 +2268,17 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2293,12 +2288,12 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2308,7 +2303,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -2318,7 +2313,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -2343,12 +2338,12 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2363,12 +2358,17 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
 ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -2433,17 +2433,17 @@ ArtAssets/Lava.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -2453,7 +2453,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2483,22 +2483,22 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2518,17 +2518,17 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -2538,12 +2538,12 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -2553,7 +2553,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -2568,7 +2568,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2633,7 +2633,7 @@ ArtAssets/Lava.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -2643,12 +2643,12 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2678,17 +2678,17 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2698,7 +2698,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2713,12 +2713,12 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -2743,7 +2743,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -2758,7 +2758,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2768,7 +2768,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -2830,11 +2830,6 @@ ArtAssets/Lava.png
 0 0
 ArtAssets/Lava.png
 0
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
 0 0
 0 0
 0 0
@@ -2858,7 +2853,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2868,7 +2863,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2883,7 +2878,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -2893,7 +2888,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -2903,7 +2898,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2913,12 +2908,17 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
 ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -2943,7 +2943,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -2953,17 +2953,17 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -3033,7 +3033,7 @@ ArtAssets/Lava.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -3058,7 +3058,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -3073,12 +3073,12 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 30 30
 10 10
@@ -3272,252 +3272,163 @@ WATER 0
 WATER 0
 WATER 0
 GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 4 -24 396
-Decal ArtAssets/damageDecal.png
-GRASS 0
-WATER 0
-MOUNTAIN 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 5 19 606
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Animal
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 636
-Decal ArtAssets/deathDecal.png
-GRASS 3
-Effect HEALTHEFFECT 3 11 666
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Animal
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 1 9 217
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Animal
-MOUNTAIN 0
-GRASS 3
-Effect HEALTHEFFECT 2 1 277
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Key
-GRASS 0
-GRASS 0
-WATER 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 5 1 427
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Food
-GRASS 3
-Effect HEALTHEFFECT 3 8 457
-Decal ArtAssets/healDecal.png
-Item ONESHOT Book
-WATER 0
-MOUNTAIN 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 4 6 607
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Key
-GRASS 2
-Effect HEALTHEFFECT 5 -24 637
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 1 18 697
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Food
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 1 2 338
-Decal ArtAssets/healDecal.png
-Item ONESHOT Book
-MOUNTAIN 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 2 2 548
-Decal ArtAssets/healDecal.png
-Item ONESHOT Health Pot
-GRASS 3
-Effect HEALTHEFFECT 4 7 578
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Food
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 1 12 638
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Bed of Spikes
-GRASS 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 0
-MOUNTAIN 0
-GRASS 3
-Effect HEALTHEFFECT 4 6 309
-Decal ArtAssets/healDecal.png
-Item ONESHOT Health Pot
-GRASS 0
-WATER 0
-GRASS 2
-Effect HEALTHEFFECT 10 -22 399
-Decal ArtAssets/damageDecal.png
-MOUNTAIN 0
-MOUNTAIN 0
-MOUNTAIN 0
-MOUNTAIN 0
-GRASS 3
-Effect HEALTHEFFECT 1 25 549
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Bed of Spikes
-GRASS 3
-Effect HEALTHEFFECT 4 25 579
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Key
-GRASS 0
-GRASS 0
-WATER 0
-GRASS 3
-Effect HEALTHEFFECT 4 1 699
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Animal
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 1
-Item INTERACTIVE Door
-GRASS 1
-Item TAKEABLE Key
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-MOUNTAIN 0
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 520
-Decal ArtAssets/deathDecal.png
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 5 14 670
-Decal ArtAssets/healDecal.png
-Item ONESHOT Health Pot
-GRASS 2
-Effect HEALTHEFFECT 5 -17 700
-Decal ArtAssets/damageDecal.png
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
 GRASS 3
 Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
+Item INTERACTIVE Animal
+GRASS 3
+Effect HEALTHEFFECT 3 3 246
+Decal ArtAssets/healDecal.png
+Item ONESHOT Book
+GRASS 3
+Effect HEALTHEFFECT 1 24 276
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Food
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 8 -11 576
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 5 22 636
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Food
+MOUNTAIN 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 6 -9 427
+Decal ArtAssets/damageDecal.png
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item INTERACTIVE Animal
+GRASS 3
+Effect HEALTHEFFECT 5 14 487
+Decal ArtAssets/healDecal.png
 Item ONESHOT Health Pot
 GRASS 0
+GRASS 0
+WATER 0
 GRASS 2
-Effect HEALTHEFFECT 4 -12 401
-Decal ArtAssets/damageDecal.png
+Effect HEALTHEFFECT 0 -100000 607
+Decal ArtAssets/deathDecal.png
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 5 19 697
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Sword
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+MOUNTAIN 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 2 3 278
+Decal ArtAssets/healDecal.png
+Item ONESHOT Health Pot
+GRASS 3
+Effect HEALTHEFFECT 2 20 308
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Food
 GRASS 2
-Effect HEALTHEFFECT 3 -5 431
+Effect HEALTHEFFECT 10 -7 338
 Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 0
 GRASS 0
 GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 5 -21 521
-Decal ArtAssets/damageDecal.png
+Effect HEALTHEFFECT 0 -100000 488
+Decal ArtAssets/deathDecal.png
 GRASS 0
+GRASS 0
+GRASS 0
+MOUNTAIN 0
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+WATER 0
+GRASS 3
+Effect HEALTHEFFECT 5 18 249
+Decal ArtAssets/healDecal.png
+Item OBSTACLE Bed of Spikes
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
 GRASS 2
-Effect HEALTHEFFECT 8 -16 581
+Effect HEALTHEFFECT 1 -13 489
 Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 0
 GRASS 0
 GRASS 3
 Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 Item ONESHOT Banana peel
+GRASS 2
+Effect HEALTHEFFECT 8 -4 579
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 2 23 669
+Decal ArtAssets/healDecal.png
+Item ONESHOT Banana peel
+GRASS 0
 WATER 0
 WATER 0
 WATER 0
@@ -3531,488 +3442,509 @@ WATER 0
 WATER 0
 WATER 0
 GRASS 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 1
+Item INTERACTIVE Door
+GRASS 1
+Item TAKEABLE Key
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 2 11 400
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Key
+GRASS 2
+Effect HEALTHEFFECT 8 -9 430
+Decal ArtAssets/damageDecal.png
+GRASS 3
+Effect HEALTHEFFECT 1 17 460
+Decal ArtAssets/healDecal.png
+Item ONESHOT Health Pot
+GRASS 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 10 -1 550
+Decal ArtAssets/damageDecal.png
+MOUNTAIN 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 610
+Decal ArtAssets/deathDecal.png
+WATER 0
+WATER 0
+MOUNTAIN 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+WATER 0
+GRASS 3
+Effect HEALTHEFFECT 3 5 251
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Food
+WATER 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 341
+Decal ArtAssets/deathDecal.png
+GRASS 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 431
+Decal ArtAssets/deathDecal.png
+MOUNTAIN 0
+GRASS 2
+Effect HEALTHEFFECT 4 -15 491
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 581
+Decal ArtAssets/deathDecal.png
+GRASS 3
+Effect HEALTHEFFECT 1 24 611
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Food
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 3
+Effect HEALTHEFFECT 1 14 192
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Key
 GRASS 2
 Effect HEALTHEFFECT 0 -100000 222
 Decal ArtAssets/deathDecal.png
 GRASS 0
-MOUNTAIN 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-MOUNTAIN 0
-GRASS 0
-GRASS 0
 GRASS 0
 GRASS 0
 GRASS 3
-Effect HEALTHEFFECT 2 17 612
+Effect HEALTHEFFECT 4 20 342
 Decal ArtAssets/healDecal.png
-Item ONESHOT Book
-GRASS 0
-MOUNTAIN 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item ONESHOT Book
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-MOUNTAIN 0
-MOUNTAIN 0
-MOUNTAIN 0
-MOUNTAIN 0
-GRASS 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item ONESHOT Book
-MOUNTAIN 0
-GRASS 3
-Effect HEALTHEFFECT 5 17 433
-Decal ArtAssets/healDecal.png
-Item ONESHOT Banana peel
-GRASS 0
-MOUNTAIN 0
-GRASS 0
-GRASS 0
-WATER 0
-MOUNTAIN 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item INTERACTIVE Door
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 4 -9 314
-Decal ArtAssets/damageDecal.png
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 5 24 464
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Animal
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 3 22 644
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Animal
-GRASS 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
 Item OBSTACLE Bed of Spikes
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
 GRASS 0
-MOUNTAIN 0
-GRASS 2
-Effect HEALTHEFFECT 6 -22 255
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 4 -17 315
-Decal ArtAssets/damageDecal.png
-GRASS 2
-Effect HEALTHEFFECT 2 -4 345
-Decal ArtAssets/damageDecal.png
-GRASS 0
+WATER 0
 GRASS 0
 GRASS 0
 MOUNTAIN 0
 GRASS 0
 GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-MOUNTAIN 0
+WATER 0
+GRASS 2
+Effect HEALTHEFFECT 7 -1 612
+Decal ArtAssets/damageDecal.png
 GRASS 0
 GRASS 3
-Effect HEALTHEFFECT 5 11 705
+Effect HEALTHEFFECT 2 24 672
 Decal ArtAssets/healDecal.png
-Item OBSTACLE Spike
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
+Item TAKEABLE Key
 GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
+Effect HEALTHEFFECT 4 25 702
+Decal ArtAssets/healDecal.png
 Item ONESHOT Banana peel
 WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 0
+MOUNTAIN 0
 GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item TAKEABLE Sword
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 4 17 436
+Effect HEALTHEFFECT 5 25 313
 Decal ArtAssets/healDecal.png
-Item TAKEABLE Food
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 6 -3 496
-Decal ArtAssets/damageDecal.png
+Item INTERACTIVE Door
 GRASS 0
 GRASS 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 8 -23 616
-Decal ArtAssets/damageDecal.png
-MOUNTAIN 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 0
-MOUNTAIN 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 347
-Decal ArtAssets/deathDecal.png
-GRASS 0
-GRASS 0
-MOUNTAIN 0
-MOUNTAIN 0
-GRASS 0
-WATER 0
 GRASS 3
-Effect HEALTHEFFECT 4 3 557
+Effect HEALTHEFFECT 4 5 403
 Decal ArtAssets/healDecal.png
-Item ONESHOT Book
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-MOUNTAIN 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
+Item INTERACTIVE Animal
 GRASS 0
 GRASS 3
-Effect HEALTHEFFECT 4 9 498
-Decal ArtAssets/healDecal.png
-Item ONESHOT Book
-GRASS 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 10 -8 588
-Decal ArtAssets/damageDecal.png
-GRASS 2
-Effect HEALTHEFFECT 7 -22 618
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 199
-Decal ArtAssets/deathDecal.png
-GRASS 2
-Effect HEALTHEFFECT 7 -21 229
-Decal ArtAssets/damageDecal.png
-GRASS 3
-Effect HEALTHEFFECT 1 19 259
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Spike
-WATER 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item ONESHOT Health Pot
-WATER 0
-GRASS 0
-GRASS 0
-MOUNTAIN 0
-GRASS 0
-GRASS 0
-MOUNTAIN 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 2 -6 589
-Decal ArtAssets/damageDecal.png
-GRASS 2
-Effect HEALTHEFFECT 1 -20 619
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 2
-Effect HEALTHEFFECT 7 -25 200
-Decal ArtAssets/damageDecal.png
-GRASS 2
-Effect HEALTHEFFECT 3 -11 230
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 1 23 290
+Effect HEALTHEFFECT 3 25 463
 Decal ArtAssets/healDecal.png
 Item TAKEABLE Key
 MOUNTAIN 0
-MOUNTAIN 0
-GRASS 0
-MOUNTAIN 0
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 440
-Decal ArtAssets/deathDecal.png
-WATER 0
 GRASS 3
-Effect HEALTHEFFECT 5 3 500
+Effect HEALTHEFFECT 4 10 523
 Decal ArtAssets/healDecal.png
-Item TAKEABLE Food
-WATER 0
+Item ONESHOT Health Pot
 GRASS 0
 GRASS 0
-MOUNTAIN 0
 GRASS 3
-Effect HEALTHEFFECT 3 21 650
+Effect HEALTHEFFECT 3 2 613
 Decal ArtAssets/healDecal.png
-Item TAKEABLE Sword
+Item ONESHOT Health Pot
+WATER 0
 GRASS 3
 Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
+Item ONESHOT Book
+MOUNTAIN 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 1 9 434
+Decal ArtAssets/healDecal.png
+Item ONESHOT Book
+GRASS 2
+Effect HEALTHEFFECT 9 -1 464
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+GRASS 0
+MOUNTAIN 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+WATER 0
+MOUNTAIN 0
+GRASS 0
+GRASS 0
+WATER 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 2 15 405
+Decal ArtAssets/healDecal.png
+Item OBSTACLE Bed of Spikes
+GRASS 0
+GRASS 0
+WATER 0
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item INTERACTIVE Door
+GRASS 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 615
+Decal ArtAssets/deathDecal.png
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 645
+Decal ArtAssets/deathDecal.png
+MOUNTAIN 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 256
+Decal ArtAssets/deathDecal.png
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 286
+Decal ArtAssets/deathDecal.png
+GRASS 0
+MOUNTAIN 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 1 4 406
+Decal ArtAssets/healDecal.png
+Item INTERACTIVE Door
+GRASS 2
+Effect HEALTHEFFECT 2 -9 436
+Decal ArtAssets/damageDecal.png
+GRASS 0
+WATER 0
+GRASS 3
+Effect HEALTHEFFECT 5 1 526
+Decal ArtAssets/healDecal.png
+Item OBSTACLE Wall
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item OBSTACLE Wall
+GRASS 0
+GRASS 0
+MOUNTAIN 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 2 10 706
+Decal ArtAssets/healDecal.png
+Item ONESHOT Book
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+MOUNTAIN 0
+GRASS 3
+Effect HEALTHEFFECT 3 7 227
+Decal ArtAssets/healDecal.png
+Item INTERACTIVE Animal
+GRASS 3
+Effect HEALTHEFFECT 1 23 257
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Sword
+GRASS 3
+Effect HEALTHEFFECT 1 17 287
+Decal ArtAssets/healDecal.png
+Item OBSTACLE Wall
+GRASS 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 3 -23 557
+Decal ArtAssets/damageDecal.png
+GRASS 3
+Effect HEALTHEFFECT 4 11 587
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Food
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 5 -24 647
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 5 23 707
+Decal ArtAssets/healDecal.png
+Item ONESHOT Book
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 3
+Effect HEALTHEFFECT 1 15 198
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Food
+GRASS 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 5 5 378
+Decal ArtAssets/healDecal.png
+Item OBSTACLE Wall
+WATER 0
+GRASS 0
+GRASS 0
+MOUNTAIN 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 528
+Decal ArtAssets/deathDecal.png
+GRASS 0
+GRASS 0
+GRASS 0
+MOUNTAIN 0
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 5 18 289
+Decal ArtAssets/healDecal.png
 Item ONESHOT Banana peel
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 5 13 231
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Bed of Spikes
-GRASS 0
-GRASS 0
-WATER 0
+MOUNTAIN 0
 GRASS 0
 GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 3 -8 411
+Effect HEALTHEFFECT 1 -6 409
 Decal ArtAssets/damageDecal.png
 GRASS 0
 GRASS 3
-Effect HEALTHEFFECT 4 16 471
+Effect HEALTHEFFECT 2 14 469
 Decal ArtAssets/healDecal.png
-Item INTERACTIVE Animal
-WATER 0
-WATER 0
-GRASS 0
+Item ONESHOT Book
+GRASS 2
+Effect HEALTHEFFECT 5 -9 499
+Decal ArtAssets/damageDecal.png
 GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 10 -15 621
+Effect HEALTHEFFECT 8 -24 559
 Decal ArtAssets/damageDecal.png
 MOUNTAIN 0
 WATER 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 649
+Decal ArtAssets/deathDecal.png
 GRASS 0
 GRASS 0
 WATER 0
-GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
 GRASS 3
-Effect HEALTHEFFECT 5 7 322
+Effect HEALTHEFFECT 2 24 230
 Decal ArtAssets/healDecal.png
-Item OBSTACLE Bed of Spikes
-MOUNTAIN 0
-GRASS 3
-Effect HEALTHEFFECT 5 8 382
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Animal
-GRASS 3
-Effect HEALTHEFFECT 1 4 412
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Door
+Item OBSTACLE Wall
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 9 -20 290
+Decal ArtAssets/damageDecal.png
 GRASS 0
 GRASS 3
 Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
-Item OBSTACLE Spike
-MOUNTAIN 0
-GRASS 0
-MOUNTAIN 0
-GRASS 0
-WATER 0
-MOUNTAIN 0
-GRASS 3
-Effect HEALTHEFFECT 3 5 682
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Spike
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 2 10 233
-Decal ArtAssets/healDecal.png
 Item TAKEABLE Sword
-WATER 0
 GRASS 0
 GRASS 0
 GRASS 0
 WATER 0
 GRASS 3
-Effect HEALTHEFFECT 5 13 413
+Effect HEALTHEFFECT 3 5 500
 Decal ArtAssets/healDecal.png
-Item INTERACTIVE Door
+Item ONESHOT Health Pot
 GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+MOUNTAIN 0
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+GRASS 0
+WATER 0
+WATER 0
 GRASS 2
-Effect HEALTHEFFECT 3 -19 473
+Effect HEALTHEFFECT 7 -10 441
 Decal ArtAssets/damageDecal.png
-GRASS 3
-Effect HEALTHEFFECT 2 6 503
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Food
 GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 0 -100000 563
+Effect HEALTHEFFECT 9 -13 501
+Decal ArtAssets/damageDecal.png
+GRASS 0
+WATER 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 3 15 621
+Decal ArtAssets/healDecal.png
+Item ONESHOT Health Pot
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 651
 Decal ArtAssets/deathDecal.png
-GRASS 3
-Effect HEALTHEFFECT 5 22 593
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Food
-GRASS 0
-GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 1 -9 683
+Effect HEALTHEFFECT 2 -24 681
 Decal ArtAssets/damageDecal.png
 GRASS 0
 WATER 0
@@ -4027,6 +3959,93 @@ WATER 0
 WATER 0
 WATER 0
 WATER 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item INTERACTIVE Animal
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 5 18 472
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Food
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 4 2 562
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Key
+GRASS 0
+MOUNTAIN 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 6 -25 682
+Decal ArtAssets/damageDecal.png
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 3
+Effect HEALTHEFFECT 4 5 203
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Key
+MOUNTAIN 0
+GRASS 2
+Effect HEALTHEFFECT 1 -15 263
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 0
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item ONESHOT Book
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 503
+Decal ArtAssets/deathDecal.png
+GRASS 0
+MOUNTAIN 0
+GRASS 0
+GRASS 0
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item ONESHOT Book
+MOUNTAIN 0
+GRASS 3
+Effect HEALTHEFFECT 2 3 713
+Decal ArtAssets/healDecal.png
+Item OBSTACLE Bed of Spikes
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
 WATER 0
 WATER 0
 WATER 0
@@ -4209,7 +4228,12 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -4219,12 +4243,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 30 30
 10 10
@@ -4417,375 +4436,212 @@ WATER 0
 WATER 0
 WATER 0
 WATER 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 186
+Decal ArtAssets/deathDecal.png
 GRASS 3
-Effect HEALTHEFFECT 4 14 336
+Effect HEALTHEFFECT 4 14 216
 Decal ArtAssets/healDecal.png
-Item INTERACTIVE Door
+Item TAKEABLE Sword
 MOUNTAIN 0
+MOUNTAIN 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
 GRASS 0
 GRASS 3
 Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
-Item TAKEABLE Key
-MOUNTAIN 0
-GRASS 2
-Effect HEALTHEFFECT 3 -21 486
-Decal ArtAssets/damageDecal.png
-GRASS 2
-Effect HEALTHEFFECT 4 -19 516
-Decal ArtAssets/damageDecal.png
+Item OBSTACLE Wall
 GRASS 0
-WATER 0
 GRASS 0
 GRASS 3
-Effect HEALTHEFFECT 1 22 636
+Effect HEALTHEFFECT 5 1 546
 Decal ArtAssets/healDecal.png
-Item ONESHOT Banana peel
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 666
-Decal ArtAssets/deathDecal.png
+Item OBSTACLE Bed of Spikes
 GRASS 3
-Effect HEALTHEFFECT 5 8 696
-Decal ArtAssets/healDecal.png
-Item ONESHOT Book
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 187
-Decal ArtAssets/deathDecal.png
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 2 10 277
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Animal
-GRASS 2
-Effect HEALTHEFFECT 7 -2 307
-Decal ArtAssets/damageDecal.png
-WATER 0
-GRASS 2
-Effect HEALTHEFFECT 2 -10 367
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 4 16 517
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Door
-GRASS 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 5 -16 607
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 0
-MOUNTAIN 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 5 10 248
-Decal ArtAssets/healDecal.png
-Item ONESHOT Book
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 5 12 308
+Effect HEALTHEFFECT 2 7 576
 Decal ArtAssets/healDecal.png
 Item TAKEABLE Sword
 GRASS 0
 GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 5 -20 398
-Decal ArtAssets/damageDecal.png
+GRASS 0
+MOUNTAIN 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
 MOUNTAIN 0
 GRASS 0
 GRASS 3
-Effect HEALTHEFFECT 5 25 488
+Effect HEALTHEFFECT 4 15 397
+Decal ArtAssets/healDecal.png
+Item INTERACTIVE Animal
+WATER 0
+MOUNTAIN 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 487
+Decal ArtAssets/deathDecal.png
+GRASS 2
+Effect HEALTHEFFECT 5 -8 517
+Decal ArtAssets/damageDecal.png
+WATER 0
+GRASS 3
+Effect HEALTHEFFECT 2 3 577
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Sword
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 3
+Effect HEALTHEFFECT 2 22 188
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Sword
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 2 -2 308
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 488
+Decal ArtAssets/deathDecal.png
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 2 13 548
 Decal ArtAssets/healDecal.png
 Item TAKEABLE Food
 GRASS 0
-GRASS 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item OBSTACLE Spike
-GRASS 0
-GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 6 -17 668
+Effect HEALTHEFFECT 10 -17 608
 Decal ArtAssets/damageDecal.png
-GRASS 0
 WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 3
-Effect HEALTHEFFECT 1 25 219
-Decal ArtAssets/healDecal.png
-Item ONESHOT Health Pot
-GRASS 3
-Effect HEALTHEFFECT 2 17 249
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Key
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 3 6 339
-Decal ArtAssets/healDecal.png
-Item ONESHOT Book
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 2 10 399
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Animal
 GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 0 -100000 459
+Effect HEALTHEFFECT 0 -100000 698
 Decal ArtAssets/deathDecal.png
 WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 2
+Effect HEALTHEFFECT 1 -2 189
+Decal ArtAssets/damageDecal.png
 GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item OBSTACLE Spike
-GRASS 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item ONESHOT Book
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item OBSTACLE Bed of Spikes
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 4 17 669
+Effect HEALTHEFFECT 1 19 219
 Decal ArtAssets/healDecal.png
-Item OBSTACLE Spike
+Item ONESHOT Banana peel
+MOUNTAIN 0
 GRASS 0
 WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
 GRASS 3
-Effect HEALTHEFFECT 1 7 190
+Effect HEALTHEFFECT 2 15 339
 Decal ArtAssets/healDecal.png
 Item INTERACTIVE Animal
-WATER 0
-WATER 0
+GRASS 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 2 -15 429
+Decal ArtAssets/damageDecal.png
+GRASS 0
+MOUNTAIN 0
+MOUNTAIN 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 4 17 579
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Food
 GRASS 3
 Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
-Item OBSTACLE Spike
+Item ONESHOT Banana peel
+GRASS 2
+Effect HEALTHEFFECT 5 -8 639
+Decal ArtAssets/damageDecal.png
+GRASS 2
+Effect HEALTHEFFECT 4 -22 669
+Decal ArtAssets/damageDecal.png
+GRASS 2
+Effect HEALTHEFFECT 6 -15 699
+Decal ArtAssets/damageDecal.png
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 0
 GRASS 1
 Item INTERACTIVE Door
 GRASS 1
 Item TAKEABLE Key
-GRASS 2
-Effect HEALTHEFFECT 1 -16 370
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 2 4 430
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Key
-GRASS 3
-Effect HEALTHEFFECT 1 23 460
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Bed of Spikes
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 9 -13 610
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 3 12 221
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Bed of Spikes
-MOUNTAIN 0
-GRASS 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item TAKEABLE Key
-MOUNTAIN 0
-GRASS 2
-Effect HEALTHEFFECT 1 -3 371
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 1 6 461
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Bed of Spikes
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 2 23 581
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Sword
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item ONESHOT Health Pot
-MOUNTAIN 0
-GRASS 3
-Effect HEALTHEFFECT 2 23 342
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Key
 GRASS 0
 GRASS 0
 MOUNTAIN 0
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 462
-Decal ArtAssets/deathDecal.png
-MOUNTAIN 0
-GRASS 0
-WATER 0
-GRASS 2
-Effect HEALTHEFFECT 4 -2 582
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 0
 GRASS 3
-Effect HEALTHEFFECT 5 23 672
+Effect HEALTHEFFECT 2 7 460
 Decal ArtAssets/healDecal.png
 Item ONESHOT Health Pot
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
 GRASS 3
-Effect HEALTHEFFECT 3 4 702
+Effect HEALTHEFFECT 5 10 700
 Decal ArtAssets/healDecal.png
-Item TAKEABLE Sword
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item ONESHOT Health Pot
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 3 11 253
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Sword
-MOUNTAIN 0
-GRASS 0
-MOUNTAIN 0
-GRASS 2
-Effect HEALTHEFFECT 1 -5 373
-Decal ArtAssets/damageDecal.png
-GRASS 3
-Effect HEALTHEFFECT 5 22 403
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Spike
-GRASS 3
-Effect HEALTHEFFECT 2 17 433
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Spike
-GRASS 0
-MOUNTAIN 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 5 17 643
-Decal ArtAssets/healDecal.png
-Item ONESHOT Book
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 1 -9 703
-Decal ArtAssets/damageDecal.png
+Item INTERACTIVE Animal
 WATER 0
 WATER 0
 WATER 0
@@ -4799,416 +4655,553 @@ WATER 0
 WATER 0
 WATER 0
 GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
 WATER 0
 GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 3 10 374
-Decal ArtAssets/healDecal.png
-Item ONESHOT Health Pot
-GRASS 2
-Effect HEALTHEFFECT 4 -13 404
-Decal ArtAssets/damageDecal.png
 GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 4 -20 464
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-WATER 0
-GRASS 0
-WATER 0
-GRASS 3
-Effect HEALTHEFFECT 3 10 704
-Decal ArtAssets/healDecal.png
-Item ONESHOT Banana peel
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-MOUNTAIN 0
 GRASS 0
 GRASS 0
 GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 5 -4 345
-Decal ArtAssets/damageDecal.png
-GRASS 2
-Effect HEALTHEFFECT 5 -17 375
-Decal ArtAssets/damageDecal.png
-MOUNTAIN 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 0
-MOUNTAIN 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 196
+Effect HEALTHEFFECT 0 -100000 401
 Decal ArtAssets/deathDecal.png
 GRASS 0
+GRASS 0
+GRASS 0
+MOUNTAIN 0
 GRASS 3
-Effect HEALTHEFFECT 2 16 256
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item TAKEABLE Key
+GRASS 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 10 -4 641
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 4 11 252
+Decal ArtAssets/healDecal.png
+Item OBSTACLE Bed of Spikes
+GRASS 2
+Effect HEALTHEFFECT 4 -13 282
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 4 -23 462
+Decal ArtAssets/damageDecal.png
+GRASS 2
+Effect HEALTHEFFECT 7 -7 492
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 0
+MOUNTAIN 0
+GRASS 3
+Effect HEALTHEFFECT 5 6 612
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Food
+GRASS 3
+Effect HEALTHEFFECT 4 23 642
 Decal ArtAssets/healDecal.png
 Item ONESHOT Banana peel
 GRASS 0
-GRASS 0
-MOUNTAIN 0
 GRASS 2
-Effect HEALTHEFFECT 2 -19 376
+Effect HEALTHEFFECT 1 -15 702
 Decal ArtAssets/damageDecal.png
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 3 14 223
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Key
+WATER 0
 GRASS 2
-Effect HEALTHEFFECT 0 -100000 406
-Decal ArtAssets/deathDecal.png
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 436
+Effect HEALTHEFFECT 0 -100000 283
 Decal ArtAssets/deathDecal.png
 GRASS 0
-MOUNTAIN 0
-GRASS 3
-Effect HEALTHEFFECT 1 24 526
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Spike
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-MOUNTAIN 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
 GRASS 0
 GRASS 0
 GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item ONESHOT Health Pot
-WATER 0
-GRASS 0
-GRASS 0
-MOUNTAIN 0
-GRASS 0
-MOUNTAIN 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 3 15 677
-Decal ArtAssets/healDecal.png
-Item ONESHOT Health Pot
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 3
-Effect HEALTHEFFECT 3 7 198
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Sword
-GRASS 0
-GRASS 0
-WATER 0
-GRASS 3
-Effect HEALTHEFFECT 2 6 318
+Effect HEALTHEFFECT 5 1 403
 Decal ArtAssets/healDecal.png
 Item INTERACTIVE Door
-GRASS 3
-Effect HEALTHEFFECT 3 2 348
-Decal ArtAssets/healDecal.png
-Item ONESHOT Book
 WATER 0
+WATER 0
+GRASS 3
+Effect HEALTHEFFECT 4 15 493
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Food
 GRASS 0
+WATER 0
 GRASS 2
-Effect HEALTHEFFECT 4 -1 438
+Effect HEALTHEFFECT 7 -9 583
 Decal ArtAssets/damageDecal.png
 GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 1 8 528
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Key
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 588
-Decal ArtAssets/deathDecal.png
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 1 21 708
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Key
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
+MOUNTAIN 0
 MOUNTAIN 0
 GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
 GRASS 0
 GRASS 3
-Effect HEALTHEFFECT 4 6 289
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item INTERACTIVE Animal
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 2 14 284
 Decal ArtAssets/healDecal.png
-Item ONESHOT Book
+Item TAKEABLE Food
+GRASS 0
+GRASS 0
+GRASS 0
 MOUNTAIN 0
 GRASS 0
+WATER 0
 GRASS 3
-Effect HEALTHEFFECT 3 16 379
+Effect HEALTHEFFECT 1 15 494
 Decal ArtAssets/healDecal.png
 Item INTERACTIVE Animal
 GRASS 0
-GRASS 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 1 -18 499
-Decal ArtAssets/damageDecal.png
-MOUNTAIN 0
-MOUNTAIN 0
-GRASS 0
-MOUNTAIN 0
-GRASS 0
-GRASS 0
 GRASS 3
-Effect HEALTHEFFECT 1 3 709
+Effect HEALTHEFFECT 4 13 554
 Decal ArtAssets/healDecal.png
-Item TAKEABLE Food
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item TAKEABLE Food
-WATER 0
-MOUNTAIN 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 6 -5 440
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 7 -1 530
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 3
-Effect HEALTHEFFECT 2 23 231
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Key
-WATER 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item TAKEABLE Food
-GRASS 3
-Effect HEALTHEFFECT 5 13 321
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Door
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 2 -14 381
-Decal ArtAssets/damageDecal.png
-MOUNTAIN 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
 Item OBSTACLE Bed of Spikes
 GRASS 0
 GRASS 0
 GRASS 0
+MOUNTAIN 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
+WATER 0
+GRASS 0
+GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 5 -6 561
+Effect HEALTHEFFECT 5 -19 345
 Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
 GRASS 0
 MOUNTAIN 0
 GRASS 2
-Effect HEALTHEFFECT 7 -1 262
+Effect HEALTHEFFECT 10 -25 435
 Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 2 3 495
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Sword
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 3 -8 555
+Decal ArtAssets/damageDecal.png
+GRASS 2
+Effect HEALTHEFFECT 6 -4 585
+Decal ArtAssets/damageDecal.png
+GRASS 3
+Effect HEALTHEFFECT 1 18 615
+Decal ArtAssets/healDecal.png
+Item OBSTACLE Wall
+GRASS 3
+Effect HEALTHEFFECT 3 23 645
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Sword
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+WATER 0
+GRASS 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+MOUNTAIN 0
+GRASS 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 2 -18 526
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+MOUNTAIN 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+MOUNTAIN 0
 GRASS 3
 Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
-Item OBSTACLE Spike
+Item ONESHOT Banana peel
+GRASS 0
+MOUNTAIN 0
 GRASS 2
-Effect HEALTHEFFECT 0 -100000 322
+Effect HEALTHEFFECT 5 -2 347
+Decal ArtAssets/damageDecal.png
+GRASS 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 3 4 497
+Decal ArtAssets/healDecal.png
+Item ONESHOT Health Pot
+GRASS 0
+GRASS 0
+WATER 0
+GRASS 3
+Effect HEALTHEFFECT 3 24 617
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Food
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 4 -18 378
+Decal ArtAssets/damageDecal.png
+WATER 0
+GRASS 0
+GRASS 0
+WATER 0
+GRASS 0
+GRASS 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 4 1 708
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Food
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+WATER 0
+GRASS 3
+Effect HEALTHEFFECT 3 8 259
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Food
+GRASS 3
+Effect HEALTHEFFECT 5 21 289
+Decal ArtAssets/healDecal.png
+Item INTERACTIVE Animal
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 4 17 349
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Sword
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 3 20 409
+Decal ArtAssets/healDecal.png
+Item INTERACTIVE Door
+GRASS 0
+MOUNTAIN 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 4 19 589
+Decal ArtAssets/healDecal.png
+Item INTERACTIVE Door
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 3 15 649
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Food
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 7 -5 709
+Decal ArtAssets/damageDecal.png
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+WATER 0
+GRASS 3
+Effect HEALTHEFFECT 2 25 260
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Sword
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item TAKEABLE Sword
+GRASS 3
+Effect HEALTHEFFECT 1 15 320
+Decal ArtAssets/healDecal.png
+Item ONESHOT Banana peel
+MOUNTAIN 0
+GRASS 2
+Effect HEALTHEFFECT 7 -4 380
+Decal ArtAssets/damageDecal.png
+GRASS 3
+Effect HEALTHEFFECT 4 25 410
+Decal ArtAssets/healDecal.png
+Item OBSTACLE Bed of Spikes
+GRASS 2
+Effect HEALTHEFFECT 8 -10 440
+Decal ArtAssets/damageDecal.png
+GRASS 0
+MOUNTAIN 0
+WATER 0
+GRASS 2
+Effect HEALTHEFFECT 6 -3 560
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 4 2 650
+Decal ArtAssets/healDecal.png
+Item INTERACTIVE Door
+MOUNTAIN 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 1 3 261
+Decal ArtAssets/healDecal.png
+Item ONESHOT Health Pot
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item ONESHOT Banana peel
+GRASS 3
+Effect HEALTHEFFECT 5 25 411
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Key
+GRASS 0
+GRASS 0
+GRASS 0
+MOUNTAIN 0
+GRASS 3
+Effect HEALTHEFFECT 1 2 561
+Decal ArtAssets/healDecal.png
+Item ONESHOT Book
+GRASS 2
+Effect HEALTHEFFECT 1 -14 591
+Decal ArtAssets/damageDecal.png
+WATER 0
+GRASS 3
+Effect HEALTHEFFECT 1 10 651
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Key
+GRASS 3
+Effect HEALTHEFFECT 2 13 681
+Decal ArtAssets/healDecal.png
+Item INTERACTIVE Animal
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 3 5 262
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Sword
+GRASS 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 352
 Decal ArtAssets/deathDecal.png
 GRASS 0
+WATER 0
+WATER 0
 GRASS 0
+WATER 0
 GRASS 0
 GRASS 3
-Effect HEALTHEFFECT 4 23 442
+Effect HEALTHEFFECT 1 16 562
 Decal ArtAssets/healDecal.png
+Item TAKEABLE Sword
+GRASS 0
+GRASS 0
+GRASS 0
+MOUNTAIN 0
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
 Item TAKEABLE Key
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
 GRASS 3
-Effect HEALTHEFFECT 3 13 472
+Effect HEALTHEFFECT 2 2 233
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Sword
+GRASS 0
+MOUNTAIN 0
+MOUNTAIN 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 383
+Decal ArtAssets/deathDecal.png
+GRASS 3
+Effect HEALTHEFFECT 4 24 413
+Decal ArtAssets/healDecal.png
+Item ONESHOT Book
+GRASS 0
+WATER 0
+MOUNTAIN 0
+GRASS 3
+Effect HEALTHEFFECT 5 25 533
 Decal ArtAssets/healDecal.png
 Item ONESHOT Health Pot
 GRASS 0
 GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
 GRASS 3
-Effect HEALTHEFFECT 1 7 562
+Effect HEALTHEFFECT 3 22 713
 Decal ArtAssets/healDecal.png
-Item INTERACTIVE Door
-GRASS 3
-Effect HEALTHEFFECT 3 3 592
-Decal ArtAssets/healDecal.png
-Item ONESHOT Health Pot
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 7 -5 652
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 3 -19 712
-Decal ArtAssets/damageDecal.png
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 2
-Effect HEALTHEFFECT 6 -8 203
-Decal ArtAssets/damageDecal.png
-MOUNTAIN 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 6 -17 293
-Decal ArtAssets/damageDecal.png
-MOUNTAIN 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 9 -24 383
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 5 -24 503
-Decal ArtAssets/damageDecal.png
-GRASS 3
-Effect HEALTHEFFECT 3 25 533
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Bed of Spikes
-GRASS 2
-Effect HEALTHEFFECT 1 -5 563
-Decal ArtAssets/damageDecal.png
-MOUNTAIN 0
-GRASS 0
-MOUNTAIN 0
-GRASS 0
-GRASS 0
+Item ONESHOT Banana peel
 WATER 0
 WATER 0
 WATER 0
@@ -5408,12 +5401,12 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -5449,6 +5442,206 @@ ArtAssets/Path2.png
 0 0
 0 0
 ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -5523,676 +5716,6 @@ ArtAssets/Lava.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Lava.png
-0
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
 ArtAssets/Path1.png
 1
 0 0
@@ -6238,7 +5761,22 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -6249,6 +5787,61 @@ ArtAssets/Path1.png
 0 0
 0 0
 ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -6353,7 +5946,407 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
 ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Lava.png
+0
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -6459,108 +6452,149 @@ WATER 0
 WATER 0
 WATER 0
 WATER 0
-WATER 0
-GRASS 3
-Effect HEALTHEFFECT 5 18 104
-Decal ArtAssets/healDecal.png
-Item ONESHOT Health Pot
 GRASS 0
 GRASS 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item ONESHOT Health Pot
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
 MOUNTAIN 0
 GRASS 0
 GRASS 3
-Effect HEALTHEFFECT 3 1 224
+Effect HEALTHEFFECT 5 25 264
 Decal ArtAssets/healDecal.png
 Item TAKEABLE Sword
+GRASS 0
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item ONESHOT Book
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 85
+Decal ArtAssets/deathDecal.png
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 2 -20 165
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item ONESHOT Book
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
 WATER 0
 GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 5 -11 106
+Decal ArtAssets/damageDecal.png
+MOUNTAIN 0
+GRASS 3
+Effect HEALTHEFFECT 3 23 146
+Decal ArtAssets/healDecal.png
+Item INTERACTIVE Door
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+GRASS 3
+Effect HEALTHEFFECT 1 6 246
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Food
+GRASS 3
+Effect HEALTHEFFECT 1 19 266
+Decal ArtAssets/healDecal.png
+Item OBSTACLE Wall
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item OBSTACLE Wall
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item TAKEABLE Sword
+GRASS 2
+Effect HEALTHEFFECT 2 -1 326
+Decal ArtAssets/damageDecal.png
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
 GRASS 3
 Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 Item ONESHOT Health Pot
-GRASS 2
-Effect HEALTHEFFECT 7 -3 304
-Decal ArtAssets/damageDecal.png
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 145
-Decal ArtAssets/deathDecal.png
-GRASS 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 5 -3 205
-Decal ArtAssets/damageDecal.png
-WATER 0
 GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item TAKEABLE Food
-WATER 0
-GRASS 0
-WATER 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 0
-MOUNTAIN 0
-MOUNTAIN 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 4 22 206
+Effect HEALTHEFFECT 2 18 107
 Decal ArtAssets/healDecal.png
-Item TAKEABLE Key
+Item TAKEABLE Food
 GRASS 0
-MOUNTAIN 0
-GRASS 0
-WATER 0
-GRASS 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-WATER 0
 GRASS 1
 Item INTERACTIVE Door
 GRASS 0
 GRASS 0
+GRASS 0
+MOUNTAIN 0
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item INTERACTIVE Door
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 5 19 307
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Key
+GRASS 3
+Effect HEALTHEFFECT 5 23 327
+Decal ArtAssets/healDecal.png
+Item ONESHOT Book
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+MOUNTAIN 0
 MOUNTAIN 0
 GRASS 0
 WATER 0
-GRASS 2
-Effect HEALTHEFFECT 6 -16 267
-Decal ArtAssets/damageDecal.png
 GRASS 3
-Effect HEALTHEFFECT 4 2 287
+Effect HEALTHEFFECT 2 9 168
 Decal ArtAssets/healDecal.png
-Item OBSTACLE Spike
-WATER 0
+Item INTERACTIVE Door
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+MOUNTAIN 0
+GRASS 0
+GRASS 0
 GRASS 0
 WATER 0
 WATER 0
@@ -6569,251 +6603,215 @@ WATER 0
 WATER 0
 WATER 0
 WATER 0
+GRASS 2
+Effect HEALTHEFFECT 5 -5 89
+Decal ArtAssets/damageDecal.png
 GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 0 -100000 108
+Effect HEALTHEFFECT 5 -7 129
+Decal ArtAssets/damageDecal.png
+MOUNTAIN 0
+MOUNTAIN 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 4 -13 209
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 7 -6 249
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 289
 Decal ArtAssets/deathDecal.png
 GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
+MOUNTAIN 0
+MOUNTAIN 0
+WATER 0
+MOUNTAIN 0
+GRASS 0
+GRASS 1
+Item TAKEABLE Key
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+MOUNTAIN 0
+GRASS 0
 GRASS 3
-Effect HEALTHEFFECT 5 17 148
+Effect HEALTHEFFECT 4 21 151
+Decal ArtAssets/healDecal.png
+Item ONESHOT Health Pot
+GRASS 0
+MOUNTAIN 0
+GRASS 3
+Effect HEALTHEFFECT 1 12 211
+Decal ArtAssets/healDecal.png
+Item OBSTACLE Bed of Spikes
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 1 -18 112
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 0
+WATER 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 192
+Decal ArtAssets/deathDecal.png
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 8 -24 232
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 4 6 272
+Decal ArtAssets/healDecal.png
+Item INTERACTIVE Door
+MOUNTAIN 0
+GRASS 3
+Effect HEALTHEFFECT 4 12 312
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Food
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item INTERACTIVE Door
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 5 7 153
 Decal ArtAssets/healDecal.png
 Item ONESHOT Banana peel
-GRASS 3
-Effect HEALTHEFFECT 4 9 168
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Door
 GRASS 0
+GRASS 0
+MOUNTAIN 0
 MOUNTAIN 0
 GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 7 -7 248
+Effect HEALTHEFFECT 2 -2 273
 Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
 GRASS 2
-Effect HEALTHEFFECT 5 -14 268
+Effect HEALTHEFFECT 2 -13 94
 Decal ArtAssets/damageDecal.png
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 288
-Decal ArtAssets/deathDecal.png
-GRASS 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 5 15 149
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Spike
-GRASS 0
-WATER 0
-GRASS 0
-MOUNTAIN 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
 GRASS 3
 Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
-Item TAKEABLE Food
+Item TAKEABLE Sword
+GRASS 0
+WATER 0
+GRASS 0
 GRASS 0
 GRASS 0
 MOUNTAIN 0
-WATER 0
-GRASS 3
-Effect HEALTHEFFECT 3 8 210
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Door
-GRASS 1
-Item TAKEABLE Key
 GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 9 -22 274
+Decal ArtAssets/damageDecal.png
 WATER 0
 WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
 MOUNTAIN 0
 WATER 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 5 21 171
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Bed of Spikes
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 4 8 211
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Bed of Spikes
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 3 19 271
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Door
-GRASS 0
-GRASS 0
-GRASS 0
 WATER 0
 WATER 0
 WATER 0
 WATER 0
 WATER 0
 WATER 0
-WATER 0
+GRASS 0
+GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 9 -4 92
+Effect HEALTHEFFECT 9 -9 135
 Decal ArtAssets/damageDecal.png
 GRASS 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item INTERACTIVE Animal
-MOUNTAIN 0
 GRASS 0
 GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 5 8 232
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Door
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 1 3 292
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Door
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 1 13 332
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Bed of Spikes
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 2
-Effect HEALTHEFFECT 2 -14 93
-Decal ArtAssets/damageDecal.png
-GRASS 2
-Effect HEALTHEFFECT 6 -12 113
-Decal ArtAssets/damageDecal.png
-WATER 0
 GRASS 0
 GRASS 0
 GRASS 0
 GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 8 -24 233
+Effect HEALTHEFFECT 3 -13 295
 Decal ArtAssets/damageDecal.png
 GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 0 -100000 273
+Effect HEALTHEFFECT 0 -100000 136
 Decal ArtAssets/deathDecal.png
 GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 3 4 333
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Door
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 2
-Effect HEALTHEFFECT 1 -6 94
-Decal ArtAssets/damageDecal.png
-GRASS 0
-MOUNTAIN 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 3 -24 214
-Decal ArtAssets/damageDecal.png
-WATER 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 6 -1 274
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
 MOUNTAIN 0
 GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 0 -100000 215
+Effect HEALTHEFFECT 0 -100000 216
 Decal ArtAssets/deathDecal.png
 GRASS 0
-WATER 0
+GRASS 2
+Effect HEALTHEFFECT 1 -11 256
+Decal ArtAssets/damageDecal.png
 GRASS 0
-GRASS 0
-WATER 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 296
+Decal ArtAssets/deathDecal.png
 MOUNTAIN 0
 GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 4 12 196
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Spike
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 4 9 296
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Door
-GRASS 0
-GRASS 0
 WATER 0
 WATER 0
 WATER 0
@@ -6877,11 +6875,6 @@ WATER 0
 WATER 0
 WATER 0
 WATER 0
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
 0 0
 0 0
 0 0
@@ -6895,7 +6888,12 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -7093,220 +7091,214 @@ WATER 0
 WATER 0
 WATER 0
 WATER 0
-GRASS 3
-Effect HEALTHEFFECT 5 2 186
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Spike
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 8 -21 216
+Decal ArtAssets/damageDecal.png
 MOUNTAIN 0
+GRASS 3
+Effect HEALTHEFFECT 4 1 276
+Decal ArtAssets/healDecal.png
+Item OBSTACLE Wall
 GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 4 5 276
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Food
-GRASS 3
-Effect HEALTHEFFECT 3 15 306
-Decal ArtAssets/healDecal.png
-Item ONESHOT Banana peel
+GRASS 2
+Effect HEALTHEFFECT 10 -14 336
+Decal ArtAssets/damageDecal.png
 GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 5 7 366
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Door
-GRASS 3
-Effect HEALTHEFFECT 1 4 396
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Bed of Spikes
-WATER 0
 GRASS 3
 Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
-Item OBSTACLE Spike
+Item TAKEABLE Food
+GRASS 3
+Effect HEALTHEFFECT 2 6 426
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Sword
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 456
+Decal ArtAssets/deathDecal.png
+MOUNTAIN 0
 GRASS 0
 GRASS 0
+GRASS 0
+WATER 0
 MOUNTAIN 0
 GRASS 3
-Effect HEALTHEFFECT 4 22 576
+Effect HEALTHEFFECT 3 7 666
+Decal ArtAssets/healDecal.png
+Item OBSTACLE Wall
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 2
+Effect HEALTHEFFECT 1 -18 187
+Decal ArtAssets/damageDecal.png
+MOUNTAIN 0
+GRASS 0
+WATER 0
+GRASS 2
+Effect HEALTHEFFECT 3 -9 307
+Decal ArtAssets/damageDecal.png
+WATER 0
+GRASS 3
+Effect HEALTHEFFECT 2 23 367
 Decal ArtAssets/healDecal.png
 Item ONESHOT Book
-GRASS 0
-GRASS 0
-WATER 0
 GRASS 3
-Effect HEALTHEFFECT 5 6 696
+Effect HEALTHEFFECT 3 14 397
 Decal ArtAssets/healDecal.png
 Item OBSTACLE Bed of Spikes
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
 MOUNTAIN 0
-GRASS 3
-Effect HEALTHEFFECT 1 15 247
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Spike
 GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 3 -3 307
+Effect HEALTHEFFECT 2 -22 487
 Decal ArtAssets/damageDecal.png
 GRASS 0
 MOUNTAIN 0
-GRASS 0
-MOUNTAIN 0
-GRASS 2
-Effect HEALTHEFFECT 1 -9 457
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 2 4 547
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Door
+WATER 0
 MOUNTAIN 0
 GRASS 0
 GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 5 2 667
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Door
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 4 3 278
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Spike
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 5 9 398
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Key
 GRASS 2
-Effect HEALTHEFFECT 2 -13 428
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 608
-Decal ArtAssets/deathDecal.png
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 5 3 668
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Door
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 10 -23 279
+Effect HEALTHEFFECT 2 -9 697
 Decal ArtAssets/damageDecal.png
 WATER 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 8 -19 429
-Decal ArtAssets/damageDecal.png
-MOUNTAIN 0
-GRASS 0
-MOUNTAIN 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
 WATER 0
 GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 609
-Decal ArtAssets/deathDecal.png
 GRASS 3
-Effect HEALTHEFFECT 1 7 639
+Effect HEALTHEFFECT 3 2 218
 Decal ArtAssets/healDecal.png
-Item TAKEABLE Food
-GRASS 3
-Effect HEALTHEFFECT 1 5 669
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Bed of Spikes
+Item OBSTACLE Wall
 GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-WATER 0
-GRASS 2
-Effect HEALTHEFFECT 7 -3 250
-Decal ArtAssets/damageDecal.png
 GRASS 3
 Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
+Item TAKEABLE Food
+GRASS 3
+Effect HEALTHEFFECT 4 6 308
+Decal ArtAssets/healDecal.png
 Item TAKEABLE Sword
+GRASS 2
+Effect HEALTHEFFECT 4 -11 338
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item TAKEABLE Food
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 2 -7 458
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 0
+MOUNTAIN 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 2
+Effect HEALTHEFFECT 5 -10 189
+Decal ArtAssets/damageDecal.png
+GRASS 2
+Effect HEALTHEFFECT 9 -15 219
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 279
+Decal ArtAssets/deathDecal.png
+MOUNTAIN 0
+GRASS 3
+Effect HEALTHEFFECT 3 16 339
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Key
+MOUNTAIN 0
+WATER 0
+GRASS 2
+Effect HEALTHEFFECT 9 -2 429
+Decal ArtAssets/damageDecal.png
+GRASS 2
+Effect HEALTHEFFECT 6 -20 459
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 1 12 250
+Decal ArtAssets/healDecal.png
+Item INTERACTIVE Animal
+GRASS 0
 GRASS 1
 Item INTERACTIVE Door
 GRASS 1
 Item TAKEABLE Key
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
 WATER 0
-GRASS 2
-Effect HEALTHEFFECT 4 -24 520
-Decal ArtAssets/damageDecal.png
-GRASS 2
-Effect HEALTHEFFECT 10 -20 550
-Decal ArtAssets/damageDecal.png
-GRASS 0
 GRASS 0
 MOUNTAIN 0
+GRASS 0
+MOUNTAIN 0
+GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 0 -100000 670
-Decal ArtAssets/deathDecal.png
+Effect HEALTHEFFECT 5 -1 550
+Decal ArtAssets/damageDecal.png
 GRASS 0
 WATER 0
+MOUNTAIN 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 9 -22 700
+Decal ArtAssets/damageDecal.png
 WATER 0
 WATER 0
 WATER 0
@@ -7319,135 +7311,320 @@ WATER 0
 WATER 0
 WATER 0
 WATER 0
+GRASS 3
+Effect HEALTHEFFECT 2 24 191
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Key
+MOUNTAIN 0
+GRASS 0
+MOUNTAIN 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 6 -10 341
+Decal ArtAssets/damageDecal.png
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 371
+Decal ArtAssets/deathDecal.png
 GRASS 0
 MOUNTAIN 0
 GRASS 3
-Effect HEALTHEFFECT 4 18 281
+Effect HEALTHEFFECT 2 22 461
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Key
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 611
+Decal ArtAssets/deathDecal.png
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+MOUNTAIN 0
+GRASS 0
+GRASS 0
+MOUNTAIN 0
+GRASS 0
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item ONESHOT Health Pot
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 3 5 402
+Decal ArtAssets/healDecal.png
+Item OBSTACLE Bed of Spikes
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 3 -15 462
+Decal ArtAssets/damageDecal.png
+GRASS 3
+Effect HEALTHEFFECT 2 11 492
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Food
+GRASS 0
+MOUNTAIN 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 582
+Decal ArtAssets/deathDecal.png
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 1 21 253
+Decal ArtAssets/healDecal.png
+Item ONESHOT Book
+GRASS 0
+GRASS 0
+GRASS 0
+MOUNTAIN 0
+MOUNTAIN 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 4 12 463
+Decal ArtAssets/healDecal.png
+Item INTERACTIVE Door
+MOUNTAIN 0
+GRASS 2
+Effect HEALTHEFFECT 2 -12 523
+Decal ArtAssets/damageDecal.png
+GRASS 0
+MOUNTAIN 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+MOUNTAIN 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 1 25 284
+Decal ArtAssets/healDecal.png
+Item ONESHOT Banana peel
+GRASS 3
+Effect HEALTHEFFECT 2 3 314
+Decal ArtAssets/healDecal.png
+Item ONESHOT Book
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 344
+Decal ArtAssets/deathDecal.png
+MOUNTAIN 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 1 12 434
+Decal ArtAssets/healDecal.png
+Item ONESHOT Health Pot
+GRASS 0
+WATER 0
+GRASS 0
+WATER 0
+GRASS 0
+MOUNTAIN 0
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 3 2 315
+Decal ArtAssets/healDecal.png
+Item INTERACTIVE Door
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 4 -16 375
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+MOUNTAIN 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 2 24 705
+Decal ArtAssets/healDecal.png
+Item OBSTACLE Wall
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 3
+Effect HEALTHEFFECT 5 3 196
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Key
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+MOUNTAIN 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 197
+Decal ArtAssets/deathDecal.png
+WATER 0
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 1 10 287
+Decal ArtAssets/healDecal.png
+Item ONESHOT Banana peel
+GRASS 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 8 -16 467
+Decal ArtAssets/damageDecal.png
+GRASS 0
+GRASS 0
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item ONESHOT Book
+GRASS 3
+Effect HEALTHEFFECT 5 2 587
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Key
+WATER 0
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item TAKEABLE Sword
+GRASS 2
+Effect HEALTHEFFECT 1 -16 677
+Decal ArtAssets/damageDecal.png
+GRASS 3
+Effect HEALTHEFFECT 1 14 707
 Decal ArtAssets/healDecal.png
 Item TAKEABLE Food
 WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
 GRASS 2
-Effect HEALTHEFFECT 1 -19 341
-Decal ArtAssets/damageDecal.png
+Effect HEALTHEFFECT 0 -100000 198
+Decal ArtAssets/deathDecal.png
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
 WATER 0
 GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 10 -21 431
-Decal ArtAssets/damageDecal.png
+WATER 0
+GRASS 0
 GRASS 3
-Effect HEALTHEFFECT 3 4 461
+Effect HEALTHEFFECT 1 21 498
 Decal ArtAssets/healDecal.png
 Item OBSTACLE Bed of Spikes
 WATER 0
-GRASS 3
-Effect HEALTHEFFECT 5 13 521
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Sword
-GRASS 2
-Effect HEALTHEFFECT 10 -20 551
-Decal ArtAssets/damageDecal.png
-GRASS 2
-Effect HEALTHEFFECT 5 -17 581
-Decal ArtAssets/damageDecal.png
-GRASS 3
-Effect HEALTHEFFECT 5 23 611
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Spike
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 641
-Decal ArtAssets/deathDecal.png
-MOUNTAIN 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item OBSTACLE Spike
-GRASS 0
-GRASS 0
-WATER 0
-GRASS 0
-GRASS 0
-MOUNTAIN 0
-GRASS 3
-Effect HEALTHEFFECT 5 20 462
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Spike
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 492
-Decal ArtAssets/deathDecal.png
-MOUNTAIN 0
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 552
-Decal ArtAssets/deathDecal.png
-MOUNTAIN 0
-WATER 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item ONESHOT Banana peel
 GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 0 -100000 702
-Decal ArtAssets/deathDecal.png
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 5 18 223
-Decal ArtAssets/healDecal.png
-Item ONESHOT Health Pot
-GRASS 2
-Effect HEALTHEFFECT 7 -18 253
-Decal ArtAssets/damageDecal.png
-GRASS 2
-Effect HEALTHEFFECT 9 -8 283
-Decal ArtAssets/damageDecal.png
-WATER 0
-GRASS 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item ONESHOT Book
-GRASS 2
-Effect HEALTHEFFECT 2 -6 403
+Effect HEALTHEFFECT 7 -9 588
 Decal ArtAssets/damageDecal.png
 GRASS 0
-GRASS 0
-GRASS 0
-WATER 0
-GRASS 0
-GRASS 0
-MOUNTAIN 0
 GRASS 3
-Effect HEALTHEFFECT 2 15 643
+Effect HEALTHEFFECT 5 13 648
 Decal ArtAssets/healDecal.png
 Item INTERACTIVE Door
 GRASS 0
-MOUNTAIN 0
+GRASS 0
 WATER 0
 WATER 0
 WATER 0
@@ -7464,427 +7641,206 @@ GRASS 3
 Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 Item ONESHOT Health Pot
-MOUNTAIN 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item INTERACTIVE Animal
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 0 -100000 434
-Decal ArtAssets/deathDecal.png
-MOUNTAIN 0
-WATER 0
-GRASS 3
-Effect HEALTHEFFECT 5 10 524
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Sword
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 3 24 644
-Decal ArtAssets/healDecal.png
-Item TAKEABLE Sword
-MOUNTAIN 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 6 -14 255
-Decal ArtAssets/damageDecal.png
-MOUNTAIN 0
-GRASS 2
-Effect HEALTHEFFECT 7 -14 315
-Decal ArtAssets/damageDecal.png
-MOUNTAIN 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 4 -18 405
-Decal ArtAssets/damageDecal.png
-GRASS 3
-Effect HEALTHEFFECT 5 18 435
-Decal ArtAssets/healDecal.png
-Item ONESHOT Book
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 465
-Decal ArtAssets/deathDecal.png
-GRASS 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item TAKEABLE Sword
-MOUNTAIN 0
-MOUNTAIN 0
-GRASS 0
-GRASS 0
-WATER 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 2 21 316
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Bed of Spikes
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 376
-Decal ArtAssets/deathDecal.png
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 2 17 436
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Animal
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 1 2 496
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Bed of Spikes
-GRASS 2
-Effect HEALTHEFFECT 3 -4 526
+Effect HEALTHEFFECT 8 -3 229
 Decal ArtAssets/damageDecal.png
 GRASS 3
 Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 Item ONESHOT Health Pot
+GRASS 0
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item OBSTACLE Wall
+GRASS 0
+GRASS 0
+MOUNTAIN 0
+GRASS 2
+Effect HEALTHEFFECT 9 -23 439
+Decal ArtAssets/damageDecal.png
+GRASS 0
+MOUNTAIN 0
 MOUNTAIN 0
 GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 646
-Decal ArtAssets/deathDecal.png
-MOUNTAIN 0
+GRASS 0
+GRASS 0
+GRASS 0
 GRASS 3
-Effect HEALTHEFFECT 4 14 706
-Decal ArtAssets/healDecal.png
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item OBSTACLE Wall
+GRASS 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
 Item INTERACTIVE Door
+MOUNTAIN 0
 WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 350
+Decal ArtAssets/deathDecal.png
 GRASS 3
-Effect HEALTHEFFECT 1 19 227
+Effect HEALTHEFFECT 2 19 380
 Decal ArtAssets/healDecal.png
 Item ONESHOT Banana peel
-GRASS 0
-GRASS 0
-WATER 0
 GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item TAKEABLE Sword
-GRASS 2
-Effect HEALTHEFFECT 9 -18 377
-Decal ArtAssets/damageDecal.png
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-WATER 0
-GRASS 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item INTERACTIVE Animal
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 1 4 707
+Effect HEALTHEFFECT 1 16 410
 Decal ArtAssets/healDecal.png
-Item ONESHOT Book
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-MOUNTAIN 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 4 12 288
-Decal ArtAssets/healDecal.png
-Item ONESHOT Health Pot
-GRASS 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 10 -6 378
-Decal ArtAssets/damageDecal.png
-GRASS 0
-MOUNTAIN 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item ONESHOT Book
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 1 8 528
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Animal
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
 Item TAKEABLE Food
 GRASS 0
+WATER 0
 GRASS 2
-Effect HEALTHEFFECT 0 -100000 618
-Decal ArtAssets/deathDecal.png
-MOUNTAIN 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 4 20 259
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Bed of Spikes
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 409
-Decal ArtAssets/deathDecal.png
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 10 -21 469
-Decal ArtAssets/damageDecal.png
-MOUNTAIN 0
-GRASS 2
-Effect HEALTHEFFECT 4 -18 529
-Decal ArtAssets/damageDecal.png
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 559
-Decal ArtAssets/deathDecal.png
-GRASS 0
-MOUNTAIN 0
-GRASS 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 9 -2 230
+Effect HEALTHEFFECT 8 -16 500
 Decal ArtAssets/damageDecal.png
 GRASS 0
-GRASS 0
-WATER 0
-GRASS 0
 GRASS 3
-Effect HEALTHEFFECT 1 1 380
+Effect HEALTHEFFECT 2 17 560
 Decal ArtAssets/healDecal.png
-Item OBSTACLE Spike
-GRASS 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 6 -7 470
-Decal ArtAssets/damageDecal.png
-WATER 0
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 530
-Decal ArtAssets/deathDecal.png
-MOUNTAIN 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item INTERACTIVE Door
-GRASS 0
-GRASS 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 0
-GRASS 2
-Effect HEALTHEFFECT 1 -6 231
-Decal ArtAssets/damageDecal.png
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 261
-Decal ArtAssets/deathDecal.png
-GRASS 0
-GRASS 0
-MOUNTAIN 0
-GRASS 3
-Effect HEALTHEFFECT 1 14 381
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Bed of Spikes
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-MOUNTAIN 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 2 18 591
-Decal ArtAssets/healDecal.png
-Item INTERACTIVE Door
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-MOUNTAIN 0
-GRASS 0
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 4 18 292
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Bed of Spikes
-GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 4 1 352
-Decal ArtAssets/healDecal.png
-Item OBSTACLE Spike
-GRASS 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
 Item ONESHOT Banana peel
+MOUNTAIN 0
 GRASS 0
+MOUNTAIN 0
+MOUNTAIN 0
+GRASS 3
+Effect HEALTHEFFECT 2 20 710
+Decal ArtAssets/healDecal.png
+Item OBSTACLE Wall
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
 GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 10 -5 502
+Effect HEALTHEFFECT 10 -16 231
 Decal ArtAssets/damageDecal.png
 GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-GRASS 0
-WATER 0
-GRASS 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-WATER 0
-GRASS 2
-Effect HEALTHEFFECT 10 -18 203
-Decal ArtAssets/damageDecal.png
+GRASS 3
+Effect HEALTHEFFECT 1 5 291
+Decal ArtAssets/healDecal.png
+Item INTERACTIVE Door
 MOUNTAIN 0
 GRASS 0
 GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 2 -14 323
-Decal ArtAssets/damageDecal.png
-MOUNTAIN 0
-GRASS 0
-WATER 0
-GRASS 2
-Effect HEALTHEFFECT 0 -100000 443
+Effect HEALTHEFFECT 0 -100000 411
 Decal ArtAssets/deathDecal.png
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
+GRASS 0
 GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
-Item OBSTACLE Spike
+Effect HEALTHEFFECT 4 11 711
+Decal ArtAssets/healDecal.png
+Item ONESHOT Book
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+MOUNTAIN 0
+GRASS 0
+MOUNTAIN 0
 GRASS 0
 GRASS 0
 GRASS 0
+GRASS 0
+MOUNTAIN 0
+GRASS 3
+Effect HEALTHEFFECT 1 20 472
+Decal ArtAssets/healDecal.png
+Item OBSTACLE Bed of Spikes
+MOUNTAIN 0
+MOUNTAIN 0
+MOUNTAIN 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 592
+Decal ArtAssets/deathDecal.png
+GRASS 0
+GRASS 2
+Effect HEALTHEFFECT 0 -100000 652
+Decal ArtAssets/deathDecal.png
+WATER 0
+GRASS 3
+Effect HEALTHEFFECT 2 6 712
+Decal ArtAssets/healDecal.png
+Item INTERACTIVE Animal
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+WATER 0
+GRASS 0
+GRASS 0
+WATER 0
 GRASS 0
 GRASS 3
-Effect HEALTHEFFECT 3 8 623
+Effect HEALTHEFFECT 1 22 323
 Decal ArtAssets/healDecal.png
 Item TAKEABLE Sword
 GRASS 0
+WATER 0
+GRASS 0
 GRASS 0
 GRASS 2
-Effect HEALTHEFFECT 10 -17 713
-Decal ArtAssets/damageDecal.png
+Effect HEALTHEFFECT 0 -100000 473
+Decal ArtAssets/deathDecal.png
+GRASS 0
+GRASS 3
+Effect HEALTHEFFECT 1 20 533
+Decal ArtAssets/healDecal.png
+Item TAKEABLE Food
+MOUNTAIN 0
+GRASS 0
+GRASS 3
+Effect LEVELUPEFFECT 0
+Decal ArtAssets/levelupDecal.png
+Item TAKEABLE Key
+GRASS 0
+GRASS 0
+GRASS 0
 WATER 0
 WATER 0
 WATER 0
@@ -8079,7 +8035,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -8089,7 +8045,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -8099,7 +8055,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -8109,12 +8065,12 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -8199,32 +8155,32 @@ ArtAssets/Lava.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -8249,7 +8205,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -8274,17 +8230,17 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -8294,17 +8250,17 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -8319,7 +8275,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -8334,7 +8290,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -8414,12 +8370,12 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -8444,7 +8400,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -8464,7 +8420,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -8479,7 +8435,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -8489,12 +8445,12 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -8514,7 +8470,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -8534,7 +8490,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -8609,12 +8565,12 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -8629,7 +8585,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -8659,22 +8615,22 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -8699,7 +8655,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -8709,7 +8665,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -8719,17 +8675,17 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -8814,7 +8770,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -8864,12 +8820,12 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -8879,12 +8835,12 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -8894,7 +8850,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -8904,12 +8860,12 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -8924,7 +8880,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -8999,17 +8955,17 @@ ArtAssets/Lava.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9019,17 +8975,17 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9039,12 +8995,12 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9054,7 +9010,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9069,17 +9025,17 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9089,22 +9045,22 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -9124,7 +9080,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9196,11 +9152,6 @@ ArtAssets/Lava.png
 0 0
 ArtAssets/Lava.png
 0
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
-1
 0 0
 0 0
 0 0
@@ -9219,12 +9170,12 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -9244,7 +9195,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -9259,7 +9210,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -9274,22 +9225,22 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -9310,6 +9261,11 @@ ArtAssets/Path1.png
 0 0
 0 0
 ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9319,7 +9275,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -9399,32 +9355,32 @@ ArtAssets/Lava.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9439,7 +9395,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9449,7 +9405,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9459,17 +9415,17 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -9484,7 +9440,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9504,12 +9460,12 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9534,7 +9490,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9609,7 +9565,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9624,12 +9580,12 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9644,7 +9600,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9665,6 +9621,11 @@ ArtAssets/Path2.png
 0 0
 0 0
 ArtAssets/Path2.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9679,7 +9640,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -9710,11 +9671,6 @@ ArtAssets/Path2.png
 0 0
 0 0
 ArtAssets/Path2.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9734,7 +9690,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -9815,11 +9771,6 @@ ArtAssets/Path2.png
 0 0
 0 0
 ArtAssets/Path1.png
-1
-0 0
-0 0
-0 0
-ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -9829,7 +9780,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9859,7 +9810,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9869,17 +9820,17 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -9889,12 +9840,12 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -9909,17 +9860,22 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
+1
+0 0
+0 0
+0 0
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -10009,7 +9965,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -10029,7 +9985,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -10064,12 +10020,12 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -10094,12 +10050,12 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -10114,7 +10070,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -10129,12 +10085,12 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -10199,7 +10155,7 @@ ArtAssets/Lava.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -10224,7 +10180,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -10249,27 +10205,27 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -10279,7 +10235,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -10289,12 +10245,12 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -10304,7 +10260,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -10314,12 +10270,12 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -10329,7 +10285,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -10399,17 +10355,17 @@ ArtAssets/Lava.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -10444,7 +10400,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -10454,7 +10410,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -10469,22 +10425,22 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -10494,17 +10450,17 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -10529,7 +10485,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -10614,17 +10570,17 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -10644,17 +10600,17 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -10664,7 +10620,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -10674,7 +10630,7 @@ ArtAssets/Path2.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
@@ -10689,7 +10645,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -10709,12 +10665,12 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path2.png
+ArtAssets/Path1.png
 1
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
@@ -10734,7 +10690,7 @@ ArtAssets/Path1.png
 0 0
 0 0
 0 0
-ArtAssets/Path1.png
+ArtAssets/Path2.png
 1
 0 0
 0 0
