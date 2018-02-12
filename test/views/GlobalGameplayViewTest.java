@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import models.*;
 import models.Character;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 
@@ -29,7 +30,7 @@ public class GlobalGameplayViewTest extends ApplicationTest {
 
     }
 
-    @Test
+    @Ignore
     public void tryTest() throws InterruptedException {
 
 

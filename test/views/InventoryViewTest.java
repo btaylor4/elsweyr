@@ -95,12 +95,4 @@ public class InventoryViewTest extends ApplicationTest {
             }
         });
     }
-
-    @Test
-    public void tryInteracting() {
-        while(true) {
-
-        }
-    }
-
 }
