@@ -116,7 +116,9 @@ public class LocalGameplayController {
 
             Zone localMap = globalMap.getGlobalMap()[globalCharacterXPos][globalCharacterYPos];
 
-            moveCharacter(keyPressed, character, localMap);
+            if(moveCharacter(keyPressed, character, localMap))  {
+
+            }
 
             Point localPos = character.getLocalPos();
 
@@ -296,7 +298,7 @@ public class LocalGameplayController {
     }
 
     //Determines if move in map is a valid one
-    void moveCharacter(String numKeyPressed, Character character, Zone localMap) {
+    boolean moveCharacter(String numKeyPressed, Character character, Zone localMap) {
 
         int mapRows = (localMap.getLocalMap().length) - 1; //get rows of map
         int mapCols = (localMap.getLocalMap()[0].length) - 1; //get cols of map
@@ -330,7 +332,7 @@ public class LocalGameplayController {
                 moveDirection = new Point(0, -1);
                 break;
             default:
-                moveDirection = new Point(0, 0);
+                return false;
 
 
         }
@@ -420,5 +422,7 @@ public class LocalGameplayController {
                 }
 
         }
+
+        return true;
     }
 }
