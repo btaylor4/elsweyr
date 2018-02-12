@@ -3,6 +3,16 @@ An elswyr themed rpg
 
 
 How To Play:
+Main Menu:
+  Load Game: if you have a saved game
+  New Game: where player picks name and avatar
+  Quit: player exits the game
+Loading/ Creating/ Saving:
+  Require player to select one of three slots to load/ create/ save into
+In Game Menu:
+  Save Game: player can choose to save his current location
+  Resume Game: player chooses to go back into the game
+  Quit to Main: player goes back to main menu
 Movement:
   using the num pad:
     1: down-left
@@ -47,3 +57,5 @@ Terrain:
   Grass - player can walk on: green
   Water - player cannot walk on: blue
   Mountain - player cannot walk on: grey
+Inventory:
+  The player can open from local map to equip, unequip, and drop items
