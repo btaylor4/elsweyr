@@ -20,12 +20,14 @@ import java.util.TimerTask;
 
 
 public class LocalGameplayController {
+
     private Character character;
     private GlobalLevel globalMap;
     private LocalGameplayView view;
     Timer gameChecks = new Timer();
 
     public LocalGameplayController(LocalGameplayView localView, Character playerCharacter, GlobalLevel global) {
+
         this.character = playerCharacter;
         this.globalMap = global;
         //TODO: make sure the correct map is loaded from the global map during this constructor
@@ -39,13 +41,15 @@ public class LocalGameplayController {
         this.view.getStatusView().updateCharacterLevel(character.getLevel());
         this.view.setCharacterSpritesPath(character.getCharacterSpritePath());
 
-
+        //Applies the healthEffects currently acting on the character.
         for(HealthEffect effect: character.getHealthEffects()) {
             effect.applyEffect(character, this.view.getStatusView());
         }
 
+        //Populates the LocalGamePlayView
         populateView();
 
+        //Checks if Character is dead
         gameChecks.schedule(new TimerTask() {
 
             @Override
@@ -54,7 +58,6 @@ public class LocalGameplayController {
                 //check death
                 if(playerCharacter.getCurrentHP() <= 0){
                     Platform.runLater(() -> {
-                        System.out.println("Death");
                         DeathView deathView = new DeathView();
                         Scene scene = new Scene(deathView, 500, 500);
                         DeathController deathController = new DeathController(deathView);
@@ -68,6 +71,9 @@ public class LocalGameplayController {
         }, 0, 100);
     }
 
+    /*
+    Populates the LocalGamePlay with Images, by passing in the character Image, tile images, item images, and decal images
+     */
     public void populateView() {
 
         Point zoneLoc = character.getGlobalPos();
@@ -76,6 +82,7 @@ public class LocalGameplayController {
         int zoneHeight = tiles.length;
         int zoneWidth = tiles[0].length;
 
+        character.setCharacterSprite(new Image(character.getCharacterSpritePath() + "Character_Front.png"));
         Image characterSprite = character.getCharacterSprite();
         Image[][] tileSprites = new Image[zoneHeight][zoneWidth];
         Image[][] decalSprites = new Image[zoneHeight][zoneWidth];
@@ -105,31 +112,21 @@ public class LocalGameplayController {
 
         @Override
         public void handle(KeyEvent event) {
-            //Do Movement Stuff
             //move character around
             String keyPressed = event.getCode().toString();
-            System.out.println(keyPressed);
 
             //Attempt to move character on local map. We have to get the local map the user is on based on the global position he was in.
             int globalCharacterXPos = (int) character.getGlobalPos().getX();
             int globalCharacterYPos = (int) character.getGlobalPos().getY();
 
             Zone localMap = globalMap.getGlobalMap()[globalCharacterXPos][globalCharacterYPos];
-
-            if(moveCharacter(keyPressed, character, localMap))  {
-
-            }
-
+            moveCharacter(keyPressed, character, localMap);
             Point localPos = character.getLocalPos();
-
-            //Gets local map by accessing the global position of character and getting the zone he's on
-//            localMap = globalMap.getGlobalMap()[(int)character.getGlobalPos().getX()][(int)character.getGlobalPos().getY()];
-
 
             //CHECK IF THERE IS AN ITEM IN TILE, IF IT'S INTERACTIVE ACTIVATE IT
             //IF IT'S TAKEABLE TAKE IT
-
             if (localMap.getLocalMap()[(int) localPos.getX()][(int) localPos.getY()].getItem() != null) {
+
                 Tile tile = localMap.getLocalMap()[(int) localPos.getX()][(int) localPos.getY()];
                 Item itemOnTile = tile.getItem();
                 boolean shouldBeRemoved = itemOnTile.onTouchAction(character, view.getStatusView());
@@ -181,9 +178,8 @@ public class LocalGameplayController {
 
 
             //CHECK IF THERE'S AN EXIT TILE
-
-
             if (localPos.getX() == localMap.getExitTile().getX() && localPos.getY() == localMap.getExitTile().getY()) {
+
                 gameChecks.cancel();
                 GlobalGameplayView globalView = new GlobalGameplayView(character.getCharacterSpritePath());
                 Scene scene = new Scene(globalView, 500, 500);
@@ -214,7 +210,6 @@ public class LocalGameplayController {
             gameChecks.cancel();
 
             window.setScene(globalScene);
-            System.out.println("menu Buttonstuff");
         }
     }
 
@@ -222,7 +217,6 @@ public class LocalGameplayController {
 
         @Override
         public void handle(ActionEvent event) {
-            //Do inv menu stuff
             //switch to inventory view
 
 //            InGameMenuView inGameMenuView = new InGameMenuView();
@@ -232,18 +226,19 @@ public class LocalGameplayController {
             InventoryController inventoryController = new InventoryController(inventoryView,character,globalMap);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
+            //Stops applying HealthEffects when user enters inventory
             for(HealthEffect effect: character.getHealthEffects()) {
                 effect.stopTimer();
             }
             gameChecks.cancel();
             window.setScene(inventoryScene);
 
-            System.out.println("InvButton Stuff");
         }
     }
 
 
     boolean outOfMapBounds(Point userLocation, Point userMove, int mapRows, int mapCols) {
+
         Point predictedMove = new Point();
         predictedMove.x = userLocation.x + userMove.x;
         predictedMove.y = userLocation.y + userMove.y;
@@ -258,6 +253,7 @@ public class LocalGameplayController {
     }
 
     boolean obstacleOrTerrainBlocking(Point userLocation, Point userMove, Zone map) {
+
         Point predictedMove = new Point();
         predictedMove.x = userLocation.x + userMove.x;
         predictedMove.y = userLocation.y + userMove.y;
@@ -275,6 +271,7 @@ public class LocalGameplayController {
     }
 
     boolean hasInteractiveItem(Point userLocation, Point userMove, Zone map) {
+
         Point predictedMove = new Point();
         predictedMove.x = userLocation.x + userMove.x;
         predictedMove.y = userLocation.y + userMove.y;
@@ -288,9 +285,11 @@ public class LocalGameplayController {
     }
 
     boolean hasInteractiveItemShouldMove(Point userLocation, Point userMove, Zone map) {
+
         Point predictedMove = new Point();
         predictedMove.x = userLocation.x + userMove.x;
         predictedMove.y = userLocation.y + userMove.y;
+
         if (map.getLocalMap()[predictedMove.x][predictedMove.y].getItem().onTouchAction(character)) {
             return true;
         }
@@ -302,6 +301,7 @@ public class LocalGameplayController {
 
         int mapRows = (localMap.getLocalMap().length) - 1; //get rows of map
         int mapCols = (localMap.getLocalMap()[0].length) - 1; //get cols of map
+
         Point characterPositionInMap = character.getLocalPos();
         Point moveDirection; //Store the direction associated with the key pressed ex: UP = (0,1), DOWN = (0,-1)
 
@@ -336,10 +336,11 @@ public class LocalGameplayController {
 
 
         }
+        //Updates the localViewMovement to display Character moving in that direction
         view.updateMove(numKeyPressed);
 
 
-        // If charachter isn't out of bounds and there isn't an obstacle item or impassable terrain, update his position
+        // If character isn't out of bounds and there isn't an obstacle item or impassable terrain, update his position
         if (!outOfMapBounds(characterPositionInMap, moveDirection, mapRows, mapCols) &&
                 !obstacleOrTerrainBlocking(characterPositionInMap, moveDirection, localMap)) {
 
@@ -354,7 +355,9 @@ public class LocalGameplayController {
                     //Updates the localViewsCharacterPosition
                     view.updateCharacterPos(newCharacterPosition);
                 }
-            } else {
+            }
+
+            else {
                 Point newCharacterPosition = new Point(characterPositionInMap.x + moveDirection.x,
                         characterPositionInMap.y + moveDirection.y);
                 character.updateLocalPos(newCharacterPosition);
@@ -400,6 +403,7 @@ public class LocalGameplayController {
 //                    }
 //                }
                 break;
+
             case LEVELUPEFFECT:
                 for (HealthEffect effects : character.getHealthEffects()) {
                     effects.stopTimer(); //TODO: This applies one extra tick
@@ -412,6 +416,7 @@ public class LocalGameplayController {
                     effect.applyEffect(character, view.getStatusView());
                 }
                 break;
+
             case NONE:
                 if (!character.getHealthEffects().isEmpty()) {
                     for (HealthEffect effects : character.getHealthEffects()) {

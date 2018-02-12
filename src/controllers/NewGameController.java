@@ -69,7 +69,6 @@ public class NewGameController {
             character.setCharacterName(view.getSelectedName());
             character.setOnLocal(false);
 
-            System.out.println("Go to global gameplay");
             GlobalGameplayView globalView = new GlobalGameplayView(view.getSelectedCharacterFilePath());
             Scene globalScene = new Scene(globalView, 500, 500);
             GlobalGameplayController globalController = new GlobalGameplayController(globalView,character,global);
@@ -152,7 +151,7 @@ public class NewGameController {
 
         @Override
         public void handle(ActionEvent event) {
-            System.out.println("Back To Main Menu Buttonstuff");
+
             MainMenuView mainView = new MainMenuView();
             MainMenuController mainController = new MainMenuController(mainView);
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();

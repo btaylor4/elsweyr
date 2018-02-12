@@ -19,6 +19,7 @@ public class InGameMenuController {
     private GlobalLevel map;
 
     public InGameMenuController(InGameMenuView inGameMenuView, Character character, GlobalLevel map) {
+
         view = inGameMenuView;
         this.view.addResumeGameButtonListener(new InGameMenuController.resumeButtonHandler());
         this.view.addSaveGameButtonListener(new InGameMenuController.saveButtonHandler());
@@ -34,9 +35,9 @@ public class InGameMenuController {
         @Override
         public void handle(ActionEvent event) {
             //Switch View To game play, either local or global
-            System.out.println("Resume Game Buttonstuff");
 
             if (character.isOnLocal()) {
+
                 LocalGameplayView localView = new LocalGameplayView(character.getCharacterSpritePath());
                 Scene loadScene = new Scene(localView,500,500);
                 LocalGameplayController localGameplayController = new LocalGameplayController(localView, character, map);
@@ -44,7 +45,9 @@ public class InGameMenuController {
 
                 window.setTitle("Local Game");
                 window.setScene(loadScene);
-            } else {
+            }
+            else {
+
                 GlobalGameplayView globalView = new GlobalGameplayView(character.getCharacterSpritePath());
                 Scene loadScene = new Scene(globalView,500,500);
                 GlobalGameplayController globalGameplayController = new GlobalGameplayController(globalView, character, map);
@@ -61,8 +64,6 @@ public class InGameMenuController {
         @Override
         public void handle(ActionEvent event) {
             //Switch View To Save Game Menu
-            System.out.println("Save Game Buttonstuff");
-
 
             SaveGameView saveView = new SaveGameView(character, map);
             Scene loadScene = new Scene(saveView,500,500);
@@ -78,7 +79,6 @@ public class InGameMenuController {
         @Override
         public void handle(ActionEvent event) {
             //Exit to main
-            System.out.println("Exit Game Buttonstuff");
 
             MainMenuView mainMenuView = new MainMenuView();
             Scene loadScene = new Scene(mainMenuView,500,500);

@@ -84,18 +84,6 @@ public class LocalGameplayView extends Parent {   //
     }
 
     //Updates the character ImageView based on the direction the character is facing.
-//    public void createCharacterView(String image){
-//        //Intializes the characterSprite with an Image
-//        characterSprite = new Image(image);
-//        //Creates a characterView
-//        characterImageView = new ImageView(characterSprite);
-//        //Character height and width must be smaller than tile's height and width.
-//        characterImageView.setFitHeight(40);
-//        characterImageView.setFitWidth(40);
-//
-//    }
-
-    //Updates the character ImageView based on the direction the character is facing.
     private void updateCharacterImageView(String image){
         //Intializes the characterSprite with an Image
         characterSprite = new Image(image);
@@ -107,7 +95,7 @@ public class LocalGameplayView extends Parent {   //
 
     }
 
-
+    //Updates characterImageView based on character movement direction
     private void updateCharacterImageView(){
         switch(characterDirection){
             case "UP": // 8
@@ -249,7 +237,6 @@ public class LocalGameplayView extends Parent {   //
             localView.setBottom(inGameMenuButton);
             localView.setTop(statusView);
             localView.setRight(inventoryButton);
-            elapsedTime = 0;
         }
 
         @Override
@@ -257,20 +244,22 @@ public class LocalGameplayView extends Parent {   //
 
             //Detects when the character moves and moves the map
             if (localCharacterPos.x != localCharacterPrevPos.x || localCharacterPos.y != localCharacterPrevPos.y) {
+
                 //Updates the position to be the position moved to
                 setCharacterPrevPos(localCharacterPos);
                 localMap.getChildren().clear();
-                updateCharacterImageView();
-                displayMapAndContents();
-                elapsedTime = now;
 
+                displayMapAndContents();
 
                 localMap.add(characterImageView, viewableTilesCol / 2, viewableTilesRow / 2);
                 localMap.setValignment(characterImageView, VPos.CENTER);
                 localMap.setHalignment(characterImageView, HPos.CENTER);
-            } else {
+
+            }
+            else {
+
                 localMap.getChildren().clear();
-                updateCharacterImageView();
+
                 displayMapAndContents();
 
                 localMap.add(characterImageView, viewableTilesCol / 2, viewableTilesRow / 2);

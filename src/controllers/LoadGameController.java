@@ -21,6 +21,7 @@ public class LoadGameController {
     private LoadGameView view;
 
     public LoadGameController(LoadGameView loadView) {
+
         view = loadView;
         this.view.addBackToMainListener(new LoadGameController.backToMainButtonHandler());
         this.view.addLoadGameListener(new LoadGameController.loadGameHandler());
@@ -32,7 +33,7 @@ public class LoadGameController {
     class backToMainButtonHandler implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
-            System.out.println("Back To Main Menu Buttonstuff");
+
             MainMenuView mainView = new MainMenuView();
             Scene mainScene = new Scene(mainView, 500, 500);
             MainMenuController mainController = new MainMenuController(mainView);
@@ -62,11 +63,8 @@ public class LoadGameController {
                 map = ReadFiles.loadGame(file.getPathToMapFile());
             }
             catch(IOException e){
-                System.out.println("No game associated with this file name");
                 return;
             }
-
-            System.out.println("Load into game Button");
 
             if (character.isOnLocal()) {
                 LocalGameplayView localView = new LocalGameplayView(character.getCharacterSpritePath());

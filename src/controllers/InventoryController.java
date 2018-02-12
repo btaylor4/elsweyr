@@ -21,6 +21,7 @@ public class InventoryController {
 
 
     public InventoryController(InventoryView invView, Character playerCharacter, GlobalLevel global) {
+
         this.character = playerCharacter;
         view = invView;
         invView.initializeSprites(getSprites(), character.getInventory().getItems().indexOf(character.getEquippedItem()));
@@ -40,7 +41,7 @@ public class InventoryController {
         @Override
         public void handle(ActionEvent event) {
             // TODO breaks tests can be fixed with platform runner
-            System.out.println("Back To Game Buttonstuff");
+
             LocalGameplayView localView = new LocalGameplayView(character.getCharacterSpritePath());
             Scene localScene = new Scene(localView, 500, 500);
             LocalGameplayController localController = new LocalGameplayController(localView, character, globalMap);
@@ -54,6 +55,7 @@ public class InventoryController {
     class equipButtonHandler implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
+
             character.setEquippedItem(character.getInventory().getItems().get(view.getSelectedItemIndex()));
             view.updateEquippedBadge(view.getSelectedItemIndex());
             view.getEquipButton().setDisable(true);
@@ -64,10 +66,12 @@ public class InventoryController {
     class unEquipButtonHandler implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
+
             character.unEquip(character.getInventory().getItems().get(view.getSelectedItemIndex()));
             if (view.getSelectedItemIndex() == view.getEquippedItemIndex()) {
                 view.removeBadgeFromPreviouslyEquipped();
             }
+
             view.getEquipButton().setDisable(false);
             view.getUnEquipButton().setDisable(true);
         }
