@@ -83,6 +83,8 @@ public class InventoryController {
             // TODO breaks test can be fixed with platform runner
             if (view.getSelectedItemIndex() == view.getEquippedItemIndex()) {
                 view.removeBadgeFromPreviouslyEquipped();
+            } else if (view.getSelectedItemIndex() < view.getEquippedItemIndex()){
+                view.setEquippedItemIndex(view.getEquippedItemIndex()-1);
             }
             view.getItemsFlow().getChildren().remove(view.getSelectedItemIndex());
             view.setSelectedItemIndex(-1);
