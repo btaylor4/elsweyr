@@ -1,10 +1,13 @@
 package models;
 
+import javafx.application.Platform;
 import javafx.scene.image.Image;
+import javafx.stage.Stage;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.testfx.framework.junit.ApplicationTest;
 
 import java.awt.*;
 import java.io.File;
@@ -13,7 +16,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class TestAnimal {
+public class TestAnimal extends ApplicationTest {
 
     private static Character testCharacter;
     private static Inventory testInventory;
@@ -59,21 +62,47 @@ public class TestAnimal {
         testInventory.addItem(testItem1);
         testCharacter.setInventory(testInventory);
 
-        Animal testAnimal = new Animal();
-        System.out.println("TeStOnE");
-        //System.out.println(testAnimal.getName());
-        Assert.assertEquals(true, testAnimal.onTouchAction(testCharacter));
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Animal testAnimal = new Animal();
+                    System.out.println("TeStOnE");
+                    //System.out.println(testAnimal.getName());
+                    Assert.assertEquals(true, testAnimal.onTouchAction(testCharacter));
+                }
+
+                catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     @Test
     public void testAnimalInteractiveItemReturnsFalse() throws IOException  {
-        Animal testAnimal = new Animal();
-        testInventory.removeItem(testFood1);
-        testInventory.removeItem(testFood2);
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Animal testAnimal = new Animal();
+                    testInventory.removeItem(testFood1);
+                    testInventory.removeItem(testFood2);
 
-        testCharacter.setInventory(testInventory);
+                    testCharacter.setInventory(testInventory);
 
-        Assert.assertEquals(false, testAnimal.onTouchAction(testCharacter));
+                    Assert.assertEquals(false, testAnimal.onTouchAction(testCharacter));
+                }
+
+                catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
+    @Override
+    public void start(Stage stage) throws Exception {
+
+    }
 }

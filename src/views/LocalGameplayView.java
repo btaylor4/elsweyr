@@ -231,6 +231,10 @@ public class LocalGameplayView extends Parent {   //
         return statusView;
     }
 
+    public ImageView[][] getItemViews() {
+        return itemImageView;
+    }
+
     public class LocalDisplay extends AnimationTimer {
         private LocalGameplayView localGameplayView;
         private GridPane localMap;

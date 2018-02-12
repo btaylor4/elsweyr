@@ -1,0 +1,17 @@
+3 1
+15
+0 0
+0 1
+1 1
+PlaceHolderForImages\mapImage.png
+1
+0 0
+0 1
+0 0
+PlaceHolderForImages\mapImage.png
+0
+0 0
+0 0
+0 1
+PlaceHolderForImages\mapImage.png
+1

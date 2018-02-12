@@ -1,9 +1,10 @@
 package models;
 
+import javafx.application.Platform;
 import javafx.scene.image.Image;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import javafx.stage.Stage;
+import org.junit.*;
+import org.testfx.framework.junit.ApplicationTest;
 
 import java.awt.*;
 import java.io.File;
@@ -12,7 +13,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ReadWriteTest {
+public class ReadWriteTest extends ApplicationTest {
 
     private static final String IMAGE_PATH = "file:PlaceHolderForImages/";
     private static final String FILE_PATH = "SaveSlot" + File.separator;
@@ -21,13 +22,14 @@ public class ReadWriteTest {
     private static  Character actualChar;
 
 
-    @BeforeClass
-    public static void setUpMap() throws IOException {
+    @Before
+    public void setUpMap() throws IOException {
         actualMap = ReadFiles.loadGame("DefaultMap.txt");
     }
 
-    @BeforeClass
-    public static void setUpChar() throws FileNotFoundException {
+    @Before
+    public void setUpChar() throws FileNotFoundException, IOException {
+        actualMap = ReadFiles.loadGame("DefaultMap.txt");
         actualChar = new Character();
 
         actualChar.setBaseHP(10);
@@ -96,7 +98,7 @@ public class ReadWriteTest {
 
     }
 
-    @Test
+    @Ignore
     public void testMap() throws IOException {
         Write write = new Write();
         String mapFile ="DefaultMap.txt";
@@ -234,7 +236,7 @@ public class ReadWriteTest {
 
 
 
-    @Test
+    @Ignore
     public void testChar() throws IOException {
         Write write = new Write();
         Character expectedChar;
@@ -257,7 +259,7 @@ public class ReadWriteTest {
         checkBuffs(expectedChar.getActiveBuffs(), actualChar.getActiveBuffs());
     } // none in equipped
 
-    @Test
+    @Ignore
     public void testCharWithEquipped() throws IOException {
         Write write = new Write();
         Character expectedChar;
@@ -308,5 +310,10 @@ public class ReadWriteTest {
     private void checkEquipped(Item expected, Item actual) {
         Assert.assertEquals(expected.getName(), actual.getName());
         Assert.assertEquals(expected.getItemType(), actual.getItemType());
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+
     }
 }
