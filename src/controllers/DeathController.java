@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import views.DeathView;
 import views.MainMenuView;
-
+//Controls the deathview, and return to the main menu button.
 public class DeathController {
     DeathView view;
     public DeathController(DeathView deathView){
@@ -15,14 +15,10 @@ public class DeathController {
         this.view.addExitListener(new DeathController.exitButtonHandler());
     }
 
-    public
-
-    class exitButtonHandler implements EventHandler<ActionEvent> {
-
+    //Handles a check on the main menu bottom. Sends the user to the main menu.
+    public class exitButtonHandler implements EventHandler<ActionEvent> {
         @Override
         public void handle(ActionEvent event) {
-            //Exit to main
-            System.out.println("Exit Game Buttonstuff");
 
             MainMenuView mainMenuView = new MainMenuView();
             Scene loadScene = new Scene(mainMenuView,500,500);

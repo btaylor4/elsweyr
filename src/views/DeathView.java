@@ -7,12 +7,15 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-
+/*
+Displays a death message, and a button that returns the user to the main menu.
+ */
 public class DeathView extends Parent
 {
     private Text deathMessage;
     private Button exitGameButton = new Button("Quit to Main Menu");
     public DeathView(){
+
         GridPane gridPane = new GridPane();
         deathMessage = new Text(100,100,"You died, sorry : (");
 

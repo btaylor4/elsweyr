@@ -15,6 +15,7 @@ public class MainMenuController {
     private MainMenuView view;
 
     public MainMenuController(MainMenuView mainView) {
+
         view = mainView;
         this.view.addLoadGameButtonListener(new MainMenuController.loadButtonHandler());
         this.view.addNewGameButtonListener(new MainMenuController.newButtonHandler());
@@ -26,8 +27,8 @@ public class MainMenuController {
 
         @Override
         public void handle(ActionEvent event) {
+
             //Switch View To Load Game Menu
-            System.out.println("Load Game Buttonstuff");
             LoadGameView loadView = new LoadGameView();
             LoadGameController loadController = new LoadGameController(loadView);
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -42,7 +43,6 @@ public class MainMenuController {
         @Override
         public void handle(ActionEvent event) {
             //Switch View To Load Game Menu
-            System.out.println("New Game Buttonstuff");
             NewGameView newView = new NewGameView();
             NewGameController newController = new NewGameController(newView);
             Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -56,8 +56,8 @@ public class MainMenuController {
 
         @Override
         public void handle(ActionEvent event) {
+
             //Exit the Game
-            System.out.println("Exit Game Buttonstuff");
             Platform.exit();
         }
     }

@@ -34,20 +34,28 @@ public class GlobalGameplayController {
         populateView();
     }
 
+    /*
+    Creates Image objects for the character, and zoneTiles, and passes them to the GlobalGamePlayView to make ImageViews.
+     */
     public void populateView()
     {
         int mapHeight = map.getGlobalMap().length;
         int mapWidth = map.getGlobalMap()[0].length;
-        character.setCharacterSprite(new Image(character.getCharacterSpritePath()+ "Character_Front.png"));
+
+        character.setCharacterSprite(new Image(character.getCharacterSpritePath() + "Character_Front.png"));
         Image characterImage = character.getCharacterSprite();
+
         Image[][] zoneImages = new Image[mapHeight][mapWidth];
         for(int i = 0; i < mapHeight; i++)
             for(int j = 0; j < mapWidth; j++)
+                //map.getGlobalMap()[][].getZoneSprite() returns the imageSprite stored on the specific zone
                 zoneImages[i][j] = map.getGlobalMap()[i][j].getZoneSprite();
 
 
         view.createTileViews(zoneImages);
         view.createCharacterView(characterImage);
+
+        //Intializes the characterPosition in the view, this is used to display the ZoneImageViews
         view.setGlobalCharacterPrevPos(character.getGlobalPos());
         view.updateCharacterPos(character.getGlobalPos());
 
@@ -55,16 +63,23 @@ public class GlobalGameplayController {
     }
 
     public class GlobalMovementListener implements EventHandler<KeyEvent> {
+        /*
+        Checks if the character move is not out of bounds.
+        Or if the character is moving onto an impassable tile.
+         */
         public boolean checkValidMove(Point projectedMove) {
             Point characterPosition = character.getGlobalPos();
             int xPositionChange = characterPosition.x + projectedMove.x;
             int yPositionChange = characterPosition.y + projectedMove.y;
-            System.out.println(characterPosition.x + " : " + characterPosition.y);
+
+            //Checks if character is out of bounds in the rows
             if(xPositionChange < 0 || xPositionChange > map.getGlobalMap().length - 1)
                 return false;
 
+            //Checks if the character is out of bounds in the columns
             else if(yPositionChange < 0 || yPositionChange > map.getGlobalMap()[0].length - 1)
                 return false;
+
             //Checks if the zone is passable if it is not passable returns false.
             else if(!map.getGlobalMap()[xPositionChange][yPositionChange].isPassable())
                 return false;
@@ -73,6 +88,9 @@ public class GlobalGameplayController {
                 return true;
         }
 
+        /*
+        Position is stored in terms of a matrix, so decreasing the x point is moving up, and decreasing the y is moving left
+         */
         public boolean updateCharacterPosition(String move) {
             Point projectedMove;
 
@@ -113,15 +131,17 @@ public class GlobalGameplayController {
                 default:
                     return false;
             }
-            //Sends the view the characters move.
+
+            //Sends the view the characters move, to display a sprite showing the direction of movement
             view.updateMove(move);
 
-
+            //Updates the characters global position
             if(checkValidMove(projectedMove)) {
                 Point newPosition = new Point(character.getGlobalPos().x + projectedMove.x,
                         character.getGlobalPos().y + projectedMove.y);
                 character.updateGlobalPos(newPosition);
-                //Sends the character position to the view
+
+                //Sends the character position to the view, to update the map
                 view.updateCharacterPos(newPosition);
                 return true;
             }
@@ -130,6 +150,7 @@ public class GlobalGameplayController {
         }
 
         public boolean checkForLocalLevel() {
+
             Point globalPos = character.getGlobalPos();
             if(map.getGlobalMap()[globalPos.x][globalPos.y].getHasLevel())
                 return true;
@@ -142,16 +163,16 @@ public class GlobalGameplayController {
         public void handle(KeyEvent event) {
 
             String move = event.getCode().toString();
-            System.out.println(move);
+
+            //Sending the character to local level.
             if(updateCharacterPosition(move) && checkForLocalLevel()) {
-                System.out.println("Changing View To Local Level");
-                character.updateLocalPos(map.getStartPosOfTile(character.getGlobalPos()));
+
                 //Set the characters location to be in the Local view when changing to it
+                character.updateLocalPos(map.getStartPosOfTile(character.getGlobalPos()));
+
                 character.setOnLocal(true);
                 LocalGameplayView localGameplayView = new LocalGameplayView(character.getCharacterSpritePath());
 
-                Point startTile = map.getGlobalMap()[character.getGlobalPos().x][character.getGlobalPos().y].getStartTile();
-                character.updateLocalPos(startTile);
                 Scene globalScene = new Scene(localGameplayView, 500, 500);
                 LocalGameplayController localGameplayController = new LocalGameplayController(localGameplayView, character, map);
                 Stage window = (Stage)(((Scene)event.getSource()).getWindow());
@@ -165,8 +186,6 @@ public class GlobalGameplayController {
 
         @Override
         public void handle(ActionEvent event) {
-            // go to in game menu
-            System.out.println("menu Buttonstuff");
 
             InGameMenuView inGameMenuView = new InGameMenuView();
             Scene globalScene = new Scene(inGameMenuView, 500, 500);
@@ -176,13 +195,11 @@ public class GlobalGameplayController {
         }
     }
 
+    //Handles sending the character to localView
     class ChangeToLocalHandler implements EventHandler<ActionEvent> {
 
-        //TODO: Clean thi
         @Override
         public void handle(ActionEvent event) {
-            // load local map
-            System.out.println("Changing View To Local Level");
 
             LocalGameplayView localGameplayView = new LocalGameplayView(character.getCharacterSpritePath());
             Scene globalScene = new Scene(localGameplayView, 500, 500);
