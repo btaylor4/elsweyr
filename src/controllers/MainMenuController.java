@@ -59,6 +59,7 @@ public class MainMenuController {
             //Exit the Game
             System.out.println("Exit Game Buttonstuff");
             Platform.exit();
+            System.exit(0);
         }
     }
 }
