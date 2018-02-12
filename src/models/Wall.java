@@ -1,10 +1,9 @@
 package models;
 
-import java.awt.*;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import javafx.scene.image.Image;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class Wall extends ObstacleItem{
 
@@ -14,7 +13,7 @@ public class Wall extends ObstacleItem{
 
     public Wall() throws FileNotFoundException{
         this.setName("Wall");
-        //itemSpritePath = "file: ArtAssets" + File.separator + "ItemImages" + File.separator + "Wall.png";
-        //itemSprite = new Image(new FileInputStream(itemSpritePath));
+        this.setItemSpritePath("ArtAssets" + File.separator + "ItemImages" + File.separator + "Wall.png");
+        this.createItemImage();
     }
 }

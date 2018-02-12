@@ -1,9 +1,9 @@
 package models;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import javafx.scene.image.Image;
+
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class BedOfSpikes extends ObstacleItem {
 
@@ -13,8 +13,8 @@ public class BedOfSpikes extends ObstacleItem {
 
     public BedOfSpikes() throws FileNotFoundException {
         this.setName("BedOfSpikes");
-        //this.itemSpritePath = "ArtAssets" + File.separator + "ItemImages" + File.separator + "BedOfSpikes.png";
-        //this.imageSprite = new Image(new FileInputStream(itemSpritePath));
+        this.setItemSpritePath("ArtAssets" + File.separator + "ItemImages" + File.separator + "BedOfSpikes.png");
+        this.createItemImage();
     }
 
 }
