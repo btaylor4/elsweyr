@@ -1,5 +1,7 @@
 package controllers;
 
+import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
@@ -9,18 +11,18 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import models.Character;
 import models.*;
-import views.GlobalGameplayView;
-import views.InGameMenuView;
-import views.InventoryView;
-import views.LocalGameplayView;
+import views.*;
 
 import java.awt.*;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class LocalGameplayController {
     private Character character;
     private GlobalLevel globalMap;
     private LocalGameplayView view;
+    Timer gameChecks = new Timer();
 
     public LocalGameplayController(LocalGameplayView localView, Character playerCharacter, GlobalLevel global) {
         this.character = playerCharacter;
@@ -40,6 +42,27 @@ public class LocalGameplayController {
         }
 
         populateView();
+
+        gameChecks.schedule(new TimerTask() {
+
+            @Override
+            public void run() {
+                globalMap.setGameTime(globalMap.getGameTime()+100);
+                //check death
+                if(playerCharacter.getCurrentHP() <= 0){
+                    Platform.runLater(() -> {
+                        System.out.println("Death");
+                        DeathView deathView = new DeathView();
+                        Scene scene = new Scene(deathView, 500, 500);
+                        DeathController deathController = new DeathController(deathView);
+                        Stage window = (Stage) view.getScene().getWindow();
+                        window.setScene(scene);
+                        window.setTitle("DEATH");
+                        gameChecks.cancel();
+                    });
+                }
+            }
+        }, 0, 100);
     }
 
     public void populateView() {
@@ -121,7 +144,7 @@ public class LocalGameplayController {
 
 
             if (localPos.getX() == localMap.getExitTile().getX() && localPos.getY() == localMap.getExitTile().getY()) {
-
+                gameChecks.cancel();
                 GlobalGameplayView globalView = new GlobalGameplayView();
                 Scene scene = new Scene(globalView, 500, 500);
                 //Set the characters position to be in the global map when stepping on the exit tile
@@ -139,7 +162,7 @@ public class LocalGameplayController {
 
         @Override
         public void handle(ActionEvent event) {
-            // go to in gmae menu
+            // go to in game menu
             InGameMenuView inGameMenuView = new InGameMenuView();
             Scene globalScene = new Scene(inGameMenuView, 500, 500);
             InGameMenuController inGameController = new InGameMenuController(inGameMenuView, character, globalMap);
@@ -148,6 +171,7 @@ public class LocalGameplayController {
             for(HealthEffect effect: character.getHealthEffects()) {
                 effect.stopTimer();
             }
+            gameChecks.cancel();
 
             window.setScene(globalScene);
             System.out.println("menu Buttonstuff");
@@ -171,7 +195,7 @@ public class LocalGameplayController {
             for(HealthEffect effect: character.getHealthEffects()) {
                 effect.stopTimer();
             }
-
+            gameChecks.cancel();
             window.setScene(inventoryScene);
 
             System.out.println("InvButton Stuff");
