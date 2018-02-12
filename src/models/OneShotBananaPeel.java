@@ -1,5 +1,7 @@
 package models;
 
+import views.StatusView;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 
@@ -25,6 +27,13 @@ public class OneShotBananaPeel extends OneShotItem{
     @Override
     public boolean onTouchAction(Character character) {
         character.updateHealth(healthIncrease);
+        return true;
+    }
+
+    @Override
+    public boolean onTouchAction(Character character, StatusView view) {
+        character.updateHealth(healthIncrease);
+        view.updateCharacterHealth(healthIncrease);
         return true;
     }
 

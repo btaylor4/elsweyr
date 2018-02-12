@@ -1,6 +1,8 @@
 package models;
 
 
+import views.StatusView;
+
 public class InteractiveItem extends Item {
 
     public InteractiveItem(){
@@ -13,6 +15,11 @@ public class InteractiveItem extends Item {
         {
             return true;
         }
+        return false;
+    }
+
+    @Override
+    public boolean onTouchAction(Character character, StatusView view) {
         return false;
     }
 

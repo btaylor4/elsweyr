@@ -104,7 +104,7 @@ public class LocalGameplayController {
             if (localMap.getLocalMap()[(int) localPos.getX()][(int) localPos.getY()].getItem() != null) {
                 Tile tile = localMap.getLocalMap()[(int) localPos.getX()][(int) localPos.getY()];
                 Item itemOnTile = tile.getItem();
-                boolean shouldBeRemoved = itemOnTile.onTouchAction(character);
+                boolean shouldBeRemoved = itemOnTile.onTouchAction(character, view.getStatusView());
                 switch (itemOnTile.getItemType()) {
                     case TAKEABLE:
                         if (shouldBeRemoved) {

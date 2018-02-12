@@ -1,5 +1,7 @@
 package models;
 
+import views.StatusView;
+
 public class TakeableItem extends Item{
 
     public TakeableItem()
@@ -12,5 +14,10 @@ public class TakeableItem extends Item{
 
         return character.getInventory().addItem(this);
 
+    }
+
+    @Override
+    public boolean onTouchAction(Character character, StatusView view) {
+        return false;
     }
 }
