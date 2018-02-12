@@ -109,7 +109,7 @@ public class NewGameController {
 
                         Write write = new Write();
                         write.setPath("SaveSlot" + i + File.separator);
-                        write.writeCharacterFile("", c);
+                        write.writeCharacterFile("SaveSlot" + i + File.separator, c);
 
                         copyDefaultToNewFile(map, newMap);
 

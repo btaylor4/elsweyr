@@ -1,4 +1,4 @@
-Bob
+bob
 100
 100
 3
@@ -8,7 +8,7 @@ Bob
 0
 10 10
 10 10
-file:Character3MovementSprites/
+file:Character2MovementSprites/
 Equipped NONE
 6
 0
