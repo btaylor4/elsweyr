@@ -24,11 +24,13 @@ public class ReadFiles {
 
         currentLine = reader.readLine();
         size = getMatrixSize(currentLine.split(" "));
+        System.out.println(size);
 
         global = new Zone[size.x][size.y];
 
         currentLine = reader.readLine();
         currentNum = Integer.parseInt(currentLine);
+        System.out.println(currentNum);
 
         //build map structure
         GlobalLevel loadedMap = new GlobalLevel();
@@ -41,6 +43,7 @@ public class ReadFiles {
                 Zone currentZone = new Zone();
                 currentLine = reader.readLine();
                 size = getMatrixSize(currentLine.split(" "));
+                System.out.println(size);
                 tiles = new Tile[size.x][size.y];
                 currentZone.setLocalMap(tiles);
                 currentZone.setHasLevel(true);
@@ -51,17 +54,21 @@ public class ReadFiles {
                 currentLine = reader.readLine();
                 size = getMatrixSize(currentLine.split(" "));
                 currentZone.setExitTile(size);
+                System.out.println(size);
 
                 currentLine = reader.readLine();
                 size = getMatrixSize(currentLine.split(" "));
                 currentZone.setStartTile(size);
+                System.out.println(size);
 
                 currentLine = reader.readLine();
                 currentZone.setZoneSpritePath(currentLine);
                 currentZone.createZoneImage();
+                System.out.println(currentLine);
 
                 currentLine = reader.readLine();
                 currentZone.setPassable(trueOrFalse(currentLine, gameFile));
+                System.out.println(currentLine);
 
                 if(currentZone.getHasLevel()) {
                     for (int locRow = 0; locRow < tiles.length; locRow++) {
@@ -69,14 +76,18 @@ public class ReadFiles {
                             Tile tile = new Tile();
                             String[] line;
 
-                            line = reader.readLine().split(" ");
+                            currentLine = reader.readLine();
+                            System.out.println(currentLine);
+                            line = currentLine.split(" ");
                             tile.setTerrain(getTerrain(line[0]));
                             tile.setTileSpritePath(IMAGE_PATH + line[0] + ".png");
                             tile.createTileImage();
 
                             int tileAttributes = Integer.parseInt(line[1]);
                             for (int k = 0; k < tileAttributes; ++k) {
-                                line = reader.readLine().split(" ");
+                                currentLine = reader.readLine();
+                                line = currentLine.split(" ");
+                                System.out.println(currentLine);
                                 setUpTile(tile, line, gameFile);
                             }
 
@@ -162,7 +173,8 @@ public class ReadFiles {
 
         //equipped item
         currentLine = reader.readLine();
-        String toBeEquipped = currentLine.split(" ")[1];
+        String [] line = currentLine.split(" ");
+        String toBeEquipped = getID(line, 1, line.length - 1);
 
         //max inventory size
         currentLine = reader.readLine();
@@ -180,14 +192,16 @@ public class ReadFiles {
             int num = Integer.parseInt(itemLine[itemLine.length - 1]);
 
             for (int j = 0; j < num; ++j) {
-                TI = (TakeableItem) getItem(itemLine[1]);
+                String itemName = getID(itemLine, 0, itemLine.length - 1);
+                TI = (TakeableItem) getItem(itemName);
                 in.addItem(TI);
+
+                if (!equipped && TI.getName().equalsIgnoreCase(toBeEquipped)) {
+                    equipped = true;
+                    loadedCharacter.setEquippedItem(TI);
+                }
             }
 
-            if (!equipped && TI.getName().equals(toBeEquipped)) {
-                equipped = true;
-                loadedCharacter.setEquippedItem(TI);
-            }
         }
 
         if (!equipped) {
@@ -245,7 +259,7 @@ public class ReadFiles {
                 System.out.println("Improper Area Effect Property @ " + gameFile + "should be Health or Level");
                 assert false;
             }
-        } else if (line[0].equals("Item")) {
+        } else if (line[0].equalsIgnoreCase("Item")) {
             if (line[1].equalsIgnoreCase(ItemType.TAKEABLE.name())) {
                 if (getID(line, 2).equalsIgnoreCase("key")) {
                     TakeableKey TK = new TakeableKey();
@@ -260,7 +274,7 @@ public class ReadFiles {
                     TS.setItemType(ItemType.TAKEABLE);
                     tile.setItem(TS);
                 } else {
-                    System.out.println("Improper Takable Item: " + line[2]);
+                    System.out.println("Improper Takeable Item: " + line[2]);
                     assert false;
                 }
             } else if (line[1].equalsIgnoreCase(ItemType.OBSTACLE.name())) {
@@ -310,7 +324,7 @@ public class ReadFiles {
                 System.out.println("Improper Item Property @ " + gameFile + "should be Obstacle, Interactive, OneShot, or Takeable");
                 assert false;
             }
-        } else if (line[0].equals("Decal")) {
+        } else if (line[0].equalsIgnoreCase("Decal")) {
             tile.setDecalSpritePath(line[1]);
             tile.createDecalImage();
         } else {

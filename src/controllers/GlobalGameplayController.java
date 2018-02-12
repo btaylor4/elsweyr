@@ -57,7 +57,7 @@ public class GlobalGameplayController {
             Point characterPosition = character.getGlobalPos();
             int xPositionChange = characterPosition.x + projectedMove.x;
             int yPositionChange = characterPosition.y + projectedMove.y;
-
+            System.out.println(characterPosition.x + " : " + characterPosition.y);
             if(xPositionChange < 0 || xPositionChange > map.getGlobalMap().length - 1)
                 return false;
 

@@ -106,9 +106,13 @@ public class LocalGameplayController {
                     case TAKEABLE:
                         if (shouldBeRemoved)
                             tile.removeItem();
+                            tile.setItem(new NoneItem());
+                            view.removeItemImageView(character.getLocalPos());
                         break;
                     case ONESHOT:
                         tile.removeItem();
+                        tile.setItem(new NoneItem());
+                        view.removeItemImageView(character.getLocalPos());
                         break;
                 }
             }
@@ -186,6 +190,11 @@ public class LocalGameplayController {
         predictedMove.y = userLocation.y + userMove.y;
 
         //Check if there's an obstacle item on tile where character wants to move
+        if (map.getLocalMap()[predictedMove.x][predictedMove.y].getItem() == null) {
+            System.out.println("NULL item @ " + predictedMove.x + " : " + predictedMove.y);
+        } else {
+            System.out.println(map.getLocalMap()[predictedMove.x][predictedMove.y].getItem().getName());
+        }
         if (map.getLocalMap()[predictedMove.x][predictedMove.y].getItem().getItemType().equals(ItemType.OBSTACLE)) {
             return true;
         }

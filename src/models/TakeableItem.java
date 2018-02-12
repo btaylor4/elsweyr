@@ -6,6 +6,7 @@ public class TakeableItem extends Item{
     {
         setItemType(ItemType.TAKEABLE);
     }
+
     @Override
     public boolean onTouchAction(Character character) {
 
