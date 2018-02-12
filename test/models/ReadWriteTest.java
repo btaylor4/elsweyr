@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class ReadWriteTest {
 
-    private static final String IMAGE_PATH = "PlaceHolderForImages" + File.separator;
+    private static final String IMAGE_PATH = "file:PlaceHolderForImages/";
     private static final String FILE_PATH = "SaveSlot" + File.separator;
 
     private static GlobalLevel actualMap;

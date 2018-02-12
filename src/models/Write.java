@@ -9,6 +9,7 @@ public class Write {
 
     private FileWriter characterSaveFile;
     private FileWriter mapSaveFile;
+    private String path = "";
 
     private static String FILE_PATH;
 
@@ -194,6 +195,12 @@ public class Write {
         }
 
         mapSaveFile.close();
+    }
+
+    public String getPath() {return path;}
+
+    public void setPath(String newPath) {
+        path = newPath;
     }
 }
 

@@ -45,13 +45,13 @@ public class SaveGameController {
         public void handle(MouseEvent event) {
             System.out.println("Back to the Game!");
             if (character.isOnLocal()) {
-                LocalGameplayView localGameplayView = new LocalGameplayView();
+                LocalGameplayView localGameplayView = new LocalGameplayView(character.getCharacterSpritePath());
                 Scene localScene = new Scene(localGameplayView, 500, 500);
                 LocalGameplayController localGameplayController = new LocalGameplayController(localGameplayView, character, map);
                 Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 window.setScene(localScene);
             } else { //(!character.isOnLocal())
-                GlobalGameplayView globalGameplayView = new GlobalGameplayView();
+                GlobalGameplayView globalGameplayView = new GlobalGameplayView(character.getCharacterSpritePath());
                 Scene globalScene = new Scene(globalGameplayView, 500, 500);
                 GlobalGameplayController globalGameplayController = new GlobalGameplayController(globalGameplayView, character, map);
                 Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -107,13 +107,13 @@ public class SaveGameController {
 
             System.out.println("Back to the Game!");
             if (character.isOnLocal()) {
-                LocalGameplayView localGameplayView = new LocalGameplayView();
+                LocalGameplayView localGameplayView = new LocalGameplayView(character.getCharacterSpritePath());
                 Scene localScene = new Scene(localGameplayView, 500, 500);
                 LocalGameplayController localGameplayController = new LocalGameplayController(localGameplayView, character, map);
                 Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 window.setScene(localScene);
             } else { //(!character.isOnLocal())
-                GlobalGameplayView globalGameplayView = new GlobalGameplayView();
+                GlobalGameplayView globalGameplayView = new GlobalGameplayView(character.getCharacterSpritePath());
                 Scene globalScene = new Scene(globalGameplayView, 500, 500);
                 GlobalGameplayController globalGameplayController = new GlobalGameplayController(globalGameplayView, character, map);
                 Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

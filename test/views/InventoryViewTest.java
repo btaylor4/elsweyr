@@ -1,6 +1,7 @@
 package views;
 
 import controllers.InventoryController;
+import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -52,6 +53,7 @@ public class InventoryViewTest extends ApplicationTest {
     @Test
     public void tryEquippingItem() {
         view.setSelectedItemIndex(1);
+        view.getEquipButton().setDisable(false);
         view.getEquipButton().fire();
         assertTrue(controller.getCharacter().getEquippedItem().getName().equals("dagger"));
     }
@@ -59,6 +61,8 @@ public class InventoryViewTest extends ApplicationTest {
     @Test
     public void tryUnEquippingItem() {
         view.setSelectedItemIndex(1);
+        view.getEquipButton().setDisable(false);
+        view.getUnEquipButton().setDisable(false);
         view.getEquipButton().fire();
         view.getUnEquipButton().fire();
         assertNull(controller.getCharacter().getEquippedItem());
@@ -66,23 +70,30 @@ public class InventoryViewTest extends ApplicationTest {
 
     @Test
     public void tryDroppingItem() {
-        view.setSelectedItemIndex(1);
-        view.getDropButton().fire();
-        assertTrue(controller.getCharacter().getInventory().getItems().size() == 1);
+        Platform.runLater(new Runnable() {
+            @Override public void run() {
+                view.setSelectedItemIndex(1);
+                view.getDropButton().setDisable(false);
+                view.getDropButton().fire();
+                assertTrue(controller.getCharacter().getInventory().getItems().size() == 1);
+            }
+        });
     }
 
     @Test
     public void tryDroppingFirstItemAndEquippingSecondItem() {
-        view.setSelectedItemIndex(0);
-        view.getDropButton().fire();
-        view.setSelectedItemIndex(0);
-        view.getEquipButton().fire();
-        assertTrue(controller.getCharacter().getEquippedItem().getName().equals("dagger"));
-    }
-
-    @Test
-    public void tryExitingInventory() {
-        view.getBackToGameButton().fire();
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                view.setSelectedItemIndex(0);
+                view.getDropButton().setDisable(false);
+                view.getDropButton().fire();
+                view.setSelectedItemIndex(0);
+                view.getEquipButton().setDisable(false);
+                view.getEquipButton().fire();
+                assertTrue(controller.getCharacter().getEquippedItem().getName().equals("dagger"));
+            }
+        });
     }
 
     @Test

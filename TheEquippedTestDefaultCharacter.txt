@@ -6,9 +6,9 @@ Bobby
 4
 4
 0
-0 0
-0 0
-PlaceHolderForImages\Character.png
+10 10
+10 10
+file:PlaceHolderForImages\
 Equipped NONE
 5
 3

@@ -37,7 +37,7 @@ public class InGameMenuController {
             System.out.println("Resume Game Buttonstuff");
 
             if (character.isOnLocal()) {
-                LocalGameplayView localView = new LocalGameplayView();
+                LocalGameplayView localView = new LocalGameplayView(character.getCharacterSpritePath());
                 Scene loadScene = new Scene(localView,500,500);
                 LocalGameplayController localGameplayController = new LocalGameplayController(localView, character, map);
                 Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -45,7 +45,7 @@ public class InGameMenuController {
                 window.setTitle("Local Game");
                 window.setScene(loadScene);
             } else {
-                GlobalGameplayView globalView = new GlobalGameplayView();
+                GlobalGameplayView globalView = new GlobalGameplayView(character.getCharacterSpritePath());
                 Scene loadScene = new Scene(globalView,500,500);
                 GlobalGameplayController globalGameplayController = new GlobalGameplayController(globalView, character, map);
                 Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();

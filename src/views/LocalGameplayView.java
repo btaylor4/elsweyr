@@ -51,12 +51,14 @@ public class LocalGameplayView extends Parent {   //
     //Used to detect if the character moved.
     private Point localCharacterPrevPos;
     private StringBuffer path = new StringBuffer("file:PlaceHolderForImages/");
+    private StringBuffer characterSpritePath;
+
 
     Group root = new Group();
-    Scene localScene = new Scene(root,800,800);
 
-    public LocalGameplayView(){
+    public LocalGameplayView(String spritePath){
 
+        this.characterSpritePath = new StringBuffer(spritePath);
         viewableTilesRow = 9;
         viewableTilesCol = 9;
         characterDirection = "DOWN";
@@ -81,20 +83,77 @@ public class LocalGameplayView extends Parent {   //
         this.changeToGlobal.setOnAction(handlerForChangeToGlobal);
     }
 
+    //Updates the character ImageView based on the direction the character is facing.
+//    public void createCharacterView(String image){
+//        //Intializes the characterSprite with an Image
+//        characterSprite = new Image(image);
+//        //Creates a characterView
+//        characterImageView = new ImageView(characterSprite);
+//        //Character height and width must be smaller than tile's height and width.
+//        characterImageView.setFitHeight(40);
+//        characterImageView.setFitWidth(40);
+//
+//    }
 
-    //Creates a characterImageView
-    private void intializeCharacterImageView(){
-
-        double characterHeight = 30;
-        double characterWidth = 30;
-        characterSprite = new Image(path + "Character.png");
+    //Updates the character ImageView based on the direction the character is facing.
+    private void updateCharacterImageView(String image){
+        //Intializes the characterSprite with an Image
+        characterSprite = new Image(image);
+        //Creates a characterView
         characterImageView = new ImageView(characterSprite);
-        characterImageView.setFitHeight(characterHeight);
-        characterImageView.setFitWidth(characterWidth);
+        //Character height and width must be smaller than tile's height and width.
+        characterImageView.setFitHeight(40);
+        characterImageView.setFitWidth(40);
+
     }
 
 
+    private void updateCharacterImageView(){
+        switch(characterDirection){
+            case "UP": // 8
+                updateCharacterImageView(characterSpritePath + "Character_Back.png");
+                break;
 
+            case "DOWN": // 2
+                updateCharacterImageView(characterSpritePath + "Character_Front.png");
+                break;
+
+            case "LEFT": // 4
+                updateCharacterImageView(characterSpritePath + "Character_East.png");
+                break;
+
+            case "RIGHT": //6
+                updateCharacterImageView(characterSpritePath + "Character_East.png");
+                break;
+
+            case "END": // 1 DOWN_LEFT
+
+                break;
+
+            case "PAGE_DOWN":  // DOWN_RIGHT
+                updateCharacterImageView(characterSpritePath + "Character_South_East.png");
+                break;
+
+            case "HOME":  // UP_LEFT
+
+                break;
+
+
+            case "PAGE_UP": // UP_RIGHT
+
+                break;
+
+            default:
+
+        }
+    }
+
+    public void setCharacterSpritesPath(String path){this.characterSpritePath = new StringBuffer(path);}
+
+    public void updateMove(String move){
+        characterDirection = move;
+        updateCharacterImageView();
+    }
     //Creates a tile ImageView
     public void createTileViews(Image[][] tileSprites) {
         localMapHeight = tileSprites.length;
@@ -146,6 +205,7 @@ public class LocalGameplayView extends Parent {   //
     }
 
     public void createCharacterView(Image characterSprite) {
+        characterSprite = characterSprite;
         characterImageView = new ImageView(characterSprite);
         characterImageView.setFitHeight(40);
         characterImageView.setFitWidth(40);
@@ -200,6 +260,7 @@ public class LocalGameplayView extends Parent {   //
                 //Updates the position to be the position moved to
                 setCharacterPrevPos(localCharacterPos);
                 localMap.getChildren().clear();
+                updateCharacterImageView();
                 displayMapAndContents();
                 elapsedTime = now;
 
@@ -209,6 +270,7 @@ public class LocalGameplayView extends Parent {   //
                 localMap.setHalignment(characterImageView, HPos.CENTER);
             } else {
                 localMap.getChildren().clear();
+                updateCharacterImageView();
                 displayMapAndContents();
 
                 localMap.add(characterImageView, viewableTilesCol / 2, viewableTilesRow / 2);

@@ -1,5 +1,11 @@
 package models;
 
+import controllers.DeathController;
+import controllers.GlobalGameplayController;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import views.DeathView;
+import views.GlobalGameplayView;
 import views.StatusView;
 
 import java.util.Timer;
