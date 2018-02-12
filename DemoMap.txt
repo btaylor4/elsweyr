@@ -3344,9 +3344,7 @@ Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 GRASS 0
 GRASS 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
+GRASS 1
 Item TAKEABLE Sword
 GRASS 0
 GRASS 3
@@ -3428,9 +3426,7 @@ WATER 0
 GRASS 0
 GRASS 0
 GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 4 23 609
-Decal ArtAssets/healDecal.png
+GRASS 1
 Item TAKEABLE Sword
 GRASS 0
 MOUNTAIN 0
@@ -3621,9 +3617,7 @@ Decal ArtAssets/damageDecal.png
 MOUNTAIN 0
 WATER 0
 GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 5 13 614
-Decal ArtAssets/healDecal.png
+GRASS 1
 Item TAKEABLE Sword
 GRASS 0
 GRASS 2
@@ -3785,9 +3779,7 @@ GRASS 0
 GRASS 0
 GRASS 0
 GRASS 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
+GRASS 1
 Item OBSTACLE Bed of Spikes
 MOUNTAIN 0
 GRASS 2
@@ -3885,9 +3877,7 @@ Decal ArtAssets/levelupDecal.png
 Item INTERACTIVE Animal
 GRASS 0
 GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 2 20 560
-Decal ArtAssets/healDecal.png
+GRASS 1
 Item ONESHOT Book
 WATER 0
 GRASS 0
@@ -4447,9 +4437,7 @@ WATER 0
 WATER 0
 WATER 0
 GRASS 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
+GRASS 1
 Item ONESHOT Banana peel
 MOUNTAIN 0
 MOUNTAIN 0
@@ -4636,9 +4624,7 @@ Effect HEALTHEFFECT 1 -15 581
 Decal ArtAssets/damageDecal.png
 WATER 0
 MOUNTAIN 0
-GRASS 3
-Effect HEALTHEFFECT 4 19 671
-Decal ArtAssets/healDecal.png
+GRASS 1
 Item OBSTACLE Wall
 MOUNTAIN 0
 WATER 0
@@ -4790,9 +4776,7 @@ Decal ArtAssets/damageDecal.png
 GRASS 0
 GRASS 0
 GRASS 0
-GRASS 3
-Effect LEVELUPEFFECT 0
-Decal ArtAssets/levelupDecal.png
+GRASS 1
 Item TAKEABLE Food
 GRASS 0
 GRASS 0
@@ -4897,9 +4881,7 @@ GRASS 3
 Effect HEALTHEFFECT 2 14 647
 Decal ArtAssets/healDecal.png
 Item ONESHOT Banana peel
-GRASS 3
-Effect HEALTHEFFECT 5 1 677
-Decal ArtAssets/healDecal.png
+GRASS 1
 Item ONESHOT Book
 WATER 0
 WATER 0
@@ -4997,9 +4979,7 @@ WATER 0
 WATER 0
 WATER 0
 GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 3 24 230
-Decal ArtAssets/healDecal.png
+GRASS 1
 Item TAKEABLE Food
 WATER 0
 WATER 0
@@ -5099,9 +5079,7 @@ GRASS 2
 Effect HEALTHEFFECT 1 -100000 412
 Decal ArtAssets/deathDecal.png
 GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 5 13 472
-Decal ArtAssets/healDecal.png
+GRASS 1
 Item ONESHOT Book
 GRASS 0
 GRASS 2
@@ -6496,9 +6474,7 @@ GRASS 1
 Item TAKEABLE Key
 GRASS 0
 GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 5 1 227
-Decal ArtAssets/healDecal.png
+GRASS 1
 Item TAKEABLE Food
 GRASS 3
 Effect HEALTHEFFECT 4 2 247
@@ -6649,9 +6625,7 @@ GRASS 0
 GRASS 0
 WATER 0
 GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 1 25 213
-Decal ArtAssets/healDecal.png
+GRASS 1
 Item ONESHOT Banana peel
 GRASS 0
 GRASS 2
@@ -6736,9 +6710,7 @@ Effect LEVELUPEFFECT 0
 Decal ArtAssets/levelupDecal.png
 Item OBSTACLE Bed of Spikes
 GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 3 16 136
-Decal ArtAssets/healDecal.png
+GRASS 1
 Item TAKEABLE Food
 GRASS 0
 GRASS 0
@@ -7128,9 +7100,7 @@ GRASS 0
 GRASS 0
 GRASS 0
 GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 4 4 518
-Decal ArtAssets/healDecal.png
+GRASS 1
 Item TAKEABLE Food
 GRASS 2
 Effect HEALTHEFFECT 2 -15 548
@@ -7289,9 +7259,7 @@ Effect HEALTHEFFECT 7 -25 192
 Decal ArtAssets/damageDecal.png
 WATER 0
 GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 2 15 282
-Decal ArtAssets/healDecal.png
+GRASS 1
 Item TAKEABLE Sword
 GRASS 0
 GRASS 0
@@ -7429,9 +7397,7 @@ MOUNTAIN 0
 MOUNTAIN 0
 GRASS 0
 GRASS 0
-GRASS 3
-Effect HEALTHEFFECT 2 25 615
-Decal ArtAssets/healDecal.png
+GRASS 1
 Item OBSTACLE Bed of Spikes
 GRASS 2
 Effect HEALTHEFFECT 4 -25 645
