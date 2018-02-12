@@ -84,16 +84,18 @@ public class NewGameView extends Parent {
         String characterTwoImageFile = "file:Character2MovementSprites/";
         String characterThreeImageFile = "file:Character3MovementSprites/";
 
-        Image CharacterOneImage = new Image(characterOneImageFile+ "briefcase.png");
-        Image CharacterTwoImage = new Image(characterTwoImageFile+ "briefcase.png");
-        Image CharacterThreeImage = new Image(characterThreeImageFile+ "briefcase.png");
+        Image CharacterOneImage = new Image(characterOneImageFile+ "briefcase.png",30,30,false,false);
+        Image CharacterTwoImage = new Image(characterTwoImageFile+ "briefcase.png",30,30,false,false);
+        Image CharacterThreeImage = new Image(characterThreeImageFile+ "briefcase.png",30,30,false,false);
         //set toggles with character images
         //TODO Add different character image sprites
 
         ToggleButton tb1 = new ToggleButton("Press me", new ImageView(CharacterOneImage));
         ToggleButton tb2 = new ToggleButton("Press me", new ImageView(CharacterTwoImage));
         ToggleButton tb3 = new ToggleButton ("Press me", new ImageView(CharacterThreeImage));
-
+        tb1.setMaxSize(100,100);
+        tb2.setMaxSize(100,100);
+        tb3.setMaxSize(100,100);
         tb1.setSelected(true);
         selectedCharacterFilePath = characterOneImageFile; // this is the image path of tb1's image!!!
         //Assign toggles to one group
