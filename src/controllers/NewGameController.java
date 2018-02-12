@@ -8,9 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import models.Character;
-import models.GlobalLevel;
-import models.ReadFiles;
-import models.SaveFile;
+import models.*;
 import views.GlobalGameplayView;
 import views.MainMenuView;
 import views.NewGameView;
@@ -59,7 +57,9 @@ public class NewGameController {
                 e.printStackTrace();
             }
 
+
             character.setCharacterSpritePath(view.getSelectedCharacterFilePath());
+            System.out.println("Chosen file path: "+ view.getSelectedCharacterFilePath());
             try {
                 character.createCharacterImage();
             } catch (FileNotFoundException e) {
@@ -70,7 +70,7 @@ public class NewGameController {
             character.setOnLocal(false);
 
             System.out.println("Go to global gameplay");
-            GlobalGameplayView globalView = new GlobalGameplayView();
+            GlobalGameplayView globalView = new GlobalGameplayView(view.getSelectedCharacterFilePath());
             Scene globalScene = new Scene(globalView, 500, 500);
             GlobalGameplayController globalController = new GlobalGameplayController(globalView,character,global);
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -103,9 +103,16 @@ public class NewGameController {
                     try {
                         newMap.createNewFile();
                         newCharacter.createNewFile();
+                        Character c = ReadFiles.loadCharacter(newCharacter.getName());
+                        c.setCharacterSpritePath(view.getSelectedCharacterFilePath());
+                        c.setCharacterName(view.getSelectedName());
+
+                        Write write = new Write();
+                        write.setPath("SaveSlot" + i + File.separator);
+                        write.writeCharacterFile("SaveSlot" + i + File.separator, c);
 
                         copyDefaultToNewFile(map, newMap);
-                        copyDefaultToNewFile(character, newCharacter);
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -126,6 +133,9 @@ public class NewGameController {
             while ((bytesRead = in.read(chunk)) > 0) {
                 out.write(chunk, 0, bytesRead);
             }
+
+            out.close();
+            in.close();
         }
 
     }

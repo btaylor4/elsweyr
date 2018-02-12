@@ -20,7 +20,7 @@ public class LocalGameplayViewTest extends ApplicationTest{
     @Override
     public void start(Stage stage) throws Exception {
         Stage window = new Stage();
-        view = new LocalGameplayView();
+        view = new LocalGameplayView("file:PlaceHolderForImages/");
         Scene localScene = new Scene(view, 500, 500);
         window.setScene(localScene);
         window.show();

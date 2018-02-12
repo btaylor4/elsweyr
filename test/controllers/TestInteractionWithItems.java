@@ -38,8 +38,10 @@ public class TestInteractionWithItems extends ApplicationTest {
     public void start(Stage stage) throws Exception {
         primaryWindow = new Stage();
 
-        localview = new LocalGameplayView();
+        localview = new LocalGameplayView(character.getCharacterSpritePath());
         character = new Character();
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
+
         Zone localLevel = new Zone();
 
         localScene = new Scene(localview, 500, 500);
@@ -78,6 +80,8 @@ public class TestInteractionWithItems extends ApplicationTest {
 
         character.updateGlobalPos(new Point(0,0));
         character.updateLocalPos(new Point(0,0));
+        character.setCharacterSpritePath("file:PlaceHolderForImages/");
+
         zones[0][0].getLocalMap()[0][1].setEffectType(effect);
     }
 
@@ -107,7 +111,7 @@ public class TestInteractionWithItems extends ApplicationTest {
 
     @Test
     public void testOneShotItemIsActivatedAfterMove() {
-        item = new OneShotHealthPot(10);
+        item = new OneShotHealthPot();
         item.setName("health pot");
 
         character.setTotalHP(50);

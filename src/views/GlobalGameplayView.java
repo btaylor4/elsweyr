@@ -43,12 +43,14 @@ public class GlobalGameplayView extends Parent {   //
     private int globalMapWidth;
     //Displays the position of the character
     private String characterDirection;
+    private StringBuffer characterSpritePath;
     private StringBuffer path = new StringBuffer("file:PlaceHolderForImages/");
 
     Group root = new Group();
 
-    public GlobalGameplayView(){
+    public GlobalGameplayView(String spritePath){
 
+        this.characterSpritePath = new StringBuffer(spritePath);
         viewableTilesRow = 9;
         viewableTilesCol = 9;
 
@@ -65,11 +67,12 @@ public class GlobalGameplayView extends Parent {   //
         GlobalDisplay gd = new GlobalDisplay(this);
         gd.intializeMap();
 
+
         //TODO: Remove the hardcoding of the characters, and tiles width and height
         //TODO: Animate Character Movement along with the direction the character is facing
         //TODO: Figure out an appropariate method for moving the characters based on changing user input, and all directions.
     }
-
+    //Creates ImageViews for the character and map tiles.
 
 
     public void createCharacterView(Image characterImage) {
@@ -79,6 +82,7 @@ public class GlobalGameplayView extends Parent {   //
         characterView.setFitWidth(30);
         //updateCharacterImageView(path + "Character_Front.png");
     }
+
 
     public void createTileViews(Image[][] tileSprites){
         globalMapHeight = tileSprites.length;
@@ -145,19 +149,20 @@ public class GlobalGameplayView extends Parent {   //
     private void updateCharacterImageView(){
         switch(characterDirection){
             case "UP": // 8
-                updateCharacterImageView(path + "Character_Back.png");
+                updateCharacterImageView(characterSpritePath + "Character_Back.png");
+
                 break;
 
             case "DOWN": // 2
-                updateCharacterImageView(path + "Character_Front.png");
+                updateCharacterImageView(characterSpritePath + "Character_Front.png");
                 break;
 
             case "LEFT": // 4
-                updateCharacterImageView(path + "Character_West.png");
+                updateCharacterImageView(characterSpritePath + "Character_East.png");
                 break;
 
             case "RIGHT": //6
-                updateCharacterImageView(path + "Character_East.png");
+                updateCharacterImageView(characterSpritePath + "Character_East.png");
                 break;
 
             case "END": // 1 DOWN_LEFT
@@ -165,7 +170,7 @@ public class GlobalGameplayView extends Parent {   //
                 break;
 
             case "PAGE_DOWN":  // DOWN_RIGHT
-                updateCharacterImageView(path + "Character_South_East.png");
+                updateCharacterImageView(characterSpritePath + "Character_South_East.png");
                 break;
 
             case "HOME":  // UP_LEFT
@@ -182,7 +187,7 @@ public class GlobalGameplayView extends Parent {   //
         }
     }
 
-
+    public void setCharacterSpritesPath(String path){this.characterSpritePath = new StringBuffer(path);}
 
 
     public class GlobalDisplay extends AnimationTimer{
@@ -207,7 +212,7 @@ public class GlobalGameplayView extends Parent {   //
                 if(now - elapsedTime < 000_000_000)
                 {
                     updateViewAfterMovement();
-                    moveCharacterView();
+                   // moveCharacterView();
                 }
                 //Once the one second weight is over the map is updated.
                 else
@@ -244,61 +249,61 @@ public class GlobalGameplayView extends Parent {   //
             start();
         }
 
-        //Displays the characters position based on the movement input.
-        public void moveCharacterView(){
-            String move = characterDirection;
-            switch (move) {
-                case "UP": // 8
-                    viewableGlobalMap.add(characterView,viewableTilesCol/2,viewableTilesRow/2 - 1);
-                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
-                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
-                    break;
-
-                case "DOWN": // 2
-                    viewableGlobalMap.add(characterView,viewableTilesCol/2,viewableTilesRow/2 + 1);
-                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
-                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
-                    break;
-
-                case "LEFT": // 4
-                    viewableGlobalMap.add(characterView,viewableTilesCol/2 - 1,viewableTilesRow/2);
-                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
-                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
-                    break;
-
-                case "RIGHT": //6
-                    viewableGlobalMap.add(characterView,viewableTilesCol/2 + 1,viewableTilesRow/2);
-                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
-                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
-                    break;
-
-                case "END": // 1 DOWN_LEFT
-                    viewableGlobalMap.add(characterView, viewableTilesCol / 2 - 1, viewableTilesRow / 2 + 1);
-                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
-                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
-                    break;
-
-                case "PAGE_DOWN":  // DOWN_RIGHT
-                    viewableGlobalMap.add(characterView, viewableTilesCol / 2 + 1, viewableTilesRow / 2 + 1);
-                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
-                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
-                    break;
-
-                case "HOME":  // UP_LEFT
-                    viewableGlobalMap.add(characterView, viewableTilesCol / 2 - 1, viewableTilesRow / 2 - 1);
-                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
-                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
-                    break;
-
-
-                case "PAGE_UP": // UP_RIGHT
-                    viewableGlobalMap.add(characterView, viewableTilesCol / 2 + 1, viewableTilesRow / 2 - 1);
-                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
-                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
-                    break;
-            }
-            }
-
+//        //Displays the characters position based on the movement input.
+//        public void moveCharacterView(){
+//            String move = characterDirection;
+//            switch (move) {
+//                case "UP": // 8
+//                    viewableGlobalMap.add(characterView,viewableTilesCol/2,viewableTilesRow/2 - 1);
+//                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
+//                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
+//                    break;
+//
+//                case "DOWN": // 2
+//                    viewableGlobalMap.add(characterView,viewableTilesCol/2,viewableTilesRow/2 + 1);
+//                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
+//                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
+//                    break;
+//
+//                case "LEFT": // 4
+//                    viewableGlobalMap.add(characterView,viewableTilesCol/2 - 1,viewableTilesRow/2);
+//                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
+//                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
+//                    break;
+//
+//                case "RIGHT": //6
+//                    viewableGlobalMap.add(characterView,viewableTilesCol/2 + 1,viewableTilesRow/2);
+//                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
+//                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
+//                    break;
+//
+//                case "END": // 1 DOWN_LEFT
+//                    viewableGlobalMap.add(characterView, viewableTilesCol / 2 - 1, viewableTilesRow / 2 + 1);
+//                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
+//                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
+//                    break;
+//
+//                case "PAGE_DOWN":  // DOWN_RIGHT
+//                    viewableGlobalMap.add(characterView, viewableTilesCol / 2 + 1, viewableTilesRow / 2 + 1);
+//                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
+//                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
+//                    break;
+//
+//                case "HOME":  // UP_LEFT
+//                    viewableGlobalMap.add(characterView, viewableTilesCol / 2 - 1, viewableTilesRow / 2 - 1);
+//                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
+//                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
+//                    break;
+//
+//
+//                case "PAGE_UP": // UP_RIGHT
+//                    viewableGlobalMap.add(characterView, viewableTilesCol / 2 + 1, viewableTilesRow / 2 - 1);
+//                    viewableGlobalMap.setValignment(characterView, VPos.CENTER);
+//                    viewableGlobalMap.setHalignment(characterView, HPos.CENTER);
+//                    break;
+//            }
+//            }
+//
         }
 
     //Updates the map based on the characters previous position

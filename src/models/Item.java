@@ -1,7 +1,9 @@
 package models;
 
 import javafx.scene.image.Image;
+import views.StatusView;
 
+import javax.swing.plaf.nimbus.State;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
@@ -16,13 +18,11 @@ public abstract class Item {
         return name;
     }
 
-    public void setItemSpritePath(String itemSpritePath)
-    {
+    public void setItemSpritePath(String itemSpritePath) {
         this.itemSpritePath = itemSpritePath;
     }
 
-    public void createItemImage() throws FileNotFoundException
-    {
+    public void createItemImage() throws FileNotFoundException {
         itemSprite = new Image(new FileInputStream(itemSpritePath));
     }
 
@@ -52,4 +52,16 @@ public abstract class Item {
     }
 
     public abstract boolean onTouchAction(Character character);
+
+    public abstract boolean onTouchAction(Character character, StatusView view);
+
+    public boolean equals(Item i){
+        if(i.getName() == this.getName() && i.getItemType() == this.getItemType()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
 }

@@ -41,7 +41,7 @@ public class InventoryController {
         public void handle(ActionEvent event) {
             // TODO breaks tests can be fixed with platform runner
             System.out.println("Back To Game Buttonstuff");
-            LocalGameplayView localView = new LocalGameplayView();
+            LocalGameplayView localView = new LocalGameplayView(character.getCharacterSpritePath());
             Scene localScene = new Scene(localView, 500, 500);
             LocalGameplayController localController = new LocalGameplayController(localView, character, globalMap);
 
