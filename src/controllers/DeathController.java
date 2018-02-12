@@ -22,7 +22,7 @@ public class DeathController {
         @Override
         public void handle(ActionEvent event) {
             //Exit to main
-            System.out.println("Exit Game Buttonstuff");
+
 
             MainMenuView mainMenuView = new MainMenuView();
             Scene loadScene = new Scene(mainMenuView,500,500);

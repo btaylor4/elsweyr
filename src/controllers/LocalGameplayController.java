@@ -54,7 +54,6 @@ public class LocalGameplayController {
                 //check death
                 if(playerCharacter.getCurrentHP() <= 0){
                     Platform.runLater(() -> {
-                        System.out.println("Death");
                         DeathView deathView = new DeathView();
                         Scene scene = new Scene(deathView, 500, 500);
                         DeathController deathController = new DeathController(deathView);
@@ -108,7 +107,6 @@ public class LocalGameplayController {
             //Do Movement Stuff
             //move character around
             String keyPressed = event.getCode().toString();
-            System.out.println(keyPressed);
 
             //Attempt to move character on local map. We have to get the local map the user is on based on the global position he was in.
             int globalCharacterXPos = (int) character.getGlobalPos().getX();
@@ -214,7 +212,6 @@ public class LocalGameplayController {
             gameChecks.cancel();
 
             window.setScene(globalScene);
-            System.out.println("menu Buttonstuff");
         }
     }
 
@@ -238,7 +235,6 @@ public class LocalGameplayController {
             gameChecks.cancel();
             window.setScene(inventoryScene);
 
-            System.out.println("InvButton Stuff");
         }
     }
 

@@ -34,7 +34,6 @@ public class InGameMenuController {
         @Override
         public void handle(ActionEvent event) {
             //Switch View To game play, either local or global
-            System.out.println("Resume Game Buttonstuff");
 
             if (character.isOnLocal()) {
                 LocalGameplayView localView = new LocalGameplayView(character.getCharacterSpritePath());
@@ -61,7 +60,6 @@ public class InGameMenuController {
         @Override
         public void handle(ActionEvent event) {
             //Switch View To Save Game Menu
-            System.out.println("Save Game Buttonstuff");
 
 
             SaveGameView saveView = new SaveGameView(character, map);
@@ -78,7 +76,6 @@ public class InGameMenuController {
         @Override
         public void handle(ActionEvent event) {
             //Exit to main
-            System.out.println("Exit Game Buttonstuff");
 
             MainMenuView mainMenuView = new MainMenuView();
             Scene loadScene = new Scene(mainMenuView,500,500);

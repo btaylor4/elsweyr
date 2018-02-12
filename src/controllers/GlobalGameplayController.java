@@ -59,7 +59,6 @@ public class GlobalGameplayController {
             Point characterPosition = character.getGlobalPos();
             int xPositionChange = characterPosition.x + projectedMove.x;
             int yPositionChange = characterPosition.y + projectedMove.y;
-            System.out.println(characterPosition.x + " : " + characterPosition.y);
             if(xPositionChange < 0 || xPositionChange > map.getGlobalMap().length - 1)
                 return false;
 
@@ -142,9 +141,7 @@ public class GlobalGameplayController {
         public void handle(KeyEvent event) {
 
             String move = event.getCode().toString();
-            System.out.println(move);
             if(updateCharacterPosition(move) && checkForLocalLevel()) {
-                System.out.println("Changing View To Local Level");
                 character.updateLocalPos(map.getStartPosOfTile(character.getGlobalPos()));
                 //Set the characters location to be in the Local view when changing to it
                 character.setOnLocal(true);
@@ -166,7 +163,6 @@ public class GlobalGameplayController {
         @Override
         public void handle(ActionEvent event) {
             // go to in game menu
-            System.out.println("menu Buttonstuff");
 
             InGameMenuView inGameMenuView = new InGameMenuView();
             Scene globalScene = new Scene(inGameMenuView, 500, 500);
@@ -182,7 +178,6 @@ public class GlobalGameplayController {
         @Override
         public void handle(ActionEvent event) {
             // load local map
-            System.out.println("Changing View To Local Level");
 
             LocalGameplayView localGameplayView = new LocalGameplayView(character.getCharacterSpritePath());
             Scene globalScene = new Scene(localGameplayView, 500, 500);
