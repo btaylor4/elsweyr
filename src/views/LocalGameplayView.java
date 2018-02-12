@@ -4,7 +4,6 @@ import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
-import javafx.geometry.Insets;
 import javafx.geometry.VPos;
 import javafx.scene.Group;
 import javafx.scene.Parent;
@@ -15,7 +14,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
 
 import java.awt.*;
 
@@ -225,6 +223,10 @@ public class LocalGameplayView extends Parent {   //
         this.characterDirection = characterDirection;
     }
 
+    public void removeItemImageView(Point locPos) {
+        itemImageView[locPos.x][locPos.y].setImage(null);
+    }
+
     public StatusView getStatusView() {
         return statusView;
     }
@@ -283,7 +285,6 @@ public class LocalGameplayView extends Parent {   //
             localGameplayView.getChildren().addAll(localView);
             start();
         }
-
 
         //Displays the map and contents (including tiles, decals, and items)
         private void displayMapAndContents() {

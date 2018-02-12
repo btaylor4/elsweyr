@@ -1,4 +1,4 @@
-
+Bob
 100
 100
 3
@@ -10,12 +10,8 @@
 10 10
 file:Character3MovementSprites/
 Equipped NONE
-5
-4
-hula-hoop 1
-hula-hoop 1
-block 1
-shoe 1
+6
+0
 3
 HEALTHEFFECT 1000 4 poison
 HEALTHEFFECT 2000 6 Chocolate cake

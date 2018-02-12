@@ -1,26 +1,29 @@
 package controllers;
 
+import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import models.Character;
 import models.*;
-import views.GlobalGameplayView;
-import views.InGameMenuView;
-import views.InventoryView;
-import views.LocalGameplayView;
+import views.*;
 
 import java.awt.*;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class LocalGameplayController {
     private Character character;
     private GlobalLevel globalMap;
     private LocalGameplayView view;
+    Timer gameChecks = new Timer();
 
     public LocalGameplayController(LocalGameplayView localView, Character playerCharacter, GlobalLevel global) {
         this.character = playerCharacter;
@@ -42,6 +45,27 @@ public class LocalGameplayController {
         }
 
         populateView();
+
+        gameChecks.schedule(new TimerTask() {
+
+            @Override
+            public void run() {
+                globalMap.setGameTime(globalMap.getGameTime()+100);
+                //check death
+                if(playerCharacter.getCurrentHP() <= 0){
+                    Platform.runLater(() -> {
+                        System.out.println("Death");
+                        DeathView deathView = new DeathView();
+                        Scene scene = new Scene(deathView, 500, 500);
+                        DeathController deathController = new DeathController(deathView);
+                        Stage window = (Stage) view.getScene().getWindow();
+                        window.setScene(scene);
+                        window.setTitle("DEATH");
+                        gameChecks.cancel();
+                    });
+                }
+            }
+        }, 0, 100);
     }
 
     public void populateView() {
@@ -106,15 +130,50 @@ public class LocalGameplayController {
             if (localMap.getLocalMap()[(int) localPos.getX()][(int) localPos.getY()].getItem() != null) {
                 Tile tile = localMap.getLocalMap()[(int) localPos.getX()][(int) localPos.getY()];
                 Item itemOnTile = tile.getItem();
-                boolean shouldBeRemoved = itemOnTile.onTouchAction(character);
+                boolean shouldBeRemoved = itemOnTile.onTouchAction(character, view.getStatusView());
                 switch (itemOnTile.getItemType()) {
                     case TAKEABLE:
-                        if (shouldBeRemoved)
+                        if (shouldBeRemoved) {
                             tile.removeItem();
+                            tile.setItem(new NoneItem());
+                            view.removeItemImageView(character.getLocalPos());
+                        }
                         break;
                     case ONESHOT:
                         tile.removeItem();
+                        tile.setItem(new NoneItem());
+                        view.removeItemImageView(character.getLocalPos());
                         break;
+                    case INTERACTIVE:
+                        if (shouldBeRemoved) {
+                            if (itemOnTile instanceof Animal) {
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("Animal Interaction");
+                                alert.setHeaderText("It is an Animal");
+                                alert.setContentText("You may pet the animal now!");
+                                alert.showAndWait();
+                            } else if (itemOnTile instanceof Door) {
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("Door Interaction");
+                                alert.setHeaderText("It is a Door");
+                                alert.setContentText("You may enter the door!");
+                                alert.showAndWait();
+                            }
+                        } else {
+                            if (itemOnTile instanceof Animal) {
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("Animal Interaction");
+                                alert.setHeaderText("It is an Animal");
+                                alert.setContentText("You need food to pet the animal...");
+                                alert.showAndWait();
+                            } else if (itemOnTile instanceof Door) {
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("Door Interaction");
+                                alert.setHeaderText("It is a Door");
+                                alert.setContentText("You need a key to enter...");
+                                alert.showAndWait();
+                            }
+                        }
                 }
             }
 
@@ -123,10 +182,9 @@ public class LocalGameplayController {
 
 
             if (localPos.getX() == localMap.getExitTile().getX() && localPos.getY() == localMap.getExitTile().getY()) {
-
+                gameChecks.cancel();
                 GlobalGameplayView globalView = new GlobalGameplayView(character.getCharacterSpritePath());
-                Scene scene = new Scene(globalView,500,500);
-
+                Scene scene = new Scene(globalView, 500, 500);
                 //Set the characters position to be in the global map when stepping on the exit tile
                 character.setOnLocal(false);
                 GlobalGameplayController globalGameplay = new GlobalGameplayController(globalView, character, globalMap);
@@ -142,7 +200,7 @@ public class LocalGameplayController {
 
         @Override
         public void handle(ActionEvent event) {
-            // go to in gmae menu
+            // go to in game menu
             InGameMenuView inGameMenuView = new InGameMenuView();
             Scene globalScene = new Scene(inGameMenuView, 500, 500);
             InGameMenuController inGameController = new InGameMenuController(inGameMenuView, character, globalMap);
@@ -151,6 +209,7 @@ public class LocalGameplayController {
             for(HealthEffect effect: character.getHealthEffects()) {
                 effect.stopTimer();
             }
+            gameChecks.cancel();
 
             window.setScene(globalScene);
             System.out.println("menu Buttonstuff");
@@ -174,7 +233,7 @@ public class LocalGameplayController {
             for(HealthEffect effect: character.getHealthEffects()) {
                 effect.stopTimer();
             }
-
+            gameChecks.cancel();
             window.setScene(inventoryScene);
 
             System.out.println("InvButton Stuff");
@@ -263,7 +322,6 @@ public class LocalGameplayController {
             Point newCharacterPosition = new Point(characterPositionInMap.x + moveDirection.x,
                     characterPositionInMap.y + moveDirection.y);
             character.updateLocalPos(newCharacterPosition);
-            System.out.println(character.getLocalPos());
 
             character.updateLocalPos(newCharacterPosition);
 

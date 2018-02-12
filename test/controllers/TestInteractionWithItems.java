@@ -111,7 +111,7 @@ public class TestInteractionWithItems extends ApplicationTest {
 
     @Test
     public void testOneShotItemIsActivatedAfterMove() {
-        item = new OneShotHealthPot(10);
+        item = new OneShotHealthPot();
         item.setName("health pot");
 
         character.setTotalHP(50);

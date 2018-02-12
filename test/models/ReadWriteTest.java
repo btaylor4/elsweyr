@@ -22,170 +22,8 @@ public class ReadWriteTest {
 
 
     @BeforeClass
-    public static void setUpMap() throws FileNotFoundException {
-        Zone[][] zones = new Zone[3][1];
-        Tile[][] tiles;
-        actualMap = new GlobalLevel();
-
-        tiles = new Tile[2][2];
-        //first local map
-        zones[0][0] = new Zone();
-        zones[0][0].setLocalMap(tiles);
-        zones[0][0].setExitTile(new Point(0, 1));
-        zones[0][0].setStartTile(new Point (1, 1));
-        zones[0][0].setPassable(true);
-        zones[0][0].setZoneSpritePath(IMAGE_PATH + "mapImage.png");
-        zones[0][0].createZoneImage();
-
-        // first local map tiles
-        tiles[0][0] = new Tile();
-        tiles[0][0].setTerrain(Terrain.GRASS);
-        HealthEffect HE = new HealthEffect();
-        HE.setEffectId("1015");
-        HE.setEffectType(EffectType.HEALTHEFFECT);
-        HE.setTimeInterval(10);
-        HE.setHealthChange(-5);
-        tiles[0][0].setEffectType(HE);
-        InteractiveItem II = new InteractiveItem();
-        II.setName("bob ob");
-        II.setItemSpritePath(IMAGE_PATH + "Interactive.png");
-        II.createItemImage();
-        tiles[0][0].setItem(II);
-        tiles[0][0].setDecalSpritePath(IMAGE_PATH + "Death.png");
-        tiles[0][0].createDecalImage();
-        tiles[0][0].setTileSpritePath(IMAGE_PATH + "GRASS.png");
-        tiles[0][0].createTileImage();
-
-        // second local map tiles
-        tiles[0][1] = new Tile();
-        tiles[0][1].setTerrain(Terrain.MOUNTAIN);
-        LevelUpEffect LE = new LevelUpEffect();
-        LE.setHasBeenActivated(false);
-        LE.setEffectType(EffectType.LEVELUPEFFECT);
-        tiles[0][1].setEffectType(LE);
-        ObstacleItem OI = new ObstacleItem();
-        OI.setName("blob");
-        OI.setItemSpritePath(IMAGE_PATH + "Interactive.png");
-        OI.createItemImage();
-        tiles[0][1].setItem(OI);
-        tiles[0][1].setDecalSpritePath(IMAGE_PATH + "Level.png");
-        tiles[0][1].createDecalImage();
-        tiles[0][1].setTileSpritePath(IMAGE_PATH + "MOUNTAIN.png");
-        tiles[0][1].createTileImage();
-
-        // third local map tiles
-        tiles[1][0] = new Tile();
-        tiles[1][0].setTerrain(Terrain.WATER);
-        tiles[1][0].setEffectType(new NoneEffect());
-        OneShotItem OSI = new OneShotItem();
-        OSI.setName("one");
-        OSI.setItemSpritePath(IMAGE_PATH + "Interactive.png");
-        OSI.createItemImage();
-        tiles[1][0].setItem(OSI);
-        tiles[1][0].setTileSpritePath(IMAGE_PATH + "WATER.png");
-        tiles[1][0].createTileImage();
-
-        // fourth local map tiles
-        tiles[1][1] = new Tile();
-        tiles[1][1].setTerrain(Terrain.WATER);
-        tiles[1][1].setEffectType(new NoneEffect());
-        TakeableItem TI = new TakeableItem();
-        TI.setName("me");
-        TI.setItemSpritePath(IMAGE_PATH + "Interactive.png");
-        TI.createItemImage();
-        tiles[1][1].setItem(TI);
-        tiles[1][1].setTileSpritePath(IMAGE_PATH + "WATER.png");
-        tiles[1][1].createTileImage();
-
-        tiles = new Tile[1][2];
-        //second local map
-        zones[1][0] = new Zone();
-        zones[1][0].setLocalMap(tiles);
-        zones[1][0].setExitTile(new Point(0, 1));
-        zones[1][0].setStartTile(new Point (0, 0));
-        zones[1][0].setPassable(false);
-        zones[1][0].setZoneSpritePath(IMAGE_PATH + "mapImage.png");
-        zones[1][0].createZoneImage();
-
-        // first local map tile
-        tiles[0][0] = new Tile();
-        tiles[0][0].setTerrain(Terrain.GRASS);
-        LE = new LevelUpEffect();
-        LE.setHasBeenActivated(true);
-        LE.setEffectType(EffectType.LEVELUPEFFECT);
-        tiles[0][0].setEffectType(LE);
-        tiles[0][0].setItem(new NoneItem());
-        tiles[0][0].setDecalSpritePath(IMAGE_PATH + "Level.png");
-        tiles[0][0].createDecalImage();
-        tiles[0][0].setTileSpritePath(IMAGE_PATH + "GRASS.png");
-        tiles[0][0].createTileImage();
-
-        // second local map tiles
-        tiles[0][1] = new Tile();
-        tiles[0][1].setTerrain(Terrain.WATER);
-        tiles[0][1].setEffectType(new NoneEffect());
-        tiles[0][1].setItem(new NoneItem());
-        tiles[0][1].setTileSpritePath(IMAGE_PATH + "WATER.png");
-        tiles[0][1].createTileImage();
-
-        tiles = new Tile[2][2];
-        // third local map
-        zones[2][0] = new Zone();
-        zones[2][0].setLocalMap(tiles);
-        zones[2][0].setExitTile(new Point(0, 0));
-        zones[2][0].setStartTile(new Point (0, 1));
-        zones[2][0].setPassable(true);
-        zones[2][0].setZoneSpritePath(IMAGE_PATH + "mapImage.png");
-        zones[2][0].createZoneImage();
-
-        // first local map tiles
-        tiles[0][0] = new Tile();
-        tiles[0][0].setTerrain(Terrain.WATER);
-        tiles[0][0].setEffectType(new NoneEffect());
-        tiles[0][0].setItem(new NoneItem());
-        tiles[0][0].setTileSpritePath(IMAGE_PATH + "WATER.png");
-        tiles[0][0].createTileImage();
-
-        // second local map tiles
-        tiles[0][1] = new Tile();
-        tiles[0][1].setTerrain(Terrain.WATER);
-        tiles[0][1].setEffectType(new NoneEffect());
-        tiles[0][1].setItem(new NoneItem());
-        tiles[0][1].setTileSpritePath(IMAGE_PATH + "WATER.png");
-        tiles[0][1].createTileImage();
-
-        // third local map tiles
-        tiles[1][0] = new Tile();
-        tiles[1][0].setTerrain(Terrain.GRASS);
-        HE = new HealthEffect();
-        HE.setEffectType(EffectType.HEALTHEFFECT);
-        HE.setEffectId("101");
-        HE.setTimeInterval(5);
-        HE.setHealthChange(5);
-        tiles[1][0].setEffectType(HE);
-        tiles[1][0].setItem(new NoneItem());
-        tiles[1][0].setDecalSpritePath(IMAGE_PATH + "Health.png");
-        tiles[1][0].createDecalImage();
-        tiles[1][0].setTileSpritePath(IMAGE_PATH + "GRASS.png");
-        tiles[1][0].createTileImage();
-
-        // fourth local map tiles
-        tiles[1][1] = new Tile();
-        tiles[1][1].setTerrain(Terrain.MOUNTAIN);
-        HE = new HealthEffect();
-        HE.setEffectType(EffectType.HEALTHEFFECT);
-        HE.setEffectId("1420");
-        HE.setTimeInterval(0);
-        HE.setHealthChange(-1000);
-        tiles[1][1].setEffectType(HE);
-        tiles[1][1].setItem(new NoneItem());
-        tiles[1][1].setDecalSpritePath(IMAGE_PATH + "Death.png");
-        tiles[1][1].createDecalImage();
-        tiles[1][1].setTileSpritePath(IMAGE_PATH + "MOUNTAIN.png");
-        tiles[1][1].createTileImage();
-
-        actualMap.setGlobalMap(zones);
-        actualMap.setGameTime(15);
+    public static void setUpMap() throws IOException {
+        actualMap = ReadFiles.loadGame("DefaultMap.txt");
     }
 
     @BeforeClass
@@ -209,20 +47,19 @@ public class ReadWriteTest {
         actualChar.setCharacterName("Bob");
 
         TakeableItem TI = new TakeableItem();
-        TI.setName("hula-hoop");
-        TI.setItemSprite(new javafx.scene.image.Image(new FileInputStream(IMAGE_PATH + "Takeable.png")));
-
-        actualChar.getInventory().addItem(TI);
-        actualChar.getInventory().addItem(TI);
-
-        TI = new TakeableItem();
-        TI.setName("block");
+        TI.setName("key");
         TI.setItemSprite(new javafx.scene.image.Image(new FileInputStream(IMAGE_PATH + "Takeable.png")));
 
         actualChar.getInventory().addItem(TI);
 
         TI = new TakeableItem();
-        TI.setName("shoe");
+        TI.setName("sword");
+        TI.setItemSprite(new javafx.scene.image.Image(new FileInputStream(IMAGE_PATH + "Takeable.png")));
+
+        actualChar.getInventory().addItem(TI);
+
+        TI = new TakeableItem();
+        TI.setName("food");
         TI.setItemSprite(new Image(new FileInputStream(IMAGE_PATH + "Takeable.png")));
 
         actualChar.getInventory().addItem(TI);
@@ -318,9 +155,13 @@ public class ReadWriteTest {
             Assert.assertEquals(expected.getExitTile(), actual.getExitTile());
             Assert.assertEquals(expected.getStartTile(), actual.getStartTile());
             Assert.assertEquals(expected.isPassable(), actual.isPassable());
-            Assert.assertEquals(expected.getLocalMap().length, actual.getLocalMap().length);
-            Assert.assertEquals(expected.getLocalMap()[0].length, actual.getLocalMap()[0].length);
-            Assert.assertEquals(expected.getZoneSpritePath(), actual.getZoneSpritePath());
+            if (expected.getHasLevel() && actual.getHasLevel()) {
+                Assert.assertEquals(expected.getLocalMap().length, actual.getLocalMap().length);
+                Assert.assertEquals(expected.getLocalMap()[0].length, actual.getLocalMap()[0].length);
+                Assert.assertEquals(expected.getZoneSpritePath(), actual.getZoneSpritePath());
+            } else if(expected.getHasLevel() || actual.getHasLevel()) {
+                Assert.assertTrue(false);
+            }
         } else {
             System.out.println("one or both objects are null");
             Assert.assertTrue(false);
