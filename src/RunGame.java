@@ -1,5 +1,6 @@
 import controllers.MainMenuController;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import views.MainMenuView;
@@ -19,6 +20,11 @@ public class RunGame extends Application {
         primaryWindow.setScene(menuScene);
         primaryWindow.setTitle("Save View");
         primaryWindow.show();
+    }
+
+    public void stop(Stage stage) throws Exception {
+        Platform.exit();
+        System.exit(0);
     }
 
     public static void main(String[] args) {
