@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
  */
 public class TakeableKey extends TakeableItem{
 
-    private String imageFile = "file:ArtAssets" + File.separator + "ItemImages" + File.separator + "Key.png";
+    private String imageFile = "ArtAssets" + File.separator + "ItemImages" + File.separator + "Key.png";
 
     public TakeableKey() {
         this.setName("Key");
@@ -22,7 +22,6 @@ public class TakeableKey extends TakeableItem{
 
     @Override
     public boolean onTouchAction(Character character) {
-        character.getInventory().addItem(this);
-        return true;
+       return character.getInventory().addItem(this);
     }
 }

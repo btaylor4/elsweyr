@@ -31,6 +31,14 @@ public class LocalGameplayController {
         this.view.addMenuButtonListener(new MenuButtonHandler());
         this.view.addInventoryButtonListener(new InvButtonHandler());
 
+        this.view.getStatusView().setDefaultHealth(character.getBaseHP());
+        this.view.getStatusView().getCurrentHealth().setWidth(character.getCurrentHP());
+        this.view.getStatusView().updateCharacterLevel(character.getLevel());
+
+        for(HealthEffect effect: character.getHealthEffects()) {
+            effect.applyEffect(character, this.view.getStatusView());
+        }
+
         populateView();
     }
 
@@ -67,11 +75,6 @@ public class LocalGameplayController {
 
     }
 
-    public LocalGameplayController() {
-    }
-
-    ;
-
     class MovementHandler implements EventHandler<KeyEvent> {
 
         @Override
@@ -101,14 +104,19 @@ public class LocalGameplayController {
             if (localMap.getLocalMap()[(int) localPos.getX()][(int) localPos.getY()].getItem() != null) {
                 Tile tile = localMap.getLocalMap()[(int) localPos.getX()][(int) localPos.getY()];
                 Item itemOnTile = tile.getItem();
-                boolean shouldBeRemoved = itemOnTile.onTouchAction(character);
+                boolean shouldBeRemoved = itemOnTile.onTouchAction(character, view.getStatusView());
                 switch (itemOnTile.getItemType()) {
                     case TAKEABLE:
-                        if (shouldBeRemoved)
+                        if (shouldBeRemoved) {
                             tile.removeItem();
+                            tile.setItem(new NoneItem());
+                            view.removeItemImageView(character.getLocalPos());
+                        }
                         break;
                     case ONESHOT:
                         tile.removeItem();
+                        tile.setItem(new NoneItem());
+                        view.removeItemImageView(character.getLocalPos());
                         break;
                 }
             }
@@ -141,6 +149,11 @@ public class LocalGameplayController {
             Scene globalScene = new Scene(inGameMenuView, 500, 500);
             InGameMenuController inGameController = new InGameMenuController(inGameMenuView, character, globalMap);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            for(HealthEffect effect: character.getHealthEffects()) {
+                effect.stopTimer();
+            }
+
             window.setScene(globalScene);
             System.out.println("menu Buttonstuff");
         }
@@ -159,6 +172,11 @@ public class LocalGameplayController {
             Scene inventoryScene = new Scene(inventoryView , 500, 500);
             InventoryController inventoryController = new InventoryController(inventoryView,character,globalMap);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            for(HealthEffect effect: character.getHealthEffects()) {
+                effect.stopTimer();
+            }
+
             window.setScene(inventoryScene);
 
             System.out.println("InvButton Stuff");
@@ -186,6 +204,11 @@ public class LocalGameplayController {
         predictedMove.y = userLocation.y + userMove.y;
 
         //Check if there's an obstacle item on tile where character wants to move
+        if (map.getLocalMap()[predictedMove.x][predictedMove.y].getItem() == null) {
+            System.out.println("NULL item @ " + predictedMove.x + " : " + predictedMove.y);
+        } else {
+            System.out.println(map.getLocalMap()[predictedMove.x][predictedMove.y].getItem().getName());
+        }
         if (map.getLocalMap()[predictedMove.x][predictedMove.y].getItem().getItemType().equals(ItemType.OBSTACLE)) {
             return true;
         }
@@ -258,23 +281,46 @@ public class LocalGameplayController {
 
         switch (effect.getEffectType()) {
             case HEALTHEFFECT:
-                boolean hasEffectId = false;
-                if (!character.hasEffect((HealthEffect) effect)) {
-                    for (HealthEffect myEffects : character.getHealthEffects()) {
-                        if (myEffects.getEffectId().equalsIgnoreCase(((HealthEffect) effect).getEffectId())) {
-                            hasEffectId = true;
-                        }
-                    }
 
-                    if (!hasEffectId) {
-                        effect.applyEffect(character);
-                    }
+                for (HealthEffect effects : character.getHealthEffects()) {
+                    effects.stopTimer(); //TODO: This applies one extra tick
                 }
+
+                character.getHealthEffects().clear();
+                effect.applyEffect(character, view.getStatusView());
+                //TODO: Logic below needs to be refactored when we have full areas with a bunch of aread effects of same
+//                boolean hasEffectId = false;
+//                if (!character.getHealthEffects().isEmpty()) {
+//                    for (HealthEffect effects : character.getHealthEffects()) {
+//                        effects.stopTimer();
+//                    }
+//                }
+//
+//                if (!character.hasEffect((HealthEffect) effect)) {
+//                    for (HealthEffect myEffects : character.getHealthEffects()) {
+//                        if (myEffects.getEffectId().equalsIgnoreCase(((HealthEffect) effect).getEffectId())) {
+//                            hasEffectId = true;
+//                        }
+//                    }
+//
+//                    if (!hasEffectId) {
+//                        for (HealthEffect effects : character.getHealthEffects()) {
+//                            effects.stopTimer();
+//                        }
+//                        effect.applyEffect(character, view.getStatusView());
+//                    }
+//                }
                 break;
             case LEVELUPEFFECT:
+                for (HealthEffect effects : character.getHealthEffects()) {
+                    effects.stopTimer(); //TODO: This applies one extra tick
+                }
+
+                character.getHealthEffects().clear();
+                
                 boolean activated = ((LevelUpEffect) effect).hasBeenActivated();
                 if (!activated) {
-                    effect.applyEffect(character);
+                    effect.applyEffect(character, view.getStatusView());
                 }
                 break;
             case NONE:
@@ -282,6 +328,8 @@ public class LocalGameplayController {
                     for (HealthEffect effects : character.getHealthEffects()) {
                         effects.stopTimer(); //TODO: This applies one extra tick
                     }
+
+                    character.getHealthEffects().clear();
                 }
 
         }

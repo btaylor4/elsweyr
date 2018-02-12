@@ -4,7 +4,6 @@ import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
-import javafx.geometry.Insets;
 import javafx.geometry.VPos;
 import javafx.scene.Group;
 import javafx.scene.Parent;
@@ -15,7 +14,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
 
 import java.awt.*;
 
@@ -25,6 +23,8 @@ public class LocalGameplayView extends Parent {   //
     private Button inventoryButton = new Button("Inventory");
     private Button inGameMenuButton = new Button("In-Game Menu");
     private Button changeToGlobal = new Button("Change To Global View");
+
+    private StatusView statusView = new StatusView();
     /*
     Order of operation of sprite display.
     displayed 1st is tilesprite
@@ -109,15 +109,6 @@ public class LocalGameplayView extends Parent {   //
                 tileImageView[i][j].setFitHeight(tileHeight);
                 tileImageView[i][j].setFitWidth(tileWidth);
             }
-
-
-        //Creates the Surrounding Tile
-        Image temp = new Image(path + "MOUNTAIN.png");
-        surroundingTile = new ImageView(temp);
-        surroundingTile.setFitHeight(45.55555);
-        surroundingTile.setFitWidth(45.555555);
-
-
     }
 
     //Creates a decal ImageView
@@ -172,6 +163,13 @@ public class LocalGameplayView extends Parent {   //
         this.characterDirection = characterDirection;
     }
 
+    public void removeItemImageView(Point locPos) {
+        itemImageView[locPos.x][locPos.y].setImage(null);
+    }
+
+    public StatusView getStatusView() {
+        return statusView;
+    }
 
     public class LocalDisplay extends AnimationTimer {
         private LocalGameplayView localGameplayView;
@@ -179,7 +177,7 @@ public class LocalGameplayView extends Parent {   //
         private BorderPane localView;
         private long elapsedTime;
 
-        public LocalDisplay(LocalGameplayView view){
+        public LocalDisplay(LocalGameplayView view) {
             localGameplayView = view;
             localMap = new GridPane();
             localMap.setHgap(0);
@@ -189,6 +187,7 @@ public class LocalGameplayView extends Parent {   //
             localView = new BorderPane();
             localView.setCenter(localMap);
             localView.setBottom(inGameMenuButton);
+            localView.setTop(statusView);
             localView.setRight(inventoryButton);
             elapsedTime = 0;
         }
@@ -197,7 +196,7 @@ public class LocalGameplayView extends Parent {   //
         public void handle(long now) {
 
             //Detects when the character moves and moves the map
-            if(localCharacterPos.x != localCharacterPrevPos.x || localCharacterPos.y != localCharacterPrevPos.y) {
+            if (localCharacterPos.x != localCharacterPrevPos.x || localCharacterPos.y != localCharacterPrevPos.y) {
                 //Updates the position to be the position moved to
                 setCharacterPrevPos(localCharacterPos);
                 localMap.getChildren().clear();
@@ -208,8 +207,7 @@ public class LocalGameplayView extends Parent {   //
                 localMap.add(characterImageView, viewableTilesCol / 2, viewableTilesRow / 2);
                 localMap.setValignment(characterImageView, VPos.CENTER);
                 localMap.setHalignment(characterImageView, HPos.CENTER);
-            }
-            else{
+            } else {
                 localMap.getChildren().clear();
                 displayMapAndContents();
 
@@ -221,15 +219,13 @@ public class LocalGameplayView extends Parent {   //
 
         }
 
-        public void intializeMap(){
+        public void intializeMap() {
             localGameplayView.getChildren().addAll(localView);
             start();
         }
 
-
-
         //Displays the map and contents (including tiles, decals, and items)
-        private void displayMapAndContents(){
+        private void displayMapAndContents() {
 
             int row = localCharacterPrevPos.x;
             int col = localCharacterPrevPos.y;
@@ -247,66 +243,53 @@ public class LocalGameplayView extends Parent {   //
             //Number of Columnstobecisplayed
             int numCols = displayColEnd - displayColStart;
             int temp = displayColStart;
-            for(int i = 0; i < numRows; i++) {
+            for (int i = 0; i < numRows; i++) {
                 temp = displayColStart;
                 for (int j = 0; j < numCols; j++) {
-
-                    //If the tile is not in the map.
-                    if(displayRowStart < 0)
-                    {
-                        localMap.add(surroundingTile,j,i);
+                    //When the tile is in the map
+                    localMap.add(tileImageView[displayRowStart][temp], j, i);
+                    if (decalImageView[displayRowStart][temp] != null) {
+                        localMap.add(decalImageView[displayRowStart][temp], j, i);
                     }
-                    else if(displayRowEnd > localMapHeight){
-                        localMap.add(surroundingTile,j,i);
+                    if (itemImageView[displayRowStart][temp] != null) {
+                        localMap.add(itemImageView[displayRowStart][temp], j, i);
+                        localMap.setValignment(itemImageView[displayRowStart][temp], VPos.CENTER);
+                        localMap.setHalignment(itemImageView[displayRowStart][temp], HPos.CENTER);
                     }
-                    else if(temp < 0)
-                    {
-                        localMap.add(surroundingTile,j,i);
-                        temp++;
-                    }
-                    else if(temp > localMapWidth)
-                    {
-                        localMap.add(surroundingTile,j,i);
-                    }
-                    else {
-                        //When the tile is in the map
-                        localMap.add(tileImageView[displayRowStart][temp], j, i);
-                        if (decalImageView[displayRowStart][temp] != null) {
-                            localMap.add(decalImageView[displayRowStart][temp], j, i);
-                        }
-                        if (itemImageView[displayRowStart][temp] != null) {
-                            localMap.add(itemImageView[displayRowStart][temp], j, i);
-                            localMap.setValignment(itemImageView[displayRowStart][temp], VPos.CENTER);
-                            localMap.setHalignment(itemImageView[displayRowStart][temp], HPos.CENTER);
-
-                        }
-                    }
-
                     temp++;
                 }
                 displayRowStart++;
             }
-    }
+        }
 
         //Cannot display a row that is before the 0th row.
-        private int getDisplayStart(int row){
+        private int getDisplayStart(int row) {
             int displayRowStart = row - viewableTilesRow / 2;
+            if (displayRowStart < 0)
+                return 0;
             return displayRowStart;
         }
+
         //Cannot display a row that is not in the map.
-        private int getDisplayRowEnd(int row){
+        private int getDisplayRowEnd(int row) {
             int displayRowEnd = row + viewableTilesRow / 2 + 1;
+            if (displayRowEnd > localMapHeight - 1)
+                return localMapHeight - 1;
             return displayRowEnd;
         }
 
-        private int getDisplayColStart(int col){
-            int displayColStart = col - viewableTilesCol /2;
+        private int getDisplayColStart(int col) {
+            int displayColStart = col - viewableTilesCol / 2;
+            if (displayColStart < 0)
+                return 0;
             return displayColStart;
         }
 
-        private int getDisplayColEnd(int col){
+        private int getDisplayColEnd(int col) {
             //The plus one is for the for loop
             int displayColEnd = col + viewableTilesCol / 2 + 1;
+            if (displayColEnd > localMapWidth - 1)
+                return localMapWidth - 1;
             return displayColEnd;
         }
     }

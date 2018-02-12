@@ -1,6 +1,7 @@
 package models;
 
 import javafx.scene.image.Image;
+import views.StatusView;
 
 public class NoneItem extends Item{
 
@@ -11,6 +12,11 @@ public class NoneItem extends Item{
 
     @Override
     public boolean onTouchAction(Character character) {
+        return false;
+    }
+
+    @Override
+    public boolean onTouchAction(Character character, StatusView view) {
         return false;
     }
 }

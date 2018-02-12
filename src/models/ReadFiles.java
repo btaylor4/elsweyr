@@ -1,7 +1,5 @@
 package models;
 
-import javafx.scene.image.Image;
-
 import java.awt.*;
 import java.io.*;
 
@@ -25,14 +23,14 @@ public class ReadFiles {
         reader = new BufferedReader(inStream);
 
         currentLine = reader.readLine();
-       // System.out.println(currentLine);
         size = getMatrixSize(currentLine.split(" "));
+        System.out.println(size);
 
         global = new Zone[size.x][size.y];
 
         currentLine = reader.readLine();
-        //System.out.println(currentLine);
         currentNum = Integer.parseInt(currentLine);
+        System.out.println(currentNum);
 
         //build map structure
         GlobalLevel loadedMap = new GlobalLevel();
@@ -45,8 +43,8 @@ public class ReadFiles {
                 Zone currentZone = new Zone();
                 currentLine = reader.readLine();
                 size = getMatrixSize(currentLine.split(" "));
+                System.out.println(size);
                 tiles = new Tile[size.x][size.y];
-                System.out.println("tiles is " + size.x + ", " + size.y);
                 currentZone.setLocalMap(tiles);
                 currentZone.setHasLevel(true);
                 if (size.x == 0 && size.y == 0) {
@@ -55,22 +53,22 @@ public class ReadFiles {
 
                 currentLine = reader.readLine();
                 size = getMatrixSize(currentLine.split(" "));
-                System.out.println("exit tile is " + size.x + ", " + size.y);
                 currentZone.setExitTile(size);
+                System.out.println(size);
 
                 currentLine = reader.readLine();
                 size = getMatrixSize(currentLine.split(" "));
-                System.out.println("start tile is " + size.x + ", " + size.y);
                 currentZone.setStartTile(size);
+                System.out.println(size);
 
                 currentLine = reader.readLine();
                 currentZone.setZoneSpritePath(currentLine);
-                System.out.println("sprite path is " + currentLine);
                 currentZone.createZoneImage();
+                System.out.println(currentLine);
 
                 currentLine = reader.readLine();
                 currentZone.setPassable(trueOrFalse(currentLine, gameFile));
-                System.out.println("passable is " + currentLine);
+                System.out.println(currentLine);
 
                 if(currentZone.getHasLevel()) {
                     for (int locRow = 0; locRow < tiles.length; locRow++) {
@@ -78,15 +76,18 @@ public class ReadFiles {
                             Tile tile = new Tile();
                             String[] line;
 
-                            line = reader.readLine().split(" ");
+                            currentLine = reader.readLine();
+                            System.out.println(currentLine);
+                            line = currentLine.split(" ");
                             tile.setTerrain(getTerrain(line[0]));
                             tile.setTileSpritePath(IMAGE_PATH + line[0] + ".png");
                             tile.createTileImage();
 
                             int tileAttributes = Integer.parseInt(line[1]);
                             for (int k = 0; k < tileAttributes; ++k) {
-                                line = reader.readLine().split(" ");
-                                System.out.println();
+                                currentLine = reader.readLine();
+                                line = currentLine.split(" ");
+                                System.out.println(currentLine);
                                 setUpTile(tile, line, gameFile);
                             }
 
@@ -172,7 +173,8 @@ public class ReadFiles {
 
         //equipped item
         currentLine = reader.readLine();
-        loadedCharacter.setEquippedItem(getItem(currentLine.split(" ")[1]));
+        String [] line = currentLine.split(" ");
+        String toBeEquipped = getID(line, 1, line.length - 1);
 
         //max inventory size
         currentLine = reader.readLine();
@@ -180,20 +182,32 @@ public class ReadFiles {
         in.setMaxSize(Integer.parseInt(currentLine));
 
         //fill inventory
+        boolean equipped = false;
+        TakeableItem TI = new TakeableItem();
+        TI.setItemType(ItemType.NONE);
+        TI.setName("");
         currentNum = Integer.parseInt(reader.readLine());
         for (int i = 0; i < currentNum; ++i) {
             String [] itemLine = reader.readLine().split(" ");
             int num = Integer.parseInt(itemLine[itemLine.length - 1]);
 
             for (int j = 0; j < num; ++j) {
-                TakeableItem TI = new TakeableItem();
-
-                TI.setName(getID(itemLine, 0, itemLine.length - 1));
-                TI.setItemSprite(new Image(new FileInputStream(IMAGE_PATH + "Takeable.png")));
+                String itemName = getID(itemLine, 0, itemLine.length - 1);
+                TI = (TakeableItem) getItem(itemName);
                 in.addItem(TI);
+
+                if (!equipped && TI.getName().equalsIgnoreCase(toBeEquipped)) {
+                    equipped = true;
+                    loadedCharacter.setEquippedItem(TI);
+                }
             }
+
         }
 
+        if (!equipped) {
+            loadedCharacter.setEquippedItem(new NoneItem());
+            loadedCharacter.getEquippedItem().setItemType(ItemType.NONE);
+        }
         loadedCharacter.setInventory(in);
 
         //buff array size
@@ -245,36 +259,72 @@ public class ReadFiles {
                 System.out.println("Improper Area Effect Property @ " + gameFile + "should be Health or Level");
                 assert false;
             }
-        } else if (line[0].equals("Item")) {
-            if (line[1].equals(ItemType.TAKEABLE.name())) {
-                TakeableItem TI = new TakeableItem();
-                TI.setName(getID(line, 2, line.length - 1));
-                TI.setItemSpritePath(line[line.length - 1]);
-                TI.createItemImage();
-                tile.setItem(TI);
-            } else if (line[1].equals(ItemType.OBSTACLE.name())) {
-                ObstacleItem OI = new ObstacleItem();
-                OI.setName(getID(line, 2, line.length - 1));
-                OI.setItemSpritePath(line[line.length - 1]);
-                OI.createItemImage();
-                tile.setItem(OI);
-            } else if (line[1].equals(ItemType.ONESHOT.name())) {
-                OneShotItem OSI = new OneShotItem();
-                OSI.setName(getID(line, 2, line.length - 1));
-                OSI.setItemSpritePath(line[line.length - 1]);
-                OSI.createItemImage();
-                tile.setItem(OSI);
-            } else if (line[1].equals(ItemType.INTERACTIVE.name())) {
-                InteractiveItem II = new InteractiveItem();
-                II.setName(getID(line, 2, line.length - 1));
-                II.setItemSpritePath(line[line.length - 1]);
-                II.createItemImage();
-                tile.setItem(II);
+        } else if (line[0].equalsIgnoreCase("Item")) {
+            if (line[1].equalsIgnoreCase(ItemType.TAKEABLE.name())) {
+                if (getID(line, 2).equalsIgnoreCase("key")) {
+                    TakeableKey TK = new TakeableKey();
+                    TK.setItemType(ItemType.TAKEABLE);
+                    tile.setItem(TK);
+                } else if (getID(line, 2).equalsIgnoreCase("food")) {
+                    Food food = new Food();
+                    food.setItemType(ItemType.TAKEABLE);
+                    tile.setItem(food);
+                } else if (getID(line, 2).equalsIgnoreCase("sword")) {
+                    TakeableSword TS = new TakeableSword();
+                    TS.setItemType(ItemType.TAKEABLE);
+                    tile.setItem(TS);
+                } else {
+                    System.out.println("Improper Takeable Item: " + line[2]);
+                    assert false;
+                }
+            } else if (line[1].equalsIgnoreCase(ItemType.OBSTACLE.name())) {
+                if (getID(line, 2).equalsIgnoreCase("Bed Of Spikes")) {
+                    BedOfSpikes BOS = new BedOfSpikes();
+                    BOS.setItemType(ItemType.OBSTACLE);
+                    tile.setItem(BOS);
+                } else if (getID(line, 2).equalsIgnoreCase("Wall")) {
+                    Wall wall = new Wall();
+                    wall.setItemType(ItemType.OBSTACLE);
+                    tile.setItem(wall);
+                } else {
+                    System.out.println("Improper Obstacle Item: " + line[2]);
+                    assert false;
+                }
+            } else if (line[1].equalsIgnoreCase(ItemType.ONESHOT.name())) {
+                if (getID(line, 2).equalsIgnoreCase("Health Pot")) {
+                    OneShotHealthPot OSHP = new OneShotHealthPot();
+                    OSHP.setItemType(ItemType.ONESHOT);
+                    tile.setItem(OSHP);
+                } else if (getID(line, 2).equalsIgnoreCase("Banana Peel")) {
+                    OneShotBananaPeel OSBP = new OneShotBananaPeel();
+                    OSBP.setItemType(ItemType.ONESHOT);
+                    tile.setItem(OSBP);
+                } else if (getID(line, 2).equalsIgnoreCase("Book")) {
+                    OneShotBook book = new OneShotBook();
+                    book.setItemType(ItemType.ONESHOT);
+                    tile.setItem(book);
+                } else {
+                    System.out.println("Improper OneShot Item: " + line[2]);
+                    assert false;
+                }
+            } else if (line[1].equalsIgnoreCase(ItemType.INTERACTIVE.name())) {
+                if (getID(line, 2).equalsIgnoreCase("Door")) {
+                    Door door = new Door();
+                    door.setItemType(ItemType.INTERACTIVE);
+                    tile.setItem(door);
+                } else if (getID(line, 2).equalsIgnoreCase("Animal")) {
+                    Animal animal = new Animal();
+                    animal.setItemType(ItemType.INTERACTIVE);
+                    tile.setItem(animal);
+                } else {
+                    System.out.println("Improper Interacticve Item: " + line[2]);
+                    assert false;
+                }
             } else {
                 System.out.println("Improper Item Property @ " + gameFile + "should be Obstacle, Interactive, OneShot, or Takeable");
                 assert false;
             }
-        } else if (line[0].equals("Decal")) {
+        } else if (line[0].equalsIgnoreCase("Decal")) {
             tile.setDecalSpritePath(line[1]);
             tile.createDecalImage();
         } else {
@@ -328,11 +378,24 @@ public class ReadFiles {
         if (item.equals(ItemType.NONE.name())) {
             return new NoneItem();
         } else {
-            TakeableItem TI = new TakeableItem();
-            TI.setItemSprite(new Image(new FileInputStream(IMAGE_PATH + "Takeable.png")));
-            TI.setName(item);
-            return TI;
+            if (item.equalsIgnoreCase("key")) {
+                TakeableKey TK = new TakeableKey();
+                TK.setItemType(ItemType.TAKEABLE);
+                return TK;
+            } else if (item.equalsIgnoreCase("food")) {
+                Food food = new Food();
+                food.setItemType(ItemType.TAKEABLE);
+                return food;
+            } else if (item.equalsIgnoreCase("sword")) {
+                TakeableSword TS = new TakeableSword();
+                TS.setItemType(ItemType.TAKEABLE);
+                return TS;
+            } else {
+                System.out.println("Improper Takable Item: " + item);
+                assert false;
+            }
         }
+        return new NoneItem();
     }
 
     private static Buffs addBuffsToChar(String [] effect, String charcterFile) {

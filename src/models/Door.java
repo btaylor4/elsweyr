@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
  */
 public class Door extends InteractiveItem {
     private boolean isOpen;
-    private String imageFile = "file:ArtAssets" + File.separator + "ItemImages" + File.separator + "Door.png";
+    private String imageFile = "ArtAssets" + File.separator + "ItemImages" + File.separator + "Door.png";
 
     public Door() {
         isOpen = false;

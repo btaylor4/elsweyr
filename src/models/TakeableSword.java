@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
  */
 public class TakeableSword extends TakeableItem {
 
-    private String imageFile = "file:ArtAssets" + File.separator + "ItemImages" + File.separator + "Sword.png";
+    private String imageFile = "ArtAssets" + File.separator + "ItemImages" + File.separator + "Sword.png";
 
     public TakeableSword() {
         this.setName("Sword");
@@ -22,8 +22,7 @@ public class TakeableSword extends TakeableItem {
 
     @Override
     public boolean onTouchAction(Character character) {
-        character.getInventory().addItem(this);
-        return true;
+        return character.getInventory().addItem(this);
     }
 
 }

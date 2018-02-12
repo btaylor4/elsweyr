@@ -1,14 +1,17 @@
 package models;
 
+import views.StatusView;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 
 public class OneShotHealthPot extends OneShotItem {
     private int healthToAdd;
-    private String imageFile = "file:ArtAssets" + File.separator + "ItemImages" + File.separator + "HealthPot.png";
+    private String imageFile = "ArtAssets" + File.separator + "ItemImages" + File.separator + "HealthPot.png";
 
     public OneShotHealthPot() {
-        this.healthToAdd = 5;
+        this.healthToAdd = 10;
+        this.setName("Health Pot");
         this.setItemSpritePath(imageFile);
         try {
             this.createItemImage();
@@ -20,6 +23,13 @@ public class OneShotHealthPot extends OneShotItem {
     @Override
     public boolean onTouchAction(Character character) {
         character.updateHealth(healthToAdd);
+        return true;
+    }
+
+    @Override
+    public boolean onTouchAction(Character character, StatusView view) {
+        character.updateHealth(healthToAdd);
+        view.updateCharacterHealth(healthToAdd);
         return true;
     }
 }
