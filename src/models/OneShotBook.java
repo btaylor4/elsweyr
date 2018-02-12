@@ -1,5 +1,7 @@
 package models;
 
+import views.StatusView;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 
@@ -24,6 +26,12 @@ public class OneShotBook extends OneShotItem{
 
     @Override
     public boolean onTouchAction(Character character) {
+        character.updateExp(expIncrease);
+        return true;
+    }
+
+    @Override
+    public boolean onTouchAction(Character character, StatusView view) {
         character.updateExp(expIncrease);
         return true;
     }

@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
@@ -118,6 +119,36 @@ public class LocalGameplayController {
                         tile.setItem(new NoneItem());
                         view.removeItemImageView(character.getLocalPos());
                         break;
+                    case INTERACTIVE:
+                        if (shouldBeRemoved) {
+                            if (itemOnTile instanceof Animal) {
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("Animal Interaction");
+                                alert.setHeaderText("It is an Animal");
+                                alert.setContentText("You may pet the animal now!");
+                                alert.showAndWait();
+                            } else if (itemOnTile instanceof Door) {
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("Door Interaction");
+                                alert.setHeaderText("It is a Door");
+                                alert.setContentText("You may enter the door!");
+                                alert.showAndWait();
+                            }
+                        } else {
+                            if (itemOnTile instanceof Animal) {
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("Animal Interaction");
+                                alert.setHeaderText("It is an Animal");
+                                alert.setContentText("You need food to pet the animal...");
+                                alert.showAndWait();
+                            } else if (itemOnTile instanceof Door) {
+                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                alert.setTitle("Door Interaction");
+                                alert.setHeaderText("It is a Door");
+                                alert.setContentText("You need a key to enter...");
+                                alert.showAndWait();
+                            }
+                        }
                 }
             }
 

@@ -1,5 +1,7 @@
 package models;
 
+import views.StatusView;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 
@@ -22,6 +24,11 @@ public class TakeableSword extends TakeableItem {
 
     @Override
     public boolean onTouchAction(Character character) {
+        return character.getInventory().addItem(this);
+    }
+
+    @Override
+    public boolean onTouchAction(Character character, StatusView view) {
         return character.getInventory().addItem(this);
     }
 
