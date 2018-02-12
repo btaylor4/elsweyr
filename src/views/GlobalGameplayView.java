@@ -153,6 +153,7 @@ public class GlobalGameplayView extends Parent {   //
                 break;
 
             case "LEFT": // 4
+                updateCharacterImageView(path + "Character_West.png");
                 break;
 
             case "RIGHT": //6
