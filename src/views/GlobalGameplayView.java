@@ -161,7 +161,7 @@ public class GlobalGameplayView extends Parent {   //
                 break;
 
             case "END": // 1 DOWN_LEFT
-
+                updateCharacterImageView(path + "Character_South_West.png");
                 break;
 
             case "PAGE_DOWN":  // DOWN_RIGHT
@@ -169,12 +169,12 @@ public class GlobalGameplayView extends Parent {   //
                 break;
 
             case "HOME":  // UP_LEFT
-
+                updateCharacterImageView(path + "Character_North_West.png");
                 break;
 
 
             case "PAGE_UP": // UP_RIGHT
-
+                updateCharacterImageView(path + "Character_North_East.png");
                 break;
 
             default:
