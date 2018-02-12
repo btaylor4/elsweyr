@@ -29,13 +29,7 @@ public class Animal extends InteractiveItem {
 
     @Override
     public boolean checkRequirements(Character character) {
-        for(Item item: character.getInventory().getItems()) {
-            if(item.getName().equalsIgnoreCase("food")) {
-                return true;
-            }
-        }
-
-        return false;
+        return character.getEquippedItem().getName().equalsIgnoreCase("food");
     }
 
     @Override

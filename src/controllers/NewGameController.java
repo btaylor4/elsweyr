@@ -51,7 +51,7 @@ public class NewGameController {
             //Set up custom character settings
             try {
                 character = ReadFiles.loadCharacter("DefaultCharacter.txt");
-                global = ReadFiles.loadGame("DefaultMap.txt");
+                global = ReadFiles.loadGame("DemoMap.txt");
             } catch (IOException e) {
                 System.out.println("Game Files Not Found");
                 e.printStackTrace();
@@ -88,7 +88,7 @@ public class NewGameController {
         private void createMapAndCharacterFiles(String pathToCreateIn) {
             String saveSlot = "SaveSlot";
 
-            File map = new File("DefaultMap.txt");
+            File map = new File("DemoMap.txt");
             File character = new File("DefaultCharacter.txt");
 
             File newMap;

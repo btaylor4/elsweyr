@@ -56,7 +56,7 @@ public abstract class Item {
     public abstract boolean onTouchAction(Character character, StatusView view);
 
     public boolean equals(Item i){
-        if(i.getName() == this.getName() && i.getItemType() == this.getItemType()){
+        if(i.getName().equals(this.getName()) && i.getItemType().equals(this.getItemType())){
             return true;
         }
         else{

@@ -183,7 +183,7 @@ public class NewGameView extends Parent {
                 String characterFileNamePath = "";
 
                 for (int j = 0; j < files.length; ++j) {
-                    if (files[j].getName().equals("DefaultMap.txt")) {
+                    if (files[j].getName().equals("DemoMap.txt")) {
                         lastPlayed = new Date (files[j].lastModified());
                         mapFilePath = saveSlot + i + File.separator + files[j].getName();
                     } else if (files[j].getName().equals("DefaultCharacter.txt")) {

@@ -47,7 +47,11 @@ public class Inventory {
     }
 
     public boolean hasItem(Item item){
-        return items.contains(item);
+        for(Item i : this.items){
+            if(item.getName().equals(i.getName())){
+                return true;
+            }
+        }
+        return false;
     }
-
 }
